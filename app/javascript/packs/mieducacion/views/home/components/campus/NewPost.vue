@@ -1,5 +1,5 @@
 <template>
-  <v-card class="px-4 py-4 my-4" outlined rounded>
+  <v-card class="px-4 py-4 my-4 NewPost--card mx-2 mb-8" outlined rounded>
     <v-flex class="d-flex justify-center" style="align-items: center">
       <v-avatar size="40">
         <img
@@ -8,23 +8,33 @@
         />
       </v-avatar>
 
-      <v-col align-self="center" cols="auto" sm="8">
-        <v-textarea
-          hide-details
-          label="¿Que estás pensando, Alexander?"
-          outlined
-          dense
-          rows="1"
-          auto-grow
-        ></v-textarea>
+      <v-col align-self="center" cols="auto" sm="10">
+      
+  
       </v-col>
     </v-flex>
+    <v-btn color="#4527a0" class="NewPost--send-bnt" dark depressed
+      ><v-icon left>mdi-send-outline</v-icon> Publicar</v-btn
+    >
   </v-card>
 </template>
 
 <script>
 export default {
   name: 'CampusNewPost',
+  components: {
+  },
+  data() {
+    return {
+      text: '',
+      renderConfig: {
+        rows: 1,
+        mermaid: {
+          theme: 'dark',
+        },
+      },
+    }
+  },
 }
 </script>
 

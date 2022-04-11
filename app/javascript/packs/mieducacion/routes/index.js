@@ -5,6 +5,7 @@ import Meta from 'vue-meta'
 
 import Home from "../views/home";
 import NotFound from '../views/errors/404'
+const Courses = () => import(/* webpackChunkName: "site-courses" */ '../views/courses')
 const UserLogin = () =>
   import(/* webpackChunkName: "user-login" */ '../views/auth/Login')
 
@@ -23,6 +24,7 @@ const routes = [
     {
         path: '/courses',
         name: 'Courses',
+        component: Courses,
         meta: {
           layout: 'ApplicationLayout'
         }
@@ -51,7 +53,7 @@ const router = new VueRouter({
     routes
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeResolve((to, from, next) => {
     if (window.MiniProfiler !== undefined) {
         window.MiniProfiler.pageTransition();
         next()

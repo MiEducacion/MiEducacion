@@ -1,18 +1,47 @@
 <template>
   <div id="site-campus">
-      <h2 class="campus--greeting text-left">Buenas noches, Alexander<span class="twa twa-1f318"></span></h2>
-      <new-post/>
+    <v-flex class="flex shrink">
+      <h2 class="campus--greeting text-center pb-4 mt-n4">
+        Good Evening, Alexander<span class="twa twa-1f306"></span>
+      </h2>
+      <new-post />
+    </v-flex>
+    <v-layout column class="fill-height">
+      <v-flex class="overflow-y-auto flex fill-height">
+        <feed-post />
+        <feed-post />
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
 <script>
+import FeedPost from './FeedPost.vue'
 import NewPost from './NewPost.vue'
 export default {
-  components: { NewPost },
-
+  components: { NewPost, FeedPost },
+  data () {
+    return {
+      CampusPosts: null
+    }
+  },
+    methods: {
+    fetchCampusPosts() {
+      $.ajax('/campus.json')
+        .then((response) => {
+          this.CampusPosts = response
+          console.log(this.CampusPosts)
+        })
+        .catch((error) => {
+          console.log(error)
+          this.error = true
+        })
+    },
+    mounted () {
+      this.fetchCampusPosts()
+    }
+  },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

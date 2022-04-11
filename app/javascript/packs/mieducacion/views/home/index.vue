@@ -1,5 +1,5 @@
 <template>
-  <div id="site-homepage" class="pt-10">
+  <div id="site-homepage" class="pt-10 mb-4">
     <v-container fluid class="fill-height home-container">
       <!--       <v-alert
         border="top"
@@ -12,7 +12,7 @@
         El administrador del sitio deshabilitó las publicaciones en
         "Campus"</v-alert
       > -->
-      <v-row align="self-start" class="fill-height">
+      <v-row class="fill-height align-self-start">
         <v-col md="3" class="text-center hidden-sm-and-down">
           <DesktopLeftSummary />
         </v-col>
@@ -23,7 +23,7 @@
 
           <campus/>
 
-           <v-expansion-panels focusable popout>
+           <v-expansion-panels focusable popout class="mt-8">
             <v-expansion-panel>
               <v-expansion-panel-header>
                 Aquí hay algunos consejos para que comiences a utilizar el sitio
@@ -34,9 +34,6 @@
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
-
-           <v-virtual-scroll class="full-height"
-></v-virtual-scroll>
 
 
           <v-btn text class="mt-4" to="/about" block

@@ -59,7 +59,7 @@
 }
 
 #main-mountpoint {
-    background:rgba(255, 255, 255, 0.9)
+    background: rgba(255, 255, 255, 0.9)
 }
 
 #current-user {
@@ -182,9 +182,8 @@
     max-width: 380px !important;
 }
 
-.v-btn--active.no-active:not(:focus):not(:hover)::before
-{                                                                             
-  opacity: 0 !important;
+.v-btn--active.no-active:not(:focus):not(:hover)::before {
+    opacity: 0 !important;
 }
 
 .auth--card-privacy span {
@@ -310,10 +309,15 @@
 
 .home-container {
     background-color: #fff;
-}
+    max-width: 1150px !important;
+    border-radius: 1em;
+    padding: 2em 2em 5% !important;
+    padding-bottom: 0 !important;
+    box-shadow: 0 8px 60px 0 rgba(69, 39, 160, 15%), 0 12px 90px 0 rgb(69 39 160 / 15%);}
 
 .homepage-tasks--card {
     border-radius: 0.5rem !important;
+    min-height: 500px !important;
 }
 
 .homepage-tasks--card .TasksTitle {
@@ -333,4 +337,12 @@
     font-family: 'Lato';
     font-weight: 600;
     color: #333;
+}
+
+.NewPost--card {
+    border-top: 5px #4527a0 solid !important;
+}
+
+.NewPost--send-bnt {
+    text-transform: none !important;
 }

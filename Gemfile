@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'rack-cors'
 gem 'devise'
-gem 'devise_token_auth'
+gem 'devise-jwt'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -55,3 +56,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "sidekiq", "~> 6.4"

@@ -1,24 +1,25 @@
-# README
+![MiEducacion_Banner](https://i.ibb.co/b1ms6Pb/banner-Mi-Liceo.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<div align="center">
 
-Things you may want to cover:
+<kbd>:warning: **This project started its development very recently.**</kbd>
 
-* Ruby version
+</div>
 
-* System dependencies
+**MiEducación** is a 100% open source learning platform. You can use it to:
 
-* Configuration
+ - Offer public courses
+- Being an LMS in Schools
 
-* Database creation
+For more information on the goals of the project, visit [our forums]().
 
-* Database initialization
+## Screenshots
 
-* How to run the test suite
+![Homepage](https://i.ibb.co/XxCJrPK/Captura-de-pantalla-65.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
 
-* Deployment instructions
+- [Ruby on Rails](https://github.com/rails/rails) &mdash; The back-end API is a Rails application. It responds to REST requests fully in JSON.
+- [Vue.js](https://github.com/vuejs/vue) &mdash; The frontend is a VueJS app that communicates with the Rails API.
+- [Vuetify](https://github.com/vuetifyjs/vuetify) &mdash; UI Library used for the main design of the App
 
-* ...
