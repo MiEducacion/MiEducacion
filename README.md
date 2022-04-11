@@ -23,3 +23,13 @@ For more information on the goals of the project, visit [our forums]().
 - [Vue.js](https://github.com/vuejs/vue) &mdash; The frontend is a VueJS app that communicates with the Rails API.
 - [Vuetify](https://github.com/vuetifyjs/vuetify) &mdash; UI Library used for the main design of the App
 
+
+## Contributing
+
+
+MiEducación is 100% free and open source. 
+We encourage and support the community to contribute their grain of sand, including you! :sparkles:.
+
+We look forward to seeing your pull requests!
+
+>  *__Alexander__: This is my first time working with Ruby and Rails, so any kind of contribution will be more than welcome :heart:*
