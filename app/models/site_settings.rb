@@ -5,6 +5,7 @@ class SiteSettings < RailsSettings::Base
   scope :application do
   # Define your fields
   # field :host, type: :string, default: "http://localhost:3000"
+  field :site_title, default: "MiEducación", validates: { presence: true, length: { in: 2..255 } }
   field :default_locale, default: "en", type: :string
   # field :confirmable_enable, default: "0", type: :boolean
   field :developer_emails, default: (ENV["MIEDUCACION_DEVELOPER_EMAILS"] || "developer@mieducacion.net"), type: :array, readonly: true
