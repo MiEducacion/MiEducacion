@@ -1,7 +1,7 @@
 <template>
     <v-progress-circular
-        :value="20"
-        size="36"
+        value="20"
+        :size="s_size"
         width="4"
         color="white"
         class="text-center site-spinner align-self-start mx-auto d-flex"
@@ -10,6 +10,12 @@
 
 <script>
 export default {
-    name: 'SiteSpinner'
+    name: 'SiteSpinner',
+    props: {
+        s_size: {
+            default: 36
+        },
+
+}
 }
 </script>

@@ -6,9 +6,13 @@ import router from './routes'
 import $ from 'jquery'
 import vuetwemoji from 'vue-twemoji'
 
+import SiteSpinner from './common/site-spinner.vue'
+
 
 Vue.use(Vuetify)
 Vue.use(vuetwemoji)
+Vue.component('site-spinner', SiteSpinner)
+
 
 
 $.ajaxSetup({
