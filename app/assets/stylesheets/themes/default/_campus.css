@@ -1,0 +1,35 @@
+.campus--greeting {
+    font-family: 'Gilroy-Medium';
+    font-weight: 600;
+    color: #4527a0;
+    font-size: 1.2rem;
+    justify-content: center;
+    display: flex;
+}
+
+.greeting-daytime {
+    height: 28px;
+    width: 28px;
+    margin-left: .5rem;
+}
+
+.NewPost--card {
+    border: 1px #4527a0 solid !important;
+    background-color: rgba(199, 190, 227, 0.30) !important;
+}
+
+.NewPost--card .avatar {
+    border: 4px #4527a0 solid
+}
+
+.NewPost--card .footer-btns {
+    margin-top: 1.4rem;
+}
+
+.NewPost--btn {
+    text-transform: none !important;
+    background-color: white;
+    margin: 4px 4px;
+    font-family: 'Gilroy-Regular' !important;
+    font-weight: 600!important;
+}
