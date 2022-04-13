@@ -8,9 +8,7 @@
 </template>
 
 <script>
-import siteSpinner from '../../common/site-spinner.vue'
 export default {
-  components: { siteSpinner },
   metaInfo: {
     title: 'Cursos',
   },
