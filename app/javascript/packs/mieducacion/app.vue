@@ -5,7 +5,8 @@
 </template>
 
 <script>
-window.MiEducacion = {}
+import { SiteSettings } from './helpers'
+
 
 import LayoutBroker from 'vue-layout-broker'
 
@@ -23,9 +24,9 @@ export default {
   },
   metaInfo: {
     // if no subcomponents specify a metaInfo.title, this title will be used
-    title: 'MiEducación',
+    title: SiteSettings.title,
     // all titles will be injected into this template
-    titleTemplate: '%s - MiEducación',
+    titleTemplate: '%s - '+ SiteSettings.title,
   },
   data() {
     return {
