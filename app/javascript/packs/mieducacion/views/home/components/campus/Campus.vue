@@ -1,9 +1,6 @@
 <template>
   <div id="site-campus">
     <v-flex class="flex shrink">
-      <h2 class="campus--greeting text-center pb-4 mt-n4">
-        Good Evening, Alexander<span class="twa twa-1f306"></span>
-      </h2>
       <new-post />
     </v-flex>
     <v-layout column class="fill-height">

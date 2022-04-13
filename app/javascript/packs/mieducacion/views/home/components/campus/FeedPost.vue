@@ -1,6 +1,6 @@
 <template>
   <v-card outlined class="mx-2 mb-6">
-    <v-card-title>
+    <v-card-title class="py-2">
       <v-list-item class="grow">
         <v-list-item-avatar color="grey darken-3">
           <v-img
