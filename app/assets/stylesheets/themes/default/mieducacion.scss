@@ -1,3 +1,7 @@
+@import 'home';
+@import 'courses';
+@import 'campus';
+
 #site-header {
     border-bottom: 1px #ddd solid !important;
 }
@@ -301,14 +305,6 @@
     font-size: 14px;
 }
 
-.home-container {
-    background-color: #fff;
-    max-width: 1150px !important;
-    border-radius: 1em;
-    padding: 2em 2em 5% !important;
-    padding-bottom: 0 !important;
-    box-shadow: 0 8px 60px 0 rgba(69, 39, 160, 15%), 0 12px 90px 0 rgb(69 39 160 / 15%);
-}
 
 .homepage-tasks--card {
     border-radius: 0.5rem !important;
@@ -329,28 +325,7 @@
     color: #444;
 }
 
-.campus--greeting {
-    font-family: 'Lato';
-    font-weight: 600;
-    color: #333;
-}
 
-.NewPost--card {
-    border-top: 5px #4527a0 solid !important;
-}
-
-.NewPost--send-bnt {
-    text-transform: none !important;
-}
-
-.courses-container {
-    background-color: #fff;
-    max-width: 1150px !important;
-    border-radius: 1em;
-    padding: 2em 2em 5% !important;
-    padding-bottom: 0 !important;
-    box-shadow: 0 8px 60px 0 rgba(69, 39, 160, 15%), 0 12px 90px 0 rgb(69 39 160 / 15%);
-}
 
 .site-spinner {
     animation: rotate-forever 1s infinite linear;
