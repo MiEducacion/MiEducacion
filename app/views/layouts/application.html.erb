@@ -2,6 +2,11 @@
 <html>
   <head>
     <title><%= SiteSettings.site_title %></title>
+    <script type="text/javascript">
+    window.MiEducacion = window.MiEducacion || {};
+    window.MiEducacion.SiteSettings = <%= client_side_app_settings.to_json.html_safe %>;
+    </script>   
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'themes/mieducacion/default.css', media: 'all' %>
