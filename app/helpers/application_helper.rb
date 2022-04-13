@@ -6,5 +6,10 @@ module ApplicationHelper
         return "mobile" if agent =~ /Mobile/
         return "desktop"
       end
-      
+
+      def client_side_app_settings
+        site_settings = {
+          title: SiteSettings.site_title
+        }
+      end
 end
