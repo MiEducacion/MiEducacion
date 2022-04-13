@@ -1,0 +1,2 @@
+module Campus::PostHelper
+end

@@ -12,6 +12,7 @@ Vue.use(vuetwemoji)
 
 
 $.ajaxSetup({
+  timeout: 10000,
   beforeSend: function(xhr) {
     xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
   },

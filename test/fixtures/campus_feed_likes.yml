@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  post_id: 1
-  owner_id: MyString
-  raw_body: 
+  like_count: 1
+  campus_feed: one
 
 two:
-  post_id: 1
-  owner_id: MyString
-  raw_body: 
+  like_count: 1
+  campus_feed: two

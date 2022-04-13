@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CampuTest < ActiveSupport::TestCase
+class CampusFeedLikeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

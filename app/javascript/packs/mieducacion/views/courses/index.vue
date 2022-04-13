@@ -1,15 +1,18 @@
 <template>
   <div id="site-courses" class="pt-10">
-    <v-container fluid class="fill-height courses-container">
-      <v-progress-circular indeterminate></v-progress-circular>
+   <site-spinner v-if="!CoursesData"/>
+    <v-container v-if="CoursesData" fluid class="fill-height courses-container">
+      
     </v-container>
   </div>
 </template>
 
 <script>
+import siteSpinner from '../../common/site-spinner.vue'
 export default {
+  components: { siteSpinner },
   metaInfo: {
-    title: 'Cursos'
+    title: 'Cursos',
   },
   data() {
     return {

@@ -52,6 +52,15 @@
     height: 100%;
 }
 
+#site-courses {
+    width: 100%;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+}
+
 #mieducacion {
     background-repeat: repeat;
     background-attachment: fixed;
@@ -207,21 +216,6 @@
     border-bottom: 1px #ddd solid;
 }
 
-@media only screen and (max-width: 600px) {
-    .auth--login {
-        background-position: top;
-    }
-
-    .mieducacion-404-image {
-        max-height: 120px;
-    }
-
-    #site-header #site-logo {
-        max-height: 1.4em;
-        max-width: 100%;
-    }
-}
-
 
 
 .expired--title {
@@ -313,11 +307,13 @@
     border-radius: 1em;
     padding: 2em 2em 5% !important;
     padding-bottom: 0 !important;
-    box-shadow: 0 8px 60px 0 rgba(69, 39, 160, 15%), 0 12px 90px 0 rgb(69 39 160 / 15%);}
+    box-shadow: 0 8px 60px 0 rgba(69, 39, 160, 15%), 0 12px 90px 0 rgb(69 39 160 / 15%);
+}
 
 .homepage-tasks--card {
     border-radius: 0.5rem !important;
     min-height: 500px !important;
+    max-width: 350px!important;
 }
 
 .homepage-tasks--card .TasksTitle {
@@ -345,4 +341,45 @@
 
 .NewPost--send-bnt {
     text-transform: none !important;
+}
+
+.courses-container {
+    background-color: #fff;
+    max-width: 1150px !important;
+    border-radius: 1em;
+    padding: 2em 2em 5% !important;
+    padding-bottom: 0 !important;
+    box-shadow: 0 8px 60px 0 rgba(69, 39, 160, 15%), 0 12px 90px 0 rgb(69 39 160 / 15%);
+}
+
+.site-spinner {
+    animation: rotate-forever 1s infinite linear;
+}
+
+@keyframes rotate-forever {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .auth--login {
+        background-position: top;
+    }
+
+    .home-container {
+        padding: 2em 0.2em 5% !important;
+    }
+
+    .mieducacion-404-image {
+        max-height: 120px;
+    }
+
+    #site-header #site-logo {
+        max-height: 1.4em;
+        max-width: 100%;
+    }
 }

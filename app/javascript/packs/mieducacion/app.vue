@@ -1,6 +1,6 @@
 <template>
   <v-app id="mieducacion">
-      <LayoutBroker :layouts="layouts" :current="$route.meta.layout" />
+      <LayoutBroker :layouts="layouts" :current="$route.meta.layout || 'ApplicationLayout'" />
   </v-app>
 </template>
 

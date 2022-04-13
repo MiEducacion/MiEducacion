@@ -16,7 +16,7 @@
         <v-col md="3" class="text-center hidden-sm-and-down">
           <DesktopLeftSummary />
         </v-col>
-        <v-col md="6" cols="auto" sm="4" class="text-center">
+        <v-col md="6" cols="auto" sm="7" class="text-center">
          <!--  <v-alert color="#4527a0" dark icon="mdi-firework" dense>
             Te damos la bienvenida a MiEducación
           </v-alert> -->
@@ -34,11 +34,6 @@
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
-
-
-          <v-btn text class="mt-4" to="/about" block
-            >Todas las publicaciones han sido cargadas</v-btn
-          >
         </v-col>
         <v-col md="3" class="text-center hidden-xs-only">
           <DesktopRightSummary

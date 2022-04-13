@@ -13,21 +13,12 @@ Vue.use(VueRouter)
 Vue.use(Meta)
 
 const routes = [
-    {
-        path: '/',
-        name: "home",
-        component: Home,
-        meta: {
-          layout: 'ApplicationLayout'
-        }
-    },
+    { path: '/', name: "home", component: Home, alias: '/home'},
     {
         path: '/courses',
         name: 'Courses',
-        component: Courses,
-        meta: {
-          layout: 'ApplicationLayout'
-        }
+        component: Courses
+
     },
     {
         path: '/auth/login',
@@ -36,6 +27,18 @@ const routes = [
         meta: {
           layout: 'MinimalLayout'
         }
+    },
+    {
+        path: '/my',
+        redirect: '/my/summary'
+    },
+    {
+        path: '/my/summary',
+        name: 'MySummary'
+    },
+    {
+        path: '/my/profile',
+        name: 'MyProfile'
     },
     {
         path: '*',

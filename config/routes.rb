@@ -1,8 +1,31 @@
  
 Rails.application.routes.draw do
-  resources :campus, constraints: lambda { |request| request.format == :json }
+
+
+  devise_for :users,
+  path: '',
+  path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+    },
+  controllers: {
+    sessions: 'sessions'
+  }
+
   resources :groups, constraints: lambda { |request| request.format == :json }
   resources :courses, constraints: lambda { |request| request.format == :json }
+  
+
+
+
+ # mount Logster::Web => "/logs"
+
+
+
+  devise_scope :user do
+    get 'session/current', to: "sessions#current_user"
+end
   # get 'app/index'
  
   # Apunto al controlador 'app' y llamo a su método 'index' 

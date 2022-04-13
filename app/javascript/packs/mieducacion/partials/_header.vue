@@ -58,7 +58,7 @@
             <v-list-item
               active-class="no-active"
               onclick="console.log(this)"
-              to="/my"
+              to="/my/profile"
             >
               <v-list-item-icon>
                 <v-icon>mdi-account-circle-outline</v-icon>
@@ -68,7 +68,7 @@
             <v-list-item
               active-class="no-active"
               onclick="console.log(this)"
-              to="/my"
+              to="/my/preferences"
             >
               <v-list-item-icon>
                 <v-icon>mdi-cog-outline</v-icon>
@@ -79,7 +79,7 @@
             <v-list-item
               active-class="no-active"
               onclick="console.log(this)"
-              to="/my"
+              to="/admin"
             >
               <v-list-item-icon>
                 <v-icon>mdi-wrench-outline</v-icon>
