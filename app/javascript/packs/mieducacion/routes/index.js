@@ -21,14 +21,6 @@ const routes = [
 
     },
     {
-        path: '/auth/login',
-        name: 'Login',
-        component: UserLogin,
-        meta: {
-          layout: 'MinimalLayout'
-        }
-    },
-    {
         path: '/my',
         redirect: '/my/summary'
     },
