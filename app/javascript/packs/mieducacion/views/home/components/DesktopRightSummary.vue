@@ -5,7 +5,7 @@
         ><v-icon left>mdi-book-edit-outline</v-icon> Mis Tareas</v-card-title
       >
       <img :src="NoTasks" height="auto" width="100%">
-      <span class="NoTasks--text px-4">Actualmente no tienes ninguna tarea pendiente.</span>
+      <span class="NoTasks--text">Actualmente no tienes ninguna tarea pendiente.</span>
     </v-card>
   </div>
 </template>
