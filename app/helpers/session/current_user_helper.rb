@@ -1,0 +1,2 @@
+module Session::CurrentUserHelper
+end
