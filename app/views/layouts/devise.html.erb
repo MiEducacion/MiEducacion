@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= SiteSettings.site_title %></title>
-    <script type="text/javascript">
-    window.MiEducacion = window.MiEducacion || {};
-    window.MiEducacion.SiteSettings = <%= client_side_app_settings.to_json.html_safe %>;
-    </script>   
-
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <title><%= @title %> | <%= SiteSettings.site_title %></title>
     <%= stylesheet_link_tag 'themes/default/mieducacion', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'mieducacion/mieducacion' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
   </head>
-  <body class="app-body<% if device == "mobile" %> is-mobile<% end %>">
-  
+  <body class="devise-auth<% if device == "mobile" %> is-mobile<% end %>">
     <%= yield %>
-    <%= current_user %>
   </body>
 </html>
