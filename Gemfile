@@ -32,6 +32,17 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'pups'
 
+gem 'cancancan'
+gem 'rolify'
+
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
+
+# by Alexander: I have personally seen that many schools and socio-educational
+# projects for the inclusion of Online Learning use CAS or OAuth2 as SSO providers, so
+# it was decided to add these strategies to OmniAuth
+gem 'omniauth-cas'
+gem 'omniauth-oauth2-generic'
 
 
 # Use Active Storage variant
