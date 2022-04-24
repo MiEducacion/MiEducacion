@@ -1,0 +1,23 @@
+#site-logo {
+    height: 2.667em;
+    width: auto;
+}
+
+.auth-card {
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    background-color: #FFF;
+}
+
+.login-bg {
+    background-image: url(image_path('illustrations/background_illustration_login.svg'));
+    background-position: center;
+}
+
+.login--title {
+    font-family: 'Jost';
+    font-weight: 500;
+    color: #222;
+}

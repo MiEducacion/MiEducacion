@@ -2,7 +2,10 @@
 <html>
   <head>
     <title><%= @title %> | <%= SiteSettings.site_title %></title>
-    <%= stylesheet_link_tag 'themes/default/mieducacion', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+    <script src="/vendor/javascripts/mdb.js"></script>
+    <script src="/vendor/javascripts/bootstrap.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
   </head>
-  <body class="devise-auth<% if device == "mobile" %> is-mobile<% end %>">
+
     <%= yield %>
+  <body class="devise-auth<% if device == "mobile" %> is-mobile<% end %> <%= @custom_class %>">
+    
   </body>
 </html>

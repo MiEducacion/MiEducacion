@@ -1,17 +1,29 @@
 <% @title="Sign In" %>
-
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<% @custom_class="login-bg" %>
+<div class="vertical-center container-fluid h-100">
+  <div class="row">
+    <div class="col-md">
+    </div>
+    <div class="col-md">
+    <div class="container z-depth-1 auth-card px-4 py-4">
+    <div class="mx-auto text-center">
+    <%= image_tag SiteSettings.site_logo, id: 'site-logo' %>
+    </div>
+    <div class="welcome-again text-center mt-4">
+    <h2 class="login--title">Welcome back</h2>
+    <p class="login--subhead">Log in to your account</p>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="md-form md-bg">
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    <%= f.label :email %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <div class="md-form md-bg">
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+    <%= f.label :password %>
   </div>
+
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
@@ -20,9 +32,16 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions d-block">
+    <%= f.button "Log in", class: "btn btn-dark btn-block rounded-pill px-2 btn-sm shadow-sm", type: 'submit' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+    </div>
+    </div>
+    <div class="col-md">
+    </div>
+  </div>
+  </div>
