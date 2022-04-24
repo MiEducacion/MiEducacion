@@ -2,5 +2,5 @@
 //= link_directory ../stylesheets .css
 //= link_directory ../stylesheets .scss
 
-  //= link themes/default/mieducacion.css
+  //= link themes/base/mieducacion.css
 
