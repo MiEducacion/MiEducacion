@@ -9,7 +9,8 @@ module ApplicationHelper
 
       def client_side_app_settings
         site_settings = {
-          title: SiteSettings.site_title
+          title: SiteSettings.site_title,
+          public_site: SiteSettings.public_site
         }
       end
 end
