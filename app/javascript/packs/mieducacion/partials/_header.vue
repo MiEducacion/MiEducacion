@@ -27,8 +27,8 @@
       </div>
       <v-spacer></v-spacer>
       <div class="header-user-panel--nav">
-        <NotificationsMenu/>
-        <v-btn icon class="mr-2">
+        <NotificationsMenu v-if="currentUser"/>
+        <v-btn icon class="mr-2" v-if="currentUser">
           <v-icon>mdi-email-outline</v-icon>
         </v-btn>
         <UserMenu/>
@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       DefaultSiteLogo,
+      currentUser: window.MiEducacion.currentUser
     }
   },
 }
