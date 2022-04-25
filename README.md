@@ -15,7 +15,7 @@ For more information on the goals of the project, visit [our forums]().
 
 ## Screenshots
 
-![Homepage](https://i.ibb.co/XxCJrPK/Captura-de-pantalla-65.png)
+![Homepage](https://i.ibb.co/x8GN3FY/Captura-de-pantalla-72.png)
 
 ## Built With
 
