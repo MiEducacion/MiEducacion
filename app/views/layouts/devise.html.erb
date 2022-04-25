@@ -16,9 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
   </head>
-
-    <%= yield %>
   <body class="devise-auth<% if device == "mobile" %> is-mobile<% end %> <%= @custom_class %>">
-    
+    <%= yield %>
   </body>
 </html>
