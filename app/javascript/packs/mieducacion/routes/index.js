@@ -1,3 +1,6 @@
+const SiteSettings = window.MiEducacion.SiteSettings
+const currentUser = window.MiEducacion.currentUser
+
 import Vue from "vue";
 import VueRouter from 'vue-router'
 import Meta from 'vue-meta'
@@ -62,15 +65,16 @@ router.beforeEach((to, from, next) => {
   if (window.MiniProfiler !== undefined) {
     window.MiniProfiler.pageTransition();
 
-    if (window.MiEducacion.SiteSettings.public_site == false && to.path !== '/login-required') {
+    if (SiteSettings.public_site == false && !currentUser && to.path !== '/login-required') {
       next( { path: '/login-required' })
     }
   else next()
   }
 
-  if (window.MiEducacion.SiteSettings.public_site == false && to.path !== '/login-required') {
+  if (SiteSettings.public_site == false && !currentUser && to.path !== '/login-required') {
     next( { path: '/login-required' })
   }
+
 
   else next()
 })
