@@ -21,7 +21,7 @@
           <v-icon left>mdi-checkbox-multiple-blank-outline</v-icon
           >Recursos</v-btn
         >
-        <v-btn text class="site-nav--btn" to="/grades">
+        <v-btn text class="site-nav--btn" to="/grades" v-if="currentUser">
           <v-icon left>mdi-star-outline</v-icon>Calificaciones</v-btn
         >
       </div>
