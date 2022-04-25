@@ -4,13 +4,23 @@ import 'vuetify/dist/vuetify.min.css'
 import App from './app.vue'
 import router from './routes'
 import $ from 'jquery'
-import vuetwemoji from 'vue-twemoji'
+import twemoji from 'twemoji'
+import VueDirectiveMarkdown from 'vue-directive-markdown'
+
+
 import SiteSpinner from './common/site-spinner.vue'
 import store from './store'
 
 Vue.use(Vuetify)
-Vue.use(vuetwemoji)
 Vue.component('site-spinner', SiteSpinner)
+
+Vue.directive('emoji', {
+    inserted (el) {
+      el.innerHTML = twemoji.parse(el.innerHTML, {  size: 'svg', ext: '.svg'  })
+    }
+  })
+Vue.directive('md', VueDirectiveMarkdown)
+
 
 $.ajaxSetup({
     timeout: 10000,

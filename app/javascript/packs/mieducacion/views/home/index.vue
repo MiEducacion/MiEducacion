@@ -1,5 +1,6 @@
 <template>
   <div id="site-homepage" class="pt-10 mb-4">
+    <site-banner/>
     <v-container fluid class="fill-height home-container">
       <!--       <v-alert
         border="top"
@@ -44,6 +45,7 @@
 </template>
 
 <script>
+import SiteBanner from '../../partials/_site_banner.vue'
 import Campus from './components/campus/Campus.vue'
 import DesktopLeftSummary from './components/DesktopLeftSummary'
 import DesktopRightSummary from './components/DesktopRightSummary.vue'
@@ -54,6 +56,7 @@ export default {
     DesktopLeftSummary,
     DesktopRightSummary,
     Campus,
+    SiteBanner,
   },
   metaInfo: {
     title: 'Inicio',

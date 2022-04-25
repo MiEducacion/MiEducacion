@@ -19,4 +19,9 @@ class SiteSettings < RailsSettings::Base
     field :site_logo, default: ( ENV["MIEDUCACION_SITE_LOGO"] ||"default/mieducacion_default_siteLogo.svg"), type: :string
   end
 
+  scope :site_banner do
+    field :show_site_banner, default: ( ENV["MIEDUCACION_SHOW_SITE_BANNER"] ||"0"), type: :boolean
+    field :site_banner_content, default: ( ENV["MIEDUCACION_SITE_BANNER_CONTENT"] ||""), type: :string
+  end
+
 end

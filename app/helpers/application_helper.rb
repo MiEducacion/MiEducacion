@@ -10,7 +10,9 @@ module ApplicationHelper
       def client_side_app_settings
         site_settings = {
           title: SiteSettings.site_title,
-          public_site: SiteSettings.public_site
+          public_site: SiteSettings.public_site,
+          show_site_banner: SiteSettings.show_site_banner,
+          site_banner_content: SiteSettings.site_banner_content
         }
       end
 end
