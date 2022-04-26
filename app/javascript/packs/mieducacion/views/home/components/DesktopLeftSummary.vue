@@ -1,12 +1,9 @@
 <template>
-  <div class="desktop-left-summary">
+  <div class="desktop-left-summary" v-if="currentUser">
     <v-card class="homepage-user--card p-3 mb-3" outlined>
       <v-card-title class="UserCardTitle"
         ><v-avatar size="36">
-          <img
-            alt="User Avatar"
-            src="https://www.yanquisalexander.me/_website/img/alexander.64c2647.webp"
-          />
+          <v-gravatar :email="currentUser.email" alt="User Avatar" :size="120" />
         </v-avatar>
         <p class="ml-3">Alexander Barrios</p></v-card-title
       >
@@ -38,6 +35,11 @@
 <script>
 export default {
   name: 'DesktopLeftSummary',
+  data() {
+    return {
+      currentUser: window.MiEducacion.currentUser
+    }
+  }
 }
 </script>
 

@@ -5,6 +5,7 @@ import App from './app.vue'
 import router from './routes'
 import $ from 'jquery'
 import twemoji from 'twemoji'
+import Gravatar from 'vue-gravatar';
 import VueDirectiveMarkdown from 'vue-directive-markdown'
 
 
@@ -20,6 +21,8 @@ Vue.directive('emoji', {
     }
   })
 Vue.directive('md', VueDirectiveMarkdown)
+Vue.component('v-gravatar', Gravatar);
+
 
 
 $.ajaxSetup({

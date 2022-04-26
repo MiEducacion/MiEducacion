@@ -1,15 +1,11 @@
 <template>
-  <v-card class="px-4 py-4 my-4 NewPost--card mx-2 mb-8" outlined rounded>
+  <v-card class="px-4 py-4 my-4 NewPost--card mx-2 mb-8" outlined rounded v-if="currentUser">
     <v-flex class="justify-center" style="align-items: center">
       <h2 class="campus--greeting text-center pb-4">Good Evening, Alexander 
         <img class="greeting-daytime" :src="GreetingNight">
       </h2>
       <v-avatar size="64">
-        <img
-          src="https://www.yanquisalexander.me/_website/img/alexander.64c2647.webp"
-          alt="User Avatar"
-          class="avatar"
-        />
+        <v-gravatar :email="currentUser.email" alt="User Avatar" :size="120" class="avatar" />
       </v-avatar>
       <div class="footer-btns">
         <v-btn text rounded color="#4527a0" class="NewPost--btn" dark depressed
@@ -43,7 +39,8 @@ export default {
       GreetingDay,
       GreetingAfternoon,
       GreetingEvening,
-      GreetingNight
+      GreetingNight,
+      currentUser: window.MiEducacion.currentUser
     }
   },
 }

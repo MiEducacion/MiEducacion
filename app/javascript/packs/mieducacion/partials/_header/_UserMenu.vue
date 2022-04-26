@@ -16,10 +16,7 @@
         v-on="on"
       >
         <v-avatar size="32">
-          <img
-            src="https://www.yanquisalexander.me/_website/img/alexander.64c2647.webp"
-            alt="User Avatar"
-          />
+          <v-gravatar :email="currentUser.email" alt="User Avatar" :size="120" />
         </v-avatar>
       </v-btn>
     </template>
@@ -27,7 +24,6 @@
     <v-list dense rounded>
       <v-list-item
         active-class="no-active"
-        onclick="console.log(this)"
         to="/my/profile"
       >
         <v-list-item-icon>
@@ -37,7 +33,6 @@
       </v-list-item>
       <v-list-item
         active-class="no-active"
-        onclick="console.log(this)"
         to="/my/preferences"
       >
         <v-list-item-icon>
@@ -48,7 +43,6 @@
 
       <v-list-item
         active-class="no-active"
-        onclick="console.log(this)"
         to="/admin"
       >
         <v-list-item-icon>
