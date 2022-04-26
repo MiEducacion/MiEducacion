@@ -4,10 +4,9 @@
     id="site_banner"
     class="mx-auto"
     icon="mdi-pin"
-    elevation="2"
     v-if="showSiteBanner"
   >
-    <span v-emoji v-md.html.breaks>{{SiteBanner_Content}}</span>
+    <span v-emoji v-md.html.breaks.linkify>{{SiteBanner_Content}}</span>
   </v-alert>
 </template>
 

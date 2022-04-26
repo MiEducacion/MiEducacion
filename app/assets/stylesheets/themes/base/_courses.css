@@ -4,5 +4,19 @@
     border-radius: 1em;
     padding: 2em 2em 5% !important;
     padding-bottom: 0 !important;
-    box-shadow: 0 8px 60px 0 rgba(69, 39, 160, 0.15), 0 12px 90px 0 rgba(69, 39, 160, 0.15);
+    box-shadow: 0 8px 20px 0 rgba(69, 39, 160, 0.15), 0 12px 20px 0 rgba(69, 39, 160, 0.15);
+}
+
+.courses--no-data .illustration {
+    height: 300px;
+    width: 100%;
+    filter: grayscale(1);
+}
+
+.courses--no-data .NoCoursesTitle {
+    max-width: 320px;
+    font-family: 'Jost';
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #444;
 }
