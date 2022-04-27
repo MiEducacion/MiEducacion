@@ -8,6 +8,10 @@ import twemoji from 'twemoji'
 import Gravatar from 'vue-gravatar';
 import VueDirectiveMarkdown from 'vue-directive-markdown'
 
+import I18n from 'i18n-js'
+window.I18n = I18n
+
+
 
 import SiteSpinner from './common/site-spinner.vue'
 import store from './store'

@@ -11,6 +11,7 @@ import NotFound from '../views/errors/404'
 import LoginRequired from '../views/errors/LoginRequired'
 
 const Courses = () => import( /* webpackChunkName: "site-courses" */ '../views/courses')
+const UserPage = () => import( /* webpackChunkName: "user-page" */ '../views/users')
 const MyProfile = () => import( /* webpackChunkName: "my-profile" */ '../views/users/my')
 
 
@@ -31,16 +32,20 @@ const routes = [{
     },
     {
         path: '/my',
-        redirect: '/my/profile'
+		component: UserPage,
+        redirect: '/my/profile',
+		children: [
+			{
+				path: 'profile',
+				name: 'MyProfile',
+				component: MyProfile,
+				meta: {
+					requiresAuth: true
+				}
+			}
+		]
     },
-    {
-        path: '/my/profile',
-        name: 'MyProfile',
-        component: MyProfile,
-        meta: {
-            requiresAuth: true
-        }
-    },
+
     {
         path: '/login-required',
         name: 'LoginRequired',

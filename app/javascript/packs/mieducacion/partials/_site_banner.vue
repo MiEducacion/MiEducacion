@@ -5,6 +5,7 @@
     class="mx-auto"
     icon="mdi-pin"
     v-if="showSiteBanner"
+    transition="scroll-x-reverse-transition"
   >
     <span v-emoji v-md.html.breaks.linkify>{{SiteBanner_Content}}</span>
   </v-alert>

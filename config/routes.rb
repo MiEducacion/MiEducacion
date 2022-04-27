@@ -18,7 +18,7 @@ Rails.application.routes.draw do
  
   # Apunto al controlador 'app' y llamo a su método 'index' 
   root :to => "app#index", as: 'app'
-  get 'session/current', to: 'session/current_user#index'
+  get 'session/current', to: 'session/current_user#index', constraints: lambda { |request| request.format == :json }
 
 
   match '*path', to: 'app#index', via: :all
