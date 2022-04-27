@@ -18,5 +18,12 @@ module MiEducacion
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    require_dependency 'lib/mieducacion'
+
+    config.autoloader = :zeitwerk
+    config.autoload_paths += Dir[ Rails.root.join('lib') ]
+
+
   end
 end
