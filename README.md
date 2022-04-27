@@ -11,11 +11,15 @@
  - Offer public courses
 - Being an LMS in Schools
 
-For more information on the goals of the project, visit [our forums]().
+For more information on the goals of the project, visit [our forums](https://mieducacion.discourse.group).
 
 ## Screenshots
 
-![Homepage](https://i.ibb.co/x8GN3FY/Captura-de-pantalla-72.png)
+<img src="https://i.ibb.co/C7Rj8Y9/Captura-de-pantalla-73.png" width="720px" alt="Homepage">
+
+<img src="https://i.ibb.co/Vmbpqmp/Screenshot-20220427-101445-Chrome.jpg" width="320" alt="Mobile Homepage (PWA)">
+
+
 
 ## Built With
 
