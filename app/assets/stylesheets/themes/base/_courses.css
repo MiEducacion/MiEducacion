@@ -9,8 +9,7 @@
 
 .courses--no-data .illustration {
     height: 300px;
-    width: 100%;
-    filter: grayscale(1);
+    width: auto;
 }
 
 .courses--no-data .NoCoursesTitle {
