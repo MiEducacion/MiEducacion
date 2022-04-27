@@ -17,6 +17,7 @@ gem 'webpacker', '~> 5.0'
 # Turbolinks doesn't play well with SPA
 #gem 'turbolinks', '~> 5'
 
+gem 'nokogiri', '1.13.4'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'

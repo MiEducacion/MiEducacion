@@ -291,6 +291,7 @@ DEPENDENCIES
   devise
   devise-jwt
   jbuilder (~> 2.7)
+  nokogiri (= 1.13.4)
   omniauth
   omniauth-cas
   omniauth-oauth2-generic
