@@ -11,7 +11,7 @@
  - Offer public courses
 - Being an LMS in Schools
 
-For more information on the goals of the project, visit [our forums]().
+For more information on the goals of the project, visit [our forums](https://mieducacion.discourse.group).
 
 ## Screenshots
 
