@@ -1,7 +1,6 @@
 <template>
   <v-app-bar id="site-header" color="white" flat fixed app>
     <div class="site-header-wrap">
-      <v-app-bar-nav-icon class="d-block d-sm-none"></v-app-bar-nav-icon>
       <div class="title">
         <router-link to="/">
           <img id="site-logo" :src="DefaultSiteLogo" height="100%" />
