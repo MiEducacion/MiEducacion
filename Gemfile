@@ -76,6 +76,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sidekiq", "~> 6.4"
+gem "pg"
+
 
 gem "rails-settings-cached", "~> 2.8"
 gem "rails_material_design_icons"
