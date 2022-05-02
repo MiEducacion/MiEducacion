@@ -28,3 +28,4 @@ production:
   host: <%= ENV['MIEDUCACION_DB_HOSTNAME'] || 'localhost' %>
   username: <%= ENV['MIEDUCACION_DB_USERNAME'] || 'mieducacion' %>
   password: <%= ENV['MIEDUCACION_DB_PASSWORD'] || 'mieducacion' %>
+  port: <%= ENV['MIEDUCACION_DB_PORT'] || 5432 %>
