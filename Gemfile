@@ -5,8 +5,6 @@ ruby '2.7.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.7'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -75,8 +73,15 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sidekiq", "~> 6.4"
-gem "pg"
 
+
+group :development, :test do
+# Use sqlite3 as the database for Active Record on Development Environments
+  gem 'sqlite3', '~> 1.4'
+end
+group :production do
+  gem 'pg'
+end
 
 gem "rails-settings-cached", "~> 2.8"
 gem "rails_material_design_icons"
