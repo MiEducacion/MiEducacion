@@ -22,4 +22,9 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['MIEDUCACION_DB'] || 'mieducacion' %>
+  host: <%= ENV['MIEDUCACION_DB_HOSTNAME'] || 'localhost' %>
+  username: <%= ENV['MIEDUCACION_DB_USERNAME'] || 'mieducacion' %>
+  password: <%= ENV['MIEDUCACION_DB_PASSWORD'] || 'mieducacion' %>
