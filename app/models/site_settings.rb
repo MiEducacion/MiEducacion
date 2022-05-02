@@ -9,6 +9,7 @@ class SiteSettings < RailsSettings::Base
   # field :confirmable_enable, default: "0", type: :boolean
   field :public_site, default: ( ENV["MIEDUCACION_PUBLIC_SITE"] ||"0"), type: :boolean
   field :developer_emails, default: (ENV["MIEDUCACION_DEVELOPER_EMAILS"] || "developer@mieducacion.net"), type: :array, readonly: true
+  field :force_https, default: ( ENV["MIEDUCACION_FORCE_HTTPS"] ||"0"), type: :boolean
   # field :omniauth_google_client_id, default: (ENV["OMNIAUTH_GOOGLE_CLIENT_ID"] || ""), type: :string, readonly: true
   # field :omniauth_google_client_secret, default: (ENV["OMNIAUTH_GOOGLE_CLIENT_SECRET"] || ""), type: :string, readonly: true
   end
