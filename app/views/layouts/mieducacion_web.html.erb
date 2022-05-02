@@ -27,7 +27,7 @@
       <script type="text/javascript">
          window.MiEducacion = {
            SiteSettings: <%= client_side_app_settings.to_json.html_safe %>,
-           currentUser: <%= current_user.to_json.html_safe %>,
+           currentUser: <%= current_session.to_json.html_safe %>,
            mobile: <% if device == "mobile" %>true<% else %>false<% end %>
          };
 

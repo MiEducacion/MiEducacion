@@ -16,4 +16,22 @@ module ApplicationHelper
           site_banner_content: SiteSettings.site_banner_content
         }
       end
+
+      def current_session
+      @u = current_user
+
+		current_session = {
+          id: @u.id,
+          email: @u.email,
+          roles: {
+            is_teacher: @u.has_role?(:teacher),
+            is_principal: @u.has_role?(:teacher),
+            is_admin: @u.has_role?(:admin)
+          }
+        }
+			
+
+
+      end
+
 end
