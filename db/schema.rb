@@ -12,6 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2022_04_14_012232) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "timescaledb"
+
   create_table "courses", force: :cascade do |t|
     t.integer "course_id"
     t.text "name"
@@ -36,7 +40,7 @@ ActiveRecord::Schema.define(version: 2022_04_14_012232) do
     t.string "last_name"
     t.string "username", null: false
     t.text "biography"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
@@ -45,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_04_14_012232) do
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
@@ -74,8 +78,8 @@ ActiveRecord::Schema.define(version: 2022_04_14_012232) do
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
+    t.bigint "user_id"
+    t.bigint "role_id"
     t.index ["role_id"], name: "index_users_roles_on_role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
