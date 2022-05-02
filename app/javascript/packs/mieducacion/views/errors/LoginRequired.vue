@@ -51,9 +51,3 @@ export default {
 
 }
 </script>
-
-<style>
-.login-required {
-  background-color: #fff;
-}
-</style>

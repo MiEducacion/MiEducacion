@@ -17,3 +17,7 @@
     margin: auto;
     margin-bottom: 1rem;
 }
+
+.login-required {
+    background-color: #fff;
+  }
