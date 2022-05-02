@@ -18,7 +18,7 @@ Rails.application.routes.draw do
  
   # Apunto al controlador 'app' y llamo a su método 'index' 
   root :to => "app#index", as: 'app'
-  get 'session/current', to: 'session/current_user#index', constraints: lambda { |request| request.format == :json }
+  get 'session/current', to: 'session/current_user#current_session', constraints: lambda { |request| request.format == :json }
   get "manifest.webmanifest" => "metadata#webmanifest", as: :manifest
   get "manifest.json" => "metadata#webmanifest"
 
