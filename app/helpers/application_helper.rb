@@ -18,9 +18,10 @@ module ApplicationHelper
       end
 
       def current_session
-      @u = current_user
+        if user_signed_in?
+        @u = current_user
 
-		current_session = {
+		    current_session = {
           id: @u.id,
           email: @u.email,
           roles: {
@@ -30,7 +31,9 @@ module ApplicationHelper
           }
         }
 			
+    else
 
+    end
 
       end
 
