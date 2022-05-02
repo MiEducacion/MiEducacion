@@ -10,7 +10,7 @@ class Role < ApplicationRecord
             :allow_nil => true
 
   validates :name,
-            inclusion: { in: ["admin", "student", "teacher", "principal"] },
+            inclusion: { in: ["student", "teacher", "principal", "admin"] },
             uniqueness: true
 
   scopify

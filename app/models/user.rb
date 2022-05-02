@@ -11,11 +11,11 @@ class User < ApplicationRecord
   validates :roles, presence: true
 
   def assign_default_role
-   # add_role(:student)
+   add_role(:student)
   end
 
   has_one :profile
-  has_one :roles
+  has_one :role
 
   accepts_nested_attributes_for :profile
 end
