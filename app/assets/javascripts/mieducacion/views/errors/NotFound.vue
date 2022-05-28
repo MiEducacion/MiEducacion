@@ -2,12 +2,11 @@
   <div class="fill-height">
     <v-app-bar flat color="white" fixed id="site-header">
       <v-spacer/>
-      <v-toolbar-title
-        @click="goToHome"
-        style="cursor: pointer"
-        class="mieducacion-default-header--text"
-        >Mi<span>Educación</span></v-toolbar-title
-      >
+            <div class="title">
+        <a href="/">
+          <img id="site-logo" :src="SiteSettings.site_logo" height="100%" draggable="false"/>
+        </a>
+      </div>
       <v-spacer/>
     </v-app-bar>
     <v-main class="mieducacion not-found-page fill-height">
@@ -18,7 +17,7 @@
             <div class="subtitle py-4">
               Lo sentimos, la página que estabas tratando de cargar no existe.
             </div>
-            <v-btn outlined dark @click="goToHome" class="e404 return-to-home my-4"
+            <v-btn outlined dark href="/" class="e404 return-to-home my-4"
               >Ir a la página principal</v-btn
             >
             <span class="e404 report-text"
@@ -48,11 +47,6 @@ export default {
     return {
       NotFoundImage,
     };
-  },
-  methods: {
-    goToHome: function () {
-      window.location.href = "/";
-    },
   },
 };
 </script>
