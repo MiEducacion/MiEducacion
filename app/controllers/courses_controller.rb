@@ -17,5 +17,22 @@ class CoursesController < ApplicationController
           },
           content_type: 'application/json' }
   end 
+end
+
+  def newCourse
+
+    @courses = Course.all
+  
+    respond_to do |format| 
+            format.json {         
+                render json: {
+                  success: true,
+                  course: {
+                    #TO-DO
+                  }
+            },
+            content_type: 'application/json', status: 500 }
+    end 
+
   end
 end
