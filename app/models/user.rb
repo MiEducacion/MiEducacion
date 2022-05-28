@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   validates :roles, presence: true
 
+  # All users have the student role by default
   def assign_default_role
    add_role(:student)
   end
