@@ -9,6 +9,7 @@
 @import 'variables';
 @import 'components/banners';
 @import 'components/header';
+@import 'components/dialogs';
 @import 'common';
 @import 'fonts';
 
@@ -34,11 +35,11 @@
 
 
 #mieducacion, .app-body {
-    background-color: var(--mieducacion-theme-background);
+    background-color: var(--body-background);
 }
 
 #main-mountpoint {
-    background: rgba(243, 242, 239 , 0.95)
+    background: var(--body-background)
 }
 
 #current-user {

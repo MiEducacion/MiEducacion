@@ -1,0 +1,22 @@
+/* Common */
+
+.dialog .title {
+    font-family: var(--mieducacion-theme-font) !important;
+    padding: 8px !important;
+}
+
+/* Create course dialog */
+
+.dialog .create-course {
+
+    & .illustration {
+        height: 180px;
+        margin-top: -2em;
+    }
+
+    & .group-title {
+        font-family: var(--mieducacion-theme-font) !important;
+        font-weight: 500;
+    }
+
+}
