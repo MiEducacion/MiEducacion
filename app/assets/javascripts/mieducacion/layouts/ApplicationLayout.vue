@@ -2,6 +2,7 @@
 <div>
 <v-main id="main-mountpoint">
   <SiteHeader />
+  <slot name="below-site-header" />
   <router-view />
 </v-main>
 <SiteBottomNavigation />
