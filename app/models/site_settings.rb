@@ -1,6 +1,6 @@
 # RailsSettings Model
 class SiteSettings < RailsSettings::Base
-  cache_prefix { "v1" }
+  cache_prefix { "v2" }
 
   scope :application do
   # Define your fields
@@ -17,7 +17,7 @@ class SiteSettings < RailsSettings::Base
   scope :client_side do
     field :force_redirect_private, default: ( ENV["MIEDUCACION_FORCE_REDIRECT_PRIVATE"] ||"0"), type: :boolean
     field :site_title, default: ( ENV["MIEDUCACION_SITE_TITLE"] ||"MiEducación"), validates: { presence: true, length: { in: 2..255 } }  
-    field :site_logo, default: ( ENV["MIEDUCACION_SITE_LOGO"] ||"default/mieducacion_default_siteLogo.svg"), type: :string
+    field :site_logo, default: ( ENV["MIEDUCACION_SITE_LOGO"] ||"/images/default/mieducacion_default_siteLogo.svg"), type: :string
   end
 
   scope :site_banner do

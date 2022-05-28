@@ -7,6 +7,8 @@ class CoursesController < ApplicationController
   # GET /courses or /courses.json
   def index
     @courses = Course.all
+
+    render json: @courses.to_json, status: 500
   end
 
 

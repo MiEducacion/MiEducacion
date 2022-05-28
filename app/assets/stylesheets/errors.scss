@@ -1,0 +1,63 @@
+.page-not-found {
+    margin: 0 0 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 10px;
+    padding-top: 2.5em !important;
+}
+
+.page-not-found h1.title {
+    font-size: var(--font-up-4) !important;
+    line-height: var(--line-height-medium) !important;
+    font-family: var(--mieducacion-theme-font) !important;
+    font-weight: 500;
+}
+
+
+.error-page {
+    text-align: center;
+    padding-top: 2em;
+
+    & .face {
+        font-size: 4.286em;
+    }
+
+    & .reason {
+        font-size: var(--font-up-4);
+    }
+
+    & .desc {
+        margin-top: 16px;
+    }
+
+    & .buttons {
+        align-items: center;
+        display: inline-flex;
+        margin-top: 15px;
+    }
+}
+
+
+.mieducacion-login-required-image {
+    max-height: 400px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.login-required--welcome {
+    font-family: 'Lato', 'Jost';
+    font-weight: 700;
+    color: #222;
+}
+
+.login-required--subtitle {
+    font-family: 'Lato';
+    max-width: 500px;
+    color: #555;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.login-required {
+    background-color: #fff;
+  }

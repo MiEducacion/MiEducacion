@@ -1,0 +1,79 @@
+.user-main {
+    background-color: #fff;
+    max-width: 1150px !important;
+    border-radius: 1em;
+    padding: 2em 2em 5% !important;
+    padding-bottom: 0 !important;
+    box-shadow: 0 8px 20px 0 rgba(69, 39, 160, 0.15), 0 12px 20px 0 rgba(69, 39, 160, 0.15);
+}
+
+.spinner-parent {
+    display: contents;
+}
+
+.user-main .details {
+    position: relative;
+    padding: 0;
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 0;
+}
+
+.user-main .details .u-primary {
+    width: 100%;
+}
+
+
+.user-main .details .user-profile-avatar {
+    position: relative;
+    float: left;
+}
+
+.user-main .details img.avatar {
+    margin: 0 20px 10px 0;
+}
+
+.user-main .details img.avatar {
+    float: left;
+}
+img.avatar {
+    border-radius: 50%;
+}
+
+.user-main .details img.avatar {
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+}
+
+.user-main .details .u-primary .primary-textual {
+    padding: 0 4px 4px;
+}
+
+
+.user-main .details .u-primary .primary-textual h1 {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.user-main .details .u-primary h1 {
+    font-size: var(--font-up-3);
+}
+.user-main .details .u-primary h1 {
+    font-weight: bold;
+}
+
+.user-main .details .role {
+    font-weight: normal;
+    margin-bottom: 0.5em;
+    font-family: 'Lato';
+}
+
+.user-navigation-tabs {
+    text-transform: none!important;
+    font-family: 'Lato' !important;
+}

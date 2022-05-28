@@ -1,0 +1,139 @@
+<div class="wizard-column">
+  <div class="wizard-column-contents">
+    <div class="wizard-step-contents">
+    <h1 class="wizard-step-title">¡Te damos la bienvenida a tu foro de Discourse!</h1>
+
+    <%= form_for @SiteSettings, url: wizard_path, method: :put do |f| %>
+        <%= f.select(:heat_level, SiteSettings.developer_emails.map { |value| [ value, value ] })%>      
+        <%= f.submit "Change Password" %>
+      <% end %>
+
+    
+
+    <%= SiteSettings.developer_emails %>
+
+  <div class="wizard-banner-and-description wizard-banner-and-description-locale">
+      <img src="https://mieducacion.discourse.group/images/wizard/welcome.png" class="wizard-step-banner">
+
+
+
+<div id="ember6" class="wizard-step-form wizard-step-locale ember-view"><!---->    <div class="wizard-fields-main">
+          <div id="ember8" class="wizard-field dropdown-field dropdown-default-locale ember-view"><label for="default_locale">
+  <span class="label-value">
+    
+
+      <span class="field-required">*</span>
+  </span>
+
+    <div class="field-description">¿Cuál es el idioma por defecto de tu comunidad?</div>
+</label>
+
+<div class="input-area">
+  <div id="ember9" class="ember-view"><details id="ember10" class="field-default-locale wizard-focusable select-kit single-select combobox combo-box has-selection ember-view">  <summary aria-label="Filtrar por: English (US)" name="Filtrar por: English (US)" data-name="English (US)" data-value="en" tabindex="9" role="listbox" id="ember10-header" class="select-kit-header single-select-header combo-box-header ember-view"><div class="select-kit-header-wrapper">
+  <!---->
+
+    <div title="English (US)" data-value="en" data-name="English (US)" role="option" class="select-kit-selected-name selected-name choice">
+<!---->
+    <span class="name">
+      English (US)
+    </span>
+
+<!---->  </div>
+
+
+<!---->
+  <svg class="fa d-icon d-icon-caret-down svg-icon caret-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#caret-down"></use></svg>
+</div>
+</summary>
+
+<div id="ember10-body" class="select-kit-body ember-view" style="position: relative;"><!----></div></details>
+</div>
+</div>
+
+<!---->
+<!----></div>
+    </div>
+</div></div>
+
+<div class="wizard-step-footer">
+
+  <div class="wizard-progress">
+    <div class="white"></div>
+    <div style="width: 0px" class="black"></div>
+    <div class="screen"></div>
+    <span>1 de 11</span>
+  </div>
+
+  <div class="wizard-buttons">
+      <a href="" tabindex="11" class="action-link quit" data-ember-action="" data-ember-action-12="12">Tal vez más tarde</a>
+
+<!---->
+<!---->
+      <button tabindex="10" class="wizard-btn next primary" type="button" data-ember-action="" data-ember-action-13="13">
+        Siguiente
+        <svg class="fa d-icon d-icon-chevron-right svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#chevron-right"></use></svg>
+      </button>
+
+<!---->  </div>
+
+</div>
+</div>
+
+
+    <div class="preloaded-font-styles">
+        <span class="body-font-arial">&nbsp;</span>
+        <strong class="body-font-arial">&nbsp;</strong>
+        <span class="body-font-system">&nbsp;</span>
+        <strong class="body-font-system">&nbsp;</strong>
+        <span class="body-font-open-sans">&nbsp;</span>
+        <strong class="body-font-open-sans">&nbsp;</strong>
+        <span class="body-font-oxanium">&nbsp;</span>
+        <strong class="body-font-oxanium">&nbsp;</strong>
+        <span class="body-font-roboto">&nbsp;</span>
+        <strong class="body-font-roboto">&nbsp;</strong>
+        <span class="body-font-lato">&nbsp;</span>
+        <strong class="body-font-lato">&nbsp;</strong>
+        <span class="body-font-noto-sans-jp">&nbsp;</span>
+        <strong class="body-font-noto-sans-jp">&nbsp;</strong>
+        <span class="body-font-montserrat">&nbsp;</span>
+        <strong class="body-font-montserrat">&nbsp;</strong>
+        <span class="body-font-roboto-condensed">&nbsp;</span>
+        <strong class="body-font-roboto-condensed">&nbsp;</strong>
+        <span class="body-font-source-sans-pro">&nbsp;</span>
+        <strong class="body-font-source-sans-pro">&nbsp;</strong>
+        <span class="body-font-oswald">&nbsp;</span>
+        <strong class="body-font-oswald">&nbsp;</strong>
+        <span class="body-font-raleway">&nbsp;</span>
+        <strong class="body-font-raleway">&nbsp;</strong>
+        <span class="body-font-roboto-mono">&nbsp;</span>
+        <strong class="body-font-roboto-mono">&nbsp;</strong>
+        <span class="body-font-poppins">&nbsp;</span>
+        <strong class="body-font-poppins">&nbsp;</strong>
+        <span class="body-font-noto-sans">&nbsp;</span>
+        <strong class="body-font-noto-sans">&nbsp;</strong>
+        <span class="body-font-roboto-slab">&nbsp;</span>
+        <strong class="body-font-roboto-slab">&nbsp;</strong>
+        <span class="body-font-merriweather">&nbsp;</span>
+        <strong class="body-font-merriweather">&nbsp;</strong>
+        <span class="body-font-ubuntu">&nbsp;</span>
+        <strong class="body-font-ubuntu">&nbsp;</strong>
+        <span class="body-font-pt-sans">&nbsp;</span>
+        <strong class="body-font-pt-sans">&nbsp;</strong>
+        <span class="body-font-playfair-display">&nbsp;</span>
+        <strong class="body-font-playfair-display">&nbsp;</strong>
+        <span class="body-font-nunito">&nbsp;</span>
+        <strong class="body-font-nunito">&nbsp;</strong>
+        <span class="body-font-lora">&nbsp;</span>
+        <strong class="body-font-lora">&nbsp;</strong>
+        <span class="body-font-mukta">&nbsp;</span>
+        <strong class="body-font-mukta">&nbsp;</strong>
+        <span class="body-font-helvetica">&nbsp;</span>
+        <strong class="body-font-helvetica">&nbsp;</strong>
+    </div>
+  </div>
+  <div class="wizard-footer">
+    <div class="mieducacion-logo">
+    <%= image_tag 'default/mieducacion_default_siteLogo.svg', id: 'site-logo' %>
+    </div>
+  </div>
+</div>

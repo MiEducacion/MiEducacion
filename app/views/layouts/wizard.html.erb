@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html class="mieducacion-wizard">
+   <head>
+      <title>Wizard | <%= SiteSettings.site_title %></title>
+      <%= stylesheet_link_tag 'wizard', media: 'all' %>
+   </head>
+   <body class='wizard'>
+      <div id='wizard-main'>
+         <%= yield %>
+      </div>
+   </body>
+</html>

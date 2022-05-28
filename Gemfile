@@ -74,6 +74,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sidekiq", "~> 6.4"
 
+# Step-By-Step Wizard Controllers
+gem 'wicked'
+
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record on Development Environments
