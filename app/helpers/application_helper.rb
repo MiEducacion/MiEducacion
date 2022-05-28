@@ -24,12 +24,12 @@ module ApplicationHelper
 		    current_session = {
           id: @u.id,
           email: @u.email,
-          roles: {
-            is_teacher: @u.has_role?(:teacher),
-            is_principal: @u.has_role?(:teacher),
-            is_admin: @u.has_role?(:admin)
+          is_student: @u.has_role?(:student),
+          is_teacher: @u.has_role?(:teacher),
+          is_principal: @u.has_role?(:teacher),
+          is_admin: @u.has_role?(:admin)
           }
-        }
+  
 			
     else
 
