@@ -1,0 +1,40 @@
+.admin-dashboard {
+    width: 100%;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+}
+
+.admin-container {
+    background-color: #fff;
+    max-width: 1150px !important;
+    border-radius: 0;
+    padding: 2em 2em 5% !important;
+    padding-bottom: 0 !important;
+}
+
+.admin-container > .panel {
+    width: 100%;
+}
+
+.admin-container > .nav-pills {
+
+    & .v-tab:before, .v-tabs-slider {
+        background-color: var(--mieducacion-primary);
+    }
+    
+    & .v-tab {
+        font-family: var(--mieducacion-theme-font) !important;
+        text-transform: none;
+        font-weight: 700;
+}
+}
+
+.admin-container > .nav-pills {
+
+    & .nav-pills--active {
+        color: var(--mieducacion-primary);
+    }
+}
