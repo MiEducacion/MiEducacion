@@ -6,9 +6,6 @@
           <img id="site-logo" :src="SiteSettings.site_logo" height="100%" />
         </router-link>
       </div>
-      <!-- <v-toolbar-title class="mieducacion-default-header--text"
-      >Mi<span>Educación</span></v-toolbar-title
-    > -->
       <div class="site-navigation--nav hidden-sm-and-down" role="navigation">
         <v-btn text class="site-nav--btn" to="/courses">
           <v-icon left>mdi-school-outline</v-icon>Cursos</v-btn
