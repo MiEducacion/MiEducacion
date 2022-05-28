@@ -1,5 +1,5 @@
 const SiteSettings = window.MiEducacion.SiteSettings
-const currentUser = window.MiEducacion.currentUser
+const user = window.MiEducacion.currentUser
 
 import Vue from "vue";
 import VueRouter from 'vue-router'
@@ -27,19 +27,19 @@ function loadRoutes() {
   
 
 router.beforeEach((to, from, next) => {
-    if (SiteSettings.public_site == false && !currentUser && to.path !== '/login-required') {
+    if (SiteSettings.public_site == false && !user && to.path !== '/login-required') {
         next({
             path: '/login-required'
         })
     }
 
-      else if (SiteSettings.public_site == false && currentUser && to.path === '/login-required') {
+      else if (SiteSettings.public_site == false && user && to.path === '/login-required') {
             next({
                 path: '/'
             })
 
     }
-    else if (to.meta.requiresAuth && !currentUser) {
+    else if (to.meta.requiresAuth && !user) {
         next({
             name: 'NotFound',
             params: [to.path],
@@ -56,6 +56,6 @@ router.afterEach((to, from) => {
     }
 })
 
-window.MiEducacion.router = router
+window.AppRouter = router
 
 export default router;
