@@ -5,7 +5,10 @@ let NotFoundRoute = {
     name: 'NotFound',
     path: '*',
     alias: '/not-found',
-    component: NotFoundView
+    component: NotFoundView,
+    meta: {
+        layout: 'MinimalLayout'
+    }
  }
 
 
