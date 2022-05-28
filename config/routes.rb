@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :groups, constraints: lambda { |request| request.format == :json }
-  resources :courses, constraints: lambda { |request| request.format == :json }
   
 
 
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
   get "manifest.webmanifest" => "metadata#webmanifest", as: :manifest
   get "manifest.json" => "metadata#webmanifest"
 
+  get "courses" => "courses#index"
 
   match '*path', to: 'app#index', via: :all
 
