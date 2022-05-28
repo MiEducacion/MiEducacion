@@ -9,13 +9,30 @@
         </h1>
       </div>
     </v-container>
+    <v-btn
+        v-if="currentUser.is_admin"
+        @click="showCreateCourses = true"
+        dark
+        right
+        bottom
+        fixed
+        class="courses extended-fab"
+        :class="{'mobile' : isMobile}"
+        fab
+      >
+      <v-icon left>mdi-plus</v-icon>
+        Crear curso
+      </v-btn>
+  <create-course v-model="showCreateCourses" />
   </div>
 </template>
 
 <script>
 import NoDataImage from 'images/illustrations/no_courses.png'
+import CreateCourse from '../components/modals/courses/CreateCourse.vue'
 
 export default {
+  components: { CreateCourse },
   metaInfo: {
     title: 'Cursos',
   },
@@ -24,7 +41,8 @@ export default {
       loading: null,
       error: null,
       CoursesData: null,
-      NoDataImage
+      NoDataImage,
+      showCreateCourses : false
     }
   },
   methods: {

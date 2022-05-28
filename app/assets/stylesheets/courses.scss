@@ -28,3 +28,23 @@
     font-size: 1.2rem;
     color: #444;
 }
+
+.extended-fab {
+    width: auto !important;
+    border-radius: 100px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .courses.extended-fab {
+      font-family: var(--mieducacion-theme-font);
+      font-weight: 500;
+      background-color: var(--mieducacion-primary) !important;
+      text-transform: none;
+      z-index:100; 
+      border-radius: 12px;
+  }
+
+  .courses.extended-fab.mobile {
+    bottom:72px;
+  }
