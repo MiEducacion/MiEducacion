@@ -1,7 +1,6 @@
 <template>
   <v-bottom-navigation
     v-if="isMobile"
-    v-model="navSelected"
     background-color="#fff"
     color="#4527a0"
     shift
