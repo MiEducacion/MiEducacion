@@ -1,10 +1,19 @@
+
+.courses-discover {
+    width: 100%;
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+}
+
 .courses-container {
     background-color: #fff;
     max-width: 1150px !important;
-    border-radius: 1em;
+    border-radius: 0;
     padding: 2em 2em 5% !important;
     padding-bottom: 0 !important;
-    box-shadow: 0 8px 20px 0 rgba(69, 39, 160, 0.15), 0 12px 20px 0 rgba(69, 39, 160, 0.15);
 }
 
 .courses--no-data .illustration {

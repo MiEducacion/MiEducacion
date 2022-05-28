@@ -1,5 +1,5 @@
 <template>
-  <div id="site-courses" class="pt-10">
+  <div class="courses-discover pt-10">
    <SiteSpinner v-if="!CoursesData"/>
     <v-container v-if="CoursesData" fluid class="fill-height courses-container align-start">
       <div class="courses--no-data mx-auto text-center" v-if="!CoursesData.lenght">

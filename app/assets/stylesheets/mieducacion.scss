@@ -32,16 +32,8 @@
     height: 100%;
 }
 
-#site-courses {
-    width: 100%;
-    padding-right: 6px;
-    padding-left: 6px;
-    margin-right: auto;
-    margin-left: auto;
-    height: 100%;
-}
 
-#mieducacion {
+#mieducacion, .app-body {
     background-color: var(--mieducacion-theme-background);
 }
 
