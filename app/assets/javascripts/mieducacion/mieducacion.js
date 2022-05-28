@@ -47,7 +47,10 @@ $.ajaxSetup({
 })
 
 window.$ = $;
+Vue.prototype.currentUser = window.MiEducacion.currentUser;
 Vue.prototype.SiteSettings = window.MiEducacion.SiteSettings;
+Vue.prototype.isMobile = window.MiEducacion.mobile;
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
