@@ -1,26 +1,19 @@
 <template>
   <v-alert
     dismissible
-    id="site_banner"
+    id="site-banner"
     class="mx-auto"
     icon="mdi-pin"
-    v-if="showSiteBanner"
+    v-if="SiteSettings.show_site_banner"
     transition="scroll-x-reverse-transition"
   >
-    <span v-emoji v-md.html.breaks.linkify>{{SiteBanner_Content}}</span>
+    <span v-emoji v-md.html.breaks.linkify>{{SiteSettings.site_banner_content}}</span>
   </v-alert>
 </template>
 
 <script>
-var SiteSettings = window.MiEducacion.SiteSettings
-
 export default {
-    data () {
-        return {
-            showSiteBanner: SiteSettings.show_site_banner,
-            SiteBanner_Content: SiteSettings.site_banner_content
-        }
-    }
+  name: 'SiteBanner'
 }
 </script>
 
