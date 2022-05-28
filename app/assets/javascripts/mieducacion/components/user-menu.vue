@@ -24,7 +24,7 @@
     <v-list dense rounded>
       <v-list-item
         active-class="no-active"
-        to="/my/profile"
+        :to="`/user/${currentUser.id}`"
       >
         <v-list-item-icon>
           <v-icon>mdi-account-circle-outline</v-icon>
@@ -33,7 +33,7 @@
       </v-list-item>
       <v-list-item
         active-class="no-active"
-        to="/my/preferences"
+        :to="`/user/preferences`"
       >
         <v-list-item-icon>
           <v-icon>mdi-cog-outline</v-icon>
@@ -41,7 +41,7 @@
         <v-list-item-title>Configuración</v-list-item-title>
       </v-list-item>
 
-      <v-list-item
+      <v-list-item v-if="currentUser.is_admin"
         active-class="no-active"
         to="/admin"
       >
@@ -73,7 +73,7 @@
 export default {
   data() {
     return {
-      currentUser: window.MiEducacion.currentUser
+      currentUser: window.MiEducacion.currentUser,
     }
   },
   methods: {
