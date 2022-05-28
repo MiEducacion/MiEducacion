@@ -38,10 +38,11 @@ $.ajaxSetup({
             return true;
         }
         if (xhr.status === 404) {
-            MiEducacion.router.replace('/not-found')
+            AppRouter.replace('/not-found')
         }
-        
-        MiEducacion.router.replace('/exception')
+        if (xhr.status === 500 || xhr.status === 502) {
+            AppRouter.replace('/exception')
+        }
     }
 })
 
