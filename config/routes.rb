@@ -5,17 +5,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :groups, constraints: lambda { |request| request.format == :json }
-  
 
-
-
- # mount Logster::Web => "/logs"
-    mount ActionCable.server => '/cable'
-
-
-  # get 'app/index'
- 
-  # Apunto al controlador 'app' y llamo a su método 'index' 
   root :to => "app#index", as: 'app'
   resources :wizard
   get 'session/current', to: 'session/current_user#current_session', constraints: lambda { |request| request.format == :json }
@@ -23,6 +13,12 @@ Rails.application.routes.draw do
   get "manifest.json" => "metadata#webmanifest"
 
   get "courses" => "courses#index"
+
+  authenticated :user, lambda {|u| u.has_role?(:admin) } do
+    mount Logster::Web => "/logs"
+  end
+
+  mount ActionCable.server => '/cable'
 
   match '*path', to: 'app#index', via: :all
 
