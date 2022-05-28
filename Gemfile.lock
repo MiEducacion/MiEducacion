@@ -117,6 +117,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jwt (2.3.0)
+    logster (2.11.2)
     loofah (2.16.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -293,6 +294,7 @@ DEPENDENCIES
   devise
   devise-jwt
   jbuilder (~> 2.7)
+  logster
   omniauth
   omniauth-cas
   omniauth-oauth2-generic
