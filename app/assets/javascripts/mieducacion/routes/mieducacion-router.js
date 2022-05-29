@@ -27,7 +27,7 @@ function loadRoutes() {
   
 
 router.beforeEach((to, from, next) => {
-    if (SiteSettings.public_site == false && !user && to.path !== '/login-required') {
+    if (!SiteSettings.public_site && !user && to.path !== '/login-required') {
         next({
             path: '/login-required'
         })
