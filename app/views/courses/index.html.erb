@@ -1,3 +1,34 @@
-<% @courses.each do |t| %>
- <%= puts t %>
+<% @title= "Courses" %>
+
+<% if user_signed_in? || SiteSettings.public_site %>
+<div itemscope itemtype='http://schema.org/ItemList'>
+  <meta itemprop='itemListOrder' content='http://schema.org/ItemListOrderDescending'>
+  <table class='courses-list'>
+    <thead>
+      <tr>
+        <th class='course-name'><%= t 'js.courses.courses' %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each_with_index do |c, index| %>
+        <tr>
+          <td class='course'>
+            <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+              <meta itemprop='position' content='<%= index %>'>
+              <meta itemprop='url' content='<%= '/courses/' + c.id.to_s %>'>
+              <h3>
+                <a href='<%= '/course/' + c.id.to_s %>'>
+                  <span itemprop='name'><%= c.name %></span>
+                </a>
+              </h3>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
 <% end %>
+
+

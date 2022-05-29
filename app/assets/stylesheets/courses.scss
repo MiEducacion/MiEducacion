@@ -1,8 +1,6 @@
 
 .courses-discover {
     width: 100%;
-    padding-right: 6px;
-    padding-left: 6px;
     margin-right: auto;
     margin-left: auto;
     height: 100%;
@@ -16,18 +14,32 @@
     padding-bottom: 0 !important;
 }
 
-.courses--no-data .illustration {
-    height: 300px;
-    width: auto;
+.courses-container {
+    & .title {
+        font-family: var(--mieducacion-theme-font) !important;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #222;
+        margin: 0 auto;
+    }
 }
 
-.courses--no-data .NoCoursesTitle {
-    max-width: 320px;
-    font-family: 'Jost';
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: #444;
+.courses--no-data {
+
+    & .illustration {
+        height: 300px;
+        width: auto;
+    }
+
+    & .title {
+        max-width: 320px;
+        font-family: var(--mieducacion-theme-font) !important;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #444;
+    }
 }
+
 
 .extended-fab {
     width: auto !important;

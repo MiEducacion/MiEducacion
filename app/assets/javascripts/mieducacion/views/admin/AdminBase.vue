@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    name: 'AdminDashboard',
+    name: 'AdminBase',
     metaInfo: {
         title: 'Admin'
     },

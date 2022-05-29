@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get "courses" => "courses#index"
   post "courses/new" => "courses#newCourse"
+  get "courses/:id" => "courses#getCourse"
 
 
   authenticated :user, lambda {|u| u.has_role?(:admin) } do

@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2022_04_14_012232) do
     t.integer "course_id"
     t.text "name"
     t.string "cover"
-    t.string "teacher_id"
+    t.text "teachers"
+    t.boolean "private", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

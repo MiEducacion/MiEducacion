@@ -19,20 +19,42 @@ class CoursesController < ApplicationController
   end 
 end
 
+
+def getCourse
+
+  @course = Course.find(params[:id])
+
+  respond_to do |format| 
+          format.html
+          format.json {         
+              render json: {
+              course: @course
+              
+          },
+          content_type: 'application/json' }
+  end 
+end
+
+
+
+
   def newCourse
 
-    @courses = Course.all
+    @course = Course.new({
+      :name => params[:name],
+      :teachers => params[:teachers],
+      :private => params[:private]
+    })
+    @course.save
   
     respond_to do |format| 
             format.json {         
                 render json: {
-                  success: true,
-                  course: {
-                    #TO-DO
-                  }
-            },
-            content_type: 'application/json', status: 500 }
+                  course: @course
+                  }, content_type: 'application/json', status: 200 }
+          
     end 
 
-  end
+end
+
 end
