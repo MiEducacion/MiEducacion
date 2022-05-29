@@ -12,13 +12,18 @@ class MetadataController < ApplicationController
     display = "standalone"
     webmanifest = {
       name: SiteSettings.site_title,
-      short_name: SiteSettings.site_title.truncate(12, separator: ' ', omission: ''),
+      short_name: SiteSettings.pwa_shortname,
       display: display,
       start_url: "/",
       background_color: "#FFF",
       theme_color: "#4527a0",
       icons: [
-          #TODO
+          {
+            src: SiteSettings.app_icon,
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable"
+          }
       ]
     }
 
