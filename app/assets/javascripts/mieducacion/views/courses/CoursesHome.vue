@@ -23,7 +23,7 @@
       </v-col>
     </v-container>
     <v-btn
-      v-if="currentUser.is_admin"
+      v-if="currentUser && currentUser.is_admin"
       @click="showCreateCourses = true"
       dark
       right
