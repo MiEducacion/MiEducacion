@@ -33,12 +33,15 @@ router.beforeEach((to, from, next) => {
         })
     }
 
-      else if (SiteSettings.public_site == false && user && to.path === '/login-required') {
-            next({
-                path: '/'
-            })
 
-    }
+    else if (to.path === '/login-required' && (SiteSettings.public_site || user )) {
+        next({
+            path: '/'
+        })
+
+}
+
+
     else if (to.meta.requiresAuth && !user) {
         next({
             name: 'NotFound',
