@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  layout 'mieducacion_web'
+  layout 'application'
   require 'action_view'
   include ActionView::Helpers::DateHelper
 
