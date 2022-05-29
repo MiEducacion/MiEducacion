@@ -12,14 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2022_05_29_214113) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "timescaledb"
+
   create_table "courses", force: :cascade do |t|
     t.integer "course_id"
     t.text "name"
     t.string "cover"
-    t.text "teachers"
-    t.boolean "private", default: false
+    t.string "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "teachers"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -37,7 +41,7 @@ ActiveRecord::Schema.define(version: 2022_05_29_214113) do
     t.string "last_name"
     t.string "username", null: false
     t.text "biography"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
@@ -46,7 +50,7 @@ ActiveRecord::Schema.define(version: 2022_05_29_214113) do
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
@@ -70,14 +74,14 @@ ActiveRecord::Schema.define(version: 2022_05_29_214113) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "new_user"
+    t.boolean "new_user", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
+    t.bigint "user_id"
+    t.bigint "role_id"
     t.index ["role_id"], name: "index_users_roles_on_role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
