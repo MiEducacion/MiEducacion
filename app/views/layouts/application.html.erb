@@ -7,6 +7,9 @@
       <%= csp_meta_tag %>
 <%= render partial: "layouts/head" %>
       <%= render partial: "common/mieducacion_stylesheet" %>
+      <script type="text/x-template" data-template-name="additional-nav-buttons">
+            <v-btn text> I am a Button rendered on a slot</v-btn>
+      </script>
    </head>
    <body
       class="app-body<% if device == "mobile" %> is-mobile<% end %>"
@@ -31,6 +34,6 @@
 
          var language = "<%= I18n.locale %>";
       </script>
-      <%= javascript_pack_tag 'mieducacion' %>
+      <%= javascript_packs_with_chunks_tag 'mieducacion' %>
    </body>
 </html>
