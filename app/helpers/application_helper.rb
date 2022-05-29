@@ -17,6 +17,10 @@ module ApplicationHelper
         }
       end
 
+      def user_logged_in_status
+        user_signed_in? ? "logged-in" : "logged-out"
+      end
+
       def current_session
         if user_signed_in?
         @u = current_user
@@ -32,7 +36,7 @@ module ApplicationHelper
   
 			
     else
-
+      nil
     end
 
       end
