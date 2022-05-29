@@ -31,7 +31,7 @@ class WizardController < ApplicationController
    
    def is_admin?
      unless current_user.has_role?(:admin)
-        redirect_to "/exception"
+        redirect_to "/not_found", status: 301
        
      end
    end
