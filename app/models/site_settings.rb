@@ -18,6 +18,9 @@ class SiteSettings < RailsSettings::Base
     field :force_redirect_private, default: ( ENV["MIEDUCACION_FORCE_REDIRECT_PRIVATE"] ||"0"), type: :boolean
     field :site_title, default: ( ENV["MIEDUCACION_SITE_TITLE"] ||"MiEducación"), validates: { presence: true, length: { in: 2..255 } }  
     field :site_logo, default: ( ENV["MIEDUCACION_SITE_LOGO"] ||"/images/default/mieducacion_default_siteLogo.svg"), type: :string
+    field :app_icon, default: ( ENV["MIEDUCACION_APP_ICON"] ||"/images/default/mieducacion_default_appicon.png"), type: :string
+    field :pwa_shortname, default: ( ENV["MIEDUCACION_PWA_SHORTNAME"] ||"MiEducación"), type: :string
+
   end
 
   scope :site_banner do
