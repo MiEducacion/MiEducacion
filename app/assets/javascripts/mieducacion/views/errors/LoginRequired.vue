@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import LoginRequiredImage from "images/illustrations/login-required.png";
+import LoginRequiredImage from "images/illustrations/login-required-new.png";
 
 export default {
     name: 'PrivateSite',
