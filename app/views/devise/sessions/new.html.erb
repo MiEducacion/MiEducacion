@@ -1,19 +1,22 @@
 <% @title="Sign In" %>
-<% @custom_class="login-bg" %>
-<div class="vertical-center container-fluid h-100">
-  <div class="row">
-    <div class="col-md">
+<% @custom_class="login" %>
+<section class="crayola-layout d-grid h-100" data-path="<%= request.env['PATH_INFO'] %>">
+  <div class="form-login crayola-card py-4 px-4 vertical-middle">
+  <section class="welcome">
+  <div class="mx-auto text-center">
+    <%= image_tag SiteSettings.site_logo, :id => 'site-logo', :alt => 'Site logo', :draggable => false %>
     </div>
-    <div class="col-md">
-    <div class="container z-depth-1 auth-card px-4 py-4">
-    <div class="mx-auto text-center">
-    <%= image_tag SiteSettings.site_logo, id: 'site-logo' %>
+    <div class="mx-auto text-center mt-2">
+     <%= image_tag("illustrations/welcome_login.png", width: 200) %>
     </div>
-    <div class="welcome-again text-center mt-4 animated fadeIn">
-    <h2 class="login--title">Welcome back</h2>
-    <p class="login--subhead">Log in to your account</p>
-    </div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   
+
+    <h2 class="welcome-title mt-5 text-center">Welcome back</h2>
+    <h3 class="welcome-subtitle text-center">Ready to go back to school?</h3>
+  </section>
+
+  <section class="form pt-4">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="md-form md-bg">
     <%= f.email_field :email, autofocus: true, :required => true, class: "form-control mb-0" %>
     <%= f.label :email %>
@@ -32,16 +35,11 @@
     </div>
   <% end %>
 
-  <div class="actions d-block mt-4">
-    <%= f.button "Log in", class: "btn btn-dark btn-block rounded-pill px-2 btn-sm shadow-sm", type: 'submit' %>
+  <div class="d-grid gap-2 col-6 mx-auto mt-4">
+    <%= f.button "Log in", class: "btn btn-block btn-dark btn-block px-2", type: 'submit' %>
   </div>
 <% end %>
+  </section>
 
-<%= render "devise/shared/links" %>
-
-    </div>
-    </div>
-    <div class="col-md">
-    </div>
   </div>
-  </div>
+</section>

@@ -1,0 +1,68 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+@import 'fonts';
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: transparentize($mieducacion-primary, .9);
+}
+
+
+#site-logo {
+    height: 2.667em;
+    width: auto;
+    margin: 0 auto;
+}
+
+.crayola-layout {
+    align-content: center;
+}
+
+.crayola-card {
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    background-color: #FFF;
+    justify-content: center;
+    align-content: center;
+}
+
+.login-bg {
+    background-image: url('https://freight.cargo.site/t/original/i/95912db242ea58b692884f7e3fa4d1672759ac923b071ffe8ada6d899faba337/otono-horizontal.png');
+    background-position: center;
+}
+
+.welcome-title {
+    font-family: var(--mieducacion-theme-font);
+    font-weight: 600;
+    font-size: var(--font-up-3);
+    color: #222;
+}
+
+.welcome-subtitle {
+    font-family: var(--mieducacion-theme-font);
+    font-weight: 600;
+    font-size: var(--font-up-1);
+    color: #444;
+}
+
+@media (min-width: 640px) {
+.form-login {
+    border-radius: var(--radius);
+    padding: var(--su-8);
+    margin: 0 auto;
+    width: 640px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+    .crayola-layout {
+        margin-top: 1rem !important;
+        align-content: flex-start;
+    }
+  }
