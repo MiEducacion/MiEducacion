@@ -3,29 +3,42 @@ class WizardController < ApplicationController
 
     layout "wizard"
 
+    steps :welcome, :site_info, :find_friends
+
     before_action :authenticate_user! 
     before_action :is_admin?
+    before_action :set_progress, only: [:show]
   
-    steps :welcome, :confirm_profile, :find_friends
   
     def show
-        @SiteSettings = "a"
       case step
-      when :find_friends
-        @friends = @user.find_friends
-      end
+      when :welcome
+        @welcome = 'Welcome'
+      
+      when :site_info
+
+        @s = SiteSettings
+          @site_info = [
+            {
+              site_title: @s.site_title
+            }
+          ]
+           
+
+      
+    end
+      
       render_wizard
     end
 
     def update
-        @SiteSettings = "a"
-        case step
-        when :confirm_password
-          @user.update(user_params)
-        end
-        sign_in(@user, bypass: true) # needed for devise
-        render_wizard @user
+      case step
+      when :welcome
+        jump_to(:site_info) 
       end
+
+      render_wizard
+    end
 
     private
    
@@ -36,4 +49,17 @@ class WizardController < ApplicationController
      end
    end
 
+   private
+      def set_progress
+        if wizard_steps.any? && wizard_steps.index(step).present?
+          @progress = ((wizard_steps.index(step) + 1).to_d / wizard_steps.count.to_d) * 100
+        else
+          @progress = 0
+        end
+      end
+
+      def dev_email_param
+        params.require(:dev_email)
+      end
+      
   end

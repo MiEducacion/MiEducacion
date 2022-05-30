@@ -1,7 +1,7 @@
 <div class="wizard-column">
    <div class="wizard-column-contents">
       <div class="wizard-step-contents">
-         <h1 class="wizard-step-title text-center mx-auto">We welcome you to MiEducación!</h1>
+         <h1 class="wizard-step-title text-center mx-auto">Site information</h1>
          <div class="mx-auto text-center">
          <%= image_tag 'illustrations/mieducacion-wizard-welcome.png', class: 'welcome-banner--img', width: 280, :draggable => false %>
          </div>
@@ -10,11 +10,14 @@
         Ready to set up your site?
         </h1>
 
+<%= @site_info[0].values[0] %> 
+        
+
       <div class="text-center d-grid gap-2 cols-6">
-         <%= link_to 'Next', wizard_path(:site_info), class: 'btn btn-dark mt-4' %>
-
+        <%= form_for @site_info.to_json, url: wizard_path , method: :put do |f| %>
+         <button type="submit" class="btn btn-dark mt-4">Next</button>
+         <% end %>
          </div>
-
       </div>
    </div>
    <div class="wizard-footer">

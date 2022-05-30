@@ -45,6 +45,7 @@ end
       :teachers => params[:teachers],
       :private => params[:private]
     })
+    
     @course.save
   
     respond_to do |format| 

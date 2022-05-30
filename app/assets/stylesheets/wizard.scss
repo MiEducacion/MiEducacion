@@ -1,3 +1,12 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'fonts';
+@import 'variables';
+
+body {
+    background-color: transparentize($mieducacion-primary, .9);
+}
+
+
 body.wizard #wizard-main {
     display: flex;
     flex-direction: column;
@@ -8,7 +17,7 @@ body.wizard #wizard-main {
 .wizard-column {
     position: relative;
     z-index: 11;
-    background-color: var(--secondary);
+    background-color: var(--mieducacion-secondary, #FFFFFF);
     box-shadow: 0 5px 10px rgba(34,34,34, 0.15);
     box-sizing: border-box;
     margin: 1.5em auto;
@@ -21,7 +30,7 @@ body.wizard #wizard-main {
 }
 
 .wizard-column .wizard-column-contents {
-    padding: 1.2em;
+    padding: 1.2em
 }
 
 .wizard-column .wizard-footer {
@@ -38,7 +47,33 @@ body.wizard #wizard-main {
     display: block;
 }
 
+.wizard-step-title {
+    font-family: var(--mieducacion-theme-font);
+    font-weight: 600;
+    font-size: var(--font-up-3);
+    color: #222;
+}
+
+.welcome-banner--img {
+    margin-top: -1.25rem !important;
+}
+
 .mieducacion-logo, .mieducacion-logo img {
     height: 30px;
     width: 110px;
+}
+
+.welcome-step-text {
+    font-family: var(--mieducacion-theme-font);
+    font-size: var(--font-up-2);
+    color: #333;
+    font-weight: 500;
+}
+
+.wizard-selector {
+    padding: 8px;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px var(--mieducacion-theme-text-secondary, #ddd ) solid
 }

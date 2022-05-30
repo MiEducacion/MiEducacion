@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_05_29_214113) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "teachers"
+    t.boolean "private"
   end
 
   create_table "groups", force: :cascade do |t|
