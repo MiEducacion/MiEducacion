@@ -58,4 +58,4 @@ jobs:
       - name: Security audit application code
         run: bundle exec brakeman --no-exit-on-error --skip-files lib/mieducacion.rb
       - name: Lint Ruby files
-        run: bin/rubocop --parallel
+        run: bundle exec rubocop --parallel
