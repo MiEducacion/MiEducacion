@@ -5,8 +5,7 @@
       v-if="!currentUser"
       v-emoji
       app
-      single-line
-      icon=""
+      icon="mdi-incognito"
       elevation="0"
       >
       You are browsing the site as an anonymous user, register to take full advantage 😁
