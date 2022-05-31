@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CoursesController < ApplicationController
   layout 'application'
   require 'action_view'
