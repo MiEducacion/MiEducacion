@@ -34,9 +34,6 @@ jobs:
         with:
           bundler-cache: true
       # Add or replace database setup steps here
-      - name: Create extension timescaledb
-        run: psql -c "create extension timescaledb"
-        
       - name: Set up database schema
         run: bin/rails db:schema:load
       # Add or replace test runners here
