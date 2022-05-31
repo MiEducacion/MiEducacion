@@ -3,6 +3,7 @@ class CoursesController < ApplicationController
   require 'action_view'
   include ActionView::Helpers::DateHelper
 
+  before_action :public_site?
 
   def index
 
@@ -56,6 +57,12 @@ end
           
     end 
 
+end
+
+private
+   
+def public_site?
+     redirect_to "/login_required", status: 301 unless SiteSettings.public_site || current_user
 end
 
 end
