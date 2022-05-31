@@ -16,7 +16,7 @@
                   </h1>
                </div>
             </div>
-            <div class="explore-courses pt-12">
+            <div class="explore-courses" :class="currentUser ? 'pt-12' : ''">
                <h2 class="title">Explore courses</h2>
                <p v-if="CoursesData">{{CoursesData.courses}}</p>
                <v-row class="courses-grid">
