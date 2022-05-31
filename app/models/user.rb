@@ -11,10 +11,10 @@ class User < ApplicationRecord
   validates :roles, presence: true
 
   attr_accessor :new_user
-  
+
   # All users have the student role by default
   def assign_default_role
-   add_role(:student)
+    add_role(:student)
   end
 
   has_one :profile
