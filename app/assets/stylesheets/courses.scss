@@ -60,3 +60,21 @@
   .courses.extended-fab.mobile {
     bottom:72px;
   }
+
+  .course-card {
+      cursor: pointer;
+
+      & .course-name {
+          font-family: var(--mieducacion-theme-font);
+          font-weight: 600;
+          font-size: var(--font-up-1);
+      }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .courses-container {
+        padding: .5em .5em 5% !important;
+        margin-bottom: 1rem;
+    }
+      
+  }
