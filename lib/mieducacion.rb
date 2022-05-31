@@ -23,7 +23,4 @@ module MiEducacion
 
     version_value
   end
-
-  class Utils
-  end
 end

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get 'manifest.json' => 'metadata#webmanifest'
 
   get 'courses' => 'courses#index'
-  post 'courses/new' => 'courses#newCourse'
-  get 'courses/:id' => 'courses#getCourse'
+  post 'courses/new' => 'courses#new_course'
+  get 'courses/:id' => 'courses#course'
 
   authenticated :user, ->(u) { u.has_role?(:admin) } do
     mount Logster::Web => '/logs'

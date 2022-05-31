@@ -21,7 +21,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  def getCourse
+  def course
     @course = Course.find(params[:id])
 
     respond_to do |format|
@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  def newCourse
+  def new_course
     @course = Course.new({
                            name: params[:name],
                            teachers: params[:teachers],

@@ -24,19 +24,18 @@ module ApplicationHelper
   end
 
   def current_session
-    if user_signed_in?
-      @u = current_user
+    return unless user_signed_in?
 
-      current_session = {
-        id: @u.id,
-        email: @u.email,
-        is_student: @u.has_role?(:student),
-        is_teacher: @u.has_role?(:teacher),
-        is_principal: @u.has_role?(:teacher),
-        is_admin: @u.has_role?(:admin),
-        is_new_user: @u.new_user?
-      }
+    @u = current_user
 
-    end
+    current_session = {
+      id: @u.id,
+      email: @u.email,
+      is_student: @u.has_role?(:student),
+      is_teacher: @u.has_role?(:teacher),
+      is_principal: @u.has_role?(:teacher),
+      is_admin: @u.has_role?(:admin),
+      is_new_user: @u.new_user?
+    }
   end
 end

@@ -1,2 +1,23 @@
 Style/Documentation:
   Enabled: false
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'config/initializers/*'
+    - 'db/**/*'
+
+Metrics/MethodLength:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Layout/LineLength:
+  Description: 'Checks that line length does not exceed the configured limit.'
+  AutoCorrect: true # this is false by default
+  Exclude:
+    - Gemfile
