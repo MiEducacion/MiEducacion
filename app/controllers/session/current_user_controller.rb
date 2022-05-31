@@ -1,25 +1,28 @@
-class Session::CurrentUserController < ApplicationController
-	before_action :authenticate_user!
-		def current_session 
-		  if user_signed_in?
+# frozen_string_literal: true
 
-      @u = current_user
+module Session
+  class CurrentUserController < ApplicationController
+    before_action :authenticate_user!
+    def current_session
+      if user_signed_in?
 
-		render json: {
-		current_user: {
-          id: @u.id,
-          email: @u.email,
-          roles: {
-            is_teacher: @u.has_role?(:teacher),
-            is_principal: @u.has_role?(:teacher),
-            is_admin: @u.has_role?(:admin)
+        @u = current_user
+
+        render json: {
+          current_user: {
+            id: @u.id,
+            email: @u.email,
+            roles: {
+              is_teacher: @u.has_role?(:teacher),
+              is_principal: @u.has_role?(:teacher),
+              is_admin: @u.has_role?(:admin)
+            }
           }
         }
-			}
-			puts user_signed_in?
-		else
-			render json: {}, status: 401
-			puts user_signed_in?
-		end
-	end
+      else
+        render json: {}, status: 401
+      end
+      puts user_signed_in?
+    end
+  end
 end

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class CoursesController < ApplicationController
-  layout "application"
-  require "action_view"
+  layout 'application'
+  require 'action_view'
   include ActionView::Helpers::DateHelper
 
   before_action :public_site?
@@ -11,13 +11,13 @@ class CoursesController < ApplicationController
     @courses = Course.all
     respond_to do |format|
       format.html
-      format.json {
+      format.json do
         render json: {
-                 courses: @courses,
+          courses: @courses
 
-               },
-               content_type: "application/json"
-      }
+        },
+               content_type: 'application/json'
+      end
     end
   end
 
@@ -26,37 +26,37 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json {
+      format.json do
         render json: {
-                 course: @course,
+          course: @course
 
-               },
-               content_type: "application/json"
-      }
+        },
+               content_type: 'application/json'
+      end
     end
   end
 
   def newCourse
     @course = Course.new({
-      :name => params[:name],
-      :teachers => params[:teachers],
-      :private => params[:private],
-    })
+                           name: params[:name],
+                           teachers: params[:teachers],
+                           private: params[:private]
+                         })
 
     @course.save
 
     respond_to do |format|
-      format.json {
+      format.json do
         render json: {
-                 course: @course,
-               }, content_type: "application/json", status: 200
-      }
+          course: @course
+        }, content_type: 'application/json', status: 200
+      end
     end
   end
 
   private
 
   def public_site?
-    redirect_to "/login_required", status: 301 unless SiteSettings.public_site || current_user
+    redirect_to '/login_required', status: 301 unless SiteSettings.public_site || current_user
   end
 end
