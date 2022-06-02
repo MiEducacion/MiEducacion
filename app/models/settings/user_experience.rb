@@ -11,7 +11,6 @@ module Settings
                                         },
                                       }
     # a non-public instance will redirect all unauthenticated pages to the registration page.
-    setting :public, type: :boolean, default: true
     setting :default_locale, type: :string, default: "en"
   end
 end
