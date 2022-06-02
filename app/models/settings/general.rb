@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 module Settings
-  class General < Base
-    self.table_name = :site_generals
+  class General < RailsSettings::Base
+    self.table_name = :settings_generals
 
     # Meta
     setting :admin_action_taken_at, type: :datetime, default: Time.current
