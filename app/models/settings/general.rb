@@ -1,5 +1,5 @@
 module Settings
-  class General < RailsSettings::Base
+  class General < Base
     self.table_name = :settings_generals
 
     # Meta
