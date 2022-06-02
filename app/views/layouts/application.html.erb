@@ -2,8 +2,7 @@
 <html>
    <head>
       <meta charset="utf-8">
-      <% title = yield(:title) %>
-      <title><%= title || site_name.to_s %></title>
+      <title><%= site_name.to_s %></title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
 <%= render partial: "layouts/head" %>
