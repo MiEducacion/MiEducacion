@@ -53,14 +53,6 @@ ActiveRecord::Schema.define(version: 2022_06_02_014138) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
-  create_table "settings", force: :cascade do |t|
-    t.string "var", null: false
-    t.text "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["var"], name: "index_settings_on_var", unique: true
-  end
-
   create_table "settings_generals", force: :cascade do |t|
     t.string "var", null: false
     t.text "value"
