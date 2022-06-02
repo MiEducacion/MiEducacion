@@ -14,10 +14,10 @@
         "Campus"</v-alert
       > -->
       <v-row class="fill-height align-self-start">
-        <v-col md="3" class="text-center hidden-sm-and-down">
+        <v-col md="3" class="hidden-sm-and-down">
           <DesktopLeftSummary />
         </v-col>
-        <v-col md="6" cols="auto" sm="7" class="text-center">
+        <v-col md="9" cols="auto" sm="12">
          <!--  <v-alert color="#4527a0" dark icon="mdi-firework" dense>
             Te damos la bienvenida a MiEducación
           </v-alert> -->
@@ -36,9 +36,6 @@
             </v-expansion-panel>
           </v-expansion-panels>
         </v-col>
-        <v-col md="3" class="text-center hidden-xs-only">
-          <DesktopRightSummary
-        /></v-col>
       </v-row>
     </v-container>
   </div>

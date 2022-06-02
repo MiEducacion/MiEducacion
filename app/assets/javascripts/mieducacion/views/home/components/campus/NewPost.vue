@@ -1,9 +1,6 @@
 <template>
-  <v-card class="px-4 py-4 my-4 NewPost--card mx-2 mb-8" outlined rounded v-if="currentUser">
-    <v-flex class="justify-center" style="align-items: center">
-      <h2 class="campus--greeting text-center pb-4">Good Evening, Alexander 
-        <img class="greeting-daytime" :src="GreetingNight">
-      </h2>
+  <v-card class="px-4 py-4 my-4 NewPost--card mx-2 mb-8" rounded v-if="currentUser">
+    <v-flex shrink class="d-flex" justify-content="start">
       <v-avatar size="64">
         <v-gravatar :email="currentUser.email" alt="User Avatar" :size="120" class="avatar" />
       </v-avatar>
@@ -16,6 +13,8 @@
         >
         <v-btn text rounded color="#4527a0" class="NewPost--btn" dark depressed
           ><v-icon left>mdi-forum</v-icon> Pregunta</v-btn
+        ><v-btn text rounded color="#4527a0" class="NewPost--btn" dark depressed
+          ><v-icon left>mdi-bullhorn-outline</v-icon> Anunciar</v-btn
         >
       </div>
     </v-flex>

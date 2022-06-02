@@ -1,8 +1,8 @@
 <template>
   <div id="site-campus">
-    <v-flex class="flex shrink">
+    <div>
       <new-post />
-    </v-flex>
+    </div>
     <v-layout column class="fill-height">
       <v-flex class="overflow-y-auto flex fill-height">
         <feed-post />

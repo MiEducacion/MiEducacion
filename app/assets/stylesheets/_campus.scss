@@ -14,22 +14,45 @@
 }
 
 .NewPost--card {
-    border: 1px #4527a0 solid !important;
-    background-color: rgba(199, 190, 227, 0.30) !important;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 2px 6px 2px rgba(60, 64, 67, .15) !important;
+    border-radius: 0.5rem;
+
+    & .v-avatar {
+        align-self: center;
+    }
 }
 
 .NewPost--card .avatar {
-    border: 3px #4527a0 solid
+    border: 3px #4527a0 solid;
 }
 
 .NewPost--card .footer-btns {
-    margin-top: 1.4rem;
+    align-items: center;
+    display: flex;
+    margin-left: 1.5em;
 }
 
 .NewPost--btn {
     text-transform: none !important;
     background-color: white;
     margin: 4px 4px;
-    font-family: 'Gilroy-Regular' !important;
-    font-weight: 600!important;
+    font-family: var(--mieducacion-theme-font) !important;
+    font-weight: 700!important;
 }
+
+@media (max-width: 600px) {
+
+    .NewPost--btn {
+        margin: 0.1rem;
+    }
+    .NewPost--card .footer-btns {
+        align-items: start;
+        display: block;
+        margin-left: .5em;
+    }
+
+    .NewPost--card .avatar {
+        height: 48px;
+        width: 48px;
+    }
+    }
