@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class CoursesController < ApplicationController
-  layout 'application'
-  require 'action_view'
+  layout "application"
+  require "action_view"
   include ActionView::Helpers::DateHelper
 
   before_action :public_site?
@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
           courses: @courses
 
         },
-               content_type: 'application/json'
+               content_type: "application/json"
       end
     end
   end
@@ -31,7 +31,7 @@ class CoursesController < ApplicationController
           course: @course
 
         },
-               content_type: 'application/json'
+               content_type: "application/json"
       end
     end
   end
@@ -49,7 +49,7 @@ class CoursesController < ApplicationController
       format.json do
         render json: {
           course: @course
-        }, content_type: 'application/json', status: 200
+        }, content_type: "application/json", status: 200
       end
     end
   end
@@ -57,6 +57,6 @@ class CoursesController < ApplicationController
   private
 
   def public_site?
-    redirect_to '/login_required', status: 301 unless SiteSettings.public_site || current_user
+    redirect_to "/login_required", status: 301 unless SiteSettings.public_site || current_user
   end
 end

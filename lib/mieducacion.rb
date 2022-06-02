@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_dependency 'version'
+require_dependency "version"
 
 module MiEducacion
   def self.git_version
     @git_version ||= begin
-      git_cmd = 'git rev-parse HEAD'
+      git_cmd = "git rev-parse HEAD"
       try_git(git_cmd, MiEducacion::Application::Version::FULL)
     end
   end

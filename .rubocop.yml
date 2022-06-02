@@ -21,3 +21,10 @@ Layout/LineLength:
   AutoCorrect: true # this is false by default
   Exclude:
     - Gemfile
+
+Style/StringLiterals:
+  Description: 'Checks if uses of quotes match the configured preference.'
+  StyleGuide: '#consistent-string-literals'
+  Enabled: true
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true

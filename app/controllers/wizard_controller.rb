@@ -3,7 +3,7 @@
 class WizardController < ApplicationController
   include Wicked::Wizard
 
-  layout 'wizard'
+  layout "wizard"
 
   steps :welcome, :site_info, :find_friends
 
@@ -14,7 +14,7 @@ class WizardController < ApplicationController
   def show
     case step
     when :welcome
-      @welcome = 'Welcome'
+      @welcome = "Welcome"
     when :site_info
       @s = SiteSettings
       @site_info = [
@@ -39,7 +39,7 @@ class WizardController < ApplicationController
   private
 
   def admin?
-    redirect_to '/not_found', status: 301 unless current_user.has_role?(:admin)
+    redirect_to "/not_found", status: 301 unless current_user.has_role?(:admin)
   end
 
   def set_progress

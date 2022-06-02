@@ -3,10 +3,10 @@
 module ApplicationHelper
   def device
     agent = request.user_agent
-    return 'tablet' if agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
-    return 'mobile' if agent =~ /Mobile/
+    return "tablet" if agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
+    return "mobile" if agent =~ /Mobile/
 
-    'desktop'
+    "desktop"
   end
 
   def client_side_app_settings
@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def user_logged_in_status
-    user_signed_in? ? 'logged-in' : 'logged-out'
+    user_signed_in? ? "logged-in" : "logged-out"
   end
 
   def current_session
