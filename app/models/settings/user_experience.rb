@@ -9,7 +9,6 @@ module Settings
                                           with: HEX_COLOR_REGEX,
                                           message: "must be be a 3 or 6 character hex (starting with #)",
                                         },
-                                        color_contrast: true,
                                       }
     # a non-public instance will redirect all unauthenticated pages to the registration page.
     setting :public, type: :boolean, default: true
