@@ -13,9 +13,9 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-                 courses: @courses,
+          courses: @courses
 
-               },
+        },
                content_type: "application/json"
       end
     end
@@ -28,9 +28,9 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-                 course: @course,
+          course: @course
 
-               },
+        },
                content_type: "application/json"
       end
     end
@@ -40,7 +40,7 @@ class CoursesController < ApplicationController
     @course = Course.new({
                            name: params[:name],
                            teachers: params[:teachers],
-                           private: params[:private],
+                           private: params[:private]
                          })
 
     @course.save
@@ -48,7 +48,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.json do
         render json: {
-          course: @course,
+          course: @course
         }, content_type: "application/json", status: 200
       end
     end

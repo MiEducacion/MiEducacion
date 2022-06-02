@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Based on https://github.com/huacnlee/rails-settings-cached/blob/main/lib/generators/settings/install_generator.rb
 
 require "rails/generators"
@@ -30,14 +32,14 @@ class SettingsModelGenerator < Rails::Generators::NamedBase
       "migration.erb",
       "db/migrate/create_#{table_name}.rb",
       migration_version: migration_version,
-      table_name: table_name,
+      table_name: table_name
     )
   end
 
   def create_model
     template(
       "model.erb",
-      File.join("app/models/settings", class_path, "#{file_name}.rb"),
+      File.join("app/models/settings", class_path, "#{file_name}.rb")
     )
   end
 

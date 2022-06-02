@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Settings
   class LMS < Base
     self.table_name = :settings_lms

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Settings
   class General < Base
     self.table_name = "site_configs"
@@ -12,9 +14,9 @@ module Settings
       validates: {
         format: {
           with: /\A[^[<|>]]+\Z/,
-          message: "may not include the \"<\" nor \">\" character",
-        },
-      },
+          message: "may not include the \"<\" nor \">\" character"
+        }
+      }
     )
     setting :site_description, type: :string
     setting :site_shortname, type: :string, default: ApplicationConfig["MIEDUCACION_SHORTNAME"] || "MiEducacion"
