@@ -98,19 +98,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-jwt (0.9.0)
-      devise (~> 4.0)
-      warden-jwt_auth (~> 0.6)
-    dry-auto_inject (0.9.0)
-      dry-container (>= 0.3.4)
-    dry-configurable (0.15.0)
-      concurrent-ruby (~> 1.0)
-      dry-core (~> 0.6)
-    dry-container (0.9.0)
-      concurrent-ruby (~> 1.0)
-      dry-configurable (~> 0.13, >= 0.13.0)
-    dry-core (0.7.1)
-      concurrent-ruby (~> 1.0)
     erubi (1.10.0)
     faraday (2.2.0)
       faraday-net_http (~> 2.0)
@@ -289,11 +276,6 @@ GEM
     unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    warden-jwt_auth (0.6.0)
-      dry-auto_inject (~> 0.8)
-      dry-configurable (~> 0.13)
-      jwt (~> 2.1)
-      warden (~> 1.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -330,7 +312,6 @@ DEPENDENCIES
   cancancan
   capybara (>= 3.26)
   devise
-  devise-jwt
   highline
   jbuilder (~> 2.7)
   logster

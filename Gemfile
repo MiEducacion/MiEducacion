@@ -27,7 +27,7 @@ gem "redis", "~> 4.0"
 gem "logster"
 
 gem "devise"
-gem "devise-jwt"
+# gem "devise-jwt"
 gem "pups"
 gem "rack-cors"
 
