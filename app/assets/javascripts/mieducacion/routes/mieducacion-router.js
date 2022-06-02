@@ -50,6 +50,15 @@ router.beforeEach((to, from, next) => {
         })
 
     }
+
+    else if (to.meta.requireAdmin && !user.is_admin) {
+        next({
+            name: 'NotFound',
+            params: [to.path],
+            replace: true
+        })
+
+    }
     else next()
 })
 

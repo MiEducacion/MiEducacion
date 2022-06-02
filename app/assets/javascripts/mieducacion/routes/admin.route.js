@@ -10,12 +10,18 @@ const AdminRoutes = {
         {
             name: 'admin.dashboard',
             path: 'dashboard',
-            component: AdminDashboard
+            component: AdminDashboard,
+            meta: {
+                requireAdmin: true
+            }
         },
         {
             name: 'admin.settings',
             path: 'settings',
-            component: AdminSettings
+            component: AdminSettings,
+            meta: {
+                requireAdmin: true
+            }
         }
     ],
     meta: {
