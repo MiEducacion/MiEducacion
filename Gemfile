@@ -96,4 +96,3 @@ end
 
 gem "highline"
 gem "rails_material_design_icons"
-gem "rails-settings-cached", "~> 2.8"

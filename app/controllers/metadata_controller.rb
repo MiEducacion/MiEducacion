@@ -13,20 +13,20 @@ class MetadataController < ApplicationController
   def default_webmanifest
     display = "standalone"
     {
-      name: SiteSettings.site_title,
-      short_name: SiteSettings.pwa_shortname,
+      name: Settings::General.site_name,
+      short_name: Settings::General.site_shortname,
       display: display,
       start_url: "/",
       background_color: "#FFF",
       theme_color: "#4527a0",
       icons: [
         {
-          src: SiteSettings.app_icon,
+          src: Settings::General.app_icon,
           sizes: "512x512",
           type: "image/png",
-          purpose: "maskable"
-        }
-      ]
+          purpose: "maskable",
+        },
+      ],
     }
   end
 end

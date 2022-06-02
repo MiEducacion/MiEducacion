@@ -9,13 +9,17 @@ module ApplicationHelper
     "desktop"
   end
 
+  def site_name
+    @site_name ||= Settings::General.site_name
+  end
+
   def client_side_app_settings
     site_settings = {
-      title: SiteSettings.site_title,
-      site_logo: SiteSettings.site_logo,
-      public_site: SiteSettings.public_site,
-      show_site_banner: SiteSettings.show_site_banner,
-      site_banner_content: SiteSettings.site_banner_content
+      title: Settings::General.site_name,
+      site_logo: Settings::General.site_logo,
+      public_site: Settings::LMS.private,
+      show_site_banner: Settings::LMS.banner_show,
+      site_banner_content: Settings::LMS.banner_content,
     }
   end
 
@@ -35,7 +39,7 @@ module ApplicationHelper
       is_teacher: @u.has_role?(:teacher),
       is_principal: @u.has_role?(:teacher),
       is_admin: @u.has_role?(:admin),
-      is_new_user: @u.new_user?
+      is_new_user: @u.new_user?,
     }
   end
 end

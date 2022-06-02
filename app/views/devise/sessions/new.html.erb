@@ -1,10 +1,10 @@
-<% @title="Sign In" %>
-<% @custom_class="login" %>
-<section class="crayola-layout d-grid h-100" data-path="<%= request.env['PATH_INFO'] %>">
+<% @title = "Sign In" %>
+<% @custom_class = "login" %>
+<section class="crayola-layout d-grid h-100" data-path="<%= request.env["PATH_INFO"] %>">
   <div class="form-login crayola-card py-4 px-4 vertical-middle">
   <section class="welcome">
   <div class="mx-auto text-center">
-    <%= image_tag SiteSettings.site_logo, :id => 'site-logo', :alt => 'Site logo', :draggable => false %>
+    <%= image_tag Settings::General.site_logo, :id => "site-logo", :alt => "Site logo", :draggable => false %>
     </div>
     <div class="mx-auto text-center mt-2">
      <%= image_tag("illustrations/welcome_login.png", width: 200) %>
@@ -30,13 +30,13 @@
 
   <% if devise_mapping.rememberable? %>
     <div class="custom-control custom-checkbox">
-      <%= f.check_box :remember_me, class: "custom-control-input"  %>
+      <%= f.check_box :remember_me, class: "custom-control-input" %>
       <%= f.label :remember_me, class: "custom-control-label" %>
     </div>
   <% end %>
 
   <div class="d-grid gap-2 col-6 mx-auto mt-4">
-    <%= f.button "Log in", class: "btn btn-block btn-dark btn-block px-2", type: 'submit' %>
+    <%= f.button "Log in", class: "btn btn-block btn-dark btn-block px-2", type: "submit" %>
   </div>
 <% end %>
   </section>

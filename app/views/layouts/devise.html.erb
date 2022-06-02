@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @title %> | <%= SiteSettings.site_title %></title>
+    <title><%= @title %> | <%= Settings::General.site_name %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%= render partial: "layouts/head" %>
-      <%= stylesheet_link_tag 'authentication', media: 'all' %>
+      <%= stylesheet_link_tag "authentication", media: "all" %>
   </head>
   <body class="devise-auth<% if device == "mobile" %> is-mobile<% end %> <%= @custom_class %>">
     <%= yield %>

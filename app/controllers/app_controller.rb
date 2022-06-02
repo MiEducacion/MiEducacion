@@ -3,8 +3,8 @@
 class AppController < ApplicationController
   layout "application"
   before_action :authenticate_user!, unless: lambda {
-                                               SiteSettings.public_site || !SiteSettings.force_redirect_private
-                                             }
+                         !Settings::LMS.private || Settings::LMS.force_redirect_private?
+                       }
 
   def home; end
 
