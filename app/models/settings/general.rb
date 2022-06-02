@@ -2,7 +2,7 @@
 
 module Settings
   class General < Base
-    self.table_name = "site_configs"
+    self.table_name = :site_configs
 
     # Meta
     setting :admin_action_taken_at, type: :datetime, default: Time.current
@@ -14,9 +14,9 @@ module Settings
       validates: {
         format: {
           with: /\A[^[<|>]]+\Z/,
-          message: "may not include the \"<\" nor \">\" character"
-        }
-      }
+          message: "may not include the \"<\" nor \">\" character",
+        },
+      },
     )
     setting :site_description, type: :string
     setting :site_shortname, type: :string, default: ApplicationConfig["MIEDUCACION_SHORTNAME"] || "MiEducacion"
