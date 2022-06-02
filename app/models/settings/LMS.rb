@@ -10,9 +10,9 @@ module Settings
     setting :force_redirect_private,
             type: :boolean,
             default: ApplicationConfig["MIEDUCACION_FORCE_REDIRECT_PRIVATE"] || true
-    setting :private,
+    setting :public,
             type: :boolean,
-            default: ApplicationConfig["MIEDUCACION_PRIVATE"] || true
+            default: ApplicationConfig["MIEDUCACION_PUBLIC"] || false
 
     setting :banner_show, type: :string
     setting :banner_content, type: :string
