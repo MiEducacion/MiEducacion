@@ -1,7 +1,7 @@
 <template>
-  <v-card class="px-4 py-4 my-4 NewPost--card mx-2 mb-8" rounded v-if="currentUser">
+  <v-card class="px-8 py-2 NewPost--card mx-2 mb-8" rounded v-if="currentUser">
     <v-flex shrink class="d-flex" justify-content="start">
-      <v-avatar size="64">
+      <v-avatar size="40">
         <v-gravatar :email="currentUser.email" alt="User Avatar" :size="120" class="avatar" />
       </v-avatar>
       <div class="footer-btns">
