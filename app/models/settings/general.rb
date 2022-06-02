@@ -2,7 +2,7 @@
 
 module Settings
   class General < Base
-    self.table_name = :site_configs
+    self.table_name = :site_generals
 
     # Meta
     setting :admin_action_taken_at, type: :datetime, default: Time.current
