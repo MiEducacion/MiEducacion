@@ -67,6 +67,8 @@ group :development do
 end
 
 group :development do
+  gem "better_errors", "~> 2.9" # Provides a better error page for Rails and other Rack apps
+  gem "binding_of_caller"
   gem "brakeman"
 end
 
