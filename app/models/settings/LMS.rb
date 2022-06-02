@@ -1,6 +1,6 @@
 module Settings
   class LMS < Base
-    self.table_name = :settings_mieducacion
+    self.table_name = :settings_lms
 
     setting :copyright_start_year,
             type: :integer,
@@ -14,6 +14,5 @@ module Settings
 
     setting :banner_show, type: :string
     setting :banner_content, type: :string
-
   end
 end
