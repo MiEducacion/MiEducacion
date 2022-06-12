@@ -21,7 +21,7 @@
       </v-btn>
     </template>
 
-    <v-list dense rounded>
+    <v-list dense>
       <v-list-item
         active-class="no-active"
         :to="`/user/${currentUser.id}`"
@@ -55,7 +55,7 @@
         @click = "userLogout"
       >
         <v-list-item-icon>
-          <v-icon>mdi-wrench-outline</v-icon>
+          <v-icon>mdi-logout</v-icon>
         </v-list-item-icon>
         <v-list-item-title>Cerrar Sesión</v-list-item-title>
       </v-list-item>
@@ -73,8 +73,8 @@
 export default {
   data() {
     return {
-      currentUser: window.MiEducacion.currentUser,
-    }
+
+}
   },
   methods: {
     userLogout () {
