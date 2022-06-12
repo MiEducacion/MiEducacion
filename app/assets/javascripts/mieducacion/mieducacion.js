@@ -65,14 +65,18 @@ $('script[type="text/x-template"]').each(function () {
     $this.remove();
   });
 
+ /* Remove noscript tag in SPA */
+  document.querySelector("noscript")?.remove();
 
-document.addEventListener('DOMContentLoaded', () => {
-    const app = new Vue({
+  const app = new Vue({
         el: '#mieducacion',
         vuetify: new Vuetify(),
         router,
         store,
         render: h => h(App)
     }).$mount()
-    document.body.appendChild(app.$el)
-})
+  document.body.appendChild(app.$el)
+
+  let MiEducacion = app
+
+  window.MiEducacion = MiEducacion
