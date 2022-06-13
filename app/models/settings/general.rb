@@ -31,5 +31,8 @@ module Settings
     setting :app_icon,
             type: :string,
             default: ApplicationConfig["MIEDUCACION_APP_ICON"] || "/images/default/mieducacion_default_appicon.png"
+    setting :default_locale,
+            type: :string,
+            default: ApplicationConfig["MIEDUCACION_DEFAULT_LOCALE"] || "en"
   end
 end

@@ -1,0 +1,4 @@
+es:
+  js:
+    login:
+      welcome_to: "Bienvenido a %{site_name}"
