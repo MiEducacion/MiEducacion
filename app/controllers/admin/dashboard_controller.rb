@@ -24,7 +24,6 @@ class Admin::DashboardController < ApplicationController
   private
 
   def admin?
-    redirect_to "/not_found", status: 301 unless current_user.has_role?(:admin)
-    # Alexander: I wonder if there is a way to return a 404 without redirecting?
+    render :status => 404 unless current_user.has_role?(:admin)
   end
 end
