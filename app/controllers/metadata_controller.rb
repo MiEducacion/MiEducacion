@@ -24,9 +24,26 @@ class MetadataController < ApplicationController
           src: Settings::General.app_icon,
           sizes: "512x512",
           type: "image/png",
-          purpose: "maskable"
-        }
-      ]
+          purpose: "maskable",
+        },
+      ],
+      shortcuts: [
+        {
+          name: I18n.t("js.lms.courses"),
+          short_name: I18n.t("js.lms.courses"),
+          url: "/courses",
+        },
+        {
+          name: I18n.t("js.lms.groups"),
+          short_name: I18n.t("js.lms.groups"),
+          url: "/groups",
+        },
+        {
+          name: I18n.t("js.user.inbox"),
+          short_name: I18n.t("js.user.inbox"),
+          url: "/my/inbox",
+        },
+      ],
     }
   end
 end
