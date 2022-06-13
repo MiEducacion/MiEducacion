@@ -10,7 +10,8 @@
       <script type="text/x-template" data-template-name="additional-nav-buttons">
             <v-btn text> I am a Button rendered on a slot</v-btn>
       </script>
-   </head>
+   </head>    
+   <div class="hidden" id="data-preloaded" data-preloaded="<%= preloaded_json %>"></div>
    <body
       class="app-body<% if device == "mobile" %> is-mobile<% end %>"
       data-user-status="<%= j(user_logged_in_status) %>">
@@ -26,12 +27,6 @@
          <%= render partial: "layouts/noscript_footer" %>
       </noscript>
       <script type="text/javascript">
-         window.MiEducacion = {
-           SiteSettings: <%= client_side_app_settings.to_json.html_safe %>,
-           currentUser: <%= current_session.to_json.html_safe %>,
-           mobile: <% if device == "mobile" %>true<% else %>false<% end %>
-         };
-
          var language = "<%= I18n.locale %>";
       </script>
       <%= javascript_packs_with_chunks_tag "mieducacion" %>

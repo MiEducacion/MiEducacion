@@ -47,9 +47,18 @@ $.ajaxSetup({
 })
 
 window.$ = $;
-Vue.prototype.currentUser = window.MiEducacion.currentUser;
-Vue.prototype.SiteSettings = window.MiEducacion.SiteSettings;
-Vue.prototype.isMobile = window.MiEducacion.mobile;
+let preloaded;
+const preloadedDataElement = document.getElementById("data-preloaded");
+
+if (preloadedDataElement) {
+  preloaded = JSON.parse(preloadedDataElement.dataset.preloaded);
+}
+
+let MiEducacion;
+
+Vue.prototype.currentUser = preloaded.currentUser;
+Vue.prototype.SiteSettings = preloaded.SiteSettings;
+Vue.prototype.isMobile = preloaded.isMobile;
 
 /* TODO: Register the components that are in head tag so that they are available in the app */
 $('script[type="text/x-template"]').each(function () {
@@ -77,6 +86,6 @@ $('script[type="text/x-template"]').each(function () {
     }).$mount()
   document.body.appendChild(app.$el)
 
-  let MiEducacion = app
+  MiEducacion = app
 
   window.MiEducacion = MiEducacion
