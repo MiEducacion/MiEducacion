@@ -38,3 +38,4 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+app/assets/javascripts/mieducacion/i18n/translations.js
