@@ -40,7 +40,6 @@ export default {
   components: { NotificationsMenu, UserMenu },
   data() {
     return {
-      currentUser: window.MiEducacion.currentUser
     }
   },
 }

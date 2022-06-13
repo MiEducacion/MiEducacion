@@ -42,21 +42,5 @@
 <script>
 export default {
     name: 'SiteBottomNavigation',
-    data () {
-        return {
-            isMobile: window.MiEducacion.mobile,
-            currentUser: window.MiEducacion.currentUser
-        }
-         
-         },
-
-    computed: {
-
-    },
   }
-
 </script>
-
-<style>
-
-</style>
