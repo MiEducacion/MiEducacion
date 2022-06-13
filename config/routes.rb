@@ -2,13 +2,11 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  resources :groups, constraints: ->(request) { request.format == :json }
 
   root to: "app#index", as: "app"
   resources :wizard
-  get "session/current", to: "session/current_user#current_session", constraints: lambda { |request|
-                       request.format == :json
-                     }
+
+  get "session/current", to: "session#current_session"
   get "manifest.webmanifest" => "metadata#webmanifest", as: :manifest
   get "manifest.json" => "metadata#webmanifest"
 
@@ -22,9 +20,7 @@ Rails.application.routes.draw do
     mount Logster::Web => "/logs"
   end
 
-  namespace :admin do
-    get "dashboard" => "dashboard#index"
-  end
+  draw :admin
 
   mount ActionCable.server => "/cable"
 
