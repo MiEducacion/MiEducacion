@@ -100,3 +100,5 @@ gem "highline"
 gem "rails_material_design_icons"
 
 gem "request_store", "~> 1.5" # RequestStore gives you per-request global storage
+# For multi-lingual app
+gem "i18n-js"
