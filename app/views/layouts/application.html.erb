@@ -26,12 +26,6 @@
          </div>
          <%= render partial: "layouts/noscript_footer" %>
       </noscript>
-      <%= javascript_tag do %>
-         window.I18n = {}
-         I18n.defaultLocale = "<%= I18n.default_locale %>";
-         I18n.locale = "<%= I18n.locale %>";
-         I18n.fallbacks = true;
-      <% end %>
-      <%= javascript_packs_with_chunks_tag "mieducacion" %>
+      <%= javascript_packs_with_chunks_tag "start-mieducacion" %>
    </body>
 </html>
