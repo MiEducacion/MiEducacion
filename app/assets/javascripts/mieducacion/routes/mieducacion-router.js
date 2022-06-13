@@ -1,5 +1,12 @@
-const SiteSettings = window.MiEducacion.SiteSettings
-const user = window.MiEducacion.currentUser
+let preloaded;
+const preloadedDataElement = document.getElementById("data-preloaded");
+
+if (preloadedDataElement) {
+  preloaded = JSON.parse(preloadedDataElement.dataset.preloaded);
+}
+
+const user = preloaded.currentUser;
+const SiteSettings = preloaded.SiteSettings;
 
 import Vue from "vue";
 import VueRouter from 'vue-router'
