@@ -1,0 +1,11 @@
+en:
+  js:
+    login:
+      welcome_to: "Welcome to %{site_name}"
+
+    lms:
+      courses: "Courses"
+      groups: "Groups"
+    
+    user:
+      inbox: "Inbox"
