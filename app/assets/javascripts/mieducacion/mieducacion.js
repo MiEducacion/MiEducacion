@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuetify from 'vuetify'
 import App from './app.vue'
 import router from './routes/mieducacion-router'
-import twemoji from 'twemoji'
 import Gravatar from 'vue-gravatar';
 import VueDirectiveMarkdown from 'vue-directive-markdown'
 
