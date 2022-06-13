@@ -22,25 +22,9 @@
 </template>
 
 <script>
-import GreetingDay from 'images/greetings/greeting_day.png'
-import GreetingAfternoon from 'images/greetings/greeting_afternoon.png'
-import GreetingEvening from 'images/greetings/greeting_evening.png'
-import GreetingNight from 'images/greetings/greeting_night.png'
-
-
-
-
 export default {
   name: 'CampusNewPost',
   components: {},
-  data() {
-    return {
-      GreetingDay,
-      GreetingAfternoon,
-      GreetingEvening,
-      GreetingNight
-    }
-  },
 }
 </script>
 
