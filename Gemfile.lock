@@ -252,6 +252,8 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    serviceworker-rails (0.6.0)
+      railties (>= 3.1)
     sidekiq (6.4.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -333,6 +335,7 @@ DEPENDENCIES
   rubocop-rspec (~> 2.11)
   sass-rails (>= 6)
   selenium-webdriver
+  serviceworker-rails
   sidekiq (~> 6.4)
   sqlite3 (~> 1.4)
   tzinfo-data

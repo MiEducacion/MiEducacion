@@ -22,7 +22,7 @@ class MetadataController < ApplicationController
       icons: [
         {
           src: Settings::General.app_icon,
-          sizes: "512x512",
+          sizes: "1024x1024",
           type: "image/png",
           purpose: "maskable",
         },
