@@ -27,6 +27,14 @@ module ApplicationHelper
     user_signed_in? ? "logged-in" : "logged-out"
   end
 
+  def preloaded_json
+    {
+      SiteSettings: client_side_app_settings,
+      currentUser: current_session,
+      isMobile: device == "mobile",
+    }.to_json
+  end
+
   def current_session
     return unless user_signed_in?
 
