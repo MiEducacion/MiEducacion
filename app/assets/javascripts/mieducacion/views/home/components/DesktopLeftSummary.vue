@@ -37,7 +37,7 @@ export default {
   name: 'DesktopLeftSummary',
   data() {
     return {
-      currentUser: window.MiEducacion.currentUser
+    
     }
   }
 }

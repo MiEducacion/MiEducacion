@@ -38,8 +38,7 @@ export default {
       GreetingDay,
       GreetingAfternoon,
       GreetingEvening,
-      GreetingNight,
-      currentUser: window.MiEducacion.currentUser
+      GreetingNight
     }
   },
 }
