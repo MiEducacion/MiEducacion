@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     mount Logster::Web => "/logs"
   end
 
+  namespace :admin do
+    get "dashboard" => "dashboard#index"
+  end
+
   mount ActionCable.server => "/cable"
 
   match "*path", to: "app#index", via: :all
