@@ -9,6 +9,7 @@ import VueDirectiveMarkdown from 'vue-directive-markdown'
 require('./lib/ajax-setup')
 require('./lib/i18n')
 require('./lib/register-components')
+require('./filters/truncate')
 
 
 import SiteSpinner from './components/site-spinner.vue'
