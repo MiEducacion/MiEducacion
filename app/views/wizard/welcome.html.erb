@@ -3,15 +3,15 @@
       <div class="wizard-step-contents">
          <h1 class="wizard-step-title text-center mx-auto">We welcome you to MiEducación!</h1>
          <div class="mx-auto text-center">
-         <%= image_tag 'illustrations/mieducacion-wizard-welcome.png', class: 'welcome-banner--img', width: 280, :draggable => false %>
+         <%= image_tag "illustrations/mieducacion-wizard-welcome.png", class: "welcome-banner--img", width: 280, :draggable => false %>
          </div>
 
-        <h1 class="welcome-step-text text-center mx-auto pt-5">
+        <h1 class="wizard-step-text text-center mx-auto pt-5">
         Ready to set up your site?
         </h1>
 
       <div class="text-center d-grid gap-2 cols-6">
-         <%= link_to 'Next', wizard_path(:site_info), class: 'btn btn-dark mt-4' %>
+         <%= link_to "Next", wizard_path(:site_info), class: "btn btn-dark mt-4" %>
 
          </div>
 
@@ -19,7 +19,7 @@
    </div>
    <div class="wizard-footer">
       <div class="mieducacion-logo">
-         <%= image_tag SiteSettings.site_logo, id: 'site-logo' %>
+         <%= image_tag Settings::General.site_logo, id: "site-logo" %>
       </div>
    </div>
 </div>

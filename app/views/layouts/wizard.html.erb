@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html class="mieducacion-wizard">
    <head>
-      <title>Wizard | <%= SiteSettings.site_title %></title>
+      <title>Wizard | <%= site_name.to_s %></title>
       <%= render partial: "layouts/head" %>
-      <%= stylesheet_link_tag 'wizard', media: 'all' %>
+      <%= stylesheet_link_tag "wizard", media: "all" %>
    </head>
    <body class='wizard'>
       <div id='wizard-main'>
