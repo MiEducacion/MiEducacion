@@ -23,7 +23,7 @@ jobs:
           POSTGRES_USER: rails
           POSTGRES_PASSWORD: password
     env:
-      RAILS_ENV: test
+      RAILS_ENV: production
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
     steps:
       - name: Checkout code
@@ -35,7 +35,7 @@ jobs:
           bundler-cache: true
       # Add or replace database setup steps here
       - name: Set up database schema
-        run: bin/rails db:schema:load
+        run: bin/rails rake db:drop db:create db:migrate db:seed
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
