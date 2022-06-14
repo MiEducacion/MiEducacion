@@ -8,6 +8,7 @@ import VueDirectiveMarkdown from 'vue-directive-markdown'
 require('./lib/ajax-setup')
 require('./lib/i18n')
 require('./lib/register-components')
+require('./lib/report-js-error')
 require('./filters/truncate')
 
 
