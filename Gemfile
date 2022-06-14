@@ -103,4 +103,4 @@ gem "request_store", "~> 1.5" # RequestStore gives you per-request global storag
 # For multi-lingual app
 gem "i18n-js"
 # Service Worker with asset pipeline
-gem 'serviceworker-rails'
+gem "serviceworker-rails"

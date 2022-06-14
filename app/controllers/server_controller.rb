@@ -13,7 +13,7 @@ class ServerController < ApplicationController
   def server_status
     {
       booted_at: MiEducacion::BOOTED_AT.to_s,
-      uptime: time_ago_in_words(MiEducacion::BOOTED_AT),
+      uptime: time_ago_in_words(MiEducacion::BOOTED_AT)
     }
   end
 end

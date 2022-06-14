@@ -8,16 +8,16 @@ class SessionController < ApplicationController
       @u = current_user
 
       render json: {
-               current_user: {
-                 id: @u.id,
-                 email: @u.email,
-                 roles: {
-                   is_teacher: @u.has_role?(:teacher),
-                   is_principal: @u.has_role?(:teacher),
-                   is_admin: @u.has_role?(:admin),
-                 },
-               },
-             }
+        current_user: {
+          id: @u.id,
+          email: @u.email,
+          roles: {
+            is_teacher: @u.has_role?(:teacher),
+            is_principal: @u.has_role?(:teacher),
+            is_admin: @u.has_role?(:admin)
+          }
+        }
+      }
     else
       render json: {}, status: 401
     end

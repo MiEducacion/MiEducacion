@@ -1,29 +1,31 @@
 # frozen_string_literal: true
 
-class Admin::DashboardController < ApplicationController
-  before_action :authenticate_user!
-  before_action :admin?
+module Admin
+  class DashboardController < ApplicationController
+    before_action :authenticate_user!
+    before_action :admin?
 
-  def index
-    data = {
-      booted_at: MiEducacion::BOOTED_AT,
-      version_check: {
-        installed_version: MiEducacion::Application::Version::FULL,
-        installed_sha: MiEducacion.git_version,
-        git_branch: MiEducacion.git_branch,
-      },
-    }
-    respond_to do |format|
-      format.html
-      format.json do
-        render json: data
+    def index
+      data = {
+        booted_at: MiEducacion::BOOTED_AT,
+        version_check: {
+          installed_version: MiEducacion::Application::Version::FULL,
+          installed_sha: MiEducacion.git_version,
+          git_branch: MiEducacion.git_branch
+        }
+      }
+      respond_to do |format|
+        format.html
+        format.json do
+          render json: data
+        end
       end
     end
-  end
 
-  private
+    private
 
-  def admin?
-    render :status => 404 unless current_user.has_role?(:admin)
+    def admin?
+      render status: 404 unless current_user.has_role?(:admin)
+    end
   end
 end

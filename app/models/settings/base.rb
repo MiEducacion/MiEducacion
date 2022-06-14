@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This class was adapted from the rails-settings-cached gem.
 # See: https://github.com/huacnlee/rails-settings-cached
 #
@@ -12,7 +14,7 @@ module Settings
     self.abstract_class = true
 
     PROTECTED_KEYS = %w[var value].freeze
-    SEPARATOR_REGEXP = /[\n,;]+/
+    SEPARATOR_REGEXP = /[\n,;]+/.freeze
 
     after_commit :clear_cache, on: %i[create update destroy]
 
@@ -28,7 +30,7 @@ module Settings
           default: default,
           type: type,
           separator: separator,
-          validates: validates,
+          validates: validates
         )
       end
 
@@ -63,7 +65,7 @@ module Settings
         @defined_settings << {
           key: key,
           default: default,
-          type: type || :string,
+          type: type || :string
         }
 
         # Getter
@@ -114,10 +116,10 @@ module Settings
           value.split(separator || SEPARATOR_REGEXP).compact_blank.map(&:strip)
         when :hash
           value = begin
-              YAML.safe_load(value).to_h
-            rescue StandardError
-              {}
-            end
+            YAML.safe_load(value).to_h
+          rescue StandardError
+            {}
+          end
           value.deep_stringify_keys!
           ActiveSupport::HashWithIndifferentAccess.new(value)
         when :integer

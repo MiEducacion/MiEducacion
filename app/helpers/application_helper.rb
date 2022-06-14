@@ -19,7 +19,7 @@ module ApplicationHelper
       site_logo: Settings::General.site_logo,
       public_site: Settings::LMS.public,
       show_site_banner: Settings::LMS.banner_show,
-      site_banner_content: Settings::LMS.banner_content,
+      site_banner_content: Settings::LMS.banner_content
     }
   end
 
@@ -31,7 +31,7 @@ module ApplicationHelper
     {
       SiteSettings: client_side_app_settings,
       currentUser: current_session,
-      isMobile: device == "mobile",
+      isMobile: device == "mobile"
     }.to_json
   end
 
@@ -47,7 +47,7 @@ module ApplicationHelper
       is_teacher: @u.has_role?(:teacher),
       is_principal: @u.has_role?(:teacher),
       is_admin: @u.has_role?(:admin),
-      is_new_user: @u.new_user?,
+      is_new_user: @u.new_user?
     }
   end
 end
