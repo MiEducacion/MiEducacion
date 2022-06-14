@@ -28,3 +28,30 @@ Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
   ConsistentQuotesInMultiline: true
+
+Metrics/CyclomaticComplexity:
+  Description: >-
+    A complexity metric that is strongly correlated to the number
+    of test cases needed to validate a method.
+  Enabled: true
+  Max: 13
+
+Metrics/PerceivedComplexity:
+  Description: >-
+                 A complexity metric geared towards measuring complexity for a
+                 human reader.
+  Enabled: true
+  Max: 14
+
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Enabled: false
+
+Metrics/ClassLength:
+  Description: 'Avoid classes longer than 100 lines of code.'
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
