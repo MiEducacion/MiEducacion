@@ -21,7 +21,6 @@
     <v-card-actions :class="isMobile ? '' : 'px-5'">
       <v-col cols="12">
           <v-textarea
-            v-model="post_comment"
             outlined
             auto-grow
             class="post-comment"
