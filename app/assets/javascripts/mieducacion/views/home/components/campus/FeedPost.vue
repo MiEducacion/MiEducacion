@@ -31,7 +31,7 @@
             label="Add a comment"
             type="text"
           >
-            <template v-slot:prepend>
+            <template v-if="currentUser" v-slot:prepend>
                <v-avatar size="32">
         <v-gravatar :email="currentUser.email" alt="User Avatar" :size="120" class="avatar" />
       </v-avatar>
