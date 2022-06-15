@@ -13,9 +13,9 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-          courses: @courses
+                 courses: @courses,
 
-        },
+               },
                content_type: "application/json"
       end
     end
@@ -28,28 +28,24 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-          course: @course
+                 course: @course,
 
-        },
+               },
                content_type: "application/json"
       end
     end
   end
 
   def new_course
-    @course = Course.new({
-                           name: params[:name],
-                           teachers: params[:teachers],
-                           private: params[:private]
-                         })
-
-    @course.save
-
+    course = Course.create(course_params)
     respond_to do |format|
       format.json do
-        render json: {
-          course: @course
-        }, content_type: "application/json", status: 200
+        if course.valid?
+          render json: {
+                   course: course,
+                 }, content_type: "application/json", status: 200
+        else render json: { errors: course.errors.full_messages },
+                    status: :not_acceptable         end
       end
     end
   end
@@ -58,5 +54,9 @@ class CoursesController < ApplicationController
 
   def public_site?
     redirect_to "/login_required", status: 301 unless !Settings::LMS.public || current_user
+  end
+
+  def course_params
+    params.permit(:name, :private, :teachers => [])
   end
 end
