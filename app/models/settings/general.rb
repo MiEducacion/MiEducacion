@@ -21,6 +21,14 @@ module Settings
     setting :site_description, type: :string
     setting :site_shortname, type: :string, default: ApplicationConfig["MIEDUCACION_SHORTNAME"] || "MiEducacion"
 
+    setting :force_redirect_private,
+            type: :boolean,
+            default: ApplicationConfig["MIEDUCACION_FORCE_REDIRECT_PRIVATE"] || true
+
+    setting :public,
+            type: :boolean,
+            default: ApplicationConfig["MIEDUCACION_PUBLIC"] || false
+
     # Core setup
     setting :waiting_on_first_user, type: :boolean, default: !User.exists?
 
