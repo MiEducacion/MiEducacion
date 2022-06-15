@@ -17,7 +17,7 @@ module ApplicationHelper
     site_settings = {
       title: Settings::General.site_name,
       site_logo: Settings::General.site_logo,
-      public_site: Settings::LMS.public,
+      public_site: Settings::General.public,
       show_site_banner: Settings::LMS.banner_show,
       site_banner_content: Settings::LMS.banner_content
     }
