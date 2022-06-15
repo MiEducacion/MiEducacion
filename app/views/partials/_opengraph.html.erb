@@ -1,0 +1,8 @@
+<% if Settings::General.enable_opengraph %>
+<meta property="og:title" content="<%= site_name.to_s %>" />
+<% unless Settings::General.site_description.blank? %>
+<meta property="og:description" content="<%= Settings::General.opengraph_sitename %>" />
+<% end %>
+<meta property="og:image" content="<%= Settings::General.opengraph_image %>" />
+<% end %>
+<% # TODO: Offer dynamic titles, descriptions and images based on content of URL %>

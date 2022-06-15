@@ -36,5 +36,12 @@ module Settings
     setting :default_locale,
             type: :string,
             default: ApplicationConfig["MIEDUCACION_DEFAULT_LOCALE"] || "en"
+
+    # Social
+
+    # Feature: OpenGraph Cards
+    setting :enable_opengraph, type: :boolean, default: true
+    setting :opengraph_sitename, type: :string, default: :site_name
+    setting :opengraph_image, type: :string, default: Settings::General.site_logo
   end
 end
