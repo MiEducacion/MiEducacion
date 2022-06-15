@@ -33,22 +33,34 @@ const AdminRoutes = {
                     alias: '',
                     name: 'admin.settings.general',
                     path: 'general_settings',
-                    component: GeneralSettings
+                    component: GeneralSettings,
+                    meta: {
+                        requireAdmin: true
+                    }
                 },
                 {
                     name: 'admin.settings.customization',
                     path: 'customization',
-                    component: CustomizationSettings
+                    component: CustomizationSettings,
+                    meta: {
+                        requireAdmin: true
+                    }
                 },
                 {
                     name: 'admin.settings.security',
                     path: 'security',
-                    component: SecuritySettings
+                    component: SecuritySettings,
+                    meta: {
+                        requireAdmin: true
+                    }
                 },
                 {
                     name: 'admin.settings.smtp',
                     path: 'smtp',
-                    component: EmailSettings
+                    component: EmailSettings,
+                    meta: {
+                        requireAdmin: true
+                    }
                 }
             ]
         }
