@@ -21,7 +21,30 @@ const AdminRoutes = {
             component: AdminSettings,
             meta: {
                 requireAdmin: true
-            }
+            },
+            children: [
+                {   
+                    alias: '',
+                    name: 'admin.settings.general',
+                    path: 'general_settings',
+                    component: () => import("../views/admin/settings/GeneralSettings.vue")
+                },
+                {
+                    name: 'admin.settings.customization',
+                    path: 'customization',
+                    component: () => import("../views/admin/settings/CustomizationSettings.vue")
+                },
+                {
+                    name: 'admin.settings.security',
+                    path: 'security',
+                    component: () => import("../views/admin/settings/SecuritySettings.vue")
+                },
+                {
+                    name: 'admin.settings.smtp',
+                    path: 'smtp',
+                    component: () => import("../views/admin/settings/EmailSettings.vue")
+                }
+            ]
         }
     ],
     meta: {

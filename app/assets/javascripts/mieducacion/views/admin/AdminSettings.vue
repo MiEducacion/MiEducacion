@@ -1,5 +1,5 @@
 <template>
-  <div class="panel">
+  <div class="panel settings">
     <v-select
     class="mt-8"
         dense
@@ -12,7 +12,7 @@
         return-object
         @change="logSelect"
       ></v-select>
-      <SiteSpinner />
+      <router-view />
   </div>
 </template>
 
@@ -23,32 +23,30 @@ export default {
         title: 'Admin'
     },
     methods: {
-        fetchDashboard() {
-            $.ajax('/admin/site-settings.json')
-        },
         logSelect(value) {
             console.log(value)
+            this.$router.push({ path: `/admin/settings/${value.id}`});
         }
     },
     data () {
         return { 
             settingsCategories: [{
-                id: 0,
-                name: "General"
+                id: "general_settings",
+                name: I18n.t("js.admin.settings.general_settings")
             },
             {
-                id: 1,
+                id: "customization",
                 name: "Customization"
             },
             {
-                id: 2,
-                name: "Login"
+                id: "security",
+                name: "Security"
             },
             {
-                id: 3,
+                id: "smtp",
                 name: "Email"
             }],
-            currentCategory: 0,
+            currentCategory: this.$router.currentRoute.path.split("/")[3]
 
         }
     }

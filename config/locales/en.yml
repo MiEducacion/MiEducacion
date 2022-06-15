@@ -9,3 +9,7 @@ en:
     
     user:
       inbox: "Inbox"
+
+    admin:
+      settings:
+        general_settings: "General"

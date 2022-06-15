@@ -9,3 +9,7 @@ es:
     
     user:
       inbox: "Bandeja de Entrada"
+
+    admin:
+      settings:
+        general_settings: "Ajustes generales"
