@@ -2,6 +2,12 @@ const AdminBase = () => import( /* webpackChunkName: "admin-base" */ '../views/a
 const AdminDashboard = () => import( /* webpackChunkName: "admin-dashboard" */ '../views/admin/AdminDashboard.vue');
 const AdminSettings = () => import( /* webpackChunkName: "admin-settings" */ '../views/admin/AdminSettings.vue');
 
+import GeneralSettings from '../views/admin/settings/GeneralSettings.vue';
+import CustomizationSettings from "../views/admin/settings/CustomizationSettings.vue";
+import SecuritySettings from "../views/admin/settings/SecuritySettings.vue";
+import EmailSettings from "../views/admin/settings/EmailSettings.vue";
+
+
 const AdminRoutes = {
     path: '/admin',
     redirect: '/admin/dashboard',
@@ -27,22 +33,22 @@ const AdminRoutes = {
                     alias: '',
                     name: 'admin.settings.general',
                     path: 'general_settings',
-                    component: () => import("../views/admin/settings/GeneralSettings.vue")
+                    component: GeneralSettings
                 },
                 {
                     name: 'admin.settings.customization',
                     path: 'customization',
-                    component: () => import("../views/admin/settings/CustomizationSettings.vue")
+                    component: CustomizationSettings
                 },
                 {
                     name: 'admin.settings.security',
                     path: 'security',
-                    component: () => import("../views/admin/settings/SecuritySettings.vue")
+                    component: SecuritySettings
                 },
                 {
                     name: 'admin.settings.smtp',
                     path: 'smtp',
-                    component: () => import("../views/admin/settings/EmailSettings.vue")
+                    component: EmailSettings
                 }
             ]
         }
