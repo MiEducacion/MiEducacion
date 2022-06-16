@@ -1,0 +1,11 @@
+{
+    "upload": {  
+      "type": "yaml",
+      "features": ["lang_root"],
+      "files": "config/locales/en.yml"         
+    },
+    "download": {
+      "files": "config/locales/${lang}.yml",
+      "includeSourceLang": true
+    } 
+  }
