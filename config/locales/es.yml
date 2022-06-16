@@ -1,15 +1,27 @@
+---
 es:
   js:
-    login:
-      welcome_to: "Bienvenido a %{site_name}"
-
+    admin:
+      settings:
+        general_settings:
+          public:
+            description: "Si está deshabilitada, solicita autenticación para leer el contenido de este sitio y no permite el acceso anónimo."
+            title: "Sitio público"
+          site_description:
+            description: "Describe este sitio en una frase; se usa en la etiqueta de meta descripción."
+            title: "Descripción del sitio"
+          site_name:
+            description: "El nombre de este sitio, tal como se usa en la etiqueta del título."
+            title: "Nombre del sitio"
+          site_shortname:
+            description: "El título corto se utilizará en la pantalla de inicio del usuario, en el lanzador u otros lugares donde el espacio sea limitado. Debe estar limitado a 12 caracteres."
+            title: "Nombre abreviado del sitio"
+          title: "General"
+        save: "Guardar ajustes"
     lms:
       courses: "Cursos"
       groups: "Grupos"
-    
+    login:
+      welcome_to: "Te damos la bienvenida a %{site_name}"
     user:
-      inbox: "Bandeja de Entrada"
-
-    admin:
-      settings:
-        general_settings: "Ajustes generales"
+      inbox: "Bandeja de entrada"

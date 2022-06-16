@@ -1,20 +1,27 @@
+---
 en:
   js:
-    login:
-      welcome_to: "Welcome to %{site_name}"
-
-    lms:
-      courses: "Courses"
-      groups: "Groups"
-    
-    user:
-      inbox: "Inbox"
-
     admin:
       settings:
         general_settings:
+          public:
+            description: "If disabled, require authentication to read content on this site, disallow anonymous access."
+            title: "Public site"
+          site_description:
+            description: "Describe this site in one sentence; used in the meta description tag."
+            title: "Site description"
+          site_name:
+            description: "The name of this site, as used in the title tag."
+            title: "Site name"
+          site_shortname:
+            description: "The short title will be used on the user's home screen, launcher, or other places where space may be limited. It should be limited to 12 characters."
+            title: "Site shortname"
           title: "General"
-          site_name: "Site Name"
-          site_description: "Site description"
-          
         save: "Save settings"
+    lms:
+      courses: "Courses"
+      groups: "Groups"
+    login:
+      welcome_to: "Welcome to %{site_name}"
+    user:
+      inbox: "Inbox"
