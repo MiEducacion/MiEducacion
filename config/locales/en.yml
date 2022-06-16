@@ -12,7 +12,9 @@ en:
 
     admin:
       settings:
-        general_settings: "General"
+        general_settings:
+          title: "General"
           site_name: "Site Name"
           site_description: "Site description"
+          
         save: "Save settings"

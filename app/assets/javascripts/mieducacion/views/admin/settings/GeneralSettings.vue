@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="center">
-      <h1>{{ t("js.admin.settings.general_settings") }}</h1>
+      <h1>{{ t("js.admin.settings.general_settings.title") }}</h1>
       <v-container>
         <div class="pt-4">
           <v-form @submit.prevent="updateSettings">
