@@ -25,7 +25,8 @@ Vue.config.errorHandler = function(err, vm, info) {
         message: err,
         url: window.AppRouter.currentRoute.path,
         window_location: window.location && (window.location + ""),
-        stacktrace: info
+        stacktrace: info,
+        severity: 'error'
     }
 
     $.ajax("/logs/report_js_error", {
@@ -51,7 +52,8 @@ Vue.config.warnHandler = function(err, vm, info) {
         message: err,
         url: window.AppRouter.currentRoute.path,
         window_location: window.location && (window.location + ""),
-        stacktrace: info
+        stacktrace: info,
+        severity: 'info'
     }
 
     $.ajax("/logs/report_js_error", {
