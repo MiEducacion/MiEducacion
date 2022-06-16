@@ -32,7 +32,7 @@ export default {
         return { 
             settingsCategories: [{
                 id: "general_settings",
-                name: I18n.t("js.admin.settings.general_settings")
+                name: I18n.t("js.admin.settings.general_settings.title")
             },
             {
                 id: "customization",
