@@ -1,0 +1,27 @@
+---
+pt-BR:
+  js:
+    admin:
+      settings:
+        general_settings:
+          public:
+            description: "Se desativado, exija autenticação para ler o conteúdo deste site, não permite acesso anônimo."
+            title: "Site público"
+          site_description:
+            description: "Descreva este site em uma frase; usado na meta description tag."
+            title: "Descrição do site"
+          site_name:
+            description: "O nome deste site, conforme usado na tag de título."
+            title: "Nome do site"
+          site_shortname:
+            description: "O título curto será usado na tela inicial do usuário, no iniciador ou em outros lugares onde o espaço possa ser limitado. Ele deve ser limitado a 12 caracteres."
+            title: "Nome abreviado do site"
+          title: "Geral"
+        save: "Salvar configurações"
+    lms:
+      courses: "Cursos"
+      groups: "Grupos"
+    login:
+      welcome_to: "Bem-vindo a %{site_name}"
+    user:
+      inbox: "Mensagens"
