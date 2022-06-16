@@ -6,20 +6,42 @@
         <div class="pt-4">
           <v-form @submit.prevent="updateSettings">
             <template v-for="setting in settingsModel">
-              <div class="setting-container" :key="setting.name">
+              <v-row class="setting-container" :key="setting.name" align="start">
+                <v-col cols="12" sm="6">
+                <span class="setting-title">
+                  {{ t(`js.admin.settings.general_settings.${setting.name}.title`) }}
+                </span>
+                </v-col>
+                <v-col md="6" sm="12" cols="auto">
                 <v-text-field
-              v-if="setting.type == 0"            
-              :v-model="settings[setting.name]"
-              :value="setting.value"
-              :rules="[() => !!settings[setting.name] || 'This field is required']"
-              :label="t(`js.admin.settings.general_settings.${setting.name}`)"
-              placeholder="MiEducacion"
-              required
-            ></v-text-field>
-                {{setting}}
-              </div>
+                  v-if="setting.type == 0"
+                  @input.native="settings = $event.target.value"
+                  :value="setting.value"
+                  outlined
+                  dense
+                  class="setting-value"
+                  type="text"
+                  :rules="[() => !!settings[setting.name]|| 'This field is required']"
+                  :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
+                  placeholder="MiEducacion"
+                  required
+                  hide-details
+                ></v-text-field>
+                <v-checkbox
+                  class="mt-0 setting-value"
+                  v-else-if="setting.type == 1"
+                  v-model="checkbox"
+                  :value="SiteSettings.public_site"
+                  :label="t(`js.admin.settings.general_settings.${setting.name}.description`)"
+                >
+                </v-checkbox>
+                <span v-if="setting.type !== 1" class="setting-description">
+                {{ t(`js.admin.settings.general_settings.${setting.name}.description`) }}
+                </span>
+                </v-col>
+              </v-row>
             </template>
-              <v-btn
+            <v-btn
               :loading="btnLoading"
               color="var(--mieducacion-primary)"
               dark
@@ -40,7 +62,7 @@ export default {
   name: 'AdminGeneralSettings',
   data() {
     return {
-      settings: {},
+      settings: [],
       btnLoading: null,
       settingsModel: [
         {

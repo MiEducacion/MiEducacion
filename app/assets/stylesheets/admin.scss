@@ -108,7 +108,25 @@
 }
 
 .settings .setting-container {
-    padding-bottom: 20px
+    padding-bottom: 20px;
+
+    & .setting-title {
+        float: left;
+        margin-right: 12px;
+    }
+
+      .setting-value {
+        padding-right: 20px;
+    }
+
+    .setting-description {
+        display: block;
+        padding-top: 4px;
+        color: #888;
+        font-weight: 400;
+        font-size: var(--font-down-1);
+      }
+
 }
 
 @media screen and (max-width: 600px) {
