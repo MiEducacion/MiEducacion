@@ -1,5 +1,5 @@
 <template>
-    <div id="user-profile" class="pt-10">
+    <div id="user-profile" class="pt-10 mb-16">
     <v-container fluid class="fill-height user-main align-start">
         <div class="details">
             <div class="u-primary">

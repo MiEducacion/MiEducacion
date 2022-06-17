@@ -1,5 +1,5 @@
 <template>
-  <div id="site-homepage" class="pt-10 mb-4">
+  <div id="site-homepage" class="pt-10 mb-16">
     <SiteBanner/>
     <v-container fluid class="fill-height home-container">
       <!--       <v-alert

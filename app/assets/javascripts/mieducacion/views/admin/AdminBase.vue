@@ -1,5 +1,5 @@
 <template>
-  <div class="admin-dashboard pt-10">
+  <div class="admin-dashboard pt-10 mb-16">
     <v-container fluid class="admin-container align-start pb-10">
       <v-tabs class="nav-pills" active-class="nav-pills--active" show-arrows>
         <v-tab to="/admin/dashboard" class="mx-2">
