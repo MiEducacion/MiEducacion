@@ -24,13 +24,13 @@ const AdminRoutes = {
         {
             name: 'admin.settings',
             path: 'settings',
+            redirect: '/admin/settings/general_settings',
             component: AdminSettings,
             meta: {
                 requireAdmin: true
             },
             children: [
                 {   
-                    alias: '',
                     name: 'admin.settings.general',
                     path: 'general_settings',
                     component: GeneralSettings,
