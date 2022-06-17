@@ -25,3 +25,7 @@ en:
       welcome_to: "Welcome to %{site_name}"
     user:
       inbox: "Inbox"
+    core:
+      error_not_modified: "No changes have been made"
+      error_generic: "An error has occurred"
+      success_settings: "Settings saved successfully"
