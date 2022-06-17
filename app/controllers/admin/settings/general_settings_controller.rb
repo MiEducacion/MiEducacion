@@ -6,7 +6,7 @@ module Admin
       def create
         result = ::Settings::General::Upsert.call(settings_params)
         if result.success?
-          render json: { message: I18n.t("core.success_settings") }, status: :ok
+          render json: { message: I18n.t("js.core.success_settings") }, status: :ok
         else
           render json: { error: result.errors.to_sentence }, status: :unprocessable_entity
         end
