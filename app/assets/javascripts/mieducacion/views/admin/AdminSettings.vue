@@ -10,7 +10,7 @@
         item-value="id"
         :items="settingsCategories"
         return-object
-        @change="logSelect"
+        @change="navigateTo"
       ></v-select>
       <router-view />
   </div>
@@ -23,8 +23,7 @@ export default {
         title: 'Admin'
     },
     methods: {
-        logSelect(value) {
-            console.log(value)
+        navigateTo(value) {
             this.$router.push({ path: `/admin/settings/${value.id}`});
         }
     },
