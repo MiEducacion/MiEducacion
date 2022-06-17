@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSettingsUserExperiences < ActiveRecord::Migration[6.1]
     def self.up
       create_table :settings_user_experiences do |t|

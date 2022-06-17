@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSettingsLms < ActiveRecord::Migration[6.1]
     def self.up
       create_table :settings_lms do |t|
