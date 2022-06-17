@@ -49,7 +49,7 @@ module Settings
 
     # Feature: OpenGraph Cards
     setting :enable_opengraph, type: :boolean, default: true
-    setting :opengraph_sitename, type: :string, default: :site_name
+    setting :opengraph_sitename, type: :string, default: Settings::General.site_name
     setting :opengraph_image, type: :string, default: Settings::General.site_logo
   end
 end

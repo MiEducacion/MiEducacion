@@ -1,7 +1,7 @@
 <% if Settings::General.enable_opengraph %>
-<meta property="og:title" content="<%= site_name.to_s %>" />
+<meta property="og:title" content="<%= Settings::General.opengraph_sitename %>" />
 <% unless Settings::General.site_description.blank? %>
-<meta property="og:description" content="<%= Settings::General.opengraph_sitename %>" />
+<meta property="og:description" content="<%= Settings::General.site_description %>" />
 <% end %>
 <meta property="og:image" content="<%= Settings::General.opengraph_image %>" />
 <% end %>
