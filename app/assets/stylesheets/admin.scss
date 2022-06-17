@@ -127,6 +127,22 @@
         font-size: var(--font-down-1);
       }
 
+      .setting-image-uploader {
+        display: flex;
+
+      &
+
+      .uploaded-image-preview {
+        height: 270px;
+        width: 400px;
+        max-height: 150px;
+        margin-bottom: 10px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #C5C5C5;
+    }
+}
+
 }
 
 @media screen and (max-width: 600px) {

@@ -48,6 +48,16 @@
                     :label="t(`js.admin.settings.general_settings.${setting.name}.description`)"
                   >
                   </v-checkbox>
+
+                  <!-- Type 2: Image -->
+
+                  <div v-else-if="setting.type == 2">
+                    <div class="setting-image-uploader">
+                      <div class="uploaded-image-preview" :style="`background-image: url('${setting.value}')`">
+                        
+                      </div>
+                    </div>
+                  </div>
                   <span v-if="setting.type !== 1" class="setting-description">
                     {{ t(`js.admin.settings.general_settings.${setting.name}.description`) }}
                   </span>
@@ -80,6 +90,11 @@ export default {
       settings: {},
       btnLoading: null,
       settingsModel: [
+        {
+          name: 'site_logo',
+          type: 2,
+          value: this.SiteSettings.site_logo
+        },
         {
           name: 'site_name',
           type: 0,
