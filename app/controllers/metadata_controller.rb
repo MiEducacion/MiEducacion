@@ -14,7 +14,7 @@ class MetadataController < ApplicationController
     display = "standalone"
     {
       name: Settings::General.site_name,
-      short_name: Settings::General.site_shortname,
+      short_name: Settings::General.site_shortname.presence || Settings::General.site_name.truncate(12, separator: " ", omission: ""),
       display: display,
       start_url: "/",
       background_color: "#FFF",
@@ -24,26 +24,26 @@ class MetadataController < ApplicationController
           src: Settings::General.app_icon,
           sizes: "1024x1024",
           type: "image/png",
-          purpose: "maskable"
-        }
+          purpose: "maskable",
+        },
       ],
       shortcuts: [
         {
           name: I18n.t("js.lms.courses"),
           short_name: I18n.t("js.lms.courses"),
-          url: "/courses"
+          url: "/courses",
         },
         {
           name: I18n.t("js.lms.groups"),
           short_name: I18n.t("js.lms.groups"),
-          url: "/groups"
+          url: "/groups",
         },
         {
           name: I18n.t("js.user.inbox"),
           short_name: I18n.t("js.user.inbox"),
-          url: "/my/inbox"
-        }
-      ]
+          url: "/my/inbox",
+        },
+      ],
     }
   end
 end
