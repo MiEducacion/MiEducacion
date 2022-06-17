@@ -10,6 +10,9 @@ pt-BR:
           site_description:
             description: "Descreva este site em uma frase; usado na meta description tag."
             title: "Descrição do site"
+          site_logo:
+            description: "A imagem do logotipo no canto superior esquerdo do seu site. Use uma imagem retangular ampla com uma altura de 120 e uma proporção maior que 3:1."
+            title: "Logotipo do site"
           site_name:
             description: "O nome deste site, conforme usado na tag de título."
             title: "Nome do site"
@@ -18,6 +21,10 @@ pt-BR:
             title: "Nome abreviado do site"
           title: "Geral"
         save: "Salvar configurações"
+    core:
+      error_generic: "Ocorreu um erro"
+      error_not_modified: "Nenhuma alteração foi feita"
+      success_settings: "Configurações salvas com sucesso"
     lms:
       courses: "Cursos"
       groups: "Grupos"

@@ -10,6 +10,9 @@ es:
           site_description:
             description: "Describe este sitio en una frase; se usa en la etiqueta de meta descripción."
             title: "Descripción del sitio"
+          site_logo:
+            description: "La imagen del logotipo en la parte superior izquierda de tu sitio. Utilice una imagen rectangular ancha con una altura de 120 y una relación de aspecto superior a 3:1."
+            title: "Logotipo del sitio"
           site_name:
             description: "El nombre de este sitio, tal como se usa en la etiqueta del título."
             title: "Nombre del sitio"
@@ -18,6 +21,10 @@ es:
             title: "Nombre abreviado del sitio"
           title: "General"
         save: "Guardar ajustes"
+    core:
+      error_generic: "Se ha producido un error."
+      error_not_modified: "No se han realizado cambios"
+      success_settings: "Configuración guardada correctamente"
     lms:
       courses: "Cursos"
       groups: "Grupos"

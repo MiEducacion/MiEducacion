@@ -10,6 +10,9 @@ en:
           site_description:
             description: "Describe this site in one sentence; used in the meta description tag."
             title: "Site description"
+          site_logo:
+            description: "The logo image at the top left of your site. Use a wide rectangular image with a height of 120 and an aspect ratio greater than 3:1."
+            title: "Site logo"
           site_name:
             description: "The name of this site, as used in the title tag."
             title: "Site name"
@@ -18,6 +21,10 @@ en:
             title: "Site shortname"
           title: "General"
         save: "Save settings"
+    core:
+      error_generic: "An error has occurred"
+      error_not_modified: "No changes have been made"
+      success_settings: "Settings saved successfully"
     lms:
       courses: "Courses"
       groups: "Groups"
@@ -25,7 +32,3 @@ en:
       welcome_to: "Welcome to %{site_name}"
     user:
       inbox: "Inbox"
-    core:
-      error_not_modified: "No changes have been made"
-      error_generic: "An error has occurred"
-      success_settings: "Settings saved successfully"
