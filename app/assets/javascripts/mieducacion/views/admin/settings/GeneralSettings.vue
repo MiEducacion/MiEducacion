@@ -17,6 +17,9 @@
                   </span>
                 </v-col>
                 <v-col md="6" sm="12" cols="auto">
+
+                  <!-- Type 0: String -->
+                  
                   <v-text-field
                     v-if="setting.type == 0"
                     @input.native="settings[setting.name] = $event.target.value"
@@ -32,6 +35,9 @@
                     required
                     hide-details
                   ></v-text-field>
+
+                  <!-- Type 1: Boolean -->
+
                   <v-checkbox
                     v-else-if="setting.type == 1"
                     class="mt-0 setting-value"
