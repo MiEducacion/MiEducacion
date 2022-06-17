@@ -4,4 +4,7 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="mobile-web-app-capable" content="yes">
       <meta property="mieducacion:name" content="<%= site_name %>" />
+      <% if !Settings::General.site_description.blank? %>
+      <meta name="description" content="<%= Settings::General.site_description %>"/>
+      <% end %>
       <link rel="manifest" href="/manifest.webmanifest">
