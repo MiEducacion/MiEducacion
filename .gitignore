@@ -40,3 +40,4 @@ yarn-debug.log*
 .yarn-integrity
 app/assets/javascripts/mieducacion/i18n/translations.js
 localazy.keys.json
+public/javascripts/i18n.js
