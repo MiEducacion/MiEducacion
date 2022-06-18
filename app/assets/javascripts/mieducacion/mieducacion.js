@@ -4,6 +4,7 @@ import App from './app.vue'
 import router from './routes/mieducacion-router'
 import Gravatar from 'vue-gravatar';
 import VueDirectiveMarkdown from 'vue-directive-markdown'
+import twemoji from 'twemoji'
 
 require('./lib/ajax-setup')
 require('./lib/i18n')
