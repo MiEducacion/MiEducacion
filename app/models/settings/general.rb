@@ -29,7 +29,7 @@ module Settings
             type: :boolean,
             default: ApplicationConfig["MIEDUCACION_PUBLIC"] || false
 
-    setting :show_site_banner, type: :string
+    setting :show_site_banner, type: :boolean, default: false
     setting :site_banner_content, type: :string
 
     # Core setup
