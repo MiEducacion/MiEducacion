@@ -31,7 +31,6 @@
                     type="text"
                     :rules="[() => !!settings[setting.name]|| 'This field is required']"
                     :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
-                    placeholder="MiEducacion"
                     required
                     hide-details
                   ></v-text-field>
