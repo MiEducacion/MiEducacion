@@ -48,7 +48,7 @@
         <v-list-item-icon>
           <v-icon>mdi-wrench-outline</v-icon>
         </v-list-item-icon>
-        <v-list-item-title>Administración del Sitio</v-list-item-title>
+        <v-list-item-title>Administración</v-list-item-title>
       </v-list-item>
       <v-list-item
         active-class="no-active"
