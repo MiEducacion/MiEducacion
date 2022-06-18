@@ -16,33 +16,47 @@
         v-on="on"
       >
         <v-avatar size="32">
-          <v-gravatar :email="currentUser.email" alt="User Avatar" :size="120" />
+          <v-gravatar
+            :email="currentUser.email"
+            alt="User Avatar"
+            :size="120"
+          />
         </v-avatar>
       </v-btn>
     </template>
 
     <v-list dense>
-      <v-list-item
-        active-class="no-active"
-        :to="`/user/${currentUser.id}`"
-      >
+      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}`">
         <v-list-item-icon>
           <v-icon>mdi-account-circle-outline</v-icon>
         </v-list-item-icon>
         <v-list-item-title>Mi Perfil</v-list-item-title>
       </v-list-item>
-      <v-list-item
-        active-class="no-active"
-        :to="`/user/preferences`"
-      >
+      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}/send-invites`">
+        <v-list-item-icon>
+          <v-icon>mdi-account-plus-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>Enviar invitación</v-list-item-title>
+      </v-list-item>
+      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}/library`">
+        <v-list-item-icon>
+          <v-icon>mdi-book-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>Mi librería</v-list-item-title>
+      </v-list-item>
+      <v-divider></v-divider>
+
+      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}/settings`">
         <v-list-item-icon>
           <v-icon>mdi-cog-outline</v-icon>
         </v-list-item-icon>
         <v-list-item-title>Configuración</v-list-item-title>
       </v-list-item>
 
-      <v-list-item v-if="currentUser.is_admin"
+      <v-list-item
+        v-if="currentUser.is_admin"
         active-class="no-active"
+        exact
         to="/admin"
       >
         <v-list-item-icon>
@@ -50,10 +64,9 @@
         </v-list-item-icon>
         <v-list-item-title>Administración</v-list-item-title>
       </v-list-item>
-      <v-list-item
-        active-class="no-active"
-        @click = "userLogout"
-      >
+      <v-divider></v-divider>
+
+      <v-list-item active-class="no-active" @click="userLogout">
         <v-list-item-icon>
           <v-icon>mdi-power</v-icon>
         </v-list-item-icon>
@@ -62,9 +75,7 @@
     </v-list>
   </v-menu>
   <v-btn v-else color="primary" text class="login-button" href="/users/sign_in">
-    <v-icon left>
-      mdi-account
-    </v-icon>
+    <v-icon left> mdi-account </v-icon>
     Login
   </v-btn>
 </template>
