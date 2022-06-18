@@ -41,7 +41,6 @@
                     v-else-if="setting.type == 1"
                     class="mt-0 setting-value"
                     :input-value="setting.value"
-                    :value="setting.value"
                     @change="settings[setting.name] = $event"
                     :v-model="settings[setting.name]"
                     :label="t(`js.admin.settings.general_settings.${setting.name}.description`)"
