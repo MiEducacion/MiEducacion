@@ -4,9 +4,18 @@ en:
     admin:
       settings:
         general_settings:
+          force_redirect_private:
+            description: "If set to true, force redirect users who are not logged in to log in"
+            title: "Force redirect on private site"
           public:
             description: "If disabled, require authentication to read content on this site, disallow anonymous access."
             title: "Public site"
+          show_site_banner:
+            description: "Display a banner for all users on the main screen of the site"
+            title: "Show site banner"
+          site_banner_content:
+            description: "Content of Site Banner"
+            title: "Site banner content"
           site_description:
             description: "Describe this site in one sentence; used in the meta description tag."
             title: "Site description"

@@ -4,9 +4,18 @@ es:
     admin:
       settings:
         general_settings:
+          force_redirect_private:
+            description: "Si se establece en true, forzar la redirección de los usuarios que no han iniciado sesión para que inicien sesión"
+            title: "Forzar redirección en sitio privado"
           public:
             description: "Si está deshabilitada, solicita autenticación para leer el contenido de este sitio y no permite el acceso anónimo."
             title: "Sitio público"
+          show_site_banner:
+            description: "Mostrar un banner para todos los usuarios en la pantalla principal del sitio"
+            title: "Mostrar banner del sitio"
+          site_banner_content:
+            description: "Contenido del banner del sitio"
+            title: "Contenido del banner del sitio"
           site_description:
             description: "Describe este sitio en una frase; se usa en la etiqueta de meta descripción."
             title: "Descripción del sitio"
