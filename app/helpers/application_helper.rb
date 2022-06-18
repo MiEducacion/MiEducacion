@@ -20,8 +20,9 @@ module ApplicationHelper
         site_logo: Settings::General.site_logo,
         site_description: Settings::General.site_description,
         public_site: Settings::General.public,
-        show_site_banner: Settings::LMS.banner_show,
-        site_banner_content: Settings::LMS.banner_content,
+        force_redirect_private: Settings::General.force_redirect_private,
+        show_site_banner: Settings::General.show_site_banner,
+        site_banner_content: Settings::General.site_banner_content,
       }
   end
 
