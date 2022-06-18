@@ -17,9 +17,8 @@
                   </span>
                 </v-col>
                 <v-col md="6" sm="12" cols="auto">
-
                   <!-- Type 0: String -->
-                  
+
                   <v-text-field
                     v-if="setting.type == 0"
                     @input.native="settings[setting.name] = $event.target.value"
@@ -51,8 +50,41 @@
 
                   <div v-else-if="setting.type == 2">
                     <div class="setting-image-uploader">
-                      <div class="uploaded-image-preview" :style="`background-image: url('${setting.value}')`">
-                        
+                      <div
+                        class="uploaded-image-preview"
+                        :style="`background-image: url('${setting.value}')`"
+                      >
+                        <div class="image-upload-controls">
+                          <v-btn
+                            fab
+                            tile
+                            color="var(--mieducacion-danger)"
+                            dark
+                            x-small
+                            elevation="0"
+                            class="mx-2"
+                          >
+                            <v-icon>mdi-delete-outline</v-icon>
+                          </v-btn>
+                          <v-btn
+                            fab
+                            tile
+                            color="var(--mieducacion-primary)"
+                            dark
+                            x-small
+                            elevation="0"
+                            class="mx-2"
+                            @click="openUploadDialog"
+                          >
+                            <v-icon>mdi-image-edit-outline</v-icon>
+                          </v-btn>
+                          <input
+                            @change="preview_image"
+                            :ref="settings[setting.name]"
+                            class="d-none"
+                            :v-model="settings[setting.name]"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -75,7 +107,6 @@
                     hide-details
                     rows="1"
                   ></v-textarea>
-
 
                   <span v-if="setting.type !== 1" class="setting-description">
                     {{ t(`js.admin.settings.general_settings.${setting.name}.description`) }}
