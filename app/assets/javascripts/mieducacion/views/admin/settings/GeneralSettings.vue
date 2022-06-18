@@ -56,6 +56,27 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- Type 3: Long TextBox -->
+
+                  <v-textarea
+                    v-if="setting.type == 3"
+                    @input.native="settings[setting.name] = $event.target.value"
+                    :value="setting.value"
+                    outlined
+                    :v-model="settings[setting.name]"
+                    dense
+                    auto-grow
+                    class="setting-value"
+                    type="text"
+                    :rules="[() => !!settings[setting.name]|| 'This field is required']"
+                    :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
+                    required
+                    hide-details
+                    rows="1"
+                  ></v-textarea>
+
+
                   <span v-if="setting.type !== 1" class="setting-description">
                     {{ t(`js.admin.settings.general_settings.${setting.name}.description`) }}
                   </span>
