@@ -2,7 +2,7 @@
 
 module Settings
   class General < Base
-    self.table_name = :settings_generals
+    self.table_name = :settings_general
 
     # Meta
     setting :admin_action_taken_at, type: :datetime, default: Time.current
@@ -33,7 +33,7 @@ module Settings
     setting :site_banner_content, type: :string
 
     # Core setup
-    setting :waiting_on_first_user, type: :boolean, default: !User.exists?
+    #setting :waiting_on_first_user, type: :boolean, default: !User.exists?
 
     # Images
 
