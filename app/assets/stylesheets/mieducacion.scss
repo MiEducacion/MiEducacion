@@ -162,7 +162,7 @@
     max-width: 380px !important;
 }
 
-.v-btn--active.no-active:not(:focus):not(:hover)::before {
+.v-list-item--active.no-active:not(:focus):not(:hover)::before {
     opacity: 0 !important;
 }
 
