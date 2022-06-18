@@ -55,7 +55,7 @@
         @click = "userLogout"
       >
         <v-list-item-icon>
-          <v-icon>mdi-logout</v-icon>
+          <v-icon>mdi-power</v-icon>
         </v-list-item-icon>
         <v-list-item-title>Cerrar Sesión</v-list-item-title>
       </v-list-item>
