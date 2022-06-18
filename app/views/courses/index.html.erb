@@ -1,12 +1,12 @@
-<% @title= "Courses" %>
+<% @title = "Courses" %>
 
-<% if user_signed_in? || SiteSettings.public_site %>
+<% if user_signed_in? || Settings::General.public %>
 <div itemscope itemtype='http://schema.org/ItemList'>
   <meta itemprop='itemListOrder' content='http://schema.org/ItemListOrderDescending'>
   <table class='courses-list'>
     <thead>
       <tr>
-        <th class='course-name'><%= t 'js.courses.courses' %></th>
+        <th class='course-name'><%= t "js.courses.courses" %></th>
       </tr>
     </thead>
     <tbody>
@@ -15,9 +15,9 @@
           <td class='course'>
             <div itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
               <meta itemprop='position' content='<%= index %>'>
-              <meta itemprop='url' content='<%= '/courses/' + c.id.to_s %>'>
+              <meta itemprop='url' content='<%= "/courses/" + c.id.to_s %>'>
               <h3>
-                <a href='<%= '/course/' + c.id.to_s %>'>
+                <a href='<%= "/course/" + c.id.to_s %>'>
                   <span itemprop='name'><%= c.name %></span>
                 </a>
               </h3>

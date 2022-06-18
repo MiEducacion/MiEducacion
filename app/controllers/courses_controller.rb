@@ -53,7 +53,7 @@ class CoursesController < ApplicationController
   private
 
   def public_site?
-    redirect_to "/login_required", status: 301 unless !Settings::General.public || current_user
+    redirect_to "/login-required", status: 301 unless Settings::General.public || current_user
   end
 
   def course_params
