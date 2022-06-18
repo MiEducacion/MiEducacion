@@ -140,12 +140,12 @@ export default {
           value: this.SiteSettings.force_redirect_private
         },
         {
-          name: 'banner_show',
+          name: 'show_site_banner',
           type: 1,
           value: this.SiteSettings.show_site_banner
         },
         {
-          name: 'banner_content',
+          name: 'site_banner_content',
           type: 3,
           value: this.SiteSettings.site_banner_content
         }
