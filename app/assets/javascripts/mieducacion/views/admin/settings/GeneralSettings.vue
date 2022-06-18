@@ -133,6 +133,12 @@ export default {
           name: 'public',
           type: 1,
           value: this.SiteSettings.public_site
+        },
+        {
+          name: 'force_redirect_private',
+          type: 1,
+          value: this.SiteSettings.force_redirect_private
+        },
         }
       ]
     }
