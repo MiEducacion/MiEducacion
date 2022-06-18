@@ -14,7 +14,7 @@ es:
             description: "Mostrar un banner para todos los usuarios en la pantalla principal del sitio"
             title: "Mostrar banner del sitio"
           site_banner_content:
-            description: "Contenido del banner del sitio"
+            description: "Contenido del banner del sitio -  Admite Markdown (vista previa no disponible)"
             title: "Contenido del banner del sitio"
           site_description:
             description: "Describe este sitio en una frase; se usa en la etiqueta de meta descripción."

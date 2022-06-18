@@ -14,7 +14,7 @@ en:
             description: "Display a banner for all users on the main screen of the site"
             title: "Show site banner"
           site_banner_content:
-            description: "Content of Site Banner"
+            description: "Content of Site Banner - Supports Markdown (Preview not available)"
             title: "Site banner content"
           site_description:
             description: "Describe this site in one sentence; used in the meta description tag."
