@@ -1,5 +1,5 @@
-<% if Settings::LMS.banner_show %>
+<% if Settings::General.show_site_banner %>
 <div id="site_banner">
-  <%= Settings::LMS.banner_content %>
+  <%= Settings::General.site_banner_content %>
 </div>
 <% end %>
