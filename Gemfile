@@ -91,6 +91,8 @@ gem "wicked"
 group :development, :test do
   # Use sqlite3 as the database for Active Record on Development Environments
   gem "sqlite3", "~> 1.4"
+  # RSpec for testing
+  gem 'rspec-rails'
 end
 group :production do
   gem "pg"
