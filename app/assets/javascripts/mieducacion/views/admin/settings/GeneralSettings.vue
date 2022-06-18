@@ -157,7 +157,7 @@ export default {
       if(!$.isEmptyObject(this.settings)) {
      this.btnLoading = true
       $.post('/admin/settings/general_settings.json', {
-       settings_general: this.settings
+       settings_generals: this.settings
       })
       .then((response) => {
         toast.show({text: response.message})

@@ -19,7 +19,7 @@ module Admin
       end
 
       def settings_params
-        params.require(:settings_general)&.permit(
+        params.require(:settings_generals)&.permit(
           settings_keys.map(&:to_sym)
         )
       end
