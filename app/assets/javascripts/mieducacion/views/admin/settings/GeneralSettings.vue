@@ -74,12 +74,10 @@
                             x-small
                             elevation="0"
                             class="mx-2"
-                            @click="openUploadDialog"
                           >
                             <v-icon>mdi-image-edit-outline</v-icon>
                           </v-btn>
                           <input
-                            @change="preview_image"
                             :ref="settings[setting.name]"
                             class="d-none"
                             :v-model="settings[setting.name]"
