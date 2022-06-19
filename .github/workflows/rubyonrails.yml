@@ -7,7 +7,7 @@
 name: "Ruby on Rails CI"
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test-gh-actions ]
   pull_request:
     branches: [ main ]
 jobs:
@@ -19,12 +19,12 @@ jobs:
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
+          POSTGRES_DB: mieducacion_test
+          POSTGRES_USER: mieducacion
+          POSTGRES_PASSWORD: mieducacion
     env:
       RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      DATABASE_URL: "postgres://mieducacion:mieducacion@localhost:5432/mieducacion_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
