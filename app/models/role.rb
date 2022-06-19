@@ -3,9 +3,11 @@
 class Role < ApplicationRecord
   ROLES = %w[
     admin
-    super_admin
+    creator
     principal
     teacher
+    moderator
+    trusted
     student
   ].freeze
 

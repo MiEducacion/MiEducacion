@@ -51,6 +51,8 @@ module ApplicationHelper
       is_principal: @u.has_role?(:teacher),
       is_admin: @u.has_role?(:admin),
       is_new_user: @u.new_user?,
+      trusted: @u.has_role?(:trusted),
+      moderator: @u.has_role?(:moderator),
     }
   end
 end
