@@ -30,7 +30,7 @@ module Settings
         elsif value.respond_to?(:to_h) && value.present?
           settings_class.public_send("#{key}=", value.to_h)
         elsif value.present?
-          settings_class.public_send("#{key}=", value.strip)
+          settings_class.public_send("#{key}=", value.to_s.strip)
         elsif value.blank?
           settings_class.public_send("#{key}=", nil)
         end
