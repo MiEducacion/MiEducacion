@@ -46,6 +46,9 @@ gem "omniauth-oauth2-generic"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem "carrierwave", "~> 2.2" # Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends
+gem "carrierwave-bombshelter", "~> 0.2" # Protect your carrierwave from image bombs
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
