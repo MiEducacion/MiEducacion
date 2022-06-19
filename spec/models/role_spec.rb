@@ -15,6 +15,8 @@ RSpec.describe Role, type: :model do
         teacher
         principal
         creator
+        moderator
+        trusted
       ]
       expect(described_class::ROLES).to match_array(expected_roles)
     end
