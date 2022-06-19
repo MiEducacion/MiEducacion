@@ -47,9 +47,9 @@ export default {
     },
     methods: {
         fetchDashboard() {
-            $.ajax('/admin/dashboard.json')
+            axios.get('/admin/dashboard.json')
             .then((response) => {
-             this.dashboardData = response
+             this.dashboardData = response.data
            })
            .catch((error) => {
              console.log(error)

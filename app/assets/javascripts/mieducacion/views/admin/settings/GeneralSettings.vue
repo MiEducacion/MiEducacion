@@ -56,6 +56,7 @@
                       >
                         <div class="image-upload-controls">
                           <v-btn
+                            v-if="setting.value != setting.defaultValue"
                             fab
                             tile
                             color="var(--mieducacion-danger)"
@@ -71,6 +72,7 @@
                             tile
                             color="var(--mieducacion-primary)"
                             dark
+                            @click="uploaderButton(`upload-${setting.name}`)"
                             x-small
                             elevation="0"
                             class="mx-2"
@@ -78,9 +80,13 @@
                             <v-icon>mdi-image-edit-outline</v-icon>
                           </v-btn>
                           <input
-                            :ref="settings[setting.name]"
+                            :ref="`upload-${setting.name}`"
                             class="d-none"
+                            @change="handleImageChange"
                             :v-model="settings[setting.name]"
+                            :id="`upload-${setting.name}`"
+                            type="file"
+                            accept="image/*"
                           />
                         </div>
                       </div>
@@ -141,7 +147,8 @@ export default {
         {
           name: 'site_logo',
           type: 2,
-          value: this.SiteSettings.site_logo
+          value: this.SiteSettings.site_logo,
+          defaultValue: '/images/default/mieducacion_default_siteLogo.svg'
         },
         {
           name: 'site_name',
@@ -183,13 +190,15 @@ export default {
       },
         methods: {
     updateSettings () {
-      if(!$.isEmptyObject(this.settings)) {
+      const s = this.settings
+      if(!this.$_.isEmpty(this.settings)) {
      this.btnLoading = true
-      $.post('/admin/settings/general_settings.json', {
-       settings_generals: this.settings
+      axios.post('/admin/settings/general_settings.json',
+      {
+      settings_generals: s
       })
       .then((response) => {
-        toast.show({text: response.message})
+        toast.show({text: response.data.message})
         this.btnLoading = false
 })
       .catch((error) => {
@@ -202,7 +211,16 @@ export default {
     {
       toast.show({text: I18n.t('js.core.error_not_modified')})
     }
-    }
+    },
+  uploaderButton (form) {
+    $(`#${form}`).click()
   },
+  handleImageChange(e) {
+    console.log(e)
+    let data = e.target.files[0]
+    this.settings[`${e.target.id.replace("upload-", "")}`] = data
+    console.log(this.settings)
+  }
+        }
 }
 </script>

@@ -21,19 +21,17 @@ Vue.config.errorHandler = function(err, vm, info) {
     }
 
     lastReport = new Date();
-    var data = {
-        message: err,
+    var reportData = {
+        message: err.name,
         url: window.AppRouter.currentRoute.path,
         window_location: window.location && (window.location + ""),
-        stacktrace: info,
+        stacktrace: err.stack,
         severity: 'error'
     }
 
-    $.ajax("/logs/report_js_error", {
-        data: data,
-        type: "POST",
-        cache: false
-    });
+    axios.post("/logs/report_js_error",
+        reportData
+    );
 };
 
 
@@ -48,17 +46,15 @@ Vue.config.warnHandler = function(err, vm, info) {
     }
 
     lastReport = new Date();
-    var data = {
-        message: err,
+    var reportData = {
+        message: err.name,
         url: window.AppRouter.currentRoute.path,
         window_location: window.location && (window.location + ""),
-        stacktrace: info,
-        severity: 'info'
+        stacktrace: err.stack,
+        severity: 'warning'
     }
 
-    $.ajax("/logs/report_js_error", {
-        data: data,
-        type: "POST",
-        cache: false
-    });
+    axios.post("/logs/report_js_error",
+        reportData
+    );
 };
