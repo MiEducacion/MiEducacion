@@ -2,7 +2,7 @@
 
 class LogoUploader < BaseUploader
   MAX_FILE_SIZE = 3.megabytes
-  STORE_DIRECTORY = "uploads/logos/".freeze
+  STORE_DIRECTORY = "uploads/logos/"
   EXTENSION_ALLOWLIST = %w[png jpg jpeg jpe].freeze
   IMAGE_TYPE_ALLOWLIST = %i[png jpg jpeg jpe].freeze
   CONTENT_TYPE_ALLOWLIST = %w[image/png image/jpg image/jpeg].freeze

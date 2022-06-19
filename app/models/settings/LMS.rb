@@ -7,6 +7,5 @@ module Settings
     setting :copyright_start_year,
             type: :integer,
             default: ApplicationConfig["MIEDUCACION_COPYRIGHT_START_YEAR"] || Time.zone.today.year
-
   end
 end

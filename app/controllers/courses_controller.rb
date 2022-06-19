@@ -13,9 +13,9 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-                 courses: @courses,
+          courses: @courses
 
-               },
+        },
                content_type: "application/json"
       end
     end
@@ -28,9 +28,9 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-                 course: @course,
+          course: @course
 
-               },
+        },
                content_type: "application/json"
       end
     end
@@ -42,10 +42,11 @@ class CoursesController < ApplicationController
       format.json do
         if course.valid?
           render json: {
-                   course: course,
-                 }, content_type: "application/json", status: 200
-        else render json: { errors: course.errors.full_messages },
-                    status: :not_acceptable         end
+            course: course
+          }, content_type: "application/json", status: 200
+        else
+          render json: { errors: course.errors.full_messages },
+                 status: :not_acceptable end
       end
     end
   end
@@ -57,6 +58,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.permit(:name, :private, :teachers => [])
+    params.permit(:name, :private, teachers: [])
   end
 end

@@ -14,9 +14,9 @@ module Settings
       validates: {
         format: {
           with: /\A[^[<|>]]+\Z/,
-          message: "may not include the \"<\" nor \">\" character",
-        },
-      },
+          message: "may not include the \"<\" nor \">\" character"
+        }
+      }
     )
     setting :site_description, type: :string
     setting :site_shortname, type: :string, default: ApplicationConfig["MIEDUCACION_SHORTNAME"] || "MiEducacion"
@@ -33,7 +33,7 @@ module Settings
     setting :site_banner_content, type: :string
 
     # Core setup
-    #setting :waiting_on_first_user, type: :boolean, default: !User.exists?
+    # setting :waiting_on_first_user, type: :boolean, default: !User.exists?
 
     # Images
 
