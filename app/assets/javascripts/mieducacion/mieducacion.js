@@ -30,6 +30,9 @@ Vue.component('v-gravatar', Gravatar);
 import Preloaded from './lib/preloaded'
 Object.assign(Vue.prototype, Preloaded);
 
+import _ from './lib/lodash'
+Vue.prototype.$_ = _
+
 
  /* Remove noscript tag in SPA */
   document.querySelector("noscript")?.remove();
