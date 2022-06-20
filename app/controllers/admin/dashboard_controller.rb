@@ -11,8 +11,9 @@ module Admin
         version_check: {
           installed_version: MiEducacion::Application::Version::FULL,
           installed_sha: MiEducacion.git_version,
-          git_branch: MiEducacion.git_branch
-        }
+          git_branch: MiEducacion.git_branch,
+          last_commit_date: MiEducacion.last_commit_date,
+        },
       }
       respond_to do |format|
         format.html
