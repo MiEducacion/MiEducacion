@@ -82,24 +82,17 @@
 
 <script>
 export default {
-  data() {
-    return {
-
-}
-  },
-  methods: {
-    userLogout () {
-      $.ajax({
-    url: '/users/sign_out',
-    type: 'DELETE',
-    success: function(result) {
-        window.location.href = "/"
+    methods: {
+        userLogout() {
+            axios.delete('/users/sign_out', {
+              headers: {
+                Accept: 'application/json'
+              }
+            })
+            .then(() => {
+                window.location.href = "/"
+            })
+        }
     }
-});
-    }
-  }
-
 }
 </script>
-
-<style></style>
