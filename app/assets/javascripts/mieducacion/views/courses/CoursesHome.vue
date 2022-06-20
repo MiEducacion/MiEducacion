@@ -28,7 +28,7 @@
          </v-col>
       </v-container>
       <v-btn
-         v-if="currentUser && currentUser.is_admin || currentUser.is_teacher && CoursesData"
+         v-if="CoursesData && canCreateCourse"
          @click="showCreateCourses = true"
          dark
          right
@@ -60,7 +60,8 @@
          error: null,
          CoursesData: null,
          NoDataImage,
-         showCreateCourses : false
+         showCreateCourses : false,
+         canCreateCourse: this.currentUser && this.currentUser.is_admin || this.currentUser && this.currentUser.is_teacher
        }
      },
      methods: {
