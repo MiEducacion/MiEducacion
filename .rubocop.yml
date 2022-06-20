@@ -9,6 +9,7 @@ AllCops:
     - 'bin/*'
     - 'config/initializers/*'
     - 'db/**/*'
+    - 'lib/mieducacion.rb'
 
 Metrics/MethodLength:
   Enabled: false
@@ -54,4 +55,11 @@ Metrics/ClassLength:
   Enabled: false
 
 Naming/FileName:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Description: >-
+                 Favor modifier if/unless usage when you have a
+                 single-line body.
+  StyleGuide: '#if-as-a-modifier'
   Enabled: false
