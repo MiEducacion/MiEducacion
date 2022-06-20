@@ -5,9 +5,9 @@ module MiEducacion
     unless defined? ::MiEducacion::Version
       module Version
         MAJOR = 0
-        MINOR = 0
-        TINY  = 9
-        PRE   = "alpha"
+        MINOR = 1
+        TINY = 0
+        PRE = "alpha"
 
         FULL = [MAJOR, MINOR, TINY, PRE].compact.join(".")
       end
