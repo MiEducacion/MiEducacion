@@ -19,6 +19,7 @@ module ApplicationHelper
         title: Settings::General.site_name,
         site_logo: Settings::General.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
         site_description: Settings::General.site_description,
+        site_shortname: Settings::General.site_shortname,
         public_site: Settings::General.public,
         force_redirect_private: Settings::General.force_redirect_private,
         show_site_banner: Settings::General.show_site_banner,
