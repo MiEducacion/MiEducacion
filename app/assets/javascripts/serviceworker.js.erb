@@ -10,6 +10,9 @@ function onInstall(event) {
         // make sure serviceworker.js is not required by application.js
         // if you want to reference application.js from here
         '/offline.html',
+        '<%= Webpacker.manifest.lookup("start-mieducacion.js") %>',
+        '<%= asset_path "mieducacion.css" %>',
+        '/manifest.webmanifest'
 
       ]);
     })

@@ -9,6 +9,7 @@ import twemoji from 'twemoji'
 require('./lib/axios-setup')
 require('./lib/i18n')
 /* require('./lib/register-components')*/
+require('./lib/register-service-worker')
 require('./lib/report-js-error')
 require('./filters/truncate')
 
