@@ -216,7 +216,7 @@
 }
 
 #site-header #site-logo {
-    height: 1.8em;
+    max-height: 2.4em;
     display: flex;
     align-items: center;
 }
@@ -321,7 +321,7 @@
     }
 
     #site-header #site-logo {
-        max-height: 1.4em;
+        max-height: 2.4em;
         max-width: 100%;
     }
 }
