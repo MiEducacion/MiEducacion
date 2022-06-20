@@ -124,8 +124,6 @@
 </template>
 
 <script>
-import toast from 'vuetify-toast'
-
 export default {
     name: 'AdminGeneralSettings',
     data() {
@@ -189,21 +187,22 @@ export default {
                         formData
                     )
                     .then((response) => {
-                        toast.show({
-                            text: response.data.message
+                        Notifier.show({
+                            message: response.data.message
                         })
                         this.btnLoading = false
+                        window.location.reload()
                     })
                     .catch((error) => {
                         this.error = true
                         this.btnLoading = false
-                        toast.show({
-                            text: t('js.core.generic_error')
+                        Notifier.show({
+                            message: t('js.core.generic_error')
                         })
                     })
             } else {
-                toast.show({
-                    text: I18n.t('js.core.error_not_modified')
+                Notifier.show({
+                    message: I18n.t('js.core.error_not_modified')
                 })
             }
         },
