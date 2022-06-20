@@ -65,9 +65,9 @@
      },
      methods: {
        fetchCourses() {
-         $.ajax('/courses.json')
+         axios.get('/courses.json')
            .then((response) => {
-             this.CoursesData = response.courses
+             this.CoursesData = response.data.courses
              console.log(this.CoursesData)
            })
            .catch((error) => {

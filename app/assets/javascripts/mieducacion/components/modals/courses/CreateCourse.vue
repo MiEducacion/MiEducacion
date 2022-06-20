@@ -79,10 +79,10 @@ export default {
     createCourse() {
       this.$refs.createCourse.validate();
       this.btnLoading = true
-      $.post('/courses/new.json', this.newCourse)
+      axios.post('/courses/new.json', this.newCourse)
       .then((response) => {
                   this.$emit('input', false)
-                  this.$router.push('/courses/' + response.course.id);
+                  this.$router.push('/courses/' + response.data.course.id);
                 })
                 .catch((error) => {
                     console.log(error)

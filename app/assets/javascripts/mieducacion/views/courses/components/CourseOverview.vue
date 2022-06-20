@@ -14,10 +14,9 @@ export default {
     },
     methods: {
         getCourse() {
-            $.ajax('/courses/' + this.$route.params.id + '.json')
+            axios.get('/courses/' + this.$route.params.id + '.json')
             .then((response) => {
-                  console.log(response)
-                  this.course = response.course
+                  this.course = response.data.course
                 })
                 .catch((error) => {
                     console.log(error)
