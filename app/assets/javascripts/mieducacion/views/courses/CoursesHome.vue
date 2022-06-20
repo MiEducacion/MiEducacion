@@ -28,7 +28,7 @@
          </v-col>
       </v-container>
       <v-btn
-         v-if="currentUser && currentUser.is_admin"
+         v-if="currentUser && currentUser.is_admin || currentUser.is_teacher && CoursesData"
          @click="showCreateCourses = true"
          dark
          right
