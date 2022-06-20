@@ -52,21 +52,10 @@
                     <div class="setting-image-uploader">
                       <div
                         class="uploaded-image-preview"
+                        :id="`preview-${setting.name}`"
                         :style="`background-image: url('${setting.value}')`"
                       >
                         <div class="image-upload-controls">
-                          <v-btn
-                            v-if="setting.value != setting.defaultValue"
-                            fab
-                            tile
-                            color="var(--mieducacion-danger)"
-                            dark
-                            x-small
-                            elevation="0"
-                            class="mx-2"
-                          >
-                            <v-icon>mdi-delete-outline</v-icon>
-                          </v-btn>
                           <v-btn
                             fab
                             tile
@@ -138,89 +127,94 @@
 import toast from 'vuetify-toast'
 
 export default {
-  name: 'AdminGeneralSettings',
-  data() {
-    return {
-      settings: {},
-      btnLoading: null,
-      settingsModel: [
-        {
-          name: 'site_logo',
-          type: 2,
-          value: this.SiteSettings.site_logo,
-          defaultValue: '/images/default/mieducacion_default_siteLogo.svg'
-        },
-        {
-          name: 'site_name',
-          type: 0,
-          value: this.SiteSettings.title
-        },
-        {
-          name: 'site_description',
-          type: 0,
-          value: this.SiteSettings.site_description
-        },
-        {
-          name: 'site_shortname',
-          type: 0,
-          value: this.SiteSettings.site_shortname
-        },
-        {
-          name: 'public',
-          type: 1,
-          value: this.SiteSettings.public_site
-        },
-        {
-          name: 'force_redirect_private',
-          type: 1,
-          value: this.SiteSettings.force_redirect_private
-        },
-        {
-          name: 'show_site_banner',
-          type: 1,
-          value: this.SiteSettings.show_site_banner
-        },
-        {
-          name: 'site_banner_content',
-          type: 3,
-          value: this.SiteSettings.site_banner_content
+    name: 'AdminGeneralSettings',
+    data() {
+        return {
+            settings: {},
+            btnLoading: null,
+            settingsModel: [{
+                    name: 'site_logo',
+                    type: 2,
+                    value: this.SiteSettings.site_logo,
+                    defaultValue: '/images/default/mieducacion_default_siteLogo.svg'
+                },
+                {
+                    name: 'site_name',
+                    type: 0,
+                    value: this.SiteSettings.title
+                },
+                {
+                    name: 'site_description',
+                    type: 0,
+                    value: this.SiteSettings.site_description
+                },
+                {
+                    name: 'site_shortname',
+                    type: 0,
+                    value: this.SiteSettings.site_shortname
+                },
+                {
+                    name: 'public',
+                    type: 1,
+                    value: this.SiteSettings.public_site
+                },
+                {
+                    name: 'force_redirect_private',
+                    type: 1,
+                    value: this.SiteSettings.force_redirect_private
+                },
+                {
+                    name: 'show_site_banner',
+                    type: 1,
+                    value: this.SiteSettings.show_site_banner
+                },
+                {
+                    name: 'site_banner_content',
+                    type: 3,
+                    value: this.SiteSettings.site_banner_content
+                }
+            ]
         }
-      ]
-    }
-      },
-        methods: {
-    updateSettings () {
-      const s = this.settings
-      if(!this.$_.isEmpty(this.settings)) {
-     this.btnLoading = true
-      axios.post('/admin/settings/general_settings.json',
-      {
-      settings_generals: s
-      })
-      .then((response) => {
-        toast.show({text: response.data.message})
-        this.btnLoading = false
-})
-      .catch((error) => {
-        this.error = true
-        this.btnLoading = false
-        toast.show({text: t('js.core.generic_error')})
-      })
-    }
-     else
-    {
-      toast.show({text: I18n.t('js.core.error_not_modified')})
-    }
     },
-  uploaderButton (form) {
-    $(`#${form}`).click()
-  },
-  handleImageChange(e) {
-    console.log(e)
-    let data = e.target.files[0]
-    this.settings[`${e.target.id.replace("upload-", "")}`] = data
-    console.log(this.settings)
-  }
+    methods: {
+        updateSettings() {
+            if (!this.$_.isEmpty(this.settings)) {
+                let formData = new FormData()
+                this.$_.forEach(this.settings, function(value, key) {
+                    formData.append(`settings_generals[${key}]`, value)
+                })
+
+                this.btnLoading = true
+                axios.post('/admin/settings/general_settings.json',
+                        formData
+                    )
+                    .then((response) => {
+                        toast.show({
+                            text: response.data.message
+                        })
+                        this.btnLoading = false
+                    })
+                    .catch((error) => {
+                        this.error = true
+                        this.btnLoading = false
+                        toast.show({
+                            text: t('js.core.generic_error')
+                        })
+                    })
+            } else {
+                toast.show({
+                    text: I18n.t('js.core.error_not_modified')
+                })
+            }
+        },
+        uploaderButton(form) {
+            document.getElementById(`${form}`).click()
+        },
+        handleImageChange(e) {
+            let data = e.target.files[0]
+            this.settings[`${e.target.id.replace("upload-", "")}`] = data
+            let preview = document.getElementById(e.target.id.replace("upload-", "preview-"))
         }
+    }
 }
 </script>

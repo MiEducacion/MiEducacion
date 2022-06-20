@@ -14,9 +14,9 @@ module Settings
       validates: {
         format: {
           with: /\A[^[<|>]]+\Z/,
-          message: "may not include the \"<\" nor \">\" character"
-        }
-      }
+          message: "may not include the \"<\" nor \">\" character",
+        },
+      },
     )
     setting :site_description, type: :string
     setting :site_shortname, type: :string, default: ApplicationConfig["MIEDUCACION_SHORTNAME"] || "MiEducacion"
@@ -39,8 +39,9 @@ module Settings
 
     setting :favicon_url, type: :string, default: proc { URL.local_image("favicon.ico") }
     setting :site_logo,
-            type: :string,
-            default: ApplicationConfig["MIEDUCACION_SITE_LOGO"] || "/images/default/mieducacion_default_siteLogo.svg"
+            type: :string
+    setting :original_logo, type: :string
+    setting :resized_logo, type: :string
     setting :app_icon,
             type: :string,
             default: ApplicationConfig["MIEDUCACION_APP_ICON"] || "/images/default/mieducacion_default_appicon.png"
