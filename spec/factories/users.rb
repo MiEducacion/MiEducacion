@@ -1,22 +1,23 @@
 # frozen_string_literal: true
 
-FactoryBot.define do
-  sequence(:email) { |n| "person#{n}@example.com" }
-
+FactoryGirl.define do
   factory :user do
-    email { generate :email }
-    confirmed_at { Time.current }
-    registered_at { Time.current }
+    name "Test User"
+    email "example@example.com"
+    password "please"
+    password_confirmation "please"
+    confirmed_at Time.now
 
-    trait :creator do
-      after(:build) do |user|
-        user.add_role(:admin)
-        user.add_role(:creator)
-      end
+    factory :admin do
+      after(:create) { |user| user.add_role(:admin) }
     end
 
-    trait :admin do
-      after(:build) { |user| user.add_role(:admin) }
+    factory :creator do
+      after(:create) { |user| user.add_role(:creator) }
+    end
+
+    factory :super_admin do
+      after(:create) { |user| user.add_role(:super_admin) }
     end
   end
 end
