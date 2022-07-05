@@ -7,6 +7,20 @@
       <%= stylesheet_link_tag "authentication", media: "all" %>
   </head>
   <body class="devise-auth<% if device == "mobile" %> is-mobile<% end %> <%= @custom_class %>">
+  <header id="site-header">
+    <div class="site-header-wrap">
+    <div class="title align-middle d-flex">
+        <a href="/" class="d-flex">
+          <%= image_tag Settings::General.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg", :id => "site-logo", :alt => "Site logo", :draggable => false %>
+        </a>
+      </div>
+    <div class="separate-buttons"></div>
+    <div class="header-navs d-flex">
+      <a class="nav-link mx-2 d-sm-none d-md-block" href="/users/sign_up">Create account</a>
+    <a class="btn btn-primary px-4" href="/users/sign_in" role="button">Log in</a>
+    </div>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>

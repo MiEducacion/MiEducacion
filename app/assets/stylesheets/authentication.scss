@@ -1,6 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'variables';
 @import 'fonts';
+@import 'components/header';
 
 html {
     height: 100%;
@@ -11,24 +12,40 @@ body {
     background-color: transparentize($mieducacion-primary, .9);
 }
 
+#site-header {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0
+}
+
+.separate-buttons {
+    margin-left: auto;
+}
+
+.header-navs {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    align-self: center;
+}
 
 #site-logo {
     height: 1.8em;
     width: auto;
+    align-self: center;
     margin: 0 auto;
 }
 
 .crayola-layout {
     align-content: center;
+    margin-top: 3rem !important;
 }
 
 .crayola-card {
-    border-radius: 8px;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(23, 23, 230, 0.2);
     background-color: #FFF;
     justify-content: center;
+    border-radius: 8px;
     align-content: center;
 }
 
@@ -53,8 +70,6 @@ body {
 
 @media (min-width: 640px) {
 .form-login {
-    border-radius: var(--radius);
-    padding: var(--su-8);
     margin: 0 auto;
     width: 640px;
 }
@@ -62,7 +77,7 @@ body {
 
 @media only screen and (max-width: 768px) {
     .crayola-layout {
-        margin-top: 1rem !important;
+        margin-top: 5rem !important;
         align-content: flex-start;
     }
   }

@@ -23,7 +23,7 @@ module ApplicationHelper
         public_site: Settings::General.public,
         force_redirect_private: Settings::General.force_redirect_private,
         show_site_banner: Settings::General.show_site_banner,
-        site_banner_content: Settings::General.site_banner_content
+        site_banner_content: Settings::General.site_banner_content,
       }
   end
 
@@ -35,7 +35,7 @@ module ApplicationHelper
     {
       SiteSettings: client_side_app_settings,
       currentUser: current_session,
-      isMobile: device == "mobile"
+      isMobile: device == "mobile",
     }.to_json
   end
 
@@ -53,7 +53,7 @@ module ApplicationHelper
       is_admin: @u.has_role?(:admin),
       is_new_user: @u.new_user?,
       trusted: @u.has_role?(:trusted),
-      moderator: @u.has_role?(:moderator)
+      moderator: @u.has_role?(:moderator),
     }
   end
 end

@@ -1,7 +1,20 @@
 <template>
-  <div class="summary">
-      <p v-if="course">{{course}}</p>
-  </div>
+<v-row>
+    <v-col cols="4" md="3">
+        <v-list nav dense>
+            <v-list-item :to="`/courses/${$route.params.id}/overview`">
+                Overview
+            </v-list-item>
+            <v-list-item :to="`/courses/${$route.params.id}/students`">
+                Students
+            </v-list-item>
+        </v-list>
+    </v-col>
+  <v-col class="summary" md="9">
+    
+      <p v-if="course">{{course.name}}</p>
+  </v-col>
+  </v-row>
 </template>
 
 <script>

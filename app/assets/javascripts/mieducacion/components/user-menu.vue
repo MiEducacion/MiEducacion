@@ -74,10 +74,15 @@
       </v-list-item>
     </v-list>
   </v-menu>
-  <v-btn v-else color="primary" text class="login-button" href="/users/sign_in">
-    <v-icon left> mdi-account </v-icon>
-    Login
+  <div v-else class="header-buttons">
+      <v-btn color="var(--mieducacion-primary)" small dark elevation="0" class="sign-up-button" href="/users/sign_up">
+    Sign Up
   </v-btn>
+  <v-btn color="var(--mieducacion-primary)" small dark elevation="0" class="login-button" href="/users/sign_in">
+    <v-icon left> mdi-account </v-icon>
+    Log In
+  </v-btn>
+  </div>
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 
-.courses-discover {
+.courses-discover, .single-course-base {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
     height: 100%;
 }
 
-.courses-container {
+.course-container, .courses-container {
     background-color: #fff;
     max-width: 1150px !important;
     border-radius: 0;
@@ -76,5 +76,8 @@
         padding: .5em .5em 5% !important;
         margin-bottom: 1rem;
     }
-      
+    .course-container {
+        padding: .5em .5em 5% !important;
+        margin-bottom: 1rem;
+    } 
   }

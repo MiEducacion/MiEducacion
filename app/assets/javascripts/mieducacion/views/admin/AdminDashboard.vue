@@ -32,7 +32,7 @@
           <div class="version-notes">You're up to date!</div>
         </div>
         <div class="upgrade-header">
-          <a href="#">Updgrade instance</a>
+          <v-btn href="#">Upgrade instance</v-btn>
         </div>
       </div>
     </section>

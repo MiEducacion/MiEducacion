@@ -1,12 +1,12 @@
 <template>
-<div class="user-page pt-10">
-  <SiteSpinner />
-</div>
+  <div>
+    a
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'UserPage'
+    name: "UserActivity"
 }
 </script>
 

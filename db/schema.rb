@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_19_180621) do
+ActiveRecord::Schema.define(version: 2022_06_21_220326) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,11 +50,6 @@ ActiveRecord::Schema.define(version: 2022_06_19_180621) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.integer "group_id"
-    t.text "name"
-    t.string "image"
-    t.string "owner_id"
-    t.boolean "private"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

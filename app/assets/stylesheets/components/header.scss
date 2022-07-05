@@ -36,3 +36,15 @@
     font-weight: 600 !important;
     margin: 0 4px;
 }
+
+.header-user-panel--nav .login-button {
+    margin-left: 7px;
+}
+
+.header-user-panel--nav .login-button, .header-user-panel--nav .sign-up-button {
+    padding: 6px 10px;
+}
+
+.sign-up-button, .login-button {
+    text-transform: none !important;
+}
