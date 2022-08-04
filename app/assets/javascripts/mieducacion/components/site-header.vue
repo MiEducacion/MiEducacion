@@ -8,16 +8,24 @@
       </div>
       <div class="site-navigation--nav hidden-sm-and-down" role="navigation">
         <v-btn text class="site-nav--btn" to="/courses">
-          <GraduationCap :size="20" class="mr-2" />Cursos</v-btn
+          <GraduationCap :size="20" class="mr-2" />
+            {{ t("js.lms.courses") }}
+          </v-btn
         >
         <v-btn text class="site-nav--btn" to="/groups">
-          <GroupsIcon :size="20" class="mr-2" />Grupos</v-btn
+          <GroupsIcon :size="20" class="mr-2" />
+            {{ t("js.lms.groups") }}
+          </v-btn
         >
         <v-btn text class="site-nav--btn" to="/resources">
-          <ResourcesIcon :size="20" class="mr-2" />Recursos</v-btn
+          <ResourcesIcon :size="20" class="mr-2" />
+            {{ t("js.lms.resources") }}
+          </v-btn
         >
         <v-btn text class="site-nav--btn" to="/grades" v-if="currentUser">
-          <ClipboardCheck :size="20" class="mr-2" />Calificaciones</v-btn
+          <ClipboardCheck :size="20" class="mr-2" />
+            {{ t("js.lms.grades") }}
+          </v-btn
         >
       </div>
       <v-spacer></v-spacer>

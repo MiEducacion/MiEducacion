@@ -37,6 +37,8 @@ en:
     lms:
       courses: "Courses"
       groups: "Groups"
+      resources: "Resources"
+      grades: "Grades"
     login:
       welcome_to: "Welcome to %{site_name}"
     user:
