@@ -8,24 +8,23 @@
       </div>
       <div class="site-navigation--nav hidden-sm-and-down" role="navigation">
         <v-btn text class="site-nav--btn" to="/courses">
-          <v-icon left>mdi-school-outline</v-icon>Cursos</v-btn
+          <GraduationCap :size="20" class="mr-2" />Cursos</v-btn
         >
         <v-btn text class="site-nav--btn" to="/groups">
-          <v-icon left>mdi-account-group-outline</v-icon>Grupos</v-btn
+          <GroupsIcon :size="20" class="mr-2" />Grupos</v-btn
         >
         <v-btn text class="site-nav--btn" to="/resources">
-          <v-icon left>mdi-checkbox-multiple-blank-outline</v-icon
-          >Recursos</v-btn
+          <ResourcesIcon :size="20" class="mr-2" />Recursos</v-btn
         >
         <v-btn text class="site-nav--btn" to="/grades" v-if="currentUser">
-          <v-icon left>mdi-star-outline</v-icon>Calificaciones</v-btn
+          <ClipboardCheck :size="20" class="mr-2" />Calificaciones</v-btn
         >
       </div>
       <v-spacer></v-spacer>
       <div class="header-user-panel--nav">
         <NotificationsMenu v-if="currentUser"/>
         <v-btn icon class="mr-2" v-if="currentUser">
-          <v-icon>mdi-email-outline</v-icon>
+          <MessageCircle :size="24" />
         </v-btn>
         <UserMenu/>
       </div>
@@ -34,10 +33,11 @@
 </template>
 
 <script>
+import { MessageCircle, GraduationCap, Users as GroupsIcon, Archive as ResourcesIcon, ClipboardCheck } from 'lucide-vue'
 import NotificationsMenu from './user-notifications-menu.vue'
 import UserMenu from './user-menu.vue'
 export default {
-  components: { NotificationsMenu, UserMenu },
+  components: { NotificationsMenu, UserMenu, MessageCircle, GraduationCap, GroupsIcon, ResourcesIcon, ClipboardCheck },
   data() {
     return {
     }
