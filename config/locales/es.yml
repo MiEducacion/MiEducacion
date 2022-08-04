@@ -36,7 +36,9 @@ es:
       success_settings: "Configuración guardada correctamente"
     lms:
       courses: "Cursos"
+      grades: "Calificaciones"
       groups: "Grupos"
+      resources: "Recursos"
     login:
       welcome_to: "Te damos la bienvenida a %{site_name}"
     user:

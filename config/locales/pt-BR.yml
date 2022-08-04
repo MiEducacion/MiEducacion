@@ -36,7 +36,9 @@ pt-BR:
       success_settings: "Configurações salvas com sucesso"
     lms:
       courses: "Cursos"
+      grades: "Notas"
       groups: "Grupos"
+      resources: "Recursos"
     login:
       welcome_to: "Bem-vindo a %{site_name}"
     user:

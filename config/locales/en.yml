@@ -36,9 +36,9 @@ en:
       success_settings: "Settings saved successfully"
     lms:
       courses: "Courses"
+      grades: "Grades"
       groups: "Groups"
       resources: "Resources"
-      grades: "Grades"
     login:
       welcome_to: "Welcome to %{site_name}"
     user:
