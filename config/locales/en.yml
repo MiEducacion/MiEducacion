@@ -2,6 +2,8 @@
 en:
   js:
     admin:
+      wizard_required: "Welcome to your new MiEducacion instance! Let’s get started with the setup wizard ✨."
+      wizard_link: "Continue with Wizard"
       settings:
         general_settings:
           force_redirect_private:

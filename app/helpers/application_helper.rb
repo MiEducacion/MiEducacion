@@ -14,8 +14,7 @@ module ApplicationHelper
   end
 
   def client_side_app_settings
-    site_settings =
-      {
+    site_settings = {
         title: Settings::General.site_name,
         site_logo: Settings::General.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
         site_description: Settings::General.site_description,
@@ -25,6 +24,15 @@ module ApplicationHelper
         show_site_banner: Settings::General.show_site_banner,
         site_banner_content: Settings::General.site_banner_content
       }
+
+    if current_user && current_user.has_role?(:admin)
+      site_settings = site_settings.merge(
+        wizard_completed: Settings::Developer.wizard_completed,
+        bypass_wizard_check: Settings::Developer.bypass_wizard_check
+      )
+    end
+
+    site_settings
   end
 
   def user_logged_in_status
