@@ -3,7 +3,7 @@ import NotFoundView from '../views/errors/NotFound.vue'
 
 let NotFoundRoute = {
     name: 'NotFound',
-    path: '*',
+    path: '/:pathMatch(.*)*',
     alias: '/not-found',
     component: NotFoundView,
     meta: {

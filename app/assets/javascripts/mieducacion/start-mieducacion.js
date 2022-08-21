@@ -1,6 +1,5 @@
 import MiEducacion from './mieducacion'
 
-MiEducacion.$mount()
-document.body.appendChild(MiEducacion.$el)
+MiEducacion.mount(document.getElementById("mieducacion"))
 
 window.MiEducacion = MiEducacion

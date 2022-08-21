@@ -1,6 +1,5 @@
-import Vue from 'vue';
-
-Vue.filter('truncate', function (value, size, phraseEnd = '') {
+let globalFilters = { 
+  truncate(value, size, phraseEnd = '') {
     if (!value) return '';
     value = value.toString();
   
@@ -8,4 +7,7 @@ Vue.filter('truncate', function (value, size, phraseEnd = '') {
       return value;
     }
     return value.substr(0, size) + phraseEnd;
-  });
+  }
+}
+
+export default globalFilters

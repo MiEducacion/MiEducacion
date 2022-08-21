@@ -1,47 +1,47 @@
 <template>
-  <v-app-bar id="site-header" color="white" flat fixed app>
+  <header id="site-header">
     <div class="site-header-wrap">
       <div class="title">
         <router-link to="/">
-          <img id="site-logo" :src="SiteSettings.site_logo" height="100%" />
+          <img id="site-logo" :src="SiteSettings.site_logo">
         </router-link>
       </div>
       <div class="site-navigation--nav hidden-sm-and-down" role="navigation">
-        <v-btn text class="site-nav--btn" to="/courses">
+        <router-link class="site-nav--btn" to="/courses">
           <GraduationCap :size="20" class="mr-2" />
             {{ t("js.lms.courses") }}
-          </v-btn
+          </router-link
         >
-        <v-btn text class="site-nav--btn" to="/groups">
+        <router-link class="site-nav--btn" to="/groups">
           <GroupsIcon :size="20" class="mr-2" />
             {{ t("js.lms.groups") }}
-          </v-btn
+          </router-link
         >
-        <v-btn text class="site-nav--btn" to="/resources">
+        <router-link class="site-nav--btn" to="/resources">
           <ResourcesIcon :size="20" class="mr-2" />
             {{ t("js.lms.resources") }}
-          </v-btn
+          </router-link
         >
-        <v-btn text class="site-nav--btn" to="/grades" v-if="currentUser">
+        <router-link text class="site-nav--btn" to="/grades" v-if="currentUser">
           <ClipboardCheck :size="20" class="mr-2" />
             {{ t("js.lms.grades") }}
-          </v-btn
+          </router-link
         >
       </div>
-      <v-spacer></v-spacer>
-      <div class="header-user-panel--nav">
-        <NotificationsMenu v-if="currentUser"/>
-        <v-btn icon class="mr-2" v-if="currentUser">
+<!--       <v-spacer></v-spacer>
+ -->      <div class="header-user-panel--nav">
+<!--         <NotificationsMenu v-if="currentUser"/>
+ -->        <div icon class="mr-2" v-if="currentUser">
           <MessageCircle :size="24" />
-        </v-btn>
-        <UserMenu/>
-      </div>
+        </div>
+<!--         <UserMenu/>
+ -->      </div>
     </div>
-  </v-app-bar>
+  </header>
 </template>
 
 <script>
-import { MessageCircle, GraduationCap, Users as GroupsIcon, Archive as ResourcesIcon, ClipboardCheck } from 'lucide-vue'
+import { MessageCircle, GraduationCap, Users as GroupsIcon, Archive as ResourcesIcon, ClipboardCheck } from 'lucide-vue-next'
 import NotificationsMenu from './user-notifications-menu.vue'
 import UserMenu from './user-menu.vue'
 export default {

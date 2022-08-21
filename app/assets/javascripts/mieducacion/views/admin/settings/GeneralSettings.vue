@@ -5,10 +5,9 @@
       <v-container>
         <div class="pt-4">
           <v-form @submit.prevent="updateSettings">
-            <template v-for="setting in settingsModel">
+            <template v-for="setting in settingsModel" :key="setting.name">
               <v-row
                 class="setting-container"
-                :key="setting.name"
                 align="start"
               >
                 <v-col cols="12" sm="6">
@@ -21,7 +20,7 @@
 
                   <v-text-field
                     v-if="setting.type == 0"
-                    @input.native="settings[setting.name] = $event.target.value"
+                    @input="settings[setting.name] = $event.target.value"
                     :value="setting.value"
                     outlined
                     :v-model="settings[setting.name]"
@@ -86,7 +85,7 @@
 
                   <v-textarea
                     v-if="setting.type == 3"
-                    @input.native="settings[setting.name] = $event.target.value"
+                    @input="settings[setting.name] = $event.target.value"
                     :value="setting.value"
                     outlined
                     :v-model="settings[setting.name]"

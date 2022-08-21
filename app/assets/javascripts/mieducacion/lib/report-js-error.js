@@ -1,6 +1,5 @@
 /* This handler will report JavaScript errors to
 Logster gem, so they are accessible from "/logs" */
-import Vue from "vue";
 
 var lastReport = null;
 
@@ -8,7 +7,7 @@ if (!window.Logster) {
     window.Logster = {
         enabled: true
     };
-}
+}/* 
 
 Vue.config.errorHandler = function(err, vm, info) {
     console.error(err)
@@ -57,4 +56,4 @@ Vue.config.warnHandler = function(err, vm, info) {
     axios.post("/logs/report_js_error",
         reportData
     );
-};
+}; */

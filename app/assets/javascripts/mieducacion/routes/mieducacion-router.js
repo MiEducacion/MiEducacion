@@ -8,13 +8,7 @@ if (preloadedDataElement) {
 const user = preloaded.currentUser;
 const SiteSettings = preloaded.SiteSettings;
 
-import Vue from "vue";
-import VueRouter from 'vue-router'
-import Meta from 'vue-meta'
-
-
-Vue.use(VueRouter)
-Vue.use(Meta)
+import { createWebHistory, createRouter } from 'vue-router'
 
 function loadRoutes() {
     const routes = require.context('./', true, /\.route\.js$/)
@@ -23,12 +17,12 @@ function loadRoutes() {
       .map(m => m.default)  // get `default` export from each resolved module
   }
   
-  let routes = loadRoutes()
+let routes = loadRoutes()
   
   
   
-  const router = new VueRouter({
-      mode: "history",
+const router = createRouter({
+      history: createWebHistory(),
       routes
   });
   

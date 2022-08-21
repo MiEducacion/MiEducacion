@@ -20,8 +20,8 @@
                <h2 class="title">Explore courses</h2>
                <p v-if="CoursesData">{{CoursesData.courses}}</p>
                <v-row class="courses-grid">
-                  <template v-for="course in CoursesData">
-                     <course-card :key="course.id" :courseData="course"></course-card>
+                  <template v-for="course in CoursesData" :key="course.id">
+                     <course-card :courseData="course"></course-card>
                   </template>
                </v-row>
             </div>

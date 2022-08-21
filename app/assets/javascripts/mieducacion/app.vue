@@ -1,33 +1,36 @@
 <template>
-  <v-app id="mieducacion">
-      <LayoutBroker :layouts="layouts" :current="$route.meta.layout || 'ApplicationLayout'" />
+  <div id="mieducacion">
+    <main>
+      <SiteHeader />
+      <AnonUserBanner/>
+      <slot name="below-site-header" />
+        <router-view />
       <GlobalSnackbar ref="toast" />
-  </v-app>
+    </main>
+    <SiteBottomNavigation />
+  </div>
 </template>
 
 <script>
-import LayoutBroker from 'vue-layout-broker'
 
-import ApplicationLayout from "./layouts/ApplicationLayout";
-import MinimalLayout from "./layouts/MinimalLayout";
+import SiteHeader from './components/site-header.vue'
+import SiteBottomNavigation from './components/site-bottom-navigation.vue'
+import AnonUserBanner from './components/anon-user-banner.vue'
 
 import GlobalSnackbar from "./components/global-snackbar.vue";
 
 
-const layouts = {
-  ApplicationLayout,
-  MinimalLayout,
-}
-
 export default {
   components: {
-    LayoutBroker,
+    SiteHeader,
+    SiteBottomNavigation,
+    AnonUserBanner,
     GlobalSnackbar
   },
     data() {
     return {
-      layouts,
-    }
+
+}
   },
   mounted() {
     window.Notifier = this.$refs.toast
