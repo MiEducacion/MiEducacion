@@ -110,5 +110,4 @@ gem "request_store", "~> 1.5" # RequestStore gives you per-request global storag
 gem "i18n-js"
 # Service Worker with asset pipeline
 gem "serviceworker-rails"
-
 gem "tailwindcss-rails", "~> 2.0"
