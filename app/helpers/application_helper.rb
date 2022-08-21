@@ -14,15 +14,16 @@ module ApplicationHelper
   end
 
   def client_side_app_settings
+    @g = Settings::General
     site_settings = {
-        title: Settings::General.site_name,
-        site_logo: Settings::General.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
-        site_description: Settings::General.site_description,
-        site_shortname: Settings::General.site_shortname,
-        public_site: Settings::General.public,
-        force_redirect_private: Settings::General.force_redirect_private,
-        show_site_banner: Settings::General.show_site_banner,
-        site_banner_content: Settings::General.site_banner_content
+        title: @g.site_name,
+        site_logo: @g.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
+        site_description: @g.site_description,
+        site_shortname: @g.site_shortname,
+        public_site: @g.public,
+        force_redirect_private: @g.force_redirect_private,
+        show_site_banner: @g.show_site_banner,
+        site_banner_content: @g.site_banner_content
       }
 
     if current_user && current_user.has_role?(:admin)
