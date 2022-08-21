@@ -2,7 +2,7 @@
 
 module MiEducacion
   class Application < Rails::Application
-    unless defined? ::MiEducacion::Version
+    unless defined? ::MiEducacion::Application::Version
       module Version
         MAJOR = 0
         MINOR = 1
