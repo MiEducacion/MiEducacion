@@ -19,6 +19,11 @@ class User < ApplicationRecord
     add_role(:student)
   end
 
+  def is_admin?
+    self.has_role?(:admin)
+  end
+  
+
   has_one :profile
   has_one :role
 
