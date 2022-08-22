@@ -28,7 +28,9 @@
          <%= render partial: "layouts/noscript_header" %>
          <div>
             <!-- Fallback in case of JavaScript disabled / Crawler -->
-            <%= yield %>
+    <main class="container mx-auto mt-28 px-5 flex">
+              <%= yield %>
+    </main>
             <!-- End of Fallback -->
          </div>
          <%= render partial: "layouts/noscript_footer" %>

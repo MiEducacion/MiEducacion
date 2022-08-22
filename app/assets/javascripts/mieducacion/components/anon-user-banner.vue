@@ -1,24 +1,10 @@
 <template>
-   <v-banner
-      color="var(--mieducacion-primary)"
-      dark
+   <div id="anon-banner" class="global-notice anon-banner mt-8"
       v-if="!currentUser"
-      v-emoji
-      app
-      icon="mdi-incognito"
-      elevation="0"
       >
       You are browsing the site as an anonymous user, register to take full advantage 😁
-      <template v-slot:actions="{ dismiss }">
-         <v-btn
-            text
-            dark
-            @click="dismiss"
-            >
-            Dismiss
-         </v-btn>
-      </template>
-   </v-banner>
+     
+   </div>
 </template>
 <script>
    export default {

@@ -1,3 +1,2 @@
 web: bundle exec rails server -b 0.0.0.0
-css: bundle exec rails tailwindcss:watch
 pack: ruby bin/webpack-dev-server

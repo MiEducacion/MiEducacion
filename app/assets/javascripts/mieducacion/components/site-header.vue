@@ -7,22 +7,22 @@
         </router-link>
       </div>
       <div class="site-navigation--nav hidden-sm-and-down" role="navigation">
-        <router-link class="site-nav--btn" to="/courses">
+        <router-link class="flex site-nav--btn" to="/courses">
           <GraduationCap :size="20" class="mr-2" />
             {{ t("js.lms.courses") }}
           </router-link
         >
-        <router-link class="site-nav--btn" to="/groups">
+        <router-link class="flex site-nav--btn" to="/groups">
           <GroupsIcon :size="20" class="mr-2" />
             {{ t("js.lms.groups") }}
           </router-link
         >
-        <router-link class="site-nav--btn" to="/resources">
+        <router-link class="flex site-nav--btn" to="/resources">
           <ResourcesIcon :size="20" class="mr-2" />
             {{ t("js.lms.resources") }}
           </router-link
         >
-        <router-link text class="site-nav--btn" to="/grades" v-if="currentUser">
+        <router-link class="flex site-nav--btn" to="/grades" v-if="currentUser">
           <ClipboardCheck :size="20" class="mr-2" />
             {{ t("js.lms.grades") }}
           </router-link

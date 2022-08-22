@@ -1,7 +1,7 @@
 <template>
   <div id="mieducacion">
+    <SiteHeader />
     <main>
-      <SiteHeader />
       <AnonUserBanner/>
       <slot name="below-site-header" />
         <router-view />

@@ -342,12 +342,8 @@ GEM
     sqlite3 (1.4.4)
     ssrf_filter (1.0.8)
     strscan (3.0.4)
-    tailwindcss-rails (2.0.12)
-      railties (>= 6.0.0)
-    tailwindcss-rails (2.0.12-x64-mingw32)
-      railties (>= 6.0.0)
-    tailwindcss-rails (2.0.12-x86_64-linux)
-      railties (>= 6.0.0)
+    tailwindcss-rails-webpacker (0.2.1)
+      rails (>= 6.0.0)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
@@ -422,17 +418,17 @@ DEPENDENCIES
   rubocop-performance (~> 1.14)
   rubocop-rails (~> 2.14)
   rubocop-rspec (~> 2.11)
-  sass-rails (>= 6)
+  sass-rails
   selenium-webdriver
   serviceworker-rails
   sidekiq (~> 6.4)
   sprockets-rails
   sqlite3 (~> 1.4)
-  tailwindcss-rails (~> 2.0)
+  tailwindcss-rails-webpacker (~> 0.2.1)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
-  webpacker (~> 5.0)
+  webpacker (~> 5.4.0)
   wicked
 
 RUBY VERSION
