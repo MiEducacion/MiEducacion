@@ -7,7 +7,7 @@ import twemoji from 'twemoji'
 
 import t from './lib/i18n'
 
-import "./stylesheets/base.scss"
+import "./stylesheets/mieducacion.scss"
 
 const MiEducacion = createApp(App, {
 

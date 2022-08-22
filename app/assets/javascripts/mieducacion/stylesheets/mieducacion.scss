@@ -1,3 +1,6 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 @import 'home';
 @import 'courses';
 @import 'campus';
@@ -10,7 +13,6 @@
 @import 'components/header';
 @import 'components/dialogs';
 @import 'common';
-@import 'fonts';
 
 .homepage-user--card .UserCard--link {
     text-transform: none !important;

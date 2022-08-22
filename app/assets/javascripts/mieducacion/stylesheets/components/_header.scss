@@ -1,0 +1,47 @@
+#site-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+  backface-visibility: hidden;
+  left: 0;
+  height: 4em;
+  background-color: #FFFFFF;
+}
+
+.site-header-wrap {
+  max-width: 1110px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  height: 3.66em;
+  padding: 0 10px;
+}
+
+
+.header-user-panel--nav {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  margin-left: auto;
+  align-items: center;
+}
+
+.site-navigation--nav {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+.site-nav--btn {
+  text-transform: none !important;
+  color: #333 !important;
+  font-family: 'Lato';
+  font-weight: 600 !important;
+  margin: 0 4px;
+  @apply px-4 py-2 hover:bg-gray-100;
+}
