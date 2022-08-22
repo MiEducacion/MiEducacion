@@ -29,8 +29,9 @@
       </MenuItems>
     </transition>
   </Menu>
-  <btn v-else class="login-button" href="/users/sign_in">
-    <v-icon left> mdi-account </v-icon>
+  <btn v-else @click="openLoginModal()" class="login-button flex" href="/users/sign_in">
+  <LoginModal ref="loginModal" />
+    <UserIcon :size="18" class="mr-2" />
     Login
   </btn>
 </template>
@@ -39,8 +40,15 @@
   import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 </script>
 
-<script>
+<script> 
+import LoginModal from './modals/auth/login'
+import { User as UserIcon } from 'lucide-vue-next'
+
 export default {
+  components: {
+    LoginModal,
+    UserIcon
+  },
     methods: {
         userLogout() {
             axios.delete('/users/sign_out', {
@@ -51,7 +59,10 @@ export default {
             .then(() => {
                 window.location.href = "/"
             })
-        }
+        },
+        openLoginModal() {
+        this.$refs.loginModal.setIsOpen(true);
+      }
     }
 }
 </script>

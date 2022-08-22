@@ -1,64 +1,7 @@
 @import 'variables';
-@import 'fonts';
 
-html {
-    height: 100%;
+//transparentize($mieducacion-primary, .9);
+
+.form-input {
+    @apply px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500 border-2 block w-full sm:text-sm border-gray-300 rounded-md
 }
-
-body {
-    height: 100%;
-    background-color: transparentize($mieducacion-primary, .9);
-}
-
-
-#site-logo {
-    height: 1.8em;
-    width: auto;
-    margin: 0 auto;
-}
-
-
-
-.crayola-card {
-    border-radius: 8px;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
-    background-color: #FFF;
-    justify-content: center;
-    align-content: center;
-}
-
-.login-bg {
-    background-position: center;
-}
-
-.welcome-title {
-    font-family: var(--mieducacion-theme-font);
-    font-weight: 600;
-    font-size: var(--font-up-3);
-    color: #222;
-}
-
-.welcome-subtitle {
-    font-family: var(--mieducacion-theme-font);
-    font-weight: 600;
-    font-size: var(--font-up-1);
-    color: #444;
-}
-
-@media (min-width: 640px) {
-.form-login {
-    border-radius: var(--radius);
-    padding: var(--su-8);
-    margin: 0 auto;
-    width: 640px;
-}
-}
-
-@media only screen and (max-width: 768px) {
-    .crayola-layout {
-        margin-top: 1rem !important;
-        align-content: flex-start;
-    }
-  }
