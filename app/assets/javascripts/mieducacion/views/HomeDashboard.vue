@@ -1,5 +1,5 @@
 <template>
-  <div id="site-homepage" class="pt-10 mb-16">
+  <div id="site-homepage" class="pt-5 mb-16">
     <SiteBanner/>
     <v-container fluid class="fill-height home-container">
       <!--       <v-alert
@@ -24,17 +24,6 @@
 
           <campus/>
 
-           <v-expansion-panels focusable popout class="mt-8">
-            <v-expansion-panel>
-              <v-expansion-panel-header>
-                Aquí hay algunos consejos para que comiences a utilizar el sitio
-                😀.
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                Aquí hay algunas cosas para que comiences en MiEducación.
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
         </v-col>
       </v-row>
     </v-container>
