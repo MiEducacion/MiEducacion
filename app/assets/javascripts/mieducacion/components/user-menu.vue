@@ -74,10 +74,10 @@
       </v-list-item>
     </v-list>
   </v-menu>
-  <v-btn v-else color="primary" text class="login-button" href="/users/sign_in">
+  <btn v-else class="login-button" href="/users/sign_in">
     <v-icon left> mdi-account </v-icon>
     Login
-  </v-btn>
+  </btn>
 </template>
 
 <script>

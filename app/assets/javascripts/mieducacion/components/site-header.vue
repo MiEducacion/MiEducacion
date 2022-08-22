@@ -34,8 +34,8 @@
  -->        <div icon class="mr-2" v-if="currentUser">
           <MessageCircle :size="24" />
         </div>
-<!--         <UserMenu/>
- -->      </div>
+       <UserMenu/>
+      </div>
     </div>
   </header>
 </template>
