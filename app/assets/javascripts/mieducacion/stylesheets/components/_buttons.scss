@@ -1,3 +1,12 @@
+#current-user {
+    @apply px-4 py-2 rounded-full border-2 bg-blue-50 border-blue-100
+
+}
+
+.user-menu-items {
+    @apply absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
+}
+
 .login-button {
     @apply bg-purple-700 rounded-sm text-white py-2 px-4 cursor-pointer
 }

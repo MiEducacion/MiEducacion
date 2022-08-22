@@ -1,84 +1,43 @@
 <template>
-  <v-menu
-    bottom
-    left
-    offset-y
-    transition="slide-y-transition"
-    v-if="currentUser"
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn
-        icon
-        width="auto"
-        height="auto"
-        id="current-user"
-        v-bind="attrs"
-        v-on="on"
-      >
-        <v-avatar size="32">
-          <v-gravatar
-            :email="currentUser.email"
-            alt="User Avatar"
-            :size="120"
-          />
-        </v-avatar>
-      </v-btn>
-    </template>
+ <Menu as="div" class="relative inline-block text-left"
+    v-if="currentUser">
+    <MenuButton id="current-user">
+          
+        {{ currentUser.email }}
+    </MenuButton>
 
-    <v-list dense>
-      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}`">
-        <v-list-item-icon>
-          <v-icon>mdi-account-circle-outline</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Mi Perfil</v-list-item-title>
-      </v-list-item>
-      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}/send-invites`">
-        <v-list-item-icon>
-          <v-icon>mdi-account-plus-outline</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Enviar invitación</v-list-item-title>
-      </v-list-item>
-      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}/library`">
-        <v-list-item-icon>
-          <v-icon>mdi-book-outline</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Mi librería</v-list-item-title>
-      </v-list-item>
-      <v-divider></v-divider>
+    <!-- Use Vue's built-in <transition> element to add transitions. -->
+    <transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-out"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+    >
+      <MenuItems          
+      class="user-menu-items">
+      <div class="px-1 py-1">
+        <MenuItem v-slot="{ active }" as="li">
+        <a :class='{ "bg-purple-500": active }' href="/account-settings">
+          Account settings
+        </a>
+      </MenuItem>
+      </div>
 
-      <v-list-item active-class="no-active" :to="`/u/${currentUser.id}/settings`">
-        <v-list-item-icon>
-          <v-icon>mdi-cog-outline</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Configuración</v-list-item-title>
-      </v-list-item>
-
-      <v-list-item
-        v-if="currentUser.is_admin"
-        active-class="no-active"
-        exact
-        to="/admin"
-      >
-        <v-list-item-icon>
-          <v-icon>mdi-wrench-outline</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Administración</v-list-item-title>
-      </v-list-item>
-      <v-divider></v-divider>
-
-      <v-list-item active-class="no-active" @click="userLogout">
-        <v-list-item-icon>
-          <v-icon>mdi-power</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Cerrar Sesión</v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-menu>
+        <!-- ... -->
+      </MenuItems>
+    </transition>
+  </Menu>
   <btn v-else class="login-button" href="/users/sign_in">
     <v-icon left> mdi-account </v-icon>
     Login
   </btn>
 </template>
+
+<script setup>
+  import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+</script>
 
 <script>
 export default {
