@@ -29,6 +29,12 @@
     @apply fixed inset-0 bg-black bg-opacity-25
 }
 
+.modal-site-logo {
+    max-height: 2.4em;
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (min-width: 600px){
     .dialog.login {
         min-width: 500px;

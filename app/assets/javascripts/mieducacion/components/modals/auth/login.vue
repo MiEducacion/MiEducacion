@@ -29,6 +29,9 @@
             <DialogPanel
               class="dialog login w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
             >
+            <div class="image-container justify-center flex pb-4">
+              <img :src="SiteSettings.site_logo" class="modal-site-logo"/>
+              </div>
               <DialogTitle
                 as="h3"
                 class="text-lg font-medium leading-6 text-gray-900"
