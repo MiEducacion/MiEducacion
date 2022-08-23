@@ -1,27 +1,39 @@
 <template>
   <div id="global-alerts">
-    <div
-    id="site-banner"
-    class="mx-auto global-notice"
-    v-if="SiteSettings.show_site_banner"
-    >
-      <span v-emoji v-md.html.breaks.linkify>{{SiteSettings.site_banner_content}}</span>
-    </div>
-
-    <div
-    id="site-unconfigured"
-    class="mx-auto global-notice"
-    v-if="!SiteSettings.wizard_completed && !SiteSettings.bypass_wizard_check && currentUser && currentUser.is_admin"
-    >
-      <span v-emoji v-md.html.breaks.linkify>{{ t("js.admin.wizard_required") }} <a href="/wizard" class="text-blue-500">{{ t("js.admin.wizard_link") }}</a></span>
-    </div>
+    <template v-for="banner in banners" :key="banner.id">
+      <div
+        :id="banner.id"
+        :class="`mx-auto global-notice ${banner.id}`"
+        v-if="banner.show"
+      >
+        <span v-emoji v-md.html.breaks.linkify v-html="banner.content" />
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SiteBanner'
+  data() {
+    return {
+    banners : [
+          {
+            id: 'anon-banner',
+            content: 'You are browsing the site as an anonymous user, register to take full advantage 😁',
+            show: !this.currentUser
+          },
+          {
+            id: 'site-banner',
+            content: this.SiteSettings.site_banner_content,
+            show: this.SiteSettings.show_site_banner
+          },
+          {
+            id: 'site-unconfigured',
+            //content: `${ t("js.admin.wizard_required") } <a href="/wizard" class="text-blue-500"> ${ t("js.admin.wizard_link") }</a>`,
+            show: !this.SiteSettings.wizard_completed && !this.SiteSettings.bypass_wizard_check && this.currentUser && this.currentUser.is_admin
+          }
+        ]
+  }
+  }
 }
 </script>
-
-<style></style>
