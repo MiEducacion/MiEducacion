@@ -41,14 +41,14 @@
                 </p>
 
                 <form id="login-form" @submit="console.log(e)" type="POST">
-                    <input type="email" name="email" id="login-email-input" class="form-input mt-2" placeholder="E-mail">
+                    <input type="email" v-model="email" id="login-email-input" class="form-input mt-2" placeholder="E-mail">
 
-                    <input type="password" name="password" id="login-password-input" class="form-input mt-2" placeholder="Password">
+                    <input type="password" v-model="password" id="login-password-input" class="form-input mt-2" placeholder="Password">
                     <div class="mt-4">
                 <button
                   type="submit"
                   class="login-button"
-                  @click="closeModal"
+                  @click="submitLogin"
                 >
                   Login
                 </button>
@@ -76,19 +76,40 @@
     DialogDescription,
   } from '@headlessui/vue'
 
-  // The open/closed state lives outside of the Dialog and
-  // is managed by you.
   const isOpen = ref(false)
 
   function setIsOpen(value) {
     isOpen.value = value
   }
 
-  function handleDeactivate() {
-    // ...
-  }
-
   defineExpose({
     setIsOpen
   })
+</script>
+
+<script>
+  export default {
+    data () {
+      return {
+        email: null,
+        password: null,
+        remember_me: null,
+      }
+    },
+    methods: {
+      submitLogin (e) {
+        e.preventDefault()
+        axios.post('/users/sign_in.json', {
+          user: {
+            email: this.email,
+            password: this.password
+          }  
+        })
+        .then(res => {
+          window.location.reload() 
+        })
+        .catch(console.error)
+      }
+    }
+  }
 </script>
