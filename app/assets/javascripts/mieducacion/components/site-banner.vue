@@ -11,7 +11,7 @@
     <div
     id="site-unconfigured"
     class="mx-auto global-notice"
-    v-if="!SiteSettings.wizard_completed && !SiteSettings.bypass_wizard_check"
+    v-if="!SiteSettings.wizard_completed && !SiteSettings.bypass_wizard_check && currentUser && currentUser.is_admin"
     >
       <span v-emoji v-md.html.breaks.linkify>{{ t("js.admin.wizard_required") }} <a href="/wizard" class="text-blue-500">{{ t("js.admin.wizard_link") }}</a></span>
     </div>
