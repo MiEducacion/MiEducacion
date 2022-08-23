@@ -6,7 +6,7 @@
         :class="`mx-auto global-notice ${banner.id}`"
         v-if="banner.show"
       >
-        <span v-emoji v-md.html.breaks.linkify v-html="banner.content" />
+        <span v-emoji v-md.html.breaks.linkify>{{ banner.content }}</span>
       </div>
     </template>
   </div>
@@ -29,7 +29,7 @@ export default {
           },
           {
             id: 'site-unconfigured',
-            //content: `${ t("js.admin.wizard_required") } <a href="/wizard" class="text-blue-500"> ${ t("js.admin.wizard_link") }</a>`,
+            content: `${ this.t("js.admin.wizard_required") } <a href="/wizard" class="text-blue-500"> ${ this.t("js.admin.wizard_link") }</a>`,
             show: !this.SiteSettings.wizard_completed && !this.SiteSettings.bypass_wizard_check && this.currentUser && this.currentUser.is_admin
           }
         ]
