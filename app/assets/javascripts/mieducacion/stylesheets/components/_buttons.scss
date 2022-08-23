@@ -4,7 +4,11 @@
 }
 
 .user-menu-items {
-    @apply absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
+    @apply absolute right-0 mt-2 w-full origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none list-none
+}
+
+.user-menu-items .menu-item {
+    @apply px-4 py-2 w-full hover:text-white block text-left; 
 }
 
 .login-button {

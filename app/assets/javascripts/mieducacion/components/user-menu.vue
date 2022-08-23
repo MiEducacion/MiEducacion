@@ -17,9 +17,9 @@
     >
       <MenuItems          
       class="user-menu-items">
-      <div class="px-1 py-1">
+      <div class="py-1">
         <MenuItem v-slot="{ active }" as="li">
-        <a :class='{ "bg-purple-500": active }' href="/account-settings">
+        <a class="menu-item" :class='{ "bg-purple-500": active }' href="/account-settings">
           Account settings
         </a>
       </MenuItem>
