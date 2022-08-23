@@ -3,6 +3,7 @@
     <SiteHeader />
     <main>
       <AnonUserBanner/>
+      <SiteBanner/>
       <slot name="below-site-header" />
         <router-view />
       <GlobalSnackbar ref="toast" />
@@ -14,15 +15,16 @@
 <script>
 
 import SiteHeader from './components/site-header.vue'
+import SiteBanner from './components/site-banner.vue'
 import SiteBottomNavigation from './components/site-bottom-navigation.vue'
 import AnonUserBanner from './components/anon-user-banner.vue'
-
 import GlobalSnackbar from "./components/global-snackbar.vue";
 
 
 export default {
   components: {
     SiteHeader,
+    SiteBanner,
     SiteBottomNavigation,
     AnonUserBanner,
     GlobalSnackbar
