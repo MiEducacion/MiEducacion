@@ -23,7 +23,11 @@
       class="app-body<% if device == "mobile" %> is-mobile<% end %>"
       data-user-status="<%= j(user_logged_in_status) %>">
       <!--The application is rendered at runtime on client-side-->
-      <div id="mieducacion"></div>
+      <div id="mieducacion">
+         <%- if include_splash? %>
+            <%= render partial: "common/splash" %>
+         <%- end %>
+      </div>
       <noscript data-path="<%= request.env["PATH_INFO"] %>">
          <%= render partial: "layouts/noscript_header" %>
          <div>

@@ -65,4 +65,9 @@ module ApplicationHelper
       moderator: @u.has_role?(:moderator)
     }
   end
+
+  def include_splash?
+    Settings::General.enable_splash_screen
+  end
+
 end

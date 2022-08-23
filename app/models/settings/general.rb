@@ -55,5 +55,7 @@ module Settings
     setting :enable_opengraph, type: :boolean, default: true
     setting :opengraph_sitename, type: :string, default: Settings::General.site_name
     setting :opengraph_image, type: :string, default: Settings::General.site_logo
+
+    setting :enable_splash_screen, type: :boolean, default: true
   end
 end
