@@ -23,6 +23,10 @@
           Account settings
         </a>
       </MenuItem>
+
+      <MenuItem as="li">
+        <button @click="userLogout()" id="logout-button" class="menu-item">Logout</button>
+      </MenuItem>
       </div>
 
         <!-- ... -->

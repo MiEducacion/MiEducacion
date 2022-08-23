@@ -14,3 +14,7 @@
 .login-button {
     @apply bg-purple-700 rounded-sm text-white py-2 px-4 cursor-pointer items-center
 }
+
+#logout-button {
+    @apply hover:bg-red-600 hover:text-white
+}
