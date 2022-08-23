@@ -8,7 +8,11 @@
 }
 
 .user-menu-items .menu-item {
-    @apply px-4 py-2 w-full hover:text-white block text-left; 
+    @apply px-4 py-2 w-full hover:text-white flex text-left items-center; 
+}
+
+.user-menu-items .menu-item .icon {
+    @apply mr-2;
 }
 
 .login-button {
