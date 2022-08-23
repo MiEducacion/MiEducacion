@@ -6,7 +6,7 @@
         :class="`mx-auto global-notice ${banner.id}`"
         v-if="banner.show"
       >
-        <span v-emoji v-md.html.breaks.linkify>{{ banner.content }}</span>
+        <span v-emoji v-md.html.breaks.linkify v-html="banner.content" />
       </div>
     </template>
   </div>
