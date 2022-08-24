@@ -30,7 +30,7 @@ import store from './store'
 MiEducacion.component('SiteSpinner', SiteSpinner)
 
 MiEducacion.directive('emoji', {
-    inserted (el) {
+    mounted (el) {
       el.innerHTML = twemoji.parse(el.innerHTML, {  size: 'svg', ext: '.svg'  })
     }
   })
