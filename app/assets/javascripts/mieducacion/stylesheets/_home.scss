@@ -1,7 +1,46 @@
-.home-container {
-    background-color: #fff;
-    max-width: 1150px !important;
-    padding: 2em 2em 5% !important;
-    padding-bottom: 0 !important;
+.homepage-main-outlet {
+    @apply mt-10 bg-white
 }
 
+.home-greeting {
+    @apply py-8 px-4
+}
+
+.home-greeting .title {
+    @apply text-2xl text-center font-medium
+}
+
+.home-greeting .subtitle {
+    @apply text-lg text-center font-medium mb-6
+}
+
+.quick-shortcuts-container {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-3 
+}
+
+.quick-shortcuts-container .card {
+    @apply block p-4 border border-gray-100 shadow-sm rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-200 relative
+}
+
+.quick-shortcuts-container .card .inner-div {
+    @apply mt-4 text-gray-500 sm:pr-8
+}
+
+.quick-shortcuts-container .card .badge {
+    @apply absolute right-4 top-4 rounded-full px-3 py-1.5 font-medium text-xs
+}
+
+.badge.badge-productivity {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.badge.badge-personal {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.badge.badge-others {
+    background-color: #ecfccb;
+    color: #65a30d;
+}

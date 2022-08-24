@@ -1,10 +1,10 @@
-import HomeDashboard from'../views/HomeDashboard.vue'
+import Home from'../views/home'
 
 let HomeRoute = {
-    name: 'HomeDashboard',
+    name: 'home.index',
     path: '/',
     alias: '/home',
-    component: HomeDashboard
+    component: Home
  }
 
  
