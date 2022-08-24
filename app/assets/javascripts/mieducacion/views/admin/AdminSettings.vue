@@ -17,14 +17,22 @@
 </template>
 
 <script>
+import { useRouter, useRoute } from 'vue-router'
+
 export default {
     name: 'AdminSettings',
+    setup() {
+     const router = useRouter()
+     const route = useRoute()
+
+    const currentCategory = router.currentRoute.split("/")[3]
+    },
     metaInfo: {
         title: 'Admin'
     },
     methods: {
         navigateTo(value) {
-            this.$router.push({ path: `/admin/settings/${value.id}`});
+            this.router.push({ path: `/admin/settings/${value.id}`});
         }
     },
     data () {
@@ -45,7 +53,6 @@ export default {
                 id: "smtp",
                 name: "Email"
             }],
-            currentCategory: this.$router.currentRoute.path.split("/")[3]
 
         }
     }

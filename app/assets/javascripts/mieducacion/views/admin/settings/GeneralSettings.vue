@@ -4,7 +4,7 @@
       <h1>{{ t("js.admin.settings.general_settings.title") }}</h1>
       <v-container>
         <div class="pt-4">
-          <v-form @submit.prevent="updateSettings">
+          <form @submit.prevent="updateSettings">
             <template v-for="setting in settingsModel" :key="setting.name">
               <v-row
                 class="setting-container"
@@ -18,20 +18,20 @@
                 <v-col md="6" sm="12" cols="auto">
                   <!-- Type 0: String -->
 
-                  <v-text-field
+                  <input
                     v-if="setting.type == 0"
                     @input="settings[setting.name] = $event.target.value"
                     :value="setting.value"
                     outlined
                     :v-model="settings[setting.name]"
                     dense
-                    class="setting-value"
+                    class="setting-value input"
                     type="text"
                     :rules="[() => !!settings[setting.name]|| 'This field is required']"
                     :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
                     required
                     hide-details
-                  ></v-text-field>
+                  >
 
                   <!-- Type 1: Boolean -->
 
@@ -106,16 +106,15 @@
                 </v-col>
               </v-row>
             </template>
-            <v-btn
+            <button
               :loading="btnLoading"
-              color="var(--mieducacion-primary)"
-              dark
-              elevation="0"
               type="submit"
+              @click="updateSettings"
+              class="settings-submit"
             >
               {{t("js.admin.settings.save")}}
-            </v-btn>
-          </v-form>
+            </button>
+          </form>
         </div>
       </v-container>
     </div>
@@ -177,7 +176,8 @@ export default {
         }
     },
     methods: {
-        updateSettings() {
+        updateSettings(e) {
+          e.preventDefault();
             if (!this.$_.isEmpty(this.settings)) {
                 let formData = new FormData()
                 this.$_.forEach(this.settings, function(value, key) {

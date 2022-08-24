@@ -1,22 +1,24 @@
 .admin-dashboard {
-    width: 100%;
-    padding-right: 6px;
-    padding-left: 6px;
-    margin-right: auto;
-    margin-left: auto;
-    height: 100%;
+    @apply mt-10 bg-white
+}
+.admin-dashboard .panel {
+    @apply px-4 py-4
 }
 
-.admin-container {
-    background-color: #fff;
-    max-width: 1150px !important;
-    border-radius: 0;
-    padding: 2em 2em 5% !important;
-    padding-bottom: 0 !important;
+.admin-main-nav {
+    @apply flex;
 }
 
-.admin-container > .panel {
-    width: 100%;
+.admin-main-nav .nav.nav-pills {
+    @apply flex
+}
+
+.nav-item {
+    @apply hover:bg-purple-100 hover:text-purple-700 px-4 py-2 flex
+}
+
+.admin-nav-active {
+    @apply bg-purple-700 text-white
 }
 
 .admin-container > .nav-pills {
@@ -119,6 +121,10 @@
         padding-right: 20px;
     }
 
+      .setting-value.input {
+        @apply px-4 py-2 border border-gray-300 rounded-md
+      }
+
     .setting-description {
         display: block;
         padding-top: 4px;
@@ -151,6 +157,11 @@
     }
 }
 
+
+}
+
+.settings-submit {
+    @apply px-4 py-2 text-white bg-purple-700 hover:bg-purple-900
 }
 
 @media screen and (max-width: 600px) {

@@ -1,25 +1,20 @@
 <template>
-  <div class="admin-dashboard pt-10 mb-16">
-    <v-container fluid class="admin-container align-start pb-10">
-      <v-tabs class="nav-pills" active-class="nav-pills--active" show-arrows>
-        <v-tab to="/admin/dashboard" class="mx-2">
-        <div>
-          <v-icon left>mdi-chart-bar-stacked</v-icon>Dashboard
-        </div>
-        </v-tab>
-        <v-tab to="/admin/settings" class="mx-2">
-        <div>
-          <v-icon left>mdi-cog-outline</v-icon>Settings
-        </div>
-        </v-tab>
-        <v-tab to="/admin/users" class="mx-2">
-        <div>
-          <v-icon left>mdi-account-group-outline</v-icon>Users
-        </div>
-        </v-tab>
-      </v-tabs>
+  <div class="admin-dashboard">
+    <div class="admin-main-nav">
+      <ul class="nav nav-pills">
+        <li>
+          <router-link class="nav-item" to="/admin/dashboard" active-class="admin-nav-active">
+            Dashboard
+          </router-link>
+        </li>
+        <li>
+          <router-link class="nav-item" to="/admin/settings" active-class="admin-nav-active">
+            Settings
+          </router-link>
+        </li>
+      </ul>
+    </div>
       <router-view></router-view>
-    </v-container>
   </div>
 </template>
 

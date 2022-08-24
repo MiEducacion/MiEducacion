@@ -18,7 +18,7 @@
               rel="noopener noreferrer"
               target="_blank"
             >
-              {{ dashboardData.version_check.installed_sha | truncate(10)}}
+              {{ dashboardData.version_check.installed_sha.substr(0,10) }}
             </a>
             )
           </div>
