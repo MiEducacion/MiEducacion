@@ -3,7 +3,7 @@ let csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('conte
 
 
 const httpClient = axios.create({
-    timeout: 10000,
+    timeout: 30000,
     headers: {
         common: {
             "X-CSRF-TOKEN": csrf
