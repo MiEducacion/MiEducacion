@@ -1,7 +1,7 @@
 <template>
   <div id="mieducacion">
     <SiteHeader />
-    <main>
+    <main class="wrap">
       <SiteBanner/>
       <slot name="below-site-header" />
         <router-view />
