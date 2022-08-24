@@ -62,7 +62,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 
 <script>
 import LoginModal from './modals/auth/login'
-import { User as UserIcon, LogOut } from 'lucide-vue-next'
+import { User as UserIcon, LogOut, Wrench } from 'lucide-vue-next'
 
 export default {
   components: {
@@ -81,7 +81,7 @@ export default {
         },
         {
           text: 'Administrador',
-          icon: UserIcon,
+          icon: Wrench,
           href: '/admin',
           visible: this.currentUser && this.currentUser.is_admin
         }
