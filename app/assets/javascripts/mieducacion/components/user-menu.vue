@@ -83,7 +83,7 @@ export default {
           text: 'Administrador',
           icon: UserIcon,
           href: '/admin',
-          visible: this.currentUser.is_admin
+          visible: this.currentUser && this.currentUser.is_admin
         }
       ]
     }
