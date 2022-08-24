@@ -32,9 +32,11 @@ function logsterHandler(err, severity) {
 		severity: 'error'
 	}
 
-	axios.post("/logs/report_js_error",
-		reportData
-	);
+	if (process.env.NODE_ENV !== 'development') {
+		axios.post("/logs/report_js_error",
+			reportData
+		);
+	}
 }
 
 export default {
