@@ -21,7 +21,7 @@
     "markdown-it": "^13.0.1",
     "node-waves": "^0.7.6",
     "popper.js": "^1.16.1",
-    "postcss": "8.2.10",
+    "postcss": "8.2.13",
     "postcss-loader": "4.0.3",
     "sass": "^1.54.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
