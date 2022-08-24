@@ -29,37 +29,51 @@
             <DialogPanel
               class="dialog login w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
             >
-            <div class="image-container justify-center flex pb-4">
-              <img :src="SiteSettings.site_logo" class="modal-site-logo"/>
+              <div class="image-container justify-center flex pb-4">
+                <img :src="SiteSettings.site_logo" class="modal-site-logo" />
               </div>
               <DialogTitle
                 as="h3"
                 class="text-lg font-medium leading-6 text-gray-900"
+                v-emoji
               >
-                Welcome back to {{ SiteSettings.title }}!
+                Welcome back to {{ SiteSettings.title }} 👋!
               </DialogTitle>
               <div class="mt-2">
                 <p class="text-sm text-gray-500 mb-4">
-                 Ready to go back to school?
+                  Ready to go back to school?
                 </p>
 
                 <form id="login-form" @submit="console.log(e)" type="POST">
-                    <input type="email" v-model="email" id="login-email-input" class="form-input mt-2" placeholder="E-mail">
+                  <input
+                    type="email"
+                    v-model="email"
+                    id="login-email-input"
+                    class="form-input mt-4"
+                    placeholder="E-mail"
+                  />
 
-                    <input type="password" v-model="password" id="login-password-input" class="form-input mt-2" placeholder="Password">
-                    <div class="mt-4">
-                <button
-                  type="submit"
-                  class="login-button"
-                  @click="submitLogin"
-                >
-                  Login
-                </button>
-              </div>
+                  <input
+                    type="password"
+                    v-model="password"
+                    id="login-password-input"
+                    class="form-input mt-4"
+                    placeholder="Password"
+                  />
+                  <div class="mt-4">
+                    <a @click="forgotPassword" class="forgot-password">Forgot password</a>
+                    <button
+                      type="submit"
+                      class="login-button"
+                      @click="submitLogin"
+                    >
+                      <Unlock :size="18" class="icon" />
+                      Login
+                    </button>
+                    <hr class="separator" />
+                  </div>
                 </form>
               </div>
-
-              
             </DialogPanel>
           </TransitionChild>
         </div>
@@ -69,50 +83,54 @@
 </template>
 
 <script setup>
-  import { ref, defineExpose } from 'vue'
-  import {
-    TransitionRoot,
-    TransitionChild,
-    Dialog,
-    DialogPanel,
-    DialogTitle,
-    DialogDescription,
-  } from '@headlessui/vue'
+import { ref, defineExpose } from 'vue'
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  DialogDescription,
+} from '@headlessui/vue'
+import { Unlock } from 'lucide-vue-next'
 
-  const isOpen = ref(false)
+const isOpen = ref(false)
 
-  function setIsOpen(value) {
-    isOpen.value = value
-  }
+function setIsOpen(value) {
+  isOpen.value = value
+}
 
-  defineExpose({
-    setIsOpen
-  })
+defineExpose({
+  setIsOpen
+})
 </script>
 
 <script>
-  export default {
-    data () {
-      return {
-        email: null,
-        password: null,
-        remember_me: null,
-      }
+export default {
+  data () {
+    return {
+      email: null,
+      password: null,
+      remember_me: null,
+    }
+  },
+  methods: {
+    submitLogin (e) {
+      e.preventDefault()
+      axios.post('/users/sign_in.json', {
+        user: {
+          email: this.email,
+          password: this.password
+        }
+      })
+      .then(res => {
+        window.location.reload()
+      })
+      .catch(console.error)
     },
-    methods: {
-      submitLogin (e) {
-        e.preventDefault()
-        axios.post('/users/sign_in.json', {
-          user: {
-            email: this.email,
-            password: this.password
-          }  
-        })
-        .then(res => {
-          window.location.reload() 
-        })
-        .catch(console.error)
-      }
+    forgotPassword (e) {
+      e.preventDefault()
     }
   }
+}
 </script>

@@ -35,6 +35,10 @@
   padding: 0 10px;
 }
 
+.separator {
+  @apply border border-gray-200 my-4
+}
+
   @keyframes rotate-forever {
     0% {
       transform: rotate(0deg);
@@ -42,4 +46,8 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  .mt-4 {
+    @apply mt-4
   }
