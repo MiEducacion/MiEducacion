@@ -21,7 +21,9 @@ const httpClient = axios.create({
     }
 
     if (error.response.status === 500 || error.response.code === 502) {
-        AppRouter.replace('/exception')
+        if (process.env.NODE_ENV !== 'development') {
+          AppRouter.replace('/exception')
+        }
     }
     return Promise.reject(error);
   });
