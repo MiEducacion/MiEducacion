@@ -1,7 +1,7 @@
 <template>
   <Menu as="div" class="relative inline-block text-left" v-if="currentUser">
     <MenuButton id="current-user">
-      {{ currentUser.email }}
+      <img class="avatar" :src="currentUser.photo" />
     </MenuButton>
 
     <!-- Use Vue's built-in <transition> element to add transitions. -->
