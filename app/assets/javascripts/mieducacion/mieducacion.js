@@ -5,53 +5,41 @@ import Gravatar from 'vue-gravatar';
 import MarkdownParser from './lib/markdown-it';
 import twemoji from 'twemoji'
 import Preloaded from './lib/preloaded'
-
+import reportJsError from './lib/report-js-error'
+import globalFilters from './helpers/filters'
 import t from './lib/i18n'
-
+import _ from './lib/lodash'
 import "./stylesheets/mieducacion.scss"
+import SiteSpinner from './components/site-spinner.vue'
 
-const MiEducacion = createApp(App, {
-
-})
-MiEducacion.use(router)
-           .use(Preloaded)
-MiEducacion.config.globalProperties.$filters = globalFilters
-MiEducacion.mixin(t)
 
 require('./lib/axios-setup')
-/* require('./lib/register-components')*/
 require('./lib/register-service-worker')
-require('./lib/report-js-error')
-
-import globalFilters from './helpers/filters'
 
 
-import SiteSpinner from './components/site-spinner.vue'
-import store from './store'
+const MiEducacion = createApp(App)
+MiEducacion.use(router)
+           .use(Preloaded)
+           .use(reportJsError)
+           .mixin(t)
 
+MiEducacion.config.globalProperties.$filters = globalFilters
+MiEducacion.config.globalProperties.$_ = _
 MiEducacion.component('SiteSpinner', SiteSpinner)
-
 MiEducacion.directive('emoji', {
     mounted (el) {
       el.innerHTML = twemoji.parse(el.innerHTML, {  size: 'svg', ext: '.svg'  })
     }
   })
-  MiEducacion.directive('md', {
+MiEducacion.directive('md', {
     mounted (el) {
       el.innerHTML = MarkdownParser.render(el.innerHTML)
     }
-  })
-  MiEducacion.component('v-gravatar', Gravatar);
-
-
-import _ from './lib/lodash'
-MiEducacion.config.globalProperties.$_ = _
-
+})
+MiEducacion.component('v-gravatar', Gravatar);
 
  /* Remove noscript tag in SPA */
-  document.querySelector("noscript")?.remove();
-
+document.querySelector("noscript")?.remove();
 
 
 export default MiEducacion
-
