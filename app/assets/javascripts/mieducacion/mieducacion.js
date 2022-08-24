@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './app.vue'
 import router from './routes/mieducacion-router'
 import Gravatar from 'vue-gravatar';
-import VueDirectiveMarkdown from 'vue-directive-markdown'
+import MarkdownParser from './lib/markdown-it';
 import twemoji from 'twemoji'
 
 import t from './lib/i18n'
@@ -34,7 +34,11 @@ MiEducacion.directive('emoji', {
       el.innerHTML = twemoji.parse(el.innerHTML, {  size: 'svg', ext: '.svg'  })
     }
   })
-  MiEducacion.directive('md', VueDirectiveMarkdown)
+  MiEducacion.directive('md', {
+    mounted (el) {
+      el.innerHTML = MarkdownParser.render(el.innerHTML)
+    }
+  })
   MiEducacion.component('v-gravatar', Gravatar);
 
 import Preloaded from './lib/preloaded'

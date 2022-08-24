@@ -8,6 +8,10 @@
     @apply px-4 py-4 bg-white mx-auto mt-4
 }
 
+.global-notice a {
+    @apply text-blue-500
+}
+
 #site-banner {
     background-color: var(--mieducacion-banner-background);
     border-radius: 0;
