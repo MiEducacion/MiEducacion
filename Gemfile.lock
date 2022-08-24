@@ -129,6 +129,7 @@ GEM
     glob (0.3.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gravtastic (3.2.6)
     hashie (5.0.0)
     highline (2.0.3)
     i18n (1.12.0)
@@ -395,6 +396,7 @@ DEPENDENCIES
   carrierwave (~> 2.2)
   carrierwave-bombshelter (~> 0.2)
   devise
+  gravtastic (~> 3.2)
   highline
   i18n-js
   jbuilder (~> 2.7)

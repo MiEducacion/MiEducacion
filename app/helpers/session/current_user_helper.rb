@@ -8,6 +8,7 @@ module Session
       current_session = {
         id: u.id,
         email: u.email,
+        photo: u.gravatar_url,
         is_student: u.student?,
         is_teacher: u.teacher?,
         is_principal: u.principal?,

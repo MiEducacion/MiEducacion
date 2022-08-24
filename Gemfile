@@ -111,3 +111,5 @@ gem "i18n-js"
 # Service Worker with asset pipeline
 gem "serviceworker-rails"
 gem "tailwindcss-rails-webpacker", "~> 0.2.1"
+
+gem "gravtastic", "~> 3.2"

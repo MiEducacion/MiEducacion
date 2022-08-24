@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include Gravtastic
+  gravtastic
   rolify
   after_create :assign_default_role
   after_initialize :assign_default_role, if: :new_record?
