@@ -5,8 +5,14 @@ if (preloadedDataElement) {
   preloaded = JSON.parse(preloadedDataElement.dataset.preloaded);
 }
 
-export default {
+let preloadedData = {
     currentUser : preloaded.currentUser,
     SiteSettings : preloaded.SiteSettings,
     isMobile : preloaded.isMobile
 };
+
+export default {
+  install: (app) => {
+    Object.assign(app.config.globalProperties, preloadedData);
+  }
+}

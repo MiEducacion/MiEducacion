@@ -4,6 +4,7 @@ import router from './routes/mieducacion-router'
 import Gravatar from 'vue-gravatar';
 import MarkdownParser from './lib/markdown-it';
 import twemoji from 'twemoji'
+import Preloaded from './lib/preloaded'
 
 import t from './lib/i18n'
 
@@ -13,6 +14,7 @@ const MiEducacion = createApp(App, {
 
 })
 MiEducacion.use(router)
+           .use(Preloaded)
 MiEducacion.config.globalProperties.$filters = globalFilters
 MiEducacion.mixin(t)
 
@@ -41,8 +43,6 @@ MiEducacion.directive('emoji', {
   })
   MiEducacion.component('v-gravatar', Gravatar);
 
-import Preloaded from './lib/preloaded'
-Object.assign(MiEducacion.config.globalProperties, Preloaded);
 
 import _ from './lib/lodash'
 MiEducacion.config.globalProperties.$_ = _
