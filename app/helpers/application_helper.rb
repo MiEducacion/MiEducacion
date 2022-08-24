@@ -50,20 +50,7 @@ module ApplicationHelper
 
   def current_session
     return unless user_signed_in?
-
-    @u = current_user
-
-    current_session = {
-      id: @u.id,
-      email: @u.email,
-      is_student: @u.has_role?(:student),
-      is_teacher: @u.has_role?(:teacher),
-      is_principal: @u.has_role?(:teacher),
-      is_admin: @u.is_admin?,
-      is_new_user: @u.new_user?,
-      trusted: @u.has_role?(:trusted),
-      moderator: @u.has_role?(:moderator)
-    }
+    current_user_dump
   end
 
   def include_splash?
