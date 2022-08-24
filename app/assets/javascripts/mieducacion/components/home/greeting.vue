@@ -20,7 +20,7 @@
                     Explore your uploaded materialss.
                 </p></div>
             </router-link>
-            <router-link class="card" to="/account/calendar">
+            <router-link class="card" to="/account/notebook">
             <div class="inner-div">
                 <span class="badge badge-personal">Personal</span>
                 <h5 class="mt-2 text-xl font-bold text-gray-900" v-emoji>📔 Libreta</h5>
