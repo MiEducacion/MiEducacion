@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './app.vue'
 import router from './routes/mieducacion-router'
-import Gravatar from 'vue-gravatar';
 import MarkdownParser from './lib/markdown-it';
 import twemoji from 'twemoji'
 import Preloaded from './lib/preloaded'
@@ -36,7 +35,6 @@ MiEducacion.directive('md', {
       el.innerHTML = MarkdownParser.render(el.innerHTML)
     }
 })
-MiEducacion.component('v-gravatar', Gravatar);
 
  /* Remove noscript tag in SPA */
 document.querySelector("noscript")?.remove();
