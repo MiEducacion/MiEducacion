@@ -7,6 +7,9 @@ module Session
 
       current_session = {
         id: u.id,
+        display_name: u.profile.display_name,
+        username: u.profile.username,
+        biography: u.profile.biography,
         email: u.email,
         photo: u.gravatar_url,
         is_student: u.student?,
