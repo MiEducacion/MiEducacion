@@ -31,10 +31,10 @@
 .site-navigation--nav {
   position: relative;
   height: 100%;
-  display: flex;
   flex: 0 0 auto;
   align-items: center;
   margin-left: 1.5rem;
+  @apply hidden sm:flex
 }
 
 .site-nav--btn {
