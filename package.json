@@ -23,6 +23,7 @@
     "popper.js": "^1.16.1",
     "postcss": "8.2.10",
     "postcss-loader": "4.0.3",
+    "postcss-preset-env": "7",
     "sass": "^1.54.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "turbolinks": "^5.2.0",
