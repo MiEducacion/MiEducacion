@@ -2,14 +2,9 @@
   <div class="admin-dashboard">
     <div class="admin-main-nav">
       <ul class="nav nav-pills">
-        <li>
-          <router-link class="nav-item" to="/admin/dashboard" active-class="admin-nav-active">
-            Dashboard
-          </router-link>
-        </li>
-        <li>
-          <router-link class="nav-item" to="/admin/settings" active-class="admin-nav-active">
-            Settings
+        <li v-for="link in adminLinks" :key="link.to">
+          <router-link class="nav-item" :to="link.to" active-class="admin-nav-active">
+            {{ link.title }}
           </router-link>
         </li>
       </ul>
@@ -24,6 +19,20 @@ export default {
     metaInfo: {
         title: 'Admin'
     },
+    data () {
+      return {
+        adminLinks : [
+          {
+            title: this.t("js.admin.nav.dashboard"),
+            to: '/admin/dashboard'
+          },
+          {
+            title: this.t("js.admin.nav.settings"),
+            to: '/admin/settings'
+          }
+        ]
+      }
+    }
 
 }
 </script>
