@@ -107,7 +107,7 @@ gem "rails_material_design_icons"
 
 gem "request_store", "~> 1.5" # RequestStore gives you per-request global storage
 # For multi-lingual app
-gem "i18n-js"
+gem "i18n-js", "~> 3"
 # Service Worker with asset pipeline
 gem "serviceworker-rails"
 gem "tailwindcss-rails-webpacker", "~> 0.2.1"
