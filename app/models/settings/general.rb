@@ -33,7 +33,7 @@ module Settings
     setting :site_banner_content, type: :string
 
     # Core setup
-    # setting :waiting_on_first_user, type: :boolean, default: !User.exists?
+    setting :waiting_on_first_user, type: :boolean, default: !User.exists?
 
     # Images
 
