@@ -3,51 +3,61 @@
     <div class="site-header-wrap">
       <div class="title">
         <router-link to="/">
-          <img id="site-logo" :src="SiteSettings.site_logo">
+          <img id="site-logo" :src="SiteSettings.site_logo" />
         </router-link>
       </div>
       <div class="site-navigation--nav hidden-sm-and-down" role="navigation">
-        <router-link class="flex site-nav--btn" to="/courses">
-          <GraduationCap :size="20" class="mr-2" />
-            {{ t("js.lms.courses") }}
-          </router-link
-        >
-        <router-link class="flex site-nav--btn" to="/groups">
-          <GroupsIcon :size="20" class="mr-2" />
-            {{ t("js.lms.groups") }}
-          </router-link
-        >
-        <router-link class="flex site-nav--btn" to="/resources">
-          <ResourcesIcon :size="20" class="mr-2" />
-            {{ t("js.lms.resources") }}
-          </router-link
-        >
-        <router-link class="flex site-nav--btn" to="/grades" v-if="currentUser">
-          <ClipboardCheck :size="20" class="mr-2" />
-            {{ t("js.lms.grades") }}
-          </router-link
-        >
+        <template v-for="i in HeaderItems" :key="i.to">
+          <router-link class="flex site-nav--btn" :to="i.to" v-if="i.showItem">
+            <component :is="i.icon" :size="20" class="icon"></component>
+            {{ i.title}}
+          </router-link>
+        </template>
       </div>
-<!--       <v-spacer></v-spacer>
- -->      <div class="header-user-panel--nav">
-<!--         <NotificationsMenu v-if="currentUser"/>
- -->        <div icon class="mr-2" v-if="currentUser">
+      <div class="header-user-panel--nav">
+        <div icon class="mr-2" v-if="currentUser">
           <MessageCircle :size="24" />
         </div>
-       <UserMenu/>
+        <UserMenu />
       </div>
     </div>
   </header>
 </template>
 
 <script>
-import { MessageCircle, GraduationCap, Users as GroupsIcon, Archive as ResourcesIcon, ClipboardCheck } from 'lucide-vue-next'
+import { MessageCircle, GraduationCap, Users as GroupsIcon, Archive as ResourcesIcon, ClipboardCheck, TreeDeciduous } from 'lucide-vue-next'
 import NotificationsMenu from './user-notifications-menu.vue'
 import UserMenu from './user-menu.vue'
 export default {
   components: { NotificationsMenu, UserMenu, MessageCircle, GraduationCap, GroupsIcon, ResourcesIcon, ClipboardCheck },
   data() {
     return {
+      HeaderItems : [
+        {
+          title: this.t("js.lms.courses"),
+          to: '/courses',
+          icon: GraduationCap,
+          showItem: true
+        },
+        {
+          title: this.t("js.lms.groups"),
+          to: '/groups',
+          icon: GroupsIcon,
+          showItem: true
+        },
+        {
+          title: this.t("js.lms.resources"),
+          to: '/groups',
+          icon: ResourcesIcon,
+          showItem: true
+        },
+        {
+          title: this.t("js.lms.grades"),
+          to: '/grades',
+          icon: ClipboardCheck,
+          showItem: !this.$_.isEmpty(this.currentUser)
+        }
+      ]
     }
   },
 }
