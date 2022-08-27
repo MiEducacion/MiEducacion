@@ -2,6 +2,9 @@
 pt-BR:
   js:
     admin:
+      nav:
+        dashboard: "Painel de controle"
+        settings: "Configurações"
       settings:
         general_settings:
           force_redirect_private:
