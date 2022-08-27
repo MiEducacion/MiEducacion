@@ -14,7 +14,9 @@ module ApplicationHelper
   end
 
   def client_side_app_settings
+    # I could probably make this more dynamic in the future?
     @g = Settings::General
+    @s = Settings::Security
     site_settings = {
         title: @g.site_name,
         site_logo: @g.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
@@ -23,7 +25,9 @@ module ApplicationHelper
         public_site: @g.public,
         force_redirect_private: @g.force_redirect_private,
         show_site_banner: @g.show_site_banner,
-        site_banner_content: @g.site_banner_content
+        site_banner_content: @g.site_banner_content,
+        enable_cas_login: @s.enable_cas_login,
+        enable_oauth_login: @s.enable_oauth_login,
       }
 
     if current_user && current_user.has_role?(:admin)

@@ -17,3 +17,7 @@
 .forgot-password {
     @apply block cursor-pointer text-blue-500 text-sm my-2 mb-4;
 }
+
+.external-auth-providers .auth-provider {
+    @apply flex px-4 py-2 cursor-pointer border-2 border-gray-300 rounded-md
+}

@@ -70,7 +70,13 @@
                       <Unlock :size="18" class="icon" />
                       Login
                     </button>
-                    <hr class="separator" />
+                    <footer v-if="SiteSettings.enable_cas_login || SiteSettings.enable_oauth_login">
+                      <hr class="separator" />
+                      <div class="external-auth-providers">
+                        <a @click="casLogin" :class="`auth-provider`" v-if="SiteSettings.enable_cas_login">
+                          <Fingerprint class="icon" :size="20" />Login with CAS</a>
+                      </div>
+                    </footer>
                   </div>
                 </form>
               </div>
@@ -92,7 +98,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@headlessui/vue'
-import { Unlock } from 'lucide-vue-next'
+import { Unlock, Fingerprint } from 'lucide-vue-next'
 
 const isOpen = ref(false)
 

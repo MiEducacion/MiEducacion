@@ -103,6 +103,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_131016) do
     t.index ["var"], name: "index_settings_lms_on_var", unique: true
   end
 
+  create_table "settings_securities", force: :cascade do |t|
+    t.string "var", null: false
+    t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["var"], name: "index_settings_securities_on_var", unique: true
+  end
+
   create_table "settings_user_experiences", force: :cascade do |t|
     t.string "var", null: false
     t.text "value"
