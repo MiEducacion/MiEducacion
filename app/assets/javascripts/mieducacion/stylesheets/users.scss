@@ -1,83 +1,27 @@
-.user-dashboard {
-    width: 100%;
-    padding-right: 6px;
-    padding-left: 6px;
-    margin-right: auto;
-    margin-left: auto;
-    height: 100%;
-}
+.account-main-outlet {
+    @apply mt-10 bg-white;
 
-.user-container {
-    background-color: #fff;
-    max-width: 1150px !important;
-    border-radius: 0;
-    padding: 2em 2em 5% !important;
-    padding-bottom: 0 !important;
-}
+    .about {
+       @apply py-8 px-4 border-b border-gray-200;
 
-.user-container > .panel {
-    width: 100%;
-}
+       .details {
+        @apply text-center;
 
-.user-container > .nav-pills {
+         .avatar {
+            @apply border-8 border-blue-100 rounded-full h-28 w-28 mx-auto hover:border-blue-200 transition-all
+         }
 
-    & .v-tab:before, .v-tabs-slider {
-        background-color: var(--mieducacion-primary);
+         .username {
+            @apply text-2xl font-medium text-gray-800 mt-2
+         }
+       }
+
+       .statistic {
+            @apply flex;
+
+            .title {
+                @apply font-semibold
+            }
+       }
     }
-    
-    & .v-tab {
-        font-family: var(--mieducacion-theme-font) !important;
-        text-transform: none;
-        font-weight: 700;
-}
-}
-
-.user-container > .nav-pills {
-
-    & .nav-pills--active {
-        color: var(--mieducacion-primary);
-    }
-}
-
-.profile-banner .profile-avatar-section {
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    color: #fff;
-}
-
-.user-recognition {
-
-& .trusted {
-    background-color: #BEE3F8 !important;
-    color: #3182CE !important;
-    font-family: 'Lato', var(--mieducacion-theme-font);
-    font-weight: 500;
-
-    & .v-icon {
-        color: #3182CE;
-    }
-  }
-
-  .moderator {
-    background-color: #E9D8FD !important;
-    color: #805AD5 !important;
-    font-family: 'Lato', var(--mieducacion-theme-font);
-    font-weight: 500;
-
-    & .v-icon {
-        color: #805AD5;
-    }
-  }
-
-  .teacher {
-    background-color: #FED7D7 !important;
-    color: #E53E3E !important;
-    font-family: 'Lato', var(--mieducacion-theme-font);
-    font-weight: 500;
-
-    & .v-icon {
-        color: #E53E3E !important;
-  }
- }
 }

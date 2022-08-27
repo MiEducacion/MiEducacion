@@ -12,6 +12,7 @@ module Session
         biography: u.profile.biography,
         email: u.email,
         photo: u.gravatar_url,
+        created_at: u.created_at,
         is_student: u.student?,
         is_teacher: u.teacher?,
         is_principal: u.principal?,
