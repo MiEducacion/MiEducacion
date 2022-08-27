@@ -5,6 +5,7 @@ class User < ApplicationRecord
   gravtastic
   rolify
   after_create :assign_default_role
+  after_create :set_new_user
   after_initialize :assign_default_role, if: :new_record?
 
   # Include default devise modules. Others available are:
@@ -19,6 +20,11 @@ class User < ApplicationRecord
   # All users have the student role by default
   def assign_default_role
     add_role(:student)
+  end
+
+
+  def set_new_user
+    self.new_user = true
   end
 
   def student?
