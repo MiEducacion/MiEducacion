@@ -1,5 +1,8 @@
 <template>
-  <div id="mieducacion">
+  <div id="mountpoint">
+    <metainfo>
+      <template v-slot:title="{ content }">{{ content ? `${content} | ${SiteSettings.title}` : `${SiteSettings.title }` }}</template>
+    </metainfo>
     <SiteHeader />
     <main class="wrap">
       <SiteBanner/>
@@ -17,7 +20,6 @@ import SiteHeader from './components/site-header.vue'
 import SiteBanner from './components/site-banner.vue'
 import SiteBottomNavigation from './components/site-bottom-navigation.vue'
 import GlobalSnackbar from "./components/global-snackbar.vue";
-
 
 export default {
   components: {

@@ -30,7 +30,7 @@
     "vue-backtotop": "^1.6.1",
     "vue-layout-broker": "^0.0.3",
     "vue-loader": "^17.0.0",
-    "vue-meta": "^3.0.0-alpha.2",
+    "vue-meta": "3.0.0-alpha.7",
     "vue-router": "4",
     "vue-turbolinks": "^2.2.2",
     "vue-twemoji": "^1.0.1",
