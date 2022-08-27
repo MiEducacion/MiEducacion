@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 let globalFilters = { 
   truncate(value, size, phraseEnd = '') {
     if (!value) return '';
@@ -7,6 +9,9 @@ let globalFilters = {
       return value;
     }
     return value.substr(0, size) + phraseEnd;
+  },
+  timeAgo(date) {
+    return moment(date).fromNow()
   }
 }
 
