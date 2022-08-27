@@ -30,6 +30,8 @@ es:
             title: "Nombre abreviado del sitio"
           title: "General"
         save: "Guardar ajustes"
+      wizard_link: "Continuar con el asistente"
+      wizard_required: "¡Bienvenido a tu nueva instancia de MiEducacion! Empecemos con el asistente de configuración ✨."
     core:
       error_generic: "Se ha producido un error."
       error_not_modified: "No se han realizado cambios"
@@ -43,3 +45,5 @@ es:
       welcome_to: "Te damos la bienvenida a %{site_name}"
     user:
       inbox: "Bandeja de entrada"
+    users:
+      created_at: "Creado el"

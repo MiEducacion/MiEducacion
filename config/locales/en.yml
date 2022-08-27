@@ -2,8 +2,6 @@
 en:
   js:
     admin:
-      wizard_required: "Welcome to your new MiEducacion instance! Let’s get started with the setup wizard ✨."
-      wizard_link: "Continue with Wizard"
       settings:
         general_settings:
           force_redirect_private:
@@ -32,6 +30,8 @@ en:
             title: "Site shortname"
           title: "General"
         save: "Save settings"
+      wizard_link: "Continue with Wizard"
+      wizard_required: "Welcome to your new MiEducacion instance! Let’s get started with the setup wizard ✨."
     core:
       error_generic: "An error has occurred"
       error_not_modified: "No changes have been made"
@@ -43,7 +43,7 @@ en:
       resources: "Resources"
     login:
       welcome_to: "Welcome to %{site_name}"
-    users:
-      created_at: "Created at"
     user:
       inbox: "Inbox"
+    users:
+      created_at: "Created at"

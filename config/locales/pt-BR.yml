@@ -30,6 +30,8 @@ pt-BR:
             title: "Nome abreviado do site"
           title: "Geral"
         save: "Salvar configurações"
+      wizard_link: "Continue com o Wizard"
+      wizard_required: "Bem-vindo à sua nova instância do MIEducacion! Vamos começar com o assistente de configuração ✨."
     core:
       error_generic: "Ocorreu um erro"
       error_not_modified: "Nenhuma alteração foi feita"
@@ -43,3 +45,5 @@ pt-BR:
       welcome_to: "Bem-vindo a %{site_name}"
     user:
       inbox: "Mensagens"
+    users:
+      created_at: "Criado em"
