@@ -1,6 +1,6 @@
 const AdminBase = () => import( /* webpackChunkName: "admin-base" */ '../views/admin/AdminBase.vue');
 const AdminDashboard = () => import( /* webpackChunkName: "admin-dashboard" */ '../views/admin/AdminDashboard.vue');
-const AdminSettings = () => import( /* webpackChunkName: "admin-settings" */ '../views/admin/AdminSettings.vue');
+const AdminSettingsLayout = () => import('../views/admin/settings/_layout.vue');
 
 import GeneralSettings from '../views/admin/settings/GeneralSettings.vue';
 import CustomizationSettings from "../views/admin/settings/CustomizationSettings.vue";
@@ -25,7 +25,7 @@ const AdminRoutes = {
             name: 'admin.settings',
             path: 'settings',
             redirect: '/admin/settings/general_settings',
-            component: AdminSettings,
+            component: AdminSettingsLayout,
             meta: {
                 requireAdmin: true
             },
