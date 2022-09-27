@@ -1,6 +1,6 @@
 <template>
    <div class="courses-discover fill-height">
-      <SiteSpinner v-if="!CoursesData" />
+      <m-spinner v-if="!CoursesData" />
       <v-container
          v-if="CoursesData"
          fluid

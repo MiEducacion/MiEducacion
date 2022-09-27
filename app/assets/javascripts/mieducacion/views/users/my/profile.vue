@@ -1,6 +1,6 @@
 <template>
     <v-container fluid id="nested--profile" class="pb-10">
-        <site-spinner class="text-center mx-auto" v-if="!sessionCurrent"/>
+        <m-spinner class="text-center mx-auto" v-if="!sessionCurrent"/>
           
     </v-container>
 

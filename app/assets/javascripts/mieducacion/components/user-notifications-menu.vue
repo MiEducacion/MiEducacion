@@ -15,7 +15,7 @@
     </template>
 
     <v-card>
-    <SiteSpinner />
+    <m-spinner />
       <v-list>
         <v-list-item>
           <v-list-item-avatar>

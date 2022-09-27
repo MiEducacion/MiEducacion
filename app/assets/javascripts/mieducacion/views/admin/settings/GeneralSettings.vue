@@ -119,7 +119,7 @@
       </v-container>
     </div>
     <v-overlay color="white" :value="btnLoading">
-      <SiteSpinner/>
+      <m-spinner />
     </v-overlay>
   </div>
 </template>

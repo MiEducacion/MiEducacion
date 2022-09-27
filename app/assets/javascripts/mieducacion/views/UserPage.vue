@@ -1,6 +1,6 @@
 <template>
 <div class="user-page pt-10">
-  <SiteSpinner />
+  <m-spinner />
 </div>
 </template>
 

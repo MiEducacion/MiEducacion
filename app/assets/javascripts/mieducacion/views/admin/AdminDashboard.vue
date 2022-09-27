@@ -1,6 +1,6 @@
 <template>
   <div class="panel">
-    <SiteSpinner v-if="!dashboardData" />
+    <m-spinner v-if="!dashboardData" />
     <section v-else class="version-checks pt-6">
       <div class="section-title">
         <h2>Version</h2>
