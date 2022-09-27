@@ -1,5 +1,8 @@
 <%= stylesheet_pack_tag "mieducacion", media: "all" %>
 <%= stylesheet_link_tag "core-fonts", media: "all" %>
+<% if Settings::LMS.enable_custom_styles? %>
+<link rel="stylesheet" href="/site/custom_stylesheet.css">
+<% end %>
 <link rel="preload" href="//cdn.jsdelivr.net/npm/twemoji-awesome@1.0.6/dist/twemoji-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/twemoji-awesome@1.0.6/dist/twemoji-awesome.min.css">

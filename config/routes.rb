@@ -25,5 +25,7 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => "/cable"
 
+  get "site/custom_stylesheet", to: "app#custom_stylesheet"
+
   match "*path", to: "app#index", via: :all
 end

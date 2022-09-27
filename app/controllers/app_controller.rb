@@ -9,4 +9,8 @@ class AppController < ApplicationController
   def home; end
 
   def app; end
+
+  def custom_stylesheet
+    render body: Settings::LMS.custom_style, content_type: 'text/css'
+  end
 end
