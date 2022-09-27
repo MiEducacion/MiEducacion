@@ -1,13 +1,3 @@
-let preloaded;
-const preloadedDataElement = document.getElementById("data-preloaded");
-
-if (preloadedDataElement) {
-  preloaded = JSON.parse(preloadedDataElement.dataset.preloaded);
-}
-
-const user = preloaded.currentUser;
-const SiteSettings = preloaded.SiteSettings;
-
 import { createWebHistory, createRouter } from 'vue-router'
 
 function loadRoutes() {
@@ -28,6 +18,10 @@ const router = createRouter({
   
 
 router.beforeEach((to, from, next) => {
+ 
+    const user = window.MiEducacion.config.globalProperties.currentUser;
+    const SiteSettings = window.MiEducacion.config.globalProperties.SiteSettings;
+
     if (!SiteSettings.public_site && !user && to.path !== '/login-required') {
         next({
             path: '/login-required'
@@ -60,7 +54,7 @@ router.beforeEach((to, from, next) => {
         })
 
     }
-    else next()
+    else next() 
 })
 
 router.afterEach((to, from) => {
