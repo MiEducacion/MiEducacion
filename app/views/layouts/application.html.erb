@@ -6,14 +6,6 @@
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
 <%= render partial: "layouts/head" %>
-      <mieducacion-assets>
-         <mieducacion-assets-stylesheets>
-      <%= render partial: "partials/stylesheet" %>
-         </mieducacion-assets-stylesheets>
-         <mieducacion-preload-json>
-            <div class="hidden" id="data-preloaded" data-preloaded="<%= preloaded_json %>"></div>
-         </mieducacion-preload-json>
-      </mieducacion-assets>
       <%= render partial: "partials/opengraph" %>
       <script type="text/x-template" data-template-name="additional-nav-buttons">
             <v-btn text> I am a Button rendered on a slot</v-btn>
@@ -22,6 +14,14 @@
    <body
       class="app-body<% if device == "mobile" %> is-mobile<% end %>"
       data-user-status="<%= j(user_logged_in_status) %>">
+      <mieducacion-assets>
+         <mieducacion-assets-stylesheets>
+      <%= render partial: "partials/stylesheet" %>
+         </mieducacion-assets-stylesheets>
+         <mieducacion-essentials-preload>
+            <div class="hidden" id="data-preloaded" data-preloaded="<%= preloaded_json %>"></div>
+         </mieducacion-essentials-preload>
+      </mieducacion-assets>
       <!--The application is rendered at runtime on client-side-->
       <div id="mieducacion">
          <%- if include_splash? %>
