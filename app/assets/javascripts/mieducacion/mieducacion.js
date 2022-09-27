@@ -10,7 +10,7 @@ import globalFilters from './helpers/filters'
 import t from './lib/i18n'
 import _ from './lib/lodash'
 import "./stylesheets/mieducacion.scss"
-import SiteSpinner from './components/site-spinner.vue'
+import MSpinner from './components/m-spinner.js'
 
 
 require('./lib/axios-setup')
@@ -27,7 +27,7 @@ MiEducacion.use(Preloaded)
 
 MiEducacion.config.globalProperties.$filters = globalFilters
 MiEducacion.config.globalProperties.$_ = _
-MiEducacion.component('SiteSpinner', SiteSpinner)
+MiEducacion.component('MSpinner', MSpinner)
 MiEducacion.directive('emoji', {
     mounted (el) {
       el.innerHTML = twemoji.parse(el.innerHTML, {  size: 'svg', ext: '.svg'  })
