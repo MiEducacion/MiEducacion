@@ -1,3 +1,10 @@
+<section id="m-splash">
+    <img class="preloader-image" width="64px" height="64px" src="data:image/svg+xml, %3Csvg class='preloader-image' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.0' width='64px' height='64px' viewBox='0 0 128 128' xml:space='preserve'%3E%3Cg%3E%3Ccircle cx='108.5' cy='89.75' r='12.5' fill='%234527a0'/%3E%3Ccircle cx='108.5' cy='89.75' r='12.5' fill='%234527a0' transform='rotate(180 64 64)'/%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 64 64' to='180 64 64' dur='900ms' repeatCount='indefinite'%3E%3C/animateTransform%3E%3C/g%3E%3C/svg%3E%0A">
+    <div class="preloader-text-wrapper">
+        <div class="preloader-text">Loading</div>
+    </div>
+</section>
+
 <style>
     #m-splash {
       display: grid;
@@ -8,7 +15,7 @@
       top: 0;
       width: 100%;
       z-index: 1001;
-      --animation-state: paused;
+      animation-play-state: running;
     }
 
     #m-splash .preloader-image {
@@ -58,19 +65,3 @@
       }
     }
 </style>
-
-
-<section id="m-splash">
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-        <svg class="preloader-image" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="64px" height="64px" viewBox="0 0 128 128" xml:space="preserve">
-            <g>
-                <circle cx="108.5" cy="89.75" r="12.5" fill="#4527a0"/>
-                <circle cx="108.5" cy="89.75" r="12.5" fill="#4527a0" transform="rotate(180 64 64)"/>
-                <animateTransform attributeName="transform" type="rotate" from="0 64 64" to="180 64 64" dur="900ms" repeatCount="indefinite">
-                </animateTransform>
-            </g>
-        </svg>
-    <div class="preloader-text-wrapper">
-        <div class="preloader-text">Loading</div>
-    </div>
-</section>
