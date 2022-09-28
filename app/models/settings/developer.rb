@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Settings
   class Developer < Base
     self.table_name = :settings_developers
