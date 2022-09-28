@@ -61,4 +61,10 @@ module ApplicationHelper
     Settings::General.enable_splash_screen
   end
 
+  def core_setup_data
+    setup_data = {
+      enable_report_to_logster: Settings::Developer.enable_report_to_logster
+    }
+  end
+
 end

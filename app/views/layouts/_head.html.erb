@@ -7,4 +7,5 @@
       <% if !Settings::General.site_description.blank? %>
       <meta name="description" content="<%= Settings::General.site_description %>"/>
       <% end %>
+      <%= tag.meta id: 'mieducacion-core-setup', data: core_setup_data %>
       <link rel="manifest" href="/manifest.webmanifest">
