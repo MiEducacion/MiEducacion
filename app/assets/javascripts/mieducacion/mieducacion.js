@@ -4,6 +4,7 @@ import router from './routes/mieducacion-router'
 import { createMetaManager } from 'vue-meta'
 import MarkdownParser from './lib/markdown-it';
 import twemoji from 'twemoji'
+import coreSetup from './lib/core-setup';
 import Preloaded from './lib/preloaded'
 import reportJsError from './lib/report-js-error'
 import globalFilters from './helpers/filters'
@@ -12,14 +13,14 @@ import _ from './lib/lodash'
 import "./stylesheets/mieducacion.scss"
 import MSpinner from './components/m-spinner.js'
 
-
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 
 const metaManager = createMetaManager()
 
 const MiEducacion = createApp(App)
-MiEducacion.use(Preloaded)
+MiEducacion.use(coreSetup)
+           .use(Preloaded)
            .use(router)
            .use(reportJsError)
            .use(metaManager)
