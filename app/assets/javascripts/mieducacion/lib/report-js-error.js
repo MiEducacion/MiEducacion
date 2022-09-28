@@ -9,7 +9,7 @@ if (!window.Logster) {
 	};
 }
 
-function logsterHandler(err, severity) {
+function logsterHandler(err, severity, enableReportToLogster) {
 	if (severity === 'error') {
 		console.error(err)
 	} else {
@@ -32,7 +32,7 @@ function logsterHandler(err, severity) {
 		severity: 'error'
 	}
 
-	if (process.env.NODE_ENV !== 'development') {
+	if (process.env.NODE_ENV !== 'development' && enableReportToLogster) {
 		axios.post("/logs/report_js_error",
 			reportData
 		);
@@ -41,13 +41,14 @@ function logsterHandler(err, severity) {
 
 export default {
 	install: (app) => {
+		let config = app.config.globalProperties
 		app.config.errorHandler = function(err, vm, info) {
-			logsterHandler(err, 'error')
+			logsterHandler(err, 'error', config.enableReportToLogster)
 		};
 
 		app.config.warnHandler = function(err, vm, info) {
-			logsterHandler(err, 'warning')
+			logsterHandler(err, 'warning', config.enableReportToLogster)
 		};
 
-	},
+	}
 };

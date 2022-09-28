@@ -7,6 +7,10 @@ else {
   throw "Unable to boot MiEducación: Core Setup data not found"
 }
 
+let GlobalConfig = {
+  enableReportToLogster: coreSetup.enableReportToLogster
+}
+
 export default {
   install: (app) => {
     Object.assign(app.config.globalProperties, GlobalConfig);
