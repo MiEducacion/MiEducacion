@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './app.vue'
 import router from './routes/mieducacion-router'
-import { createMetaManager } from 'vue-meta'
 import Markdown from './plugins/markdown';
 import coreSetup from './lib/core-setup';
 import Preloaded from './lib/preloaded'
@@ -13,11 +12,11 @@ import "./stylesheets/mieducacion.scss"
 import MSpinner from './components/m-spinner.js'
 import twemoji from './plugins/twemoji';
 
+import metaManager from './plugins/metaManager';
 import mIcons from './plugins/m-icons';
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 
-const metaManager = createMetaManager()
 
 const MiEducacion = createApp(App)
 
