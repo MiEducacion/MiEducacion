@@ -6,7 +6,7 @@
           <img id="site-logo" :src="SiteSettings.site_logo" />
         </router-link>
       </div>
-      <div class="site-navigation--nav hidden-sm-and-down" role="navigation">
+      <div class="site-navigation--nav hidden-sm-and-down" role="navigation" v-if="SiteSettings.public_site || currentUser">
         <template v-for="i in HeaderItems" :key="i.to">
           <router-link class="flex site-nav--btn" :to="i.to" v-if="i.showItem">
             <component :is="i.icon" :size="20" class="icon"></component>
