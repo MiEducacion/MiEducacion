@@ -44,7 +44,7 @@
       </MenuItems>
     </transition>
   </Menu>
-  <btn
+  <button
     v-else
     @click="openLoginModal()"
     class="login-button flex"
@@ -53,7 +53,7 @@
     <LoginModal ref="loginModal" />
     <UserIcon :size="18" class="mr-2" />
     Login
-  </btn>
+  </button>
 </template>
 
 <script setup>
