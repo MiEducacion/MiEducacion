@@ -27,7 +27,6 @@ let pluginsMap = [
   reportJsError,
   metaManager,
   twemoji,
-  Markdown
   Markdown,
   mIcons
 ]
