@@ -62,13 +62,10 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 
 <script>
 import LoginModal from './modals/auth/login'
-import { User as UserIcon, LogOut, Wrench } from 'lucide-vue-next'
 
 export default {
   components: {
-    LoginModal,
-    UserIcon,
-    LogOut
+    LoginModal
   },
   data () {
     return {
