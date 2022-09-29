@@ -13,6 +13,7 @@ import "./stylesheets/mieducacion.scss"
 import MSpinner from './components/m-spinner.js'
 import twemoji from './plugins/twemoji';
 
+import mIcons from './plugins/m-icons';
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 
@@ -28,6 +29,8 @@ let pluginsMap = [
   metaManager,
   twemoji,
   Markdown
+  Markdown,
+  mIcons
 ]
 
 pluginsMap.map(function(plugin) {
