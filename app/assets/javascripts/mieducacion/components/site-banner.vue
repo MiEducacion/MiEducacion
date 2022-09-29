@@ -20,7 +20,7 @@ export default {
           {
             id: 'anon-banner',
             content: 'You are browsing the site as an anonymous user, register to take full advantage 😁',
-            show: !this.currentUser
+            show: !this.currentUser && this.SiteSettings.public_site
           },
           {
             id: 'site-banner',
