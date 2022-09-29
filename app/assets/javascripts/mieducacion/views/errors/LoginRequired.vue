@@ -1,12 +1,6 @@
 <template>
   <div class="fill-height">
-    <v-app-bar flat color="white" app fixed id="site-header">
-      <v-spacer />
-      <a href="/">
-        <img id="site-logo" :src="SiteSettings.site_logo" height="100%" />
-      </a>
-      <v-spacer />
-    </v-app-bar>
+    <site-header></site-header>
     <v-main class="login-required text-center">
       <div>
         <img
@@ -30,11 +24,15 @@
 
 <script>
 import LoginRequiredImage from "images/illustrations/login-required-new.png";
+import SiteHeader from '../../components/site-header.vue'
 
 export default {
     name: 'PrivateSite',
     metaInfo: {
         title: 'Login Required'
+    },
+    components: {
+      SiteHeader
     },
     data () {
         return {
