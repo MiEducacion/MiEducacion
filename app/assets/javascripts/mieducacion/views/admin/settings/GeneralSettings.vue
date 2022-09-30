@@ -2,48 +2,32 @@
   <div>
     <div class="center">
       <h1>{{ t("js.admin.settings.general_settings.title") }}</h1>
-      <v-container>
         <div class="pt-4">
           <form @submit.prevent="updateSettings">
-            <template v-for="setting in settingsModel" :key="setting.name">
-              <v-row
-                class="setting-container"
-                align="start"
-              >
-                <v-col cols="12" sm="6">
+            <div class="setting-container" v-for="(setting, index) in settingsModel" :key="setting.name">
                   <span class="setting-title">
                     {{ t(`js.admin.settings.general_settings.${setting.name}.title`) }}
                   </span>
-                </v-col>
-                <v-col md="6" sm="12" cols="auto">
                   <!-- Type 0: String -->
 
                   <input
                     v-if="setting.type == 0"
                     @input="settings[setting.name] = $event.target.value"
-                    :value="setting.value"
-                    outlined
-                    :v-model="settings[setting.name]"
-                    dense
                     class="setting-value input"
                     type="text"
-                    :rules="[() => !!settings[setting.name]|| 'This field is required']"
+                    :value="settingsModel[index].value"
                     :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
-                    required
-                    hide-details
                   >
 
                   <!-- Type 1: Boolean -->
 
-                  <v-checkbox
+                  <input type="checkbox"
                     v-else-if="setting.type == 1"
                     class="mt-0 setting-value"
-                    :input-value="setting.value"
-                    @change="settings[setting.name] = $event"
-                    :v-model="settings[setting.name]"
+                    @change="settings[setting.name] = $event.target.checked"
+                    :checked="settingsModel[index].value"
                     :label="t(`js.admin.settings.general_settings.${setting.name}.description`)"
                   >
-                  </v-checkbox>
 
                   <!-- Type 2: Image -->
 
@@ -55,23 +39,14 @@
                         :style="`background-image: url('${setting.value}')`"
                       >
                         <div class="image-upload-controls">
-                          <v-btn
-                            fab
-                            tile
-                            color="var(--mieducacion-primary)"
-                            dark
-                            @click="uploaderButton(`upload-${setting.name}`)"
-                            x-small
-                            elevation="0"
-                            class="mx-2"
-                          >
-                            <v-icon>mdi-image-edit-outline</v-icon>
-                          </v-btn>
+                          <m-icon-button :title="`${t('js.admin.image_uploader_title')}`">
+                            <UploadCloud />
+                          </m-icon-button>
                           <input
                             :ref="`upload-${setting.name}`"
                             class="d-none"
                             @change="handleImageChange"
-                            :v-model="settings[setting.name]"
+                            :v-model:value="settings[setting.name]"
                             :id="`upload-${setting.name}`"
                             type="file"
                             accept="image/*"
@@ -83,29 +58,19 @@
 
                   <!-- Type 3: Long TextBox -->
 
-                  <v-textarea
+                  <textarea
                     v-if="setting.type == 3"
                     @input="settings[setting.name] = $event.target.value"
                     :value="setting.value"
-                    outlined
-                    :v-model="settings[setting.name]"
-                    dense
-                    auto-grow
-                    class="setting-value"
+                    class="setting-value textarea"
                     type="text"
-                    :rules="[() => !!settings[setting.name]|| 'This field is required']"
                     :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
-                    required
-                    hide-details
-                    rows="1"
-                  ></v-textarea>
+                  ></textarea>
 
                   <span v-if="setting.type !== 1" class="setting-description">
                     {{ t(`js.admin.settings.general_settings.${setting.name}.description`) }}
                   </span>
-                </v-col>
-              </v-row>
-            </template>
+            </div>
             <button
               :loading="btnLoading"
               type="submit"
@@ -116,7 +81,6 @@
             </button>
           </form>
         </div>
-      </v-container>
     </div>
     <v-overlay color="white" :value="btnLoading">
       <m-spinner />
@@ -125,9 +89,13 @@
 </template>
 
 <script>
+import MIconButton from '../../../components/m-icon-button.vue'
 export default {
     name: 'AdminGeneralSettings',
-    data() {
+    components: {
+      MIconButton
+    },
+    data () {
         return {
             settings: {},
             btnLoading: null,
