@@ -58,6 +58,6 @@ jobs:
       - name: Security audit dependencies
         run: bundle audit check --ignore CVE-2015-9284 --update
       - name: Security audit application code
-        run: bundle exec brakeman --no-exit-on-error --skip-files lib/mi_educacion.rb
+        run: bundle exec brakeman --no-exit-on-error --skip-files lib/mi_educacion.rb lib/mieducacion.rb
       - name: Lint Ruby files
         run: bundle exec rubocop --parallel
