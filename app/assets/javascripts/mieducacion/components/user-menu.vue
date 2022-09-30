@@ -72,13 +72,13 @@ export default {
       menuItems: [
         {
           text: 'Mi Perfil',
-          icon: UserIcon,
+          icon: 'UserIcon',
           href: '/account',
           visible: true
         },
         {
           text: 'Administrador',
-          icon: Wrench,
+          icon: 'Wrench',
           href: '/admin',
           visible: this.currentUser && this.currentUser.is_admin
         }
