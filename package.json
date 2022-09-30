@@ -20,6 +20,7 @@
     "markdown-it": "^13.0.1",
     "moment": "^2.29.4",
     "node-waves": "^0.7.6",
+    "pinia": "^2.0.22",
     "popper.js": "^1.16.1",
     "postcss": "8.2.10",
     "postcss-loader": "4.0.3",
