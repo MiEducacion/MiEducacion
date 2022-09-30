@@ -5,6 +5,8 @@
 .global-notice {
     max-width: 1150px !important;
     border-radius: 0;
+    max-height: 30vh;
+    overflow: auto;
     @apply px-4 py-4 bg-white mx-auto mt-4
 }
 
