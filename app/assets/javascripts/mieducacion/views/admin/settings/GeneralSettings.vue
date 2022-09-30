@@ -39,7 +39,9 @@
                         :style="`background-image: url('${setting.value}')`"
                       >
                         <div class="image-upload-controls">
-                          <m-icon-button :title="`${t('js.admin.image_uploader_title')}`">
+                          <m-icon-button 
+                          :title="`${t('js.admin.image_uploader_title')}`"
+                          @click="uploaderButton(`upload-${setting.name}`)">
                             <UploadCloud />
                           </m-icon-button>
                           <input
