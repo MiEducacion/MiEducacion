@@ -1,14 +1,6 @@
 <template>
   <div class="fill-height">
-    <v-app-bar flat color="white" fixed id="site-header">
-      <v-spacer/>
-            <div class="title">
-        <a href="/">
-          <img id="site-logo" :src="SiteSettings.site_logo" height="100%" draggable="false"/>
-        </a>
-      </div>
-      <v-spacer/>
-    </v-app-bar>
+    <site-header></site-header>
     <v-main class="mieducacion not-found-page fill-height">
       <v-container fill-height fluid>
         <v-row align="center" justify="center">
