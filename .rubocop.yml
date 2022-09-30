@@ -9,7 +9,7 @@ AllCops:
     - 'bin/*'
     - 'config/initializers/*'
     - 'db/**/*'
-    - 'lib/mieducacion.rb'
+    - 'lib/mi_educacion.rb'
 
 Metrics/MethodLength:
   Enabled: false
