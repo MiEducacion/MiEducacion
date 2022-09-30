@@ -35,6 +35,7 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      lime: colors.lime
     },
     spacing: {
       px: '1px',
