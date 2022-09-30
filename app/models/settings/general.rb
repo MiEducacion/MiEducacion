@@ -14,9 +14,9 @@ module Settings
       validates: {
         format: {
           with: /\A[^[<|>]]+\Z/,
-          message: "may not include the \"<\" nor \">\" character",
-        },
-      },
+          message: "may not include the \"<\" nor \">\" character"
+        }
+      }
     )
     setting :site_description, type: :string
     setting :site_shortname, type: :string, default: ApplicationConfig["MIEDUCACION_SHORTNAME"] || "MiEducacion"
@@ -44,7 +44,7 @@ module Settings
     setting :resized_logo, type: :string
     setting :app_icon,
             type: :string,
-            default: ApplicationConfig["MIEDUCACION_APP_ICON"] || "/images/default/mieducacion_default_appicon_512x512.png"
+            default: "/images/default/mieducacion_default_appicon_512x512.png"
     setting :default_locale,
             type: :string,
             default: ApplicationConfig["MIEDUCACION_DEFAULT_LOCALE"] || "en"

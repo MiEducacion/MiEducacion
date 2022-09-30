@@ -22,38 +22,37 @@ class User < ApplicationRecord
     add_role(:student)
   end
 
-
   def set_new_user
     self.new_user = true
   end
 
   def student?
-    self.has_role?(:student)
+    has_role?(:student)
   end
 
   def admin?
-    self.has_role?(:admin)
+    has_role?(:admin)
   end
 
   def teacher?
-    self.has_role?(:teacher)
+    has_role?(:teacher)
   end
 
   def principal?
-    self.has_role?(:principal)
+    has_role?(:principal)
   end
 
   def moderator?
-    self.has_role?(:moderator)
+    has_role?(:moderator)
   end
 
   def trusted?
-    self.has_role?(:trusted)
+    has_role?(:trusted)
   end
 
   def can_create_course?
-    self.admin? || self.teacher?
-  end  
+    admin? || teacher?
+  end
 
   has_one :profile
   has_one :role

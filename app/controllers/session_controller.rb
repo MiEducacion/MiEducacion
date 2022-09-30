@@ -6,8 +6,8 @@ class SessionController < ApplicationController
 
   def current_session
     if user_signed_in?
-        render json: current_user_dump, content_type: "application/json"
-      end
+      render json: current_user_dump, content_type: "application/json"
+    end
     puts user_signed_in?
   end
 end

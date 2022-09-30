@@ -22,7 +22,6 @@ module Session
         moderator: u.moderator?,
         can_create_course: u.can_create_course?
       }
-
     end
   end
 end

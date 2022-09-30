@@ -18,19 +18,19 @@ module ApplicationHelper
     @g = Settings::General
     @s = Settings::Security
     site_settings = {
-        title: @g.site_name,
-        site_logo: @g.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
-        site_description: @g.site_description,
-        site_shortname: @g.site_shortname,
-        public_site: @g.public,
-        force_redirect_private: @g.force_redirect_private,
-        show_site_banner: @g.show_site_banner,
-        site_banner_content: @g.site_banner_content,
-        enable_cas_login: @s.enable_cas_login,
-        enable_oauth_login: @s.enable_oauth_login,
-      }
+      title: @g.site_name,
+      site_logo: @g.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
+      site_description: @g.site_description,
+      site_shortname: @g.site_shortname,
+      public_site: @g.public,
+      force_redirect_private: @g.force_redirect_private,
+      show_site_banner: @g.show_site_banner,
+      site_banner_content: @g.site_banner_content,
+      enable_cas_login: @s.enable_cas_login,
+      enable_oauth_login: @s.enable_oauth_login
+    }
 
-    if current_user && current_user.has_role?(:admin)
+    if current_user&.has_role?(:admin)
       site_settings = site_settings.merge(
         wizard_completed: Settings::Developer.wizard_completed,
         bypass_wizard_check: Settings::Developer.bypass_wizard_check
@@ -54,6 +54,7 @@ module ApplicationHelper
 
   def current_session
     return unless user_signed_in?
+
     current_user_dump
   end
 
@@ -66,5 +67,4 @@ module ApplicationHelper
       enable_report_to_logster: Settings::Developer.enable_report_to_logster
     }
   end
-
 end

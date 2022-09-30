@@ -13,9 +13,9 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-          courses: @courses
+                 courses: @courses
 
-        },
+               },
                content_type: "application/json"
       end
     end
@@ -28,9 +28,9 @@ class CoursesController < ApplicationController
       format.html
       format.json do
         render json: {
-          course: @course
+                 course: @course
 
-        },
+               },
                content_type: "application/json"
       end
     end
