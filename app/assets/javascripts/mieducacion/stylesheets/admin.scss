@@ -103,6 +103,10 @@
 .version-check .version-status .face {
     margin: 0 0.75em 0 0;
     font-size: var(--font-up-3);
+
+    & .up-to-date {
+        @apply text-green-500
+    }
 }
 
 .version-check .upgrade-header {

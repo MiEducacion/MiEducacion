@@ -2,7 +2,8 @@ import {
     UploadCloud,
     User,
     LogOut,
-    Wrench
+    Wrench,
+    Smile
 } from "lucide-vue-next"
 
 /* There is probably a better way to register the icons */
@@ -23,6 +24,10 @@ let ICON_MAP = [
     {
         name: 'Wrench',
         component: Wrench
+    },
+    {
+        name: 'SmileIcon',
+        component: Smile
     }
 ]
 

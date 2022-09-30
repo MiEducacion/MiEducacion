@@ -26,7 +26,7 @@
         <div class="version-status">
           <div class="face">
             <span class="up-to-date">
-              <v-icon size="3rem">mdi-emoticon-happy-outline</v-icon>
+              <SmileIcon :size="48"/>
             </span>
           </div>
           <div class="version-notes">You're up to date!</div>
