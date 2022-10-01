@@ -15,7 +15,7 @@
         </template>
       </div>
       <div class="header-user-panel--nav">
-        <div icon class="mr-2" v-if="currentUser">
+        <div icon class="mr-2 btn-icon" v-if="currentUser">
           <MessageCircle :size="24" />
         </div>
         <UserMenu />
