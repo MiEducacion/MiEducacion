@@ -1,3 +1,8 @@
+#preload-failed {
+    @apply px-4 py-6 text-center text-white;
+    background-color: var(--mieducacion-danger);
+}
+
 .page-not-found {
     margin: 0 0 40px;
     margin-right: auto;
