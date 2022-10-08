@@ -6,7 +6,7 @@ import coreSetup from './lib/core-setup';
 import Preloaded from './lib/preloaded'
 import reportJsError from './lib/report-js-error'
 import globalFilters from './helpers/filters'
-import t from './lib/i18n'
+import i18n from './lib/i18n'
 import _ from './lib/lodash'
 import "./stylesheets/mieducacion.scss"
 import MSpinner from './components/m-spinner.js'
@@ -38,8 +38,7 @@ pluginsMap.map(function(plugin) {
   MiEducacion.use(plugin)
 })
 
-
-MiEducacion.mixin(t)
+MiEducacion.mixin(i18n)
 
 MiEducacion.config.globalProperties.$filters = globalFilters
 MiEducacion.config.globalProperties.$_ = _
