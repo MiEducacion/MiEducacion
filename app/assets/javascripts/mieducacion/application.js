@@ -1,4 +1,4 @@
-import { createApp, compile } from 'vue/dist/vue.esm-bundler'
+import { createApp } from 'vue/dist/vue.esm-bundler'
 import App from './app.vue'
 import router from './routes/mieducacion-router'
 import Markdown from './plugins/markdown';
@@ -47,8 +47,6 @@ MiEducacion.component('MSpinner', MSpinner)
 
  /* Remove noscript tag in SPA */
 document.querySelector("noscript")?.remove();
-
-window.compileTemplate = compile
 
 
 export default MiEducacion
