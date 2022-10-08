@@ -13,6 +13,7 @@ let GlobalConfig = {
 
 export default {
   install: (app) => {
-    Object.assign(app.config.globalProperties, GlobalConfig);
+    Object.assign(app.$Site, GlobalConfig);
+    Object.freeze(app.$Site)
   }
 }

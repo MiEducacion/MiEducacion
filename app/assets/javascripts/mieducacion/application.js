@@ -19,6 +19,7 @@ require('./lib/register-service-worker')
 
 
 const MiEducacion = createApp(App)
+MiEducacion.$Site = {}
 
 let pluginsMap = [
   coreSetup,
