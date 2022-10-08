@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get "server/status" => "server#status"
 
+  get "login-required" => "app#login_required"
   authenticated :user, ->(u) { u.has_role?(:admin) } do
     mount Logster::Web => "/logs"
   end

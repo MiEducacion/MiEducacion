@@ -16,6 +16,10 @@ class AppController < ApplicationController
     end
   end
 
+  def login_required
+    redirect_to '/' unless !current_user
+  end
+
   private
 
   def should_render_for_anon
