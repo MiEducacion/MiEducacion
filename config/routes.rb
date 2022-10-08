@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "app#index", as: "app"
   resources :wizard
 
-  get "session/current", to: "session#current_session"
+  get "session/current", to: "session#current"
   get "manifest.webmanifest" => "metadata#webmanifest", as: :manifest
   get "manifest.json" => "metadata#webmanifest"
 
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "server/status" => "server#status"
 
   get "login-required" => "app#login_required"
+
   authenticated :user, ->(u) { u.has_role?(:admin) } do
     mount Logster::Web => "/logs"
   end
@@ -28,5 +29,5 @@ Rails.application.routes.draw do
 
   get "site/custom_stylesheet", to: "app#custom_stylesheet"
 
-  match "*path", to: "app#index", via: :all
+  match "*path", to: "exceptions#not_found", via: :all
 end
