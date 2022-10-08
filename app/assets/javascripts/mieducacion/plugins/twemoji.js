@@ -6,7 +6,8 @@ export default {
             mounted(el) {
                 el.innerHTML = twemoji.parse(el.innerHTML, {
                     size: 'svg',
-                    ext: '.svg'
+                    ext: '.svg',
+                    base: app.$Site.twemoji_cdn
                 })
             }
         })
