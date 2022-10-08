@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title><%= @error_type %> | <%= site_name.to_s %></title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+<%= render partial: "layouts/head" %>
+      <%= render partial: "partials/opengraph" %>
+   </head>    
+   <body
+      class="app-body<% if device == "mobile" %> is-mobile<% end %>"
+      data-user-status="<%= j(user_logged_in_status) %>">
+      <mieducacion-assets>
+         <mieducacion-assets-stylesheets>
+      <%= render partial: "partials/stylesheet" %>
+         </mieducacion-assets-stylesheets>
+         <mieducacion-essentials-preload>
+            <div class="hidden" id="data-preloaded" data-preloaded="<%= preloaded_json %>"></div>
+         </mieducacion-essentials-preload>
+      </mieducacion-assets>
+      <%= yield %>
+   </body>
+</html>
