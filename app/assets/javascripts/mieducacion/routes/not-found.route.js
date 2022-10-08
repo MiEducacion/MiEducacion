@@ -1,4 +1,4 @@
-import NotFoundView from '../views/errors/NotFound.vue'
+import NotFoundView from 'views/errors/NotFound.vue'
 
 
 let NotFoundRoute = {
