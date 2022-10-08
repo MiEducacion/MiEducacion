@@ -64,7 +64,8 @@ module ApplicationHelper
 
   def core_setup_data
     setup_data = {
-      enable_report_to_logster: Settings::Developer.enable_report_to_logster
+      enable_report_to_logster: Settings::Developer.enable_report_to_logster,
+      twemoji_cdn: Settings::LMS.twemoji_cdn
     }
   end
 end

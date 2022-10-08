@@ -8,5 +8,6 @@ module Settings
 
     setting :enable_custom_styles, type: :boolean, default: false
     setting :custom_style, type: :text
+    setting :twemoji_cdn, type: :string, default: 'https://twemoji.maxcdn.com/v/14.0.2/'
   end
 end

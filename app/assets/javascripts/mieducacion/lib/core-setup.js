@@ -8,7 +8,8 @@ else {
 }
 
 let GlobalConfig = {
-  enableReportToLogster: coreSetup.enableReportToLogster
+  enableReportToLogster: coreSetup.enableReportToLogster,
+  twemoji_cdn: coreSetup.twemojiCdn
 }
 
 export default {
