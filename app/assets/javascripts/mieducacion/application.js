@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, compile } from 'vue/dist/vue.esm-bundler'
 import App from './app.vue'
 import router from './routes/mieducacion-router'
 import Markdown from './plugins/markdown';
@@ -11,9 +11,9 @@ import _ from './lib/lodash'
 import "./stylesheets/mieducacion.scss"
 import MSpinner from './components/m-spinner.js'
 import twemoji from './plugins/twemoji';
-
 import metaManager from './plugins/metaManager';
 import mIcons from './plugins/m-icons';
+import pinia from './plugins/pinia';
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 
@@ -22,6 +22,7 @@ const MiEducacion = createApp(App)
 
 let pluginsMap = [
   coreSetup,
+  pinia,
   Preloaded,
   router,
   reportJsError,
@@ -30,6 +31,7 @@ let pluginsMap = [
   Markdown,
   mIcons
 ]
+
 
 pluginsMap.map(function(plugin) {
   MiEducacion.use(plugin)
@@ -44,6 +46,8 @@ MiEducacion.component('MSpinner', MSpinner)
 
  /* Remove noscript tag in SPA */
 document.querySelector("noscript")?.remove();
+
+window.compileTemplate = compile
 
 
 export default MiEducacion
