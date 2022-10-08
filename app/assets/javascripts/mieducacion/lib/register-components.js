@@ -1,13 +1,13 @@
-/* TODO: Register the components that are in head tag so that they are available in the app */
-$('script[type="text/x-template"]').each(function () {
-    let $this = $(this);
-    let name = $this.attr("name") || $this.data("template-name");
+import { compile, h } from 'vue/dist/vue.esm-bundler'
 
+document.querySelectorAll('script[type="text/x-m-component"]').forEach(function (component) {
+    let name = component.dataset.componentName
     if (window.console) {
       window.console.log(
-        "Detected x-template named: " + name
+        "Detected x-m-component named: " + name
       );
+
+      let compiledComponent = compile(component.innerHTML)
+      MiEducacion.component(name, h(compiledComponent(MiEducacion)))
     }
-    /* At the moment we eliminate them until we discover the method to register them */
-    $this.remove();
-  });
+  })
