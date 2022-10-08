@@ -41,13 +41,12 @@ function logsterHandler(err, severity, enableReportToLogster) {
 
 export default {
 	install: (app) => {
-		let config = app.config.globalProperties
 		app.config.errorHandler = function(err, vm, info) {
-			logsterHandler(err, 'error', config.enableReportToLogster)
+			logsterHandler(err, 'error', app.$Site.enableReportToLogster)
 		};
 
 		app.config.warnHandler = function(err, vm, info) {
-			logsterHandler(err, 'warning', config.enableReportToLogster)
+			logsterHandler(err, 'warning', app.$Site.enableReportToLogster)
 		};
 
 	}
