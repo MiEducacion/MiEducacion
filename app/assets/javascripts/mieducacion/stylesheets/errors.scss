@@ -3,6 +3,11 @@
     background-color: var(--mieducacion-danger);
 }
 
+#error.not-found-page {
+    background-color: rgb(10, 42, 102) !important;
+    background-image: url('https://cdn.kastatic.org/images/404/little_stars.svg');
+}
+
 .page-not-found {
     margin: 0 0 40px;
     margin-right: auto;

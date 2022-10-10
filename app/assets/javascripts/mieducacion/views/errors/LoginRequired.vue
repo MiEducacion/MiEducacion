@@ -13,10 +13,6 @@
           An account is required to access the site. Please ask an existing
           member to invite you or log in to continue.
         </p>
-        <v-btn class="login-required--btn" href="/users/sign_in">
-          <v-icon left>mdi-account</v-icon>
-          Login
-        </v-btn>
       </div>
     </v-main>
   </div>

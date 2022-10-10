@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="fill-height">
    <head>
       <meta charset="utf-8">
       <title><%= @error_type %> | <%= site_name.to_s %></title>
@@ -9,7 +9,7 @@
       <%= render partial: "partials/opengraph" %>
    </head>    
    <body
-      class="app-body<% if device == "mobile" %> is-mobile<% end %>"
+      class="app-body<% if device == "mobile" %> is-mobile<% end %> fill-height"
       data-user-status="<%= j(user_logged_in_status) %>">
       <mieducacion-assets>
          <mieducacion-assets-stylesheets>

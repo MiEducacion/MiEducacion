@@ -20,7 +20,8 @@ module Session
         is_new_user: u.new_user,
         trusted: u.trusted?,
         moderator: u.moderator?,
-        can_create_course: u.can_create_course?
+        can_create_course: u.can_create_course?,
+        current_locale: 'en',
       }
     end
   end
