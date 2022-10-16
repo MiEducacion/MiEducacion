@@ -158,6 +158,8 @@ GEM
     minitest (5.16.3)
     msgpack (1.5.4)
     multi_xml (0.6.0)
+    net-http (0.2.2)
+      uri
     net-imap (0.2.3)
       digest
       net-protocol
@@ -356,6 +358,7 @@ GEM
     tzinfo-data (1.2022.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.2.0)
+    uri (0.11.0)
     version_gem (1.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -399,6 +402,7 @@ DEPENDENCIES
   i18n-js (~> 3)
   jbuilder (~> 2.7)
   logster
+  net-http
   omniauth
   omniauth-cas
   omniauth-oauth2-generic

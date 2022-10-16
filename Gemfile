@@ -113,3 +113,4 @@ gem "serviceworker-rails"
 gem "tailwindcss-rails-webpacker", "~> 0.2.1"
 
 gem "gravtastic", "~> 3.2"
+gem "net-http"
