@@ -13,7 +13,7 @@ gem "puma", "~> 5.0"
 gem "sass-rails"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "sprockets-rails"
-gem 'webpacker', '6.0.0.beta.7'
+gem 'shakapacker'
 
 # Turbolinks doesn't play well with SPA
 # gem 'turbolinks', '~> 5'
