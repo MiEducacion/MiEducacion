@@ -67,7 +67,12 @@
                       class="login-button"
                       @click="submitLogin"
                     >
+                    <template v-if="loading">
+                      <LoadingIcon :size="18" class="icon loading-request" />
+                    </template>
+                    <template v-else>
                       <Unlock :size="18" class="icon" />
+                    </template>
                       Login
                     </button>
                     <footer v-if="SiteSettings.enable_cas_login || SiteSettings.enable_oauth_login">
@@ -118,11 +123,13 @@ export default {
       email: null,
       password: null,
       remember_me: null,
+      loading: false
     }
   },
   methods: {
     submitLogin (e) {
       e.preventDefault()
+      this.loading = true
       axios.post('/users/sign_in.json', {
         user: {
           email: this.email,
@@ -130,9 +137,13 @@ export default {
         }
       })
       .then(res => {
+        this.loading = false
         window.location.reload()
       })
-      .catch(console.error)
+      .catch(e => {
+        this.loading = false;
+        console.error(e)
+      })
     },
     forgotPassword (e) {
       e.preventDefault()

@@ -4,7 +4,8 @@ import {
     LogOut,
     Wrench,
     Smile,
-    Plus
+    Plus,
+    Loader
 } from "lucide-vue-next"
 
 /* There is probably a better way to register the icons */
@@ -33,6 +34,10 @@ let ICON_MAP = [
     {
         name: 'PlusIcon',
         component: Plus
+    },
+    {
+        name: 'LoadingIcon',
+        component: Loader
     }
 ]
 

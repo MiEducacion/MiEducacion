@@ -17,6 +17,10 @@
     }
   }
 
+.loading-request {
+  @apply animate-spin mr-3
+}
+
   .dialog {
     background-color: #fff;
     width: 100%;
