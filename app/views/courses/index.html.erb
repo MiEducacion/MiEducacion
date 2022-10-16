@@ -1,4 +1,4 @@
-<% @title = "Courses" %>
+<% content_for :title do %><%=t "js.lms.courses" %> | <%= site_name.to_s %><% end %>
 
 <% if user_signed_in? || Settings::General.public %>
 <div itemscope itemtype='http://schema.org/ItemList'>
