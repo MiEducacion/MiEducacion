@@ -1,9 +1,9 @@
 import { createApp } from 'vue/dist/vue.esm-bundler'
 import App from './app.vue'
+import CoreSetup from './pre-initializers/core-setup';
+import EssentialsPreloaded from './pre-initializers/essentials-preload'
 import router from './routes/mieducacion-router'
 import Markdown from './plugins/markdown';
-import coreSetup from './lib/core-setup';
-import Preloaded from './lib/preloaded'
 import reportJsError from './lib/report-js-error'
 import globalFilters from './helpers/filters'
 import i18n from './lib/i18n'
@@ -21,8 +21,8 @@ const MiEducacion = createApp(App)
 MiEducacion.$Site = {}
 
 let pluginsMap = [
-  coreSetup,
-  Preloaded,
+  CoreSetup,
+  EssentialsPreloaded,
   router,
   reportJsError,
   metaManager,

@@ -25,6 +25,8 @@ let preloadedData = {
     isMobile : preloaded.isMobile
 };
 
+
+
 export default {
   install: (app) => {
     Object.assign(app.config.globalProperties, preloadedData);
