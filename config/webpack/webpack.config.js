@@ -2,26 +2,39 @@
 const path = require('path')
 const { webpackConfig, merge } = require('shakapacker')
 const vueConfig = require('./rules/vue')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const customConfig = {
+  entry: {
+    "mieducacion": 'stylesheets/mieducacion.scss',
+    "admin": 'stylesheets/admin.scss'
+  },
     optimization: {
         splitChunks: {
           // include all types of chunks
           chunks: 'all',
         },
       },
-    devServer: {
-      client: {
-        progress: false
-      }
-    },
     module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
-            },
-        ],
+      rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            // fallback to style-loader in development
+            process.env.NODE_ENV !== 'production'
+              ? 'style-loader'
+              : MiniCssExtractPlugin.loader,
+            'css-loader',
+            'sass-loader',
+          ],
+        },
+      ],
     },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+      }),
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname,'..', '..', 'app/assets/javascripts/mieducacion/'),

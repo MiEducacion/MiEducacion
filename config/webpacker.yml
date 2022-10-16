@@ -1,11 +1,10 @@
 # Note: You must restart bin/webpacker-dev-server for changes to take effect
 
 default: &default
-  source_path: app
+  source_path: app/assets
   # You can have a subdirectory of the source_path, like 'packs' (recommended).
   # Alternatively, you can use '/' to use the whole source_path directory.
-  source_entry_path: assets
-  nested_entries: true
+  source_entry_path: javascripts
 
   # If nested_entries is true, then we'll pick up subdirectories within the source_entry_path.
   # You cannot set this option to true if you set source_entry_path to '/'
