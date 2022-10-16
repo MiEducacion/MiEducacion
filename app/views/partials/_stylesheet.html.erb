@@ -3,6 +3,6 @@
 <% if Settings::LMS.enable_custom_styles? %>
 <link rel="stylesheet" href="/site/custom_stylesheet.css">
 <% end %>
-<% if current_user.admin? %>
+<% if current_user && current_user.admin? %>
 <%= stylesheet_pack_tag "mieducacion/stylesheets/admin", media: "all" %>
 <% end %>
