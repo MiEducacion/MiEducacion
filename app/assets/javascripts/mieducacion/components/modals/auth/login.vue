@@ -1,6 +1,6 @@
 <template>
   <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="setIsOpen(false)" class="relative z-10">
+    <Dialog as="div" @close="setIsOpen(false)" class="modal">
       <TransitionChild
         as="template"
         enter="duration-300 ease-out"
@@ -89,7 +89,7 @@
 </template>
 
 <script setup>
-import { ref, defineExpose } from 'vue'
+import { ref } from 'vue'
 import {
   TransitionRoot,
   TransitionChild,

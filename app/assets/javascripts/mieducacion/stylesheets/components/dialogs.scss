@@ -5,6 +5,11 @@
     padding: 8px !important;
 }
 
+.modal {
+    z-index: 999;
+    @apply relative
+}
+
 .v-snack__wrapper {
     font-family: Arial, Helvetica, sans-serif;
 }
