@@ -20,7 +20,13 @@ module MiEducacion
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.eager_load_paths << Rails.root.join("lib")
+    lib_dir = Rails.root.join('lib')
+
+    config.eager_load_paths << lib_dir.join('lib')
+
+    Dir["#{lib_dir.to_s}/*.rb"].each do |f_full_path|
+        config.eager_load_paths << f_full_path
+    end
 
     require Rails.root.join("lib/mi_educacion")
   end
