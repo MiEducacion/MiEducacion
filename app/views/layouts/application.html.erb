@@ -7,12 +7,7 @@
       <%= csp_meta_tag %>
 <%= render partial: "layouts/head" %>
       <%= render partial: "partials/opengraph" %>
-      <script type="text/x-m-component" data-component-name="custom-header-links">
-         <button @click="window.$count++">{{window.$count}}</button>
-         <component :is="'script'">
-               window.$count = 0
-         </component>
-      </script>
+      <%= render partial: "partials/additional_head_content" %>
    </head>    
    <body
       class="app-body<% if device == "mobile" %> is-mobile<% end %>"
