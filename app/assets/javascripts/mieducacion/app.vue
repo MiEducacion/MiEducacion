@@ -1,7 +1,9 @@
 <template>
   <div id="mountpoint">
     <metainfo>
-      <template v-slot:title="{ content }">{{ content ? `${content} | ${SiteSettings.title}` : `${SiteSettings.title }` }}</template>
+      <template v-slot:title="{ content }">
+        {{ content ? `${content} | ${SiteSettings.title}` : `${SiteSettings.title }` }}
+      </template>
     </metainfo>
     <SiteHeader />
     <main class="wrap">
