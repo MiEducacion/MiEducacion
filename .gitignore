@@ -50,3 +50,4 @@ public/javascripts/i18n.js
 .idea/*
 /app/assets/builds/*
 !/app/assets/builds/.keep
+config/credentials.yml.enc
