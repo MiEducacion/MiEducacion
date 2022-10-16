@@ -40,24 +40,21 @@
     }
 }
 
-
-.extended-fab {
-    width: auto !important;
-    border-radius: 100px !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-
-  .courses.extended-fab {
+  #create-course.extended-fab {
       font-family: var(--mieducacion-theme-font);
       font-weight: 500;
       background-color: var(--mieducacion-primary) !important;
       text-transform: none;
       z-index:100; 
       border-radius: 12px;
+      @apply px-6 py-4 shadow-lg fixed bottom-10 right-4 text-white flex items-center;
+
+      & .icon {
+        @apply mr-2
+      }
   }
 
-  .courses.extended-fab.mobile {
+  #create-course.extended-fab.mobile {
     bottom:72px;
   }
 

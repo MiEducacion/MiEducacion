@@ -27,21 +27,16 @@
             </div>
          </v-col>
       </v-container>
-      <v-btn
+      <button
          v-if="CoursesData && canCreateCourse"
          @click="showCreateCourses = true"
-         dark
-         right
-         bottom
-         fixed
-         class="courses extended-fab"
+         id="create-course"
+         class="extended-fab"
          :class="{'mobile' : isMobile}"
-         fab
          >
-         <v-icon left>mdi-plus</v-icon>
+         <PlusIcon :size="20" class="icon"/>
          Crear curso
-      </v-btn>
-      <create-course v-model="showCreateCourses" />
+   </button>
    </div>
 </template>
 <script>
