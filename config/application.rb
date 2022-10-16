@@ -23,6 +23,6 @@ module MiEducacion
     config.autoload_paths << Rails.root.join("lib")
     config.eager_load_paths << Rails.root.join("lib")
 
-    require_relative "../lib/mi_educacion"
+    require_relative Rails.root.join("lib/mi_educacion")
   end
 end
