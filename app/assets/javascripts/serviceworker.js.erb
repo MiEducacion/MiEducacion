@@ -10,8 +10,8 @@ function onInstall(event) {
         // make sure serviceworker.js is not required by application.js
         // if you want to reference application.js from here
         '/offline.html',
-        '<%= Webpacker.manifest.lookup("start-mieducacion.js") %>',
-        '<%= Webpacker.manifest.lookup("mieducacion-app.css") %>',
+        '<%= Webpacker.manifest.lookup("javascripts/start-mieducacion.js") %>',
+        '<%= Webpacker.manifest.lookup("stylesheets/mieducacion.css") %>',
         '<%= asset_path "core-fonts.css" %>',
         '/manifest.webmanifest'
 
