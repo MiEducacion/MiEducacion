@@ -1,8 +1,9 @@
-<%= stylesheet_pack_tag "mieducacion/application", media: "all" %>
+<%= stylesheet_pack_tag "start-mieducacion", media: "all" %>
 <%= stylesheet_link_tag "core-fonts", media: "all" %>
 <% if Settings::LMS.enable_custom_styles? %>
 <link rel="stylesheet" href="/site/custom_stylesheet.css">
 <% end %>
 <% if current_user && current_user.admin? %>
-<%= stylesheet_pack_tag "mieducacion/stylesheets/admin", media: "all" %>
+<% # Upgrading to Webpacker 6 stopped generating separate css files, this line is temporarily commented %>
+<% # stylesheet_pack_tag "mieducacion/stylesheets/admin", media: "all" %>
 <% end %>
