@@ -47,7 +47,7 @@ export default {
         },
         {
           title: this.t("js.lms.resources"),
-          to: '/groups',
+          to: '/resources',
           icon: ResourcesIcon,
           showItem: true
         },
