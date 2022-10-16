@@ -8,7 +8,6 @@ import reportJsError from './lib/report-js-error'
 import globalFilters from './helpers/filters'
 import i18n from './lib/i18n'
 import _ from './lib/lodash'
-import "./stylesheets/mieducacion.scss"
 import MSpinner from './components/m-spinner.js'
 import twemoji from './plugins/twemoji';
 import metaManager from './plugins/metaManager';
