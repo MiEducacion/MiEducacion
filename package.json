@@ -2,22 +2,6 @@
   "name": "mieducacion",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@babel/core": "7",
-    "@babel/plugin-transform-runtime": "7",
-    "@babel/preset-env": "7",
-    "@babel/runtime": "7",
-    "@headlessui/vue": "^1.7.3",
-    "@rails/actioncable": "^7.0.4",
-    "@vue/compiler-sfc": "^3.2.41",
-    "axios": "^1.1.3",
-    "babel-loader": "8",
-    "babel-plugin-macros": "^3.1.0",
-    "compression-webpack-plugin": "9",
-    "css-loader": "^6.7.1",
-    "css-minimizer-webpack-plugin": "^4.2.2",
-    "i18n-js": "3.9.2",
-=======
     "@fullhuman/postcss-purgecss": "4.0.3",
     "@headlessui/vue": "^1.6.7",
     "@rails/actioncable": "^6.0.0",
@@ -31,7 +15,6 @@
     "axios": "^0.27.2",
     "emoji-mart-vue": "^2.6.6",
     "i18n-js": "^3.9.2",
->>>>>>> parent of ed0dc16 (DEV: Upgrade dependencies and fix compilation issues)
     "lodash": "^4.17.21",
     "lucide-vue-next": "^0.91.0",
     "markdown-it": "^13.0.1",
