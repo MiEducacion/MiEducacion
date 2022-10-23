@@ -8,7 +8,7 @@ class WizardController < ApplicationController
   steps :welcome, :site_info, :find_friends
 
   before_action :authenticate_user!
-  before_action :admin?
+  before_action :render_not_found_unless_admin
   before_action :set_progress, only: [:show]
 
   def show
@@ -16,12 +16,13 @@ class WizardController < ApplicationController
     when :welcome
       @welcome = "Welcome"
     when :site_info
-      @s = SiteSettings
-      @site_info = [
+      @s = Settings::General
+      @site_info = Form.new([
         {
-          site_title: @s.site_title
+          site_title: @s.site_name
         }
-      ]
+      ])
+      render_wizard @site_info
     end
 
     render_wizard
@@ -38,9 +39,6 @@ class WizardController < ApplicationController
 
   private
 
-  def admin?
-    redirect_to "/not_found", status: 301 unless current_user.has_role?(:admin)
-  end
 
   def set_progress
     @progress = if wizard_steps.any? && wizard_steps.index(step).present?

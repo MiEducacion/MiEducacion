@@ -8,7 +8,6 @@
     <SiteHeader />
     <main class="wrap">
       <SiteBanner/>
-      <slot name="below-site-header" />
         <router-view />
       <GlobalSnackbar ref="toast" />
     </main>

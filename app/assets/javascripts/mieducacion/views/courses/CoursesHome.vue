@@ -29,7 +29,7 @@
       </v-container>
       <button
          v-if="CoursesData && canCreateCourse"
-         @click="showCreateCourses = true"
+         @click="openCreateCourseModal()"
          id="create-course"
          class="extended-fab"
          :class="{'mobile' : isMobile}"
@@ -37,6 +37,7 @@
          <PlusIcon :size="20" class="icon"/>
          Crear curso
    </button>
+      <create-course ref="createCourseModal" />
    </div>
 </template>
 <script>
@@ -55,7 +56,6 @@
          error: null,
          CoursesData: null,
          NoDataImage,
-         showCreateCourses : false,
          canCreateCourse: this.currentUser && this.currentUser.is_admin || this.currentUser && this.currentUser.is_teacher
        }
      },
@@ -71,6 +71,9 @@
              this.error = true
            })
        },
+       openCreateCourseModal() {
+        this.$refs.createCourseModal.setIsOpen(true);
+      }
      },
    
      mounted() {

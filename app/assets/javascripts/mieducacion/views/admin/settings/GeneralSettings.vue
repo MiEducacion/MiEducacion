@@ -169,7 +169,7 @@ export default {
                         this.error = true
                         this.btnLoading = false
                         Notifier.show({
-                            message: t('js.core.generic_error')
+                            message: $t('js.core.generic_error')
                         })
                     })
             } else {

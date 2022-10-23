@@ -1,6 +1,7 @@
 <template>
   <div class="homepage-main-outlet">
     <Greeting />
+    <custom-header-links></custom-header-links>
   </div>
 </template>
 

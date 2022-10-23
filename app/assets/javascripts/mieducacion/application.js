@@ -12,6 +12,7 @@ import MSpinner from './components/m-spinner.js'
 import twemoji from './plugins/twemoji';
 import metaManager from './plugins/metaManager';
 import mIcons from './plugins/m-icons';
+import pinia from './plugins/pinia';
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 
@@ -21,6 +22,7 @@ MiEducacion.$Site = {}
 
 let pluginsMap = [
   CoreSetup,
+  pinia,
   EssentialsPreloaded,
   router,
   reportJsError,
