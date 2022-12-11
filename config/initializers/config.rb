@@ -16,5 +16,6 @@ Rails.application.reloader.to_prepare do
             main_app: true
         }
     ]
+    Logster.set_environments([:production])
   end
 end
