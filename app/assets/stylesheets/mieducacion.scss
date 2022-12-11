@@ -1,6 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import './variables.scss';
+
 
 @import './_home.scss';
 @import './courses.scss';
@@ -8,7 +10,6 @@
 @import './errors.scss';
 @import './users.scss';
 @import './vendor/normalize.css';
-@import './variables.scss';
 @import './authentication.scss';
 @import './components/_banners.scss';
 @import './components/_header.scss';
@@ -16,7 +17,7 @@
 @import './common.scss';
 @import './components/_buttons.scss';
 @import './_utilities.scss';
-@import './admin.scss'
+@import './admin.scss';
 
 .homepage-user--card .UserCard--link {
     text-transform: none !important;
