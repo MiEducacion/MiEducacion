@@ -11,7 +11,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.4",
     "@vue/compiler-sfc": "^3.2.31",
-    "autoprefixer": "10.2.6",
+    "autoprefixer": "^10.4.13",
     "axios": "^0.27.2",
     "i18n-js": "^3.9.2",
     "lodash": "^4.17.21",
@@ -20,10 +20,10 @@
     "moment": "^2.29.4",
     "node-waves": "^0.7.6",
     "pinia": "^2.0.22",
-    "postcss": "8.2.10",
+    "postcss": "^8.4.19",
     "postcss-loader": "4.0.3",
     "sass": "^1.55.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "tailwindcss": "^3.2.4",
     "twemoji": "^14.0.2",
     "vue": "^3.2.36",
     "vue-backtotop": "^1.6.1",
@@ -35,8 +35,14 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@csstools/postcss-sass": "^5.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^10.2.0",
     "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.14",
     "webpack-dev-server": "3"
+  },
+  "scripts": {
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/mieducacion.scss -o ./app/assets/builds/mieducacion-wind.css --minify"
   }
 }

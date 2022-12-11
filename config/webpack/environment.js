@@ -3,7 +3,9 @@ const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const vue = require('./loaders/vue')
 const aliasConfig = require('./alias')
-
+const crypto = require("crypto");
+const crypto_orig_createHash = crypto.createHash;
+crypto.createHash = algorithm => crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);
 // Get the actual sass-loader config
 const sassLoader = environment.loaders.get('sass')
 const sassLoaderConfig = sassLoader.use.find(function (element) {
@@ -32,6 +34,9 @@ environment.config.merge(aliasConfig)
 environment.loaders.prepend('vue', vue)
 
 environment.config.merge({
+    output: {
+	  hashFunction: "sha256"
+	},
     module: {
       rules: [
         {

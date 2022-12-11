@@ -1,7 +1,3 @@
-@import 'variables';
-
-//transparentize($mieducacion-primary, .9);
-
 .form-input {
     @apply px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500 border-2 block w-full sm:text-sm border-gray-300 rounded-md
 }

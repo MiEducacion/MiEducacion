@@ -1,20 +1,22 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import 'home';
-@import 'courses';
-@import 'campus';
-@import 'errors';
-@import 'users';
-@import 'vendor/normalize.css';
-@import 'variables';
-@import 'authentication';
-@import 'components/banners';
-@import 'components/header';
-@import 'components/dialogs';
-@import 'common';
-@import 'components/buttons';
-@import 'utilities';
+
+@import './_home.scss';
+@import './courses.scss';
+@import './_campus.scss';
+@import './errors.scss';
+@import './users.scss';
+@import './vendor/normalize.css';
+@import './variables.scss';
+@import './authentication.scss';
+@import './components/_banners.scss';
+@import './components/_header.scss';
+@import './components/dialogs.scss';
+@import './common.scss';
+@import './components/_buttons.scss';
+@import './_utilities.scss';
+@import './admin.scss'
 
 .homepage-user--card .UserCard--link {
     text-transform: none !important;

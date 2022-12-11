@@ -14,9 +14,11 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules")
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
-Rails.application.config.assets.precompile << ["*.otf", "*.eot", "*.woff", "*.ttf", "*.woff2"]
+
+Rails.application.config.assets.precompile << ["*.otf", "*.eot", "*.woff", "*.ttf", "*.woff2", "*.css"]
 
 Rails.application.config.assets.precompile += %w[
   serviceworker.js
   'core-fonts.scss'
+  'mieducacion-wind.css'
 ]

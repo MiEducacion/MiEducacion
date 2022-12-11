@@ -13,7 +13,6 @@ import twemoji from './plugins/twemoji';
 import metaManager from './plugins/metaManager';
 import mIcons from './plugins/m-icons';
 import pinia from './plugins/pinia';
-import "./stylesheets/mieducacion.scss"
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 
