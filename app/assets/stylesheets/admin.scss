@@ -3,6 +3,7 @@
 .admin-dashboard {
     @apply mt-10 bg-white
 }
+
 .admin-dashboard .panel {
     @apply px-4 py-4
 }
@@ -23,22 +24,9 @@
     @apply bg-purple-700 text-white
 }
 
-.admin-container > .nav-pills {
+.admin-container>.nav-pills {
 
-    & .v-tab:before, .v-tabs-slider {
-        background-color: var(--mieducacion-primary);
-    }
-    
-    & .v-tab {
-        font-family: var(--mieducacion-theme-font) !important;
-        text-transform: none;
-        font-weight: 700;
-}
-}
-
-.admin-container > .nav-pills {
-
-    & .nav-pills--active {
+    .nav-pills--active {
         color: var(--mieducacion-primary);
     }
 }
@@ -87,9 +75,9 @@
 }
 
 @media screen and (max-width: 850px) {
-.version-check .version-status {
-    max-width: unset;
-}
+    .version-check .version-status {
+        max-width: unset;
+    }
 }
 
 .version-check .version-status {
@@ -105,10 +93,10 @@
 .version-check .version-status .face {
     margin: 0 0.75em 0 0;
     font-size: var(--font-up-3);
+}
 
-    & .up-to-date {
-        @apply text-green-500
-    }
+.version-check .version-status .face>.up-to-date {
+    @apply text-green-500
 }
 
 .version-check .upgrade-header {
@@ -117,57 +105,56 @@
 
 .settings .setting-container {
     padding-bottom: 20px;
+}
 
-    & .setting-title {
-        float: left;
-        margin-right: 12px;
-    }
+.setting-title {
+    float: left;
+    margin-right: 12px;
+}
 
-      .setting-value {
-        padding-right: 20px;
-    }
+.setting-value {
+    padding-right: 20px;
+}
 
-      .setting-value.input {
-        @apply px-4 py-2 border-2 border-gray-300 rounded-md hover:border-gray-400 transition-colors active:border-gray-500 focus:outline-none      }
+.setting-value.input {
+    @apply px-4 py-2 border-2 border-gray-300 rounded-md hover:border-gray-400 transition-colors active:border-gray-500 focus:outline-none
+}
 
-      .setting-value.textarea {
-        @apply px-4 py-2 border-2 border-gray-300 rounded-md hover:border-gray-400 transition-colors focus:border-blue-400 focus:outline-none w-full
-    }
+.setting-value.textarea {
+    @apply px-4 py-2 border-2 border-gray-300 rounded-md hover:border-gray-400 transition-colors focus:border-blue-400 focus:outline-none w-full
+}
 
-    .setting-description {
-        display: block;
-        padding-top: 4px;
-        color: #888;
-        font-weight: 400;
-        font-size: var(--font-down-1);
-      }
+.setting-description {
+    display: block;
+    padding-top: 4px;
+    color: #888;
+    font-weight: 400;
+    font-size: var(--font-down-1);
+}
 
-      .setting-image-uploader {
-        display: flex;
+.setting-image-uploader {
+    display: flex;
 
-      &
-
-      .uploaded-image-preview {
+    .uploaded-image-preview {
         height: 270px;
         width: 400px;
         max-height: 150px;
         margin-bottom: 10px;
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
-        background-color: #C5C5C5;
+        background-position: center
+    }
 
-        & .image-upload-controls {
-            position: relative;
-            display: flex;
-            padding: 10px;
-            float: right;
-        }
+    background-color: #C5C5C5;
+
+    .image-upload-controls {
+        position: relative;
+        display: flex;
+        padding: 10px;
+        float: right;
     }
 }
 
-
-}
 
 .settings-submit {
     @apply px-4 py-2 text-white bg-purple-700 hover:bg-purple-900
@@ -182,5 +169,5 @@
     .settings .setting-container .setting-image-uploader .uploaded-image-preview {
         max-width: 320px;
     }
-      
-  }
+
+}
