@@ -10,7 +10,7 @@ module Settings
 
         if settings[:site_logo].present?
           logo_uploader = upload_logo(settings[:site_logo])
-          logo_settings = { original_logo: logo_uploader.url, resized_logo: logo_uploader.resized_logo.url }
+          logo_settings = { site_logo: logo_uploader.url, resized_site_logo: logo_uploader.resized_logo.url }
           params_to_clean = params_to_clean.merge(logo_settings)
         end
 
