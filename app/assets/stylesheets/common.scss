@@ -56,3 +56,11 @@
 .d-none {
   @apply hidden
 }
+
+.m-notifier {
+  @apply bg-gray-800 text-white
+}
+
+.m-notifier.success {
+  @apply bg-green-600 text-white
+}
