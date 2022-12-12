@@ -15,7 +15,7 @@
 }
 
 #site-banner {
-    background-color: $mieducacion-banner-background;
+    background-color: var(--mieducacion-banner-background)
 }
 
 #site-banner .v-alert__icon {
