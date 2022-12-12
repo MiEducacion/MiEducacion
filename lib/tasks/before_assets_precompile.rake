@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 task :before_assets_precompile do
-  # Test: Export translations before precompiling assets
+  # Export translations before precompiling assets
+  STDERR.puts "Exporting translations..."
   system("bundle exec rake i18n:js:export")
+
+  STDERR.puts "Compiling TailwindCSS styles..."
+  system("yarn build:css")
 end
 
 # every time execute 'rake assets:precompile'
