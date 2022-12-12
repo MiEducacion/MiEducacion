@@ -50,6 +50,16 @@ module Settings
         keys.to_h { |k| [k.to_sym, public_send(k)] }
       end
 
+      def value_of(var_name)
+        unless table_exists?
+          # Fallback to default value if table was not ready (before migrate)
+          Rails.logger.warn("'#{table_name}' does not exist, '#{name}.#{var_name}' will return the default value.")
+          return
+        end
+
+        all_settings[var_name]
+      end
+
       private
 
       def cache_key
@@ -133,15 +143,6 @@ module Settings
         end
       end
 
-      def value_of(var_name)
-        unless table_exists?
-          # Fallback to default value if table was not ready (before migrate)
-          Rails.logger.warn("'#{table_name}' does not exist, '#{name}.#{var_name}' will return the default value.")
-          return
-        end
-
-        all_settings[var_name]
-      end
 
       def all_settings
         RequestStore[cache_key] ||= Rails.cache.fetch(cache_key, expires_in: 1.week) do
