@@ -13,6 +13,7 @@ import twemoji from './plugins/twemoji';
 import metaManager from './plugins/metaManager';
 import mIcons from './plugins/m-icons';
 import pinia from './plugins/pinia';
+import Notifier from './lib/m-notifier';
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 
@@ -29,7 +30,8 @@ let pluginsMap = [
   metaManager,
   twemoji,
   Markdown,
-  mIcons
+  mIcons,
+  Notifier
 ]
 
 
