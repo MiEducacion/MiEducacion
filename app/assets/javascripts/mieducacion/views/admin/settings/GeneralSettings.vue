@@ -141,6 +141,11 @@ export default {
                     name: 'site_banner_content',
                     type: 3,
                     value: this.SiteSettings.site_banner_content
+                },
+                {
+                    name: 'enable_opengraph',
+                    type: 1,
+                    value: this.SiteSettings.enable_opengraph
                 }
             ]
         }
