@@ -2,7 +2,7 @@
   <div id="mountpoint">
     <metainfo>
       <template v-slot:title="{ content }">
-        {{ content ? `${content} | ${SiteSettings.title}` : `${SiteSettings.title }` }}
+        {{ content ? `${content} | ${SiteSettings.site_name}` : `${SiteSettings.site_name }` }}
       </template>
     </metainfo>
     <SiteHeader />
@@ -39,8 +39,8 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.SiteSettings.title,
-      titleTemplate: `%s - ${this.SiteSettings.title}`,
+      title: this.SiteSettings.site_name,
+      titleTemplate: `%s - ${this.SiteSettings.site_name}`,
     }
    
   },
