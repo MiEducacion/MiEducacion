@@ -15,27 +15,41 @@ module ApplicationHelper
 
   def client_side_app_settings
     # I could probably make this more dynamic in the future?
-    @g = Settings::General
+
     @s = Settings::Security
-    site_settings = {
-      title: @g.site_name,
-      site_logo: @g.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg",
-      site_description: @g.site_description,
-      site_shortname: @g.site_shortname,
-      public_site: @g.public,
-      force_redirect_private: @g.force_redirect_private,
-      show_site_banner: @g.show_site_banner,
-      site_banner_content: @g.site_banner_content,
-      enable_cas_login: @s.enable_cas_login,
-      enable_oauth_login: @s.enable_oauth_login
+
+    site_settings = {}
+
+    general_settings = [
+      :site_name,
+      :original_logo,
+      :site_logo,
+      :site_description,
+      :site_shortname,
+      :public_site,
+      :force_redirect_private,
+      :show_site_banner,
+      :site_banner_content,
+      :enable_opengraph
+    ]
+
+    general_settings.each { |setting_key| 
+      if Settings::General.value_of(setting_key).present?
+      site_settings.merge!("#{setting_key}": Settings::General.value_of(setting_key))
+      else 
+        site_settings.merge!("#{setting_key}": Settings::General.get_default(setting_key))
+    end
     }
 
+
     if current_user&.has_role?(:admin)
-      site_settings = site_settings.merge(
+      site_settings = site_settings.merge!(
         wizard_completed: Settings::Developer.wizard_completed,
         bypass_wizard_check: Settings::Developer.bypass_wizard_check
       )
     end
+
+
 
     site_settings
   end
