@@ -1,6 +1,5 @@
 <template>
   <div class="fill-height">
-    <site-header></site-header>
     <v-main class="login-required text-center">
       <div>
         <img
