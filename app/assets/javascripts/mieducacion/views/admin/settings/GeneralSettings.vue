@@ -84,18 +84,18 @@
           </form>
         </div>
     </div>
-    <v-overlay color="white" :value="btnLoading">
-      <m-spinner />
-    </v-overlay>
+    <loading-overlay v-if="btnLoading"></loading-overlay>
   </div>
 </template>
 
 <script>
 import MIconButton from '../../../components/m-icon-button.vue'
+import loadingOverlay from '../../../components/loading-overlay.vue';
 export default {
     name: 'AdminGeneralSettings',
     components: {
-      MIconButton
+      MIconButton,
+      loadingOverlay
     },
     data () {
         return {
