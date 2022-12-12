@@ -104,13 +104,12 @@ export default {
             settingsModel: [{
                     name: 'site_logo',
                     type: 2,
-                    value: this.SiteSettings.site_logo,
-                    defaultValue: '/images/default/mieducacion_default_siteLogo.svg'
+                    value: this.SiteSettings.site_logo
                 },
                 {
                     name: 'site_name',
                     type: 0,
-                    value: this.SiteSettings.title
+                    value: this.SiteSettings.site_name
                 },
                 {
                     name: 'site_description',
@@ -169,18 +168,23 @@ export default {
                         formData
                     )
                     .then((response) => {
-                        Notifier.show({
-                            message: response.data.message
-                        })
+                        this.$toast(
+                            response.data.message, {
+                              class: [
+                                'm-notifier',
+                                'success'
+                              ]
+                            }
+                        )
                         this.btnLoading = false
-                        window.location.reload()
+                        //window.location.reload()
                     })
                     .catch((error) => {
                         this.error = true
                         this.btnLoading = false
-                        Notifier.show({
-                            message: $t('js.core.generic_error')
-                        })
+                        this.$toast(
+                            $t('js.core.generic_error')
+                        )
                     })
             } else {
                 Notifier.show({
