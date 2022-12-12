@@ -146,6 +146,11 @@ export default {
                     name: 'enable_opengraph',
                     type: 1,
                     value: this.SiteSettings.enable_opengraph
+                },
+                {
+                    name: 'enable_splash_screen',
+                    type: 1,
+                    value: this.SiteSettings.enable_splash_screen
                 }
             ]
         }

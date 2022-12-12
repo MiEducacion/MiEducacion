@@ -30,7 +30,8 @@ module ApplicationHelper
       :force_redirect_private,
       :show_site_banner,
       :site_banner_content,
-      :enable_opengraph
+      :enable_opengraph,
+      :enable_splash_screen
     ]
 
     general_settings.each { |setting_key| 
