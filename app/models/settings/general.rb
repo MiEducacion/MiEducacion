@@ -38,11 +38,8 @@ module Settings
     # Images
 
     setting :favicon_url, type: :string, default: proc { URL.local_image("favicon.ico") }
-    setting :site_logo,
-            type: :string,
-            default: '/images/default/mieducacion_default_siteLogo.svg'
-    setting :original_logo, type: :string, default: '/images/default/mieducacion_default_siteLogo.svg'
-    setting :resized_logo, type: :string
+    setting :site_logo, type: :string, default: '/images/default/mieducacion_default_siteLogo.svg'
+    setting :resized_site_logo, type: :string
     setting :app_icon,
             type: :string,
             default: "/images/default/mieducacion_default_appicon_512x512.png"

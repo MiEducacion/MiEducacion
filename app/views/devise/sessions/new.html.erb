@@ -4,7 +4,7 @@
   <div class="form-login crayola-card py-4 px-4 vertical-middle">
   <section class="welcome">
   <div class="mx-auto text-center">
-    <%= image_tag Settings::General.original_logo.presence || "/images/default/mieducacion_default_siteLogo.svg", :id => "site-logo", :alt => "Site logo", :draggable => false %>
+    <%= image_tag Settings::General.site_logo.presence || "/images/default/mieducacion_default_siteLogo.svg", :id => "site-logo", :alt => "Site logo", :draggable => false %>
     </div>
     <div class="mx-auto text-center mt-2">
      <%= image_tag("illustrations/welcome_login.png", width: 200) %>

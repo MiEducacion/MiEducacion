@@ -22,8 +22,8 @@ module ApplicationHelper
 
     general_settings = [
       :site_name,
-      :original_logo,
       :site_logo,
+      :resized_site_logo,
       :site_description,
       :site_shortname,
       :public_site,

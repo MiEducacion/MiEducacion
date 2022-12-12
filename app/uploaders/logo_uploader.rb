@@ -29,14 +29,14 @@ class LogoUploader < BaseUploader
   end
 
   def filename
-    "original_logo_#{random_string}.#{file.extension}"
+    "original_site_logo_#{random_string}.#{file.extension}"
   end
 
   version :resized_logo do
     process resize_to_limit: [nil, 80]
 
     def full_filename(_for_file = file)
-      "resized_logo_#{random_string}.#{file.extension}"
+      "resized_site_logo_#{random_string}.#{file.extension}"
     end
   end
 
