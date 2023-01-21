@@ -6,6 +6,7 @@ import GeneralSettings from '../views/admin/settings/GeneralSettings.vue';
 import CustomizationSettings from "../views/admin/settings/CustomizationSettings.vue";
 import SecuritySettings from "../views/admin/settings/SecuritySettings.vue";
 import EmailSettings from "../views/admin/settings/EmailSettings.vue";
+import Updater from "../views/admin/updater.vue";
 
 
 const AdminRoutes = {
@@ -17,6 +18,14 @@ const AdminRoutes = {
             name: 'admin.dashboard',
             path: 'dashboard',
             component: AdminDashboard,
+            meta: {
+                requireAdmin: true
+            }
+        },
+        {
+            name: 'admin.updates',
+            path: 'updates',
+            component: Updater,
             meta: {
                 requireAdmin: true
             }

@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
 @import './variables.scss';
 
 
@@ -14,10 +15,12 @@
 @import './components/_banners.scss';
 @import './components/_header.scss';
 @import './components/dialogs.scss';
+@import './components/_inputs.scss';
 @import './common.scss';
 @import './components/_buttons.scss';
 @import './_utilities.scss';
 @import './admin.scss';
+
 
 .homepage-user--card .UserCard--link {
     text-transform: none !important;

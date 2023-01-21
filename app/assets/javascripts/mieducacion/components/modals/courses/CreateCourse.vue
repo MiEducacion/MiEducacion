@@ -1,92 +1,49 @@
 <template>
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog as="div" @close="setIsOpen(false)" class="modal">
-      <TransitionChild
-        as="template"
-        enter="duration-300 ease-out"
-        enter-from="opacity-0"
-        enter-to="opacity-100"
-        leave="duration-200 ease-in"
-        leave-from="opacity-100"
-        leave-to="opacity-0"
-      >
+      <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
+        leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0">
         <div class="fixed inset-0 bg-black bg-opacity-25" />
       </TransitionChild>
 
       <div class="fixed inset-0 overflow-y-auto">
-        <div
-          class="flex min-h-full items-center justify-center p-4 text-center"
-        >
-          <TransitionChild
-            as="template"
-            enter="duration-300 ease-out"
-            enter-from="opacity-0 scale-95"
-            enter-to="opacity-100 scale-100"
-            leave="duration-200 ease-in"
-            leave-from="opacity-100 scale-100"
-            leave-to="opacity-0 scale-95"
-          >
+        <div class="flex min-h-full items-center justify-center p-4 text-center">
+          <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95"
+            enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
+            leave-to="opacity-0 scale-95">
             <DialogPanel
-              class="dialog w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 align-middle shadow-xl transition-all"
-            >
-              <DialogTitle
-                as="h3"
-                class="text-lg text-center font-medium leading-6 text-gray-900"
-                v-emoji
-              >
-              Create a course
+              class="dialog w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 align-middle shadow-xl transition-all">
+              <DialogTitle as="h3" class="text-lg text-center font-medium leading-6 text-gray-900" v-emoji>
+                Create a course
               </DialogTitle>
-                <img :src="CreateIllustration" class="illustration" />
+              <img :src="CreateIllustration" class="illustration h-32" />
               <DialogDescription as="h3" v-emoji>
                 Let's start! Fill in the details to create a course
               </DialogDescription>
 
-<v-container class="dialog">
-      <div class="create-course text-center">
-        <v-form ref="createCourse" lazy-validation @submit.prevent="createCourse()">
-          <v-col cols="12" sm="10" class="mx-auto">
-            <v-text-field
-              label="Course name"
-              placeholder="My awesome course"
-              filled
-              hide-details
-              required
-              class="mb-4"
-              v-model="newCourse.name"
-            ></v-text-field>
+              <div class="dialog container">
+                <div class="create-course text-center">
+                  <form ref="createCourse" @submit.prevent="createCourse">
+                    <v-col cols="12" sm="10" class="mx-auto">
+                      <m-input label="Course name" placeholder="My awesome course" type="name" required
+                        v-model="course.name"/>
 
-            <v-combobox
-              clearable
-              filled
-              multiple
-              small-chips
-              required
-              v-model="newCourse.teachers"
-              label="Teachers"
-              return-object
-            ></v-combobox>
+                      <v-combobox clearable filled multiple small-chips required v-model="course.teacher_ids"
+                        label="Teachers" return-object></v-combobox>
 
-            <v-checkbox
-              v-model="newCourse.private"
-              label="This course is private"
-            ></v-checkbox>
-          </v-col>
+                      <v-checkbox v-model="course.private" label="This course is private"></v-checkbox>
+                    </v-col>
 
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn
-              :loading="btnLoading"
-              color="var(--mieducacion-primary)"
-              dark
-              elevation="0"
-              type="submit"
-            >
-              Crear
-            </v-btn>
-          </v-card-actions>
-        </v-form>
-      </div>
-    </v-container>   </DialogPanel>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <button :loading="btnLoading" color="var(--mieducacion-primary)" dark elevation="0" type="submit">
+                        Crear
+                      </button>
+                    </v-card-actions>
+                  </form>
+                </div>
+              </div>
+            </DialogPanel>
           </TransitionChild>
         </div>
       </div>
@@ -106,6 +63,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@headlessui/vue'
+import MInput from '../../forms/m-input.vue'
 import { Unlock, Fingerprint } from 'lucide-vue-next';
 
 const isOpen = ref(false)
@@ -117,61 +75,54 @@ function setIsOpen(value) {
 defineExpose({
   setIsOpen
 })
+
+
+
+
+const show = {
+  get() {
+    return props.value
+  },
+  set(value) {
+    this.$emit('input', value)
+  }
+}
+
+
 </script>
 
 <script>
 export default {
-  name: 'createCourseModal',
-  props: {
-     value: Boolean
-  },
-  data () {
+  data() {
     return {
-        CreateIllustration,
-        btnLoading : null,
-        newCourse: {
-          name : null,
-          teachers : null,
-          private : false,
-        }
-        
+      btnLoading: null,
+      course: {
+        name: '',
+        teacher_ids: [
+          this.currentUser.id
+        ],
+        private: false
+      }
     }
-  },
-  mounted () {
   },
   methods: {
     createCourse() {
-      this.$refs.createCourse.validate();
       this.btnLoading = true
-      axios.post('/courses/new.json', this.newCourse)
-      .then((response) => {
-                  this.$emit('input', false)
-                  this.$router.push('/courses/' + response.data.course.id);
-                })
-                .catch((error) => {
-                    console.log(error)
-                    this.error = true
-                    this.btnLoading = false
-                })
-    }
-  },
-  computed: {
-    show: {
-      get () {
-        return this.value
-      },
-      set (value) {
-         this.$emit('input', value)
+      let course = {
+        name: this.course.name,
+        teacher_ids: this.course.teacher_ids,
+        private: this.course.private
       }
+      axios.post('/courses/new.json', course)
+        .then((response) => {
+          this.btnLoading = false
+          this.$router.push('/courses/' + response.data.course.id);
+        })
+        .catch((error) => {
+          console.log(error)
+          this.error = true
+          this.btnLoading = false
+        })
     }
-  },
-watch: {
-    show(visible) {
-      if (visible) {
-        this.response = null
-      } else {
-      }
-    }
-  },
-}
-</script>
+  }
+}</script>

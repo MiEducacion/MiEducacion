@@ -31,6 +31,9 @@ module Admin
       def admin?
         render json: { error: "404 Not found" }, status: 404 unless current_user.has_role?(:admin)
       end
+
+      def index
+      end
     end
   end
 end

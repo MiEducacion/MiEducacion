@@ -20,5 +20,4 @@ Rails.application.config.assets.precompile << ["*.otf", "*.eot", "*.woff", "*.tt
 Rails.application.config.assets.precompile += %w[
   serviceworker.js
   'core-fonts.scss'
-  'mieducacion-wind.css'
 ]

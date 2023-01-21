@@ -24,15 +24,25 @@
           </div>
         </div>
         <div class="version-status">
+          <template v-if="!dashboardData.version_check.updates_available">
           <div class="face">
             <span class="up-to-date">
               <SmileIcon :size="48"/>
             </span>
           </div>
           <div class="version-notes">You're up to date!</div>
+          </template>
+          <template v-else>
+          <div class="face">
+            <span class="updates-available">
+              <SmileIcon :size="48"/>
+            </span>
+          </div>
+          <div class="version-notes">Updates available</div>
+          </template>
         </div>
         <div class="upgrade-header">
-          <a href="#">Updgrade instance</a>
+          <router-link to="/admin/updates">Update instance</router-link>
         </div>
       </div>
     </section>

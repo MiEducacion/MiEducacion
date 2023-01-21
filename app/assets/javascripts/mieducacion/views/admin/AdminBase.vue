@@ -9,30 +9,34 @@
         </li>
       </ul>
     </div>
-      <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'AdminBase',
-    metaInfo: {
-        title: 'Admin'
-    },
-    data () {
-      return {
-        adminLinks : [
-          {
-            title: this.t("js.admin.nav.dashboard"),
-            to: '/admin/dashboard'
-          },
-          {
-            title: this.t("js.admin.nav.settings"),
-            to: '/admin/settings'
-          }
-        ]
-      }
+  name: 'AdminBase',
+  metaInfo: {
+    title: 'Admin'
+  },
+  data() {
+    return {
+      adminLinks: [
+        {
+          title: this.t("js.admin.nav.dashboard"),
+          to: '/admin/dashboard'
+        },
+        {
+          title: this.t("js.admin.nav.settings"),
+          to: '/admin/settings'
+        },
+        {
+          title: this.t("js.admin.nav.updater"),
+          to: '/admin/updates'
+        }
+      ]
     }
+  }
 
 }
 </script>

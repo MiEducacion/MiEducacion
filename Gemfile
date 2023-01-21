@@ -13,7 +13,6 @@ gem "puma", "~> 5.0"
 gem "sass-rails"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "sprockets-rails"
-gem "webpacker", "~> 5.4.0"
 
 # Turbolinks doesn't play well with SPA
 # gem 'turbolinks', '~> 5'
@@ -113,3 +112,6 @@ gem "tailwindcss-rails-webpacker", "~> 0.2.1"
 
 gem "gravtastic", "~> 3.2"
 gem "net-http"
+
+gem "shakapacker", "~> 6.5"
+gem "message_bus"

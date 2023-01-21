@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "version"
+require "updater"
 
 module MiEducacion
    def self.git_version
@@ -47,4 +48,15 @@ module MiEducacion
         self.try_git(git_cmd, "unknown")
       end
   end
+
+  @@maintenance_enabled = false
+
+  def self.maintenance_enabled
+    @@maintenance_enabled
+  end
+
+  def self.maintenance_enabled=(value)
+    @@maintenance_enabled = value
+  end
+  
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_27_131016) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_20_041540) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -42,10 +42,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_131016) do
   create_table "courses", force: :cascade do |t|
     t.text "name"
     t.string "cover"
-    t.text "teachers"
     t.boolean "private", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "teacher_ids"
+  end
+
+  create_table "courses_users", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "user_id"
+    t.index ["course_id"], name: "index_courses_users_on_course_id"
+    t.index ["user_id"], name: "index_courses_users_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -117,6 +124,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_131016) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["var"], name: "index_settings_user_experiences_on_var", unique: true
+  end
+
+  create_table "site_settings", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "data_type", null: false
+    t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

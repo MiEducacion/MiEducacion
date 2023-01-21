@@ -1,6 +1,16 @@
+const { VueLoaderPlugin } = require('vue-loader')
+
 module.exports = {
-  test: /\.vue(\.erb)?$/,
-  use: [{
-    loader: 'vue-loader'
-  }]
+  module: {
+    rules: [
+      {
+        test: /\.vue(\.erb)?$/,
+        loader: 'vue-loader'
+      }
+    ]
+  },
+  plugins: [new VueLoaderPlugin()],
+  resolve: {
+    extensions: ['.vue']
+  }
 }

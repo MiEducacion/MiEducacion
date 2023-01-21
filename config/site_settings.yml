@@ -1,0 +1,5 @@
+general:
+  site_title:
+    default: "MiEducación"
+    client: true
+    type: string

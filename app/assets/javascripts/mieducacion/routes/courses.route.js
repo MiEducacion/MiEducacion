@@ -1,5 +1,4 @@
 const CoursesHome = () => import( /* webpackChunkName: "mieducacion-courses-home" */ '../views/courses/CoursesHome.vue')
-const CoursesBase = () => import( /* webpackChunkName: "mieducacion-course-overview" */ '../views/courses/CoursesBase.vue')
 
 const SingleCourseBase = () => import( /* webpackChunkName: "mieducacion-course-base" */ '../views/courses/components/SingleCourseBase.vue')
 const CourseOverview = () => import( /* webpackChunkName: "mieducacion-course-overview" */ '../views/courses/components/CourseOverview.vue')
@@ -8,17 +7,13 @@ const CourseOverview = () => import( /* webpackChunkName: "mieducacion-course-ov
 
 let CoursesHomeRoute = {
     path: '/courses',
-    component: CoursesBase,
+    component: CoursesHome,
+    name: 'courses.home',
     children: [
         {
-            name: 'courses',
-            path: '',
-            component: CoursesHome
-        },
-        {
-            path: ':id',
+            path: '/courses/:id',
             component: SingleCourseBase,
-            redirect: ':id/overview',
+            redirect: '/courses/:id/overview',
             children: [
                 {
                     name: 'course.overview',

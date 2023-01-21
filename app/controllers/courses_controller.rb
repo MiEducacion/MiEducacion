@@ -38,6 +38,8 @@ class CoursesController < ApplicationController
 
   def new_course
     course = Course.create(course_params)
+    course.teacher_ids << current_user.id
+
     respond_to do |format|
       format.json do
         if course.valid?
@@ -58,6 +60,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.permit(:name, :private, teachers: [])
+    params.permit(:name, :private, :teacher_ids)
   end
 end

@@ -1,7 +1,7 @@
 <template>
   <div class="homepage-main-outlet">
     <Greeting />
-    <custom-header-links></custom-header-links>
+    <additional-nav-buttons></additional-nav-buttons>
   </div>
 </template>
 

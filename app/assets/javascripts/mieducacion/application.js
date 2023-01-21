@@ -16,6 +16,7 @@ import pinia from './plugins/pinia';
 import Notifier from './lib/m-notifier';
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
+import "../../builds/mieducacion-wind.css"
 
 
 const MiEducacion = createApp(App)
@@ -47,6 +48,7 @@ MiEducacion.component('MSpinner', MSpinner)
 
  /* Remove noscript tag in SPA */
 document.querySelector("noscript")?.remove();
+
 
 
 export default MiEducacion

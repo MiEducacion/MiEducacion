@@ -1,7 +1,7 @@
 @import 'variables';
 
 body {
-    background-color: transparentize($mieducacion-primary, .9);
+    background-color: var(--mieducacion-theme-background);
 }
 
 
