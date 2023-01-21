@@ -77,6 +77,9 @@ export default {
 
    mounted() {
       this.fetchCourses()
+      MessageBus.subscribe("/courses", (data) => {
+         console.log(data)
+      });
    },
 }
 </script>

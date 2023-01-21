@@ -17,6 +17,8 @@ import Notifier from './lib/m-notifier';
 require('./lib/axios-setup')
 require('./lib/register-service-worker')
 import "../../builds/mieducacion-wind.css"
+import MessageBus from 'message-bus-client'
+import $ from 'jquery'
 
 
 const MiEducacion = createApp(App)
@@ -44,10 +46,13 @@ MiEducacion.mixin(i18n)
 
 MiEducacion.config.globalProperties.$filters = globalFilters
 MiEducacion.config.globalProperties.$_ = _
+MiEducacion.config.globalProperties.MessageBus = MessageBus
+
 MiEducacion.component('MSpinner', MSpinner)
 
  /* Remove noscript tag in SPA */
 document.querySelector("noscript")?.remove();
+window.$ = $
 
 
 

@@ -43,6 +43,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.json do
         if course.valid?
+          MessageBus.publish("/courses", course.to_json, user_ids: [current_user.id]) if current_user?
           render json: {
             course: course
           }, content_type: "application/json", status: 200
