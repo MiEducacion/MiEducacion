@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def site_name
-    @site_name ||= Settings::General.site_name
+    @site_name ||= SiteSetting.site_name
   end
 
   def client_side_app_settings
@@ -35,11 +35,7 @@ module ApplicationHelper
     ]
 
     general_settings.each { |setting_key| 
-      if Settings::General.value_of(setting_key).present?
-      site_settings.merge!("#{setting_key}": Settings::General.value_of(setting_key))
-      else 
-        site_settings.merge!("#{setting_key}": Settings::General.get_default(setting_key))
-    end
+      site_settings[setting_key] = SiteSetting.send(setting_key)
     }
 
 
@@ -74,7 +70,7 @@ module ApplicationHelper
   end
 
   def include_splash?
-    Settings::General.enable_splash_screen
+    SiteSetting.enable_splash_screen
   end
 
   def core_setup_data

@@ -2,58 +2,7 @@
 
 module MiEducacion
     module Updater
-        def self.run_update
-            # Inicializa la variable progress en 0
-            progress = 0
-            # Ejecuta el primer comando y actualiza la variable progress
-            output = ""
-            IO.popen("git pull") do |io|
-              while (line = io.gets) do
-                output << line
-                puts line # Esto imprime el output en tiempo real
-              end
-            end
-            progress += 25
-            # Ejecuta el segundo comando y actualiza la variable progress
-            IO.popen("bundle install") do |io|
-              while (line = io.gets) do
-                output << line
-                puts line # Esto imprime el output en tiempo real
-              end
-            end
-            progress += 50
-
-            IO.popen("rake db:migrate") do |io|
-                while (line = io.gets) do
-                  output << line
-                  puts line # Esto imprime el output en tiempo real
-                end
-            end
-
-            progress += 65
-            IO.popen("rake db:migrate") do |io|
-                while (line = io.gets) do
-                  output << line
-                  puts line # Esto imprime el output en tiempo real
-                end
-            end
-
-            progress += 80
-
-            IO.popen("rake assets:precompile") do |io|
-                while (line = io.gets) do
-                  output << line
-                  puts line # Esto imprime el output en tiempo real
-                end
-            end
-
-            progress += 100
-
-            system("rails restart")
-
-            # Devuelve el porcentaje final de la barra de progreso y el output de los comandos
-            [progress, output]
-          end
+        
 
       def self.remote_version
         remote_hash = `git ls-remote --heads origin main`.strip.split.first
@@ -71,6 +20,79 @@ module MiEducacion
       end
 
   
+      def self.log(message)
+        publish 'log', message + "\n"
+      end
+
+      def self.publish(type, value)
+        MessageBus.publish("/admin/upgrade",
+          { type: type, value: value },
+          user_ids: [@user_id]
+        )
+      end
+
+      def self.percent(val)
+        publish('percent', val)
+      end
+
+      def self.run_update
+
+        percent(0)
+
+        log("********************************************************")
+        log("*** Please be patient, next steps might take a while ***")
+        log("********************************************************")
+
+        percent(10)
+
+
+        run("git pull")
+        percent(25)
+
+        run("bundle install")
+
+        percent(50)
+
+        run("rake db:migrate")
+
+        percent(65)
+
+
+        percent(80)
+
+        log("*** Bundling assets. This will take a while *** ")
+
+        run("rake assets:precompile")
+
+        percent(100)
+
+        FileUtils.touch(Rails.root.join("tmp/restart.txt"))
+      end
+
+      def self.run(cmd)
+        log "$ #{cmd}"
+        msg = +""
+    
+        
+    
+
+    
+        retval = nil
+        Open3.popen2e("cd #{Rails.root} && #{cmd} 2>&1") do |_in, out, wait_thread|
+          out.each do |line|
+            line.rstrip! # the client adds newlines, so remove the one we're given
+            log(line)
+            msg << line << "\n"
+          end
+          retval = wait_thread.value
+        end
+    
+        unless retval == 0
+          STDERR.puts("FAILED: '#{cmd}' exited with a return value of #{retval}")
+          STDERR.puts(msg)
+          raise RuntimeError
+        end
+      end
   
       private
 

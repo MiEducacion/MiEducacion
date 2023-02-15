@@ -115,3 +115,5 @@ gem "net-http"
 
 gem "shakapacker", "~> 6.5"
 gem "message_bus"
+
+gem "rails-settings-cached", "~> 2.8"

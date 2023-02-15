@@ -235,6 +235,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
+    rails-settings-cached (2.8.3)
+      activerecord (>= 5.0.0)
+      railties (>= 5.0.0)
     rails_material_design_icons (6.5.95)
       railties (>= 3.2, < 8)
     railties (7.0.4.2)
@@ -403,6 +406,7 @@ DEPENDENCIES
   rack-cors
   rack-mini-profiler (~> 2.0)
   rails (~> 7.0.4)
+  rails-settings-cached (~> 2.8)
   rails_material_design_icons
   redis (~> 4.0)
   request_store (~> 1.5)

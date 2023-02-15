@@ -161,6 +161,17 @@
     @apply px-4 py-2 text-white bg-purple-700 hover:bg-purple-900
 }
 
+.terminal-updating {
+    margin-top: 20px;
+    overflow-x: scroll;
+    height: 400px;
+    white-space: pre;
+    font-family: monospace;
+    background-color: #000;
+    color: #ddd;
+    padding: 10px;
+}
+
 @media screen and (max-width: 600px) {
     .admin-container {
         padding: .5em .5em 5% !important;
@@ -172,3 +183,4 @@
     }
 
 }
+
