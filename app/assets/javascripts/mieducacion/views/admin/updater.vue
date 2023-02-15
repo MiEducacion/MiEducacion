@@ -17,13 +17,15 @@
                 </button>
 
 
+                <section id="update-failed" class="mx-2 bg-red-500 px-4 py-2" v-if="updateStatus === 'failed'">
 
+                </section>
                 <div class="w-full bg-gray-200 mt-4" v-if="updating">
                     <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-1 leading-none transition-all"
                         :style="`width: ${updateProgress}%`"> {{ updateProgress }}%</div>
                 </div>
 
-                <details v-if="updating">
+                <details id="expandable-logs" v-if="updating">
                     <summary>{{ currentLine }}</summary>
                     <div v-if="updating" class="terminal-updating">
                         <template v-for="line in outputMessage">
@@ -49,6 +51,12 @@ var updateResponse = ref(null)
 var outputMessage = ref([])
 var currentLine = ref('')
 var updateProgress = ref(0)
+var updateStatus = ref(null)
+
+const handleFailed = () => {
+    currentLine.value = 'Failed to update MiEducación';
+    document.getElementById("expandable-logs").setAttribute("open", "true"); 
+}
 
 onMounted(() => {
     axios.get('/admin/updates.json')
@@ -66,7 +74,11 @@ onMounted(() => {
             currentLine.value = data.value
         }
         if (data.type == "status") {
+            updateStatus.value = data.value
             console.log(data.value)
+            if (data.value == "failed") {
+                handleFailed()
+            }
         }
     });
 })

@@ -23,6 +23,6 @@ class AppController < ApplicationController
   private
 
   def should_render_for_anon
-    Settings::General.public? || !Settings::General.force_redirect_private?
+    SiteSetting.public_site? || !SiteSetting.force_redirect_private?
   end
 end

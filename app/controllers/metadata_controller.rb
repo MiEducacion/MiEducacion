@@ -13,8 +13,8 @@ class MetadataController < ApplicationController
   def default_webmanifest
     display = "standalone"
     {
-      name: Settings::General.site_name,
-      short_name: Settings::General.site_shortname.presence || Settings::General.site_name.truncate(12, separator: " ",
+      name: SiteSettings.site_name,
+      short_name: SiteSettings.site_shortname.presence || SiteSettings.site_name.truncate(12, separator: " ",
                                                                                                         omission: ""),
       display: display,
       start_url: "/",
@@ -22,7 +22,7 @@ class MetadataController < ApplicationController
       theme_color: "#4527a0",
       icons: [
         {
-          src: Settings::General.app_icon,
+          src: SiteSettings.app_icon,
           sizes: "512x512",
           type: "image/png",
           purpose: "any"

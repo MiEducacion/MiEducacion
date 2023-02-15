@@ -160,11 +160,11 @@ export default {
             if (!this.$_.isEmpty(this.settings)) {
                 let formData = new FormData()
                 this.$_.forEach(this.settings, function(value, key) {
-                    formData.append(`settings_generals[${key}]`, value)
+                    formData.append(`setting[${key}]`, value)
                 })
 
                 this.btnLoading = true
-                axios.post('/admin/settings/general_settings.json',
+                axios.post('/admin/site_settings.json',
                         formData
                     )
                     .then((response) => {
