@@ -43,7 +43,7 @@ module MiEducacion
         percent(0)
 
         log("********************************************************")
-        log("*** Please be patient, next steps might take a while ***")
+        log("*** MiEducación Update - This may take a few minutes ***")
         log("********************************************************")
 
         percent(10)
