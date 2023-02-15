@@ -5,6 +5,7 @@ en:
       nav:
         dashboard: "Dashboard"
         settings: "Settings"
+        updater: "Upgrader"
       settings:
         general_settings:
           force_redirect_private:
