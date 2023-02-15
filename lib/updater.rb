@@ -37,6 +37,9 @@ module MiEducacion
 
       def self.run_update
 
+        MiEducacion.maintenance_enabled = true
+
+
         percent(0)
 
         log("********************************************************")
@@ -66,6 +69,24 @@ module MiEducacion
 
         percent(100)
 
+        log("DONE")
+        publish('status', 'complete')
+        MiEducacion.maintenance_enabled = false
+
+      rescue => ex
+        publish('status', 'failed')
+        MiEducacion.maintenance_enabled = false
+    
+        [
+          "FAILED TO UPGRADE",
+          ex.inspect,
+          ex.backtrace.join("\n"),
+        ].each do |message|
+    
+          STDERR.puts(message)
+          log(message)
+        end
+
         FileUtils.touch(Rails.root.join("tmp/restart.txt"))
       end
 
@@ -90,6 +111,7 @@ module MiEducacion
         unless retval == 0
           STDERR.puts("FAILED: '#{cmd}' exited with a return value of #{retval}")
           STDERR.puts(msg)
+          MiEducacion.maintenance_enabled = false
           raise RuntimeError
         end
       end

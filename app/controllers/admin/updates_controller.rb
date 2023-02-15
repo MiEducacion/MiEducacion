@@ -18,8 +18,6 @@ class Admin::UpdatesController < Admin::BaseController
 
         MiEducacion::Updater.run_update
         head :ok
-        MiEducacion.maintenance_enabled = true
-
 
     end
 

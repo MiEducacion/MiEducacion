@@ -73,6 +73,11 @@ class SiteSetting < RailsSettings::Base
       default: true
   end
 
+  scope :experimental do
+    field :enable_web_updater,
+      type: :boolean,
+      default: true
+  end
 
   def self.exposed_settings
     exposed_settings = self.where(exposed_to_client: true)

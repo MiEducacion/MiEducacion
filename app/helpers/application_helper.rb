@@ -33,6 +33,11 @@ module ApplicationHelper
       :enable_opengraph,
       :enable_splash_screen
     ]
+    if current_user&.has_role?(:admin)
+      general_settings.push(
+        :enable_web_updater
+      )
+    end
 
     general_settings.each { |setting_key| 
       site_settings[setting_key] = SiteSetting.send(setting_key)
