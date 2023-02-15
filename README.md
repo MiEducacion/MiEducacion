@@ -37,3 +37,4 @@ We encourage and support the community to contribute their grain of sand, includ
 We look forward to seeing your pull requests!
 
 >  *__Alexander__: This is my first time working with Ruby and Rails, so any kind of contribution will be more than welcome :heart:*
+>  
