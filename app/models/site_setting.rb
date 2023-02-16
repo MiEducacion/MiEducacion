@@ -1,6 +1,11 @@
 # RailsSettings Model
 class SiteSetting < RailsSettings::Base
 
+  AVAILABLE_LOCALES = %w[
+    es
+    en
+    pt-BR
+  ]
 
   scope :general do
     field :site_name, 
@@ -53,8 +58,10 @@ class SiteSetting < RailsSettings::Base
             default: "/images/default/mieducacion_default_appicon_512x512.png"
 
     field :default_locale,
-            type: :string,
-            default: ApplicationConfig["MIEDUCACION_DEFAULT_LOCALE"] || "en"
+            type: :list,
+            default: ApplicationConfig["MIEDUCACION_DEFAULT_LOCALE"] || "en",
+            values: AVAILABLE_LOCALES,
+            validates: {presence: true, inclusion: {in: AVAILABLE_LOCALES}}
 
     # Social
 

@@ -22,6 +22,19 @@
 
             <!-- Type 2: Image -->
 
+            <!-- Type 3: List -->
+            <div v-else-if="setting.type === 'list'">
+              <Listbox v-model="settings[setting.key]">
+                <ListboxButton class="setting-value input">{{ settings[setting.key] || setting.value }}</ListboxButton>
+                <ListboxOptions>
+                  <ListboxOption v-for="option in setting.options.values" :key="option" :value="option">
+                    {{ option }}
+                  </ListboxOption>
+                </ListboxOptions>
+              </Listbox>
+            </div>
+
+
             <div v-else-if="setting.type === 'image'">
               <div class="setting-image-uploader">
                 <div class="uploaded-image-preview" :id="`preview-${setting.key}`"
@@ -38,15 +51,17 @@
               </div>
             </div>
 
-            <!-- Type 3: Long TextBox -->
+            <!-- Type 4: Long TextBox -->
 
-            <textarea v-if="setting.type == 3" @input="settings[setting.name] = $event.target.value"
+            <textarea v-if="setting.type == textarea" @input="settings[setting.name] = $event.target.value"
               :value="setting.value" class="setting-value textarea" type="text"
               :label="t(`js.admin.settings.${category}.${setting.key}.title`)"></textarea>
 
             <span v-if="setting.type !== 1" class="setting-description">
               {{ t(`js.admin.settings.${category}.${setting.key}.description`) }}
             </span>
+
+
           </div>
           <button :loading="btnLoading" type="submit" @click="updateSettings" class="settings-submit">
             {{ t("js.admin.settings.save") }}
@@ -61,7 +76,19 @@
 <script setup>
 
 
+
+
+
+
+
+
 import { ref, reactive, onMounted, inject, onUpdated } from 'vue'
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from '@headlessui/vue'
 import MIconButton from '../../../components/m-icon-button.vue'
 import loadingOverlay from '../../../components/loading-overlay.vue'
 
@@ -121,13 +148,13 @@ function handleImageChange(e) {
 }
 
 onMounted(() => {
-   settingsModel.value = props.settingsData
-   category.value = props.category
+  settingsModel.value = props.settingsData
+  category.value = props.category
 })
 
 onUpdated(() => {
-   settingsModel.value = props.settingsData
-   category.value = props.category
+  settingsModel.value = props.settingsData
+  category.value = props.category
 })
 
 </script>
