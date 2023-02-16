@@ -35,7 +35,7 @@
     "postcss-loader": "4.0.3",
     "postcss-import": "^15.1.0",
     "sass": "^1.57.1",
-    "shakapacker": "6.5.0",
+    "shakapacker": "^6.5",
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.2.4",
     "terser-webpack-plugin": "5",
