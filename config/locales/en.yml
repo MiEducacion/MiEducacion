@@ -11,7 +11,7 @@ en:
           force_redirect_private:
             description: "If set to true, force redirect users who are not logged in to log in"
             title: "Force redirect on private site"
-          public:
+          public_site:
             description: "If disabled, require authentication to read content on this site, disallow anonymous access."
             title: "Public site"
           show_site_banner:
@@ -32,6 +32,21 @@ en:
           site_shortname:
             description: "The short title will be used on the user's home screen, launcher, or other places where space may be limited. It should be limited to 12 characters."
             title: "Site shortname"
+          app_icon:
+            description: "Icon that will be used on the user's home screen"
+            title: "Application icon"
+          default_locale:
+            description: "The default locale that will be used for the site"
+            title: "Default locale"
+          enable_opengraph:
+            description: "Enable OpenGraph features"
+            title: "Enable OpenGraph"
+          opengraph_sitename:
+            description: "Title used for OpenGraph"
+            title: "OpenGraph sitename"
+          enable_splash_screen:
+            description: "Displays a temporary loading screen while site assets load"
+            title: "Enable Splash screen"
           title: "General"
         save: "Save settings"
       wizard_link: "Continue with Wizard"
