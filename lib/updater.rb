@@ -54,6 +54,9 @@ module MiEducacion
 
         run("bundle install")
 
+        percent(30)
+        run("yarn install --production")
+
         percent(50)
 
         run("rake db:migrate")
