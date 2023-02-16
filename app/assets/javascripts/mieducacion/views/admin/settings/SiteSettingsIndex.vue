@@ -57,9 +57,7 @@
               :value="setting.value" class="setting-value textarea" type="text"
               :label="t(`js.admin.settings.${category}.${setting.key}.title`)"></textarea>
 
-            <span v-if="setting.type !== 1" class="setting-description">
-              {{ t(`js.admin.settings.${category}.${setting.key}.description`) }}
-            </span>
+            <span v-if="setting.type !== 1" class="setting-description" v-html="t(`js.admin.settings.${category}.${setting.key}.description`)"/>
 
 
           </div>
