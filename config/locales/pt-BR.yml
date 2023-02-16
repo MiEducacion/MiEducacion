@@ -7,6 +7,50 @@ pt-BR:
         settings: "Configurações"
         updater: "Atualizador"
       settings:
+        general:
+          app_icon:
+            description: "Ícone que será usado na tela inicial do usuário"
+            title: "Ícone de aplicativo"
+          default_locale:
+            description: "A localidade padrão que será usada para o site"
+            title: "Localidade padrão"
+          enable_opengraph:
+            description: "Habilitar recursos do OpenGraph"
+            title: "Ative o OpenGraph"
+          enable_splash_screen:
+            description: "Exibe uma tela de carregamento temporária enquanto os ativos do site são carregados"
+            title: "Ativar tela inicial"
+          force_redirect_private:
+            description: "Se definido como true, force o redirecionamento de usuários que não estão logados para fazer login"
+            title: "Forçar redirecionamento em site privado"
+          opengraph_sitename:
+            description: "Título usado para OpenGraph"
+            title: "Nome do site OpenGraph"
+          public:
+            description: "Se desativado, exija autenticação para ler o conteúdo deste site, não permite acesso anônimo."
+            title: "Site público"
+          public_site:
+            description: "Se desativado, exija autenticação para ler o conteúdo deste site, não permite acesso anônimo."
+            title: "Site público"
+          show_site_banner:
+            description: "Exibir um banner para todos os usuários na tela principal do site"
+            title: "Mostrar banner do site"
+          site_banner_content:
+            description: "Conteúdo do banner do site - Suporta Markdown (previsualização não disponível)"
+            title: "Conteúdo do banner do site"
+          site_description:
+            description: "Descreva este site em uma frase; usado na meta description tag."
+            title: "Descrição do site"
+          site_logo:
+            description: "A imagem do logotipo no canto superior esquerdo do seu site. Use uma imagem retangular ampla com uma altura de 120 e uma proporção maior que 3:1."
+            title: "Logotipo do site"
+          site_name:
+            description: "O nome deste site, conforme usado na tag de título."
+            title: "Nome do site"
+          site_shortname:
+            description: "O título curto será usado na tela inicial do usuário, no iniciador ou em outros lugares onde o espaço possa ser limitado. Ele deve ser limitado a 12 caracteres."
+            title: "Nome abreviado do site"
+          title: "Geral"
         general_settings:
           app_icon:
             description: "Ícone que será usado na tela inicial do usuário"
