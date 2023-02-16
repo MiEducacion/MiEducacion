@@ -1,24 +1,24 @@
 <template>
   <div>
     <div class="center">
-      <h1>{{ t("js.admin.settings.general_settings.title") }}</h1>
+      <h1>{{ t(`js.admin.settings.${category}.title`) }}</h1>
       <div class="pt-4">
         <form @submit.prevent="updateSettings">
           <div class="setting-container" v-for="(setting, index) in settingsModel" :key="setting.key">
             <span class="setting-title">
-              {{ t(`js.admin.settings.general_settings.${setting.key}.title`) }}
+              {{ t(`js.admin.settings.${category}.${setting.key}.title`) }}
             </span>
             <!-- Type 0: String -->
 
             <input v-if="setting.type === 'string'" @input="settings[setting.key] = $event.target.value"
               class="setting-value input" type="text" :value="settingsModel[index].value"
-              :label="t(`js.admin.settings.general_settings.${setting.key}.title`)">
+              :label="t(`js.admin.settings.${category}.${setting.key}.title`)">
 
             <!-- Type 1: Boolean -->
 
             <input type="checkbox" v-else-if="setting.type === 'boolean'" class="mt-0 setting-value"
               @change="settings[setting.key] = $event.target.checked" :checked="settingsModel[index].value"
-              :label="t(`js.admin.settings.general_settings.${setting.key}.description`)">
+              :label="t(`js.admin.settings.${category}.${setting.key}.description`)">
 
             <!-- Type 2: Image -->
 
@@ -42,10 +42,10 @@
 
             <textarea v-if="setting.type == 3" @input="settings[setting.name] = $event.target.value"
               :value="setting.value" class="setting-value textarea" type="text"
-              :label="t(`js.admin.settings.general_settings.${setting.key}.title`)"></textarea>
+              :label="t(`js.admin.settings.${category}.${setting.key}.title`)"></textarea>
 
             <span v-if="setting.type !== 1" class="setting-description">
-              {{ t(`js.admin.settings.general_settings.${setting.key}.description`) }}
+              {{ t(`js.admin.settings.${category}.${setting.key}.description`) }}
             </span>
           </div>
           <button :loading="btnLoading" type="submit" @click="updateSettings" class="settings-submit">
@@ -61,7 +61,7 @@
 <script setup>
 
 
-import { ref, reactive, onMounted, inject } from 'vue'
+import { ref, reactive, onMounted, inject, onUpdated } from 'vue'
 import MIconButton from '../../../components/m-icon-button.vue'
 import loadingOverlay from '../../../components/loading-overlay.vue'
 
@@ -69,12 +69,9 @@ const toast = inject('$toast');
 const settings = reactive({})
 const btnLoading = ref(null)
 var settingsModel = ref(null)
+var category = ref(null)
+const props = defineProps(['settingsData', 'category'])
 
-onMounted(() => {
-  axios.get('/admin/site_settings.json').then((r) => {
-    settingsModel.value = r.data.site_settings
-  })
-})
 
 
 function updateSettings(e) {
@@ -122,5 +119,15 @@ function handleImageChange(e) {
   settings[`${e.target.id.replace("upload-", "")}`] = data
   const preview = document.getElementById(e.target.id.replace("upload-", "preview-"))
 }
+
+onMounted(() => {
+   settingsModel.value = props.settingsData
+   category.value = props.category
+})
+
+onUpdated(() => {
+   settingsModel.value = props.settingsData
+   category.value = props.category
+})
 
 </script>

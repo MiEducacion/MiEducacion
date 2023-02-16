@@ -2,10 +2,8 @@ const AdminBase = () => import( /* webpackChunkName: "admin-base" */ '../views/a
 const AdminDashboard = () => import( /* webpackChunkName: "admin-dashboard" */ '../views/admin/AdminDashboard.vue');
 const AdminSettingsLayout = () => import('../views/admin/settings/_layout.vue');
 
-import GeneralSettings from '../views/admin/settings/GeneralSettings.vue';
-import CustomizationSettings from "../views/admin/settings/CustomizationSettings.vue";
-import SecuritySettings from "../views/admin/settings/SecuritySettings.vue";
-import EmailSettings from "../views/admin/settings/EmailSettings.vue";
+import SettingsView from '../views/admin/settings/SiteSettingsIndex.vue';
+
 import Updater from "../views/admin/updater.vue";
 
 
@@ -39,34 +37,10 @@ const AdminRoutes = {
                 requireAdmin: true
             },
             children: [
-                {   
+                {
                     name: 'admin.settings.general',
                     path: '/admin/site_settings',
-                    component: GeneralSettings,
-                    meta: {
-                        requireAdmin: true
-                    }
-                },
-                {
-                    name: 'admin.settings.customization',
-                    path: 'customization',
-                    component: CustomizationSettings,
-                    meta: {
-                        requireAdmin: true
-                    }
-                },
-                {
-                    name: 'admin.settings.security',
-                    path: 'security',
-                    component: SecuritySettings,
-                    meta: {
-                        requireAdmin: true
-                    }
-                },
-                {
-                    name: 'admin.settings.smtp',
-                    path: 'smtp',
-                    component: EmailSettings,
+                    component: SettingsView,
                     meta: {
                         requireAdmin: true
                     }

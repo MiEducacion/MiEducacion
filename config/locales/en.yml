@@ -7,7 +7,7 @@ en:
         settings: "Settings"
         updater: "Upgrader"
       settings:
-        general_settings:
+        general:
           app_icon:
             description: "Icon that will be used on the user's home screen"
             title: "Application icon"

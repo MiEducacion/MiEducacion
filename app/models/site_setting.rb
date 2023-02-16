@@ -79,8 +79,7 @@ class SiteSetting < RailsSettings::Base
   scope :experimental do
     field :enable_web_updater,
       type: :boolean,
-      default: true,
-      hidden: true
+      default: true
   end
 
   def self.exposed_settings

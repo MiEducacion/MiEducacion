@@ -10,6 +10,7 @@ module Admin
           response = site_settings.each_with_object([]) do |setting, memo|
             memo << {
               key: setting[:key],
+              category: setting[:scope],
               default: setting[:default],
               type: setting[:type],
               readonly: setting[:readonly],
