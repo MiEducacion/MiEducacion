@@ -1,3 +1,5 @@
+import I18n from "i18n-js";
+
 function showPreloaderError() {
   document.getElementById("m-splash").remove()
   const errorDiv = document.createElement("div");
@@ -25,6 +27,10 @@ let preloadedData = {
     isMobile : preloaded.isMobile
 };
 
+window.lang = {
+  current: preloadedData.currentUser?.locale || preloadedData.SiteSettings.default_locale,
+  default: preloadedData.SiteSettings.default_locale
+}
 
 
 export default {

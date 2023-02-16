@@ -31,7 +31,8 @@ module ApplicationHelper
       :show_site_banner,
       :site_banner_content,
       :enable_opengraph,
-      :enable_splash_screen
+      :enable_splash_screen,
+      :default_locale
     ]
     if current_user&.has_role?(:admin)
       general_settings.push(
