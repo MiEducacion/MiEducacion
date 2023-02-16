@@ -33,7 +33,7 @@ const AdminRoutes = {
         {
             name: 'admin.settings',
             path: 'settings',
-            redirect: '/admin/settings/general_settings',
+            redirect: '/admin/site_settings',
             component: AdminSettingsLayout,
             meta: {
                 requireAdmin: true
@@ -41,7 +41,7 @@ const AdminRoutes = {
             children: [
                 {   
                     name: 'admin.settings.general',
-                    path: 'general_settings',
+                    path: '/admin/site_settings',
                     component: GeneralSettings,
                     meta: {
                         requireAdmin: true

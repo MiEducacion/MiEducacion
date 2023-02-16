@@ -14,9 +14,9 @@ import metaManager from './plugins/metaManager';
 import mIcons from './plugins/m-icons';
 import pinia from './plugins/pinia';
 import Notifier from './lib/m-notifier';
-require('./lib/axios-setup')
 require('./lib/register-service-worker')
 import "../../builds/mieducacion-wind.css"
+require('./lib/axios-setup')
 require('./lib/message-bus')
 
 require('./initializers/capabilities')
@@ -48,7 +48,6 @@ MiEducacion.mixin(i18n)
 
 MiEducacion.config.globalProperties.$filters = globalFilters
 MiEducacion.config.globalProperties.$_ = _
-MiEducacion.config.globalProperties.MessageBus = MessageBus
 
 MiEducacion.component('MSpinner', MSpinner)
 

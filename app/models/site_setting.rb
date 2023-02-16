@@ -17,7 +17,8 @@ class SiteSetting < RailsSettings::Base
     field :developer_emails,
       type: :array,
       default: (ENV["MIEDUCACION_DEVELOPER_EMAILS"] || "admin@admin.com"),
-      separator: /[\s,]+/
+      separator: /[\s,]+/,
+      hidden: true
 
     field :public_site,
       type: :boolean,
@@ -35,18 +36,20 @@ class SiteSetting < RailsSettings::Base
       type: :string
 
     field :favicon_url,
-      type: :string,
-      default: proc { URL.local_image("favicon.ico") }
+      type: :image,
+      default: '/favicon.ico',
+      hidden: true
 
     field :site_logo,
-      type: :string,
+      type: :image,
       default: '/images/default/mieducacion_default_siteLogo.svg'
     
     field :resized_site_logo,
-      type: :string
+      type: :image,
+      hidden: true
 
     field :app_icon,
-            type: :string,
+            type: :image,
             default: "/images/default/mieducacion_default_appicon_512x512.png"
 
     field :default_locale,
@@ -76,7 +79,8 @@ class SiteSetting < RailsSettings::Base
   scope :experimental do
     field :enable_web_updater,
       type: :boolean,
-      default: true
+      default: true,
+      hidden: true
   end
 
   def self.exposed_settings

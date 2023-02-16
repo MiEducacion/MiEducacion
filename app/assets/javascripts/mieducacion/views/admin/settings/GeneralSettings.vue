@@ -2,204 +2,125 @@
   <div>
     <div class="center">
       <h1>{{ t("js.admin.settings.general_settings.title") }}</h1>
-        <div class="pt-4">
-          <form @submit.prevent="updateSettings">
-            <div class="setting-container" v-for="(setting, index) in settingsModel" :key="setting.name">
-                  <span class="setting-title">
-                    {{ t(`js.admin.settings.general_settings.${setting.name}.title`) }}
-                  </span>
-                  <!-- Type 0: String -->
+      <div class="pt-4">
+        <form @submit.prevent="updateSettings">
+          <div class="setting-container" v-for="(setting, index) in settingsModel" :key="setting.key">
+            <span class="setting-title">
+              {{ t(`js.admin.settings.general_settings.${setting.key}.title`) }}
+            </span>
+            <!-- Type 0: String -->
 
-                  <input
-                    v-if="setting.type == 0"
-                    @input="settings[setting.name] = $event.target.value"
-                    class="setting-value input"
-                    type="text"
-                    :value="settingsModel[index].value"
-                    :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
-                  >
+            <input v-if="setting.type === 'string'" @input="settings[setting.key] = $event.target.value"
+              class="setting-value input" type="text" :value="settingsModel[index].value"
+              :label="t(`js.admin.settings.general_settings.${setting.key}.title`)">
 
-                  <!-- Type 1: Boolean -->
+            <!-- Type 1: Boolean -->
 
-                  <input type="checkbox"
-                    v-else-if="setting.type == 1"
-                    class="mt-0 setting-value"
-                    @change="settings[setting.name] = $event.target.checked"
-                    :checked="settingsModel[index].value"
-                    :label="t(`js.admin.settings.general_settings.${setting.name}.description`)"
-                  >
+            <input type="checkbox" v-else-if="setting.type === 'boolean'" class="mt-0 setting-value"
+              @change="settings[setting.key] = $event.target.checked" :checked="settingsModel[index].value"
+              :label="t(`js.admin.settings.general_settings.${setting.key}.description`)">
 
-                  <!-- Type 2: Image -->
+            <!-- Type 2: Image -->
 
-                  <div v-else-if="setting.type == 2">
-                    <div class="setting-image-uploader">
-                      <div
-                        class="uploaded-image-preview"
-                        :id="`preview-${setting.name}`"
-                        :style="`background-image: url('${setting.value}')`"
-                      >
-                        <div class="image-upload-controls">
-                          <m-icon-button 
-                          :title="`${t('js.admin.image_uploader_title')}`"
-                          @click="uploaderButton(`upload-${setting.name}`)">
-                            <UploadCloud />
-                          </m-icon-button>
-                          <input
-                            :ref="`upload-${setting.name}`"
-                            class="d-none"
-                            @change="handleImageChange"
-                            :v-model:value="settings[setting.name]"
-                            :id="`upload-${setting.name}`"
-                            type="file"
-                            accept="image/*"
-                          />
-                        </div>
-                      </div>
-                    </div>
+            <div v-else-if="setting.type === 'image'">
+              <div class="setting-image-uploader">
+                <div class="uploaded-image-preview" :id="`preview-${setting.key}`"
+                  :style="`background-image: url('${setting.value}')`">
+                  <div class="image-upload-controls">
+                    <m-icon-button :title="`${t('js.admin.image_uploader_title')}`"
+                      @click="uploaderButton(`upload-${setting.key}`)">
+                      <UploadCloud />
+                    </m-icon-button>
+                    <input :ref="`upload-${setting.key}`" class="d-none" @change="handleImageChange"
+                      :v-model:value="settings[setting.key]" :id="`upload-${setting.key}`" type="file" accept="image/*" />
                   </div>
-
-                  <!-- Type 3: Long TextBox -->
-
-                  <textarea
-                    v-if="setting.type == 3"
-                    @input="settings[setting.name] = $event.target.value"
-                    :value="setting.value"
-                    class="setting-value textarea"
-                    type="text"
-                    :label="t(`js.admin.settings.general_settings.${setting.name}.title`)"
-                  ></textarea>
-
-                  <span v-if="setting.type !== 1" class="setting-description">
-                    {{ t(`js.admin.settings.general_settings.${setting.name}.description`) }}
-                  </span>
+                </div>
+              </div>
             </div>
-            <button
-              :loading="btnLoading"
-              type="submit"
-              @click="updateSettings"
-              class="settings-submit"
-            >
-              {{t("js.admin.settings.save")}}
-            </button>
-          </form>
-        </div>
+
+            <!-- Type 3: Long TextBox -->
+
+            <textarea v-if="setting.type == 3" @input="settings[setting.name] = $event.target.value"
+              :value="setting.value" class="setting-value textarea" type="text"
+              :label="t(`js.admin.settings.general_settings.${setting.key}.title`)"></textarea>
+
+            <span v-if="setting.type !== 1" class="setting-description">
+              {{ t(`js.admin.settings.general_settings.${setting.key}.description`) }}
+            </span>
+          </div>
+          <button :loading="btnLoading" type="submit" @click="updateSettings" class="settings-submit">
+            {{ t("js.admin.settings.save") }}
+          </button>
+        </form>
+      </div>
     </div>
     <loading-overlay v-if="btnLoading"></loading-overlay>
-  </div>
+</div>
 </template>
 
-<script>
-import MIconButton from '../../../components/m-icon-button.vue'
-import loadingOverlay from '../../../components/loading-overlay.vue';
-export default {
-    name: 'AdminGeneralSettings',
-    components: {
-      MIconButton,
-      loadingOverlay
-    },
-    data () {
-        return {
-            settings: {},
-            btnLoading: null,
-            settingsModel: [{
-                    name: 'site_logo',
-                    type: 2,
-                    value: this.SiteSettings.site_logo
-                },
-                {
-                    name: 'site_name',
-                    type: 0,
-                    value: this.SiteSettings.site_name
-                },
-                {
-                    name: 'site_description',
-                    type: 0,
-                    value: this.SiteSettings.site_description
-                },
-                {
-                    name: 'site_shortname',
-                    type: 0,
-                    value: this.SiteSettings.site_shortname
-                },
-                {
-                    name: 'public',
-                    type: 1,
-                    value: this.SiteSettings.public_site
-                },
-                {
-                    name: 'force_redirect_private',
-                    type: 1,
-                    value: this.SiteSettings.force_redirect_private
-                },
-                {
-                    name: 'show_site_banner',
-                    type: 1,
-                    value: this.SiteSettings.show_site_banner
-                },
-                {
-                    name: 'site_banner_content',
-                    type: 3,
-                    value: this.SiteSettings.site_banner_content
-                },
-                {
-                    name: 'enable_opengraph',
-                    type: 1,
-                    value: this.SiteSettings.enable_opengraph
-                },
-                {
-                    name: 'enable_splash_screen',
-                    type: 1,
-                    value: this.SiteSettings.enable_splash_screen
-                }
-            ]
-        }
-    },
-    methods: {
-        updateSettings(e) {
-          e.preventDefault();
-            if (!this.$_.isEmpty(this.settings)) {
-                let formData = new FormData()
-                this.$_.forEach(this.settings, function(value, key) {
-                    formData.append(`setting[${key}]`, value)
-                })
+<script setup>
 
-                this.btnLoading = true
-                axios.post('/admin/site_settings.json',
-                        formData
-                    )
-                    .then((response) => {
-                        this.$toast(
-                            response.data.message, {
-                              class: [
-                                'm-notifier',
-                                'success'
-                              ]
-                            }
-                        )
-                        this.btnLoading = false
-                        //window.location.reload()
-                    })
-                    .catch((error) => {
-                        this.error = true
-                        this.btnLoading = false
-                        this.$toast(
-                            $t('js.core.generic_error')
-                        )
-                    })
-            } else {
-                Notifier.show({
-                    message: I18n.t('js.core.error_not_modified')
-                })
-            }
-        },
-        uploaderButton(form) {
-            document.getElementById(`${form}`).click()
-        },
-        handleImageChange(e) {
-            let data = e.target.files[0]
-            this.settings[`${e.target.id.replace("upload-", "")}`] = data
-            let preview = document.getElementById(e.target.id.replace("upload-", "preview-"))
-        }
+
+import { ref, reactive, onMounted, inject } from 'vue'
+import MIconButton from '../../../components/m-icon-button.vue'
+import loadingOverlay from '../../../components/loading-overlay.vue'
+
+const toast = inject('$toast');
+const settings = reactive({})
+const btnLoading = ref(null)
+var settingsModel = ref(null)
+
+onMounted(() => {
+  axios.get('/admin/site_settings.json').then((r) => {
+    settingsModel.value = r.data.site_settings
+  })
+})
+
+
+function updateSettings(e) {
+  e.preventDefault()
+  if (Object.keys(settings).length !== 0) {
+    const formData = new FormData()
+    for (const [key, value] of Object.entries(settings)) {
+      formData.append(`setting[${key}]`, value)
     }
+
+    btnLoading.value = true
+    axios.post('/admin/site_settings.json', formData)
+      .then((response) => {
+        toast(
+          response.data.message, {
+          class: [
+            'm-notifier',
+            'success'
+          ]
+        }
+        )
+        btnLoading.value = false
+        window.location.reload()
+      })
+      .catch((error) => {
+        error = true
+        btnLoading.value = false
+        toast(
+          I18n.t('js.core.generic_error')
+        )
+      })
+  } else {
+    toast(
+      I18n.t('js.core.error_not_modified')
+    )
+  }
 }
+
+function uploaderButton(form) {
+  document.getElementById(`${form}`).click()
+}
+
+function handleImageChange(e) {
+  const data = e.target.files[0]
+  settings[`${e.target.id.replace("upload-", "")}`] = data
+  const preview = document.getElementById(e.target.id.replace("upload-", "preview-"))
+}
+
 </script>

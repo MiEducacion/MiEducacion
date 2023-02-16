@@ -9,6 +9,7 @@
       <%= render partial: "partials/opengraph" %>
       <%= render partial: "partials/additional_head_content" %>
    </head>    
+      <% console %>
    <body
       class="app-body<% if device == "mobile" %> is-mobile<% end %>"
       data-user-status="<%= j(user_logged_in_status) %>">

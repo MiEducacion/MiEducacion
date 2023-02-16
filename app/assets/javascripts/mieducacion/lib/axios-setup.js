@@ -2,7 +2,7 @@ import axios from 'axios';
 let csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 
-const httpClient = axios.create({
+const http = axios.create({
     timeout: 30000,
     headers: {
         common: {
@@ -11,7 +11,7 @@ const httpClient = axios.create({
     }
   });
 
-  httpClient.interceptors.response.use(function (response) {
+  http.interceptors.response.use(function (response) {
     if(response.status === 200 || response.status === 422) {
       return response;  
     }
@@ -29,7 +29,6 @@ const httpClient = axios.create({
   });
 
 
-window.axios = httpClient
-export default {
-    axios: httpClient
-}
+window.axios = http
+
+export default http

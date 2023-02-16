@@ -38,13 +38,6 @@ export default {
   created() {
     registerComponents()
   },
-  mounted() {
-    window.Notifier = {
-      show: function() {
-      console.warn("Deprecation notice: Notifier has been deprecated, use this.$toast instead")
-    }
-
-    }  },
   metaInfo () {
     return {
       title: this.SiteSettings.site_name,

@@ -1,5 +1,27 @@
 module Admin
   class SiteSettingsController < Admin::BaseController
+
+    def index
+      respond_to do |format|
+        format.html
+        format.json do
+          site_settings = SiteSetting.defined_fields
+
+          response = site_settings.each_with_object([]) do |setting, memo|
+            memo << {
+              key: setting[:key],
+              default: setting[:default],
+              type: setting[:type],
+              readonly: setting[:readonly],
+              value: SiteSetting.send(setting[:key]),
+              options: setting[:options]
+            } unless setting[:options][:hidden]
+          end
+
+        render json: { site_settings: response }
+        end
+      end
+    end
     def create
       @errors = []
       setting_params.keys.each do |key|
