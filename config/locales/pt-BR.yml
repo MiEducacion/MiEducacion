@@ -5,12 +5,31 @@ pt-BR:
       nav:
         dashboard: "Painel de controle"
         settings: "Configurações"
+        updater: "Atualizador"
       settings:
         general_settings:
+          app_icon:
+            description: "Ícone que será usado na tela inicial do usuário"
+            title: "Ícone de aplicativo"
+          default_locale:
+            description: "A localidade padrão que será usada para o site"
+            title: "Localidade padrão"
+          enable_opengraph:
+            description: "Habilitar recursos do OpenGraph"
+            title: "Ative o OpenGraph"
+          enable_splash_screen:
+            description: "Exibe uma tela de carregamento temporária enquanto os ativos do site são carregados"
+            title: "Ativar tela inicial"
           force_redirect_private:
             description: "Se definido como true, force o redirecionamento de usuários que não estão logados para fazer login"
             title: "Forçar redirecionamento em site privado"
+          opengraph_sitename:
+            description: "Título usado para OpenGraph"
+            title: "Nome do site OpenGraph"
           public:
+            description: "Se desativado, exija autenticação para ler o conteúdo deste site, não permite acesso anônimo."
+            title: "Site público"
+          public_site:
             description: "Se desativado, exija autenticação para ler o conteúdo deste site, não permite acesso anônimo."
             title: "Site público"
           show_site_banner:
