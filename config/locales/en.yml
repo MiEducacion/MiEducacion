@@ -51,51 +51,14 @@ en:
             description: "The short title will be used on the user's home screen, launcher, or other places where space may be limited. It should be limited to 12 characters."
             title: "Site shortname"
           title: "General"
-        general_settings:
-          app_icon:
-            description: "Icon that will be used on the user's home screen"
-            title: "Application icon"
-          default_locale:
-            description: "The default locale that will be used for the site"
-            title: "Default locale"
-          enable_opengraph:
-            description: "Enable OpenGraph features"
-            title: "Enable OpenGraph"
-          enable_splash_screen:
-            description: "Displays a temporary loading screen while site assets load"
-            title: "Enable Splash screen"
-          force_redirect_private:
-            description: "If set to true, force redirect users who are not logged in to log in"
-            title: "Force redirect on private site"
-          opengraph_sitename:
-            description: "Title used for OpenGraph"
-            title: "OpenGraph sitename"
-          public:
-            description: "If disabled, require authentication to read content on this site, disallow anonymous access."
-            title: "Public site"
-          public_site:
-            description: "If disabled, require authentication to read content on this site, disallow anonymous access."
-            title: "Public site"
-          show_site_banner:
-            description: "Display a banner for all users on the main screen of the site"
-            title: "Show site banner"
-          site_banner_content:
-            description: "Content of Site Banner - Supports Markdown (Preview not available)"
-            title: "Site banner content"
-          site_description:
-            description: "Describe this site in one sentence; used in the meta description tag."
-            title: "Site description"
-          site_logo:
-            description: "The logo image at the top left of your site. Use a wide rectangular image with a height of 120 and an aspect ratio greater than 3:1."
-            title: "Site logo"
-          site_name:
-            description: "The name of this site, as used in the title tag."
-            title: "Site name"
-          site_shortname:
-            description: "The short title will be used on the user's home screen, launcher, or other places where space may be limited. It should be limited to 12 characters."
-            title: "Site shortname"
-          title: "General"
+        
         save: "Save settings"
+        experimental:
+          title: "Experimental"
+          enable_web_updater:
+            title: "Experimental web updater"
+            description: "Enables the web update interface in <a href='/admin/updates'>/admin/updates</a>.<br><b>Caution:</b> As an experimental feature, the application may stop working properly if something goes wrong during the update"
+
       wizard_link: "Continue with Wizard"
       wizard_required: "Welcome to your new MiEducacion instance! Let’s get started with the setup wizard ✨."
     core:
