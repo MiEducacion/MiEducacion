@@ -16,6 +16,13 @@ class Admin::UpdatesController < Admin::BaseController
             error_type: "no_updates_available"
         } if !MiEducacion::Updater.updates_available?
 
+            render json: {
+                errors: [
+                    "Web updater disabled"
+                ],
+                error_type: "web_update_disabled" 
+            }, status: 403 if !if SiteSetting.enable_web_updater
+
         MiEducacion::Updater.run_update
         head :ok
 
