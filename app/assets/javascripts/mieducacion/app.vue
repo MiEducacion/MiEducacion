@@ -2,17 +2,17 @@
   <div id="mountpoint">
     <metainfo>
       <template v-slot:title="{ content }">
-        {{ content ? `${content} | ${SiteSettings.site_name}` : `${SiteSettings.site_name }` }}
+        {{ content ? `${content} | ${SiteSettings.site_name}` : `${SiteSettings.site_name}` }}
       </template>
     </metainfo>
     <SiteHeader />
     <plugin-outlet name="below-site-header"></plugin-outlet>
-    <main class="wrap">
-      <SiteBanner/>
-        <router-view />
+    <main class="wrap" :class="isMobile ? '!pb-16' : ''">
+      <SiteBanner />
+      <router-view />
     </main>
-    <SiteBottomNavigation />
-  </div>
+    <SiteBottomNavigation v-if="isMobile" />
+</div>
 </template>
 
 <script>
@@ -30,20 +30,20 @@ export default {
     SiteBottomNavigation,
     PluginOutlet
   },
-    data() {
+  data() {
     return {
 
-}
+    }
   },
   created() {
     registerComponents()
   },
-  metaInfo () {
+  metaInfo() {
     return {
       title: this.SiteSettings.site_name,
       titleTemplate: `%s - ${this.SiteSettings.site_name}`,
     }
-   
+
   },
 
 
