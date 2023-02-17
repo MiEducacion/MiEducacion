@@ -36,7 +36,7 @@
 
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <button :loading="btnLoading" color="var(--mieducacion-primary)" dark elevation="0" type="submit">
+                      <button :loading="btnLoading" color="var(--m-primary)" dark elevation="0" type="submit">
                         Crear
                       </button>
                     </v-card-actions>
