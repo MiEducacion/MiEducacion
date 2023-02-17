@@ -1,7 +1,7 @@
 <template>
   <div class="admin-dashboard">
     <div class="admin-main-nav">
-      <ul class="nav nav-pills overflow-x-scroll">
+      <ul class="nav nav-pills overflow-x-auto">
         <li v-for="link in adminLinks" :key="link.to">
           <router-link class="nav-item min-w-0 whitespace-nowrap" :to="link.to" active-class="admin-nav-active" :v-if="link.enabled === true">
             {{ link.title }}
