@@ -89,6 +89,21 @@ class SiteSetting < RailsSettings::Base
       default: true
   end
 
+
+  scope :integrations do
+    field :enable_discourse_connect_provider,
+      type: :boolean,
+      default: false
+
+    field :discourse_connect_url,
+      type: :string
+
+    field :discourse_connect_secret,
+      type: :string,
+      secret: true
+  end
+
+
   def self.exposed_settings
     exposed_settings = self.where(exposed_to_client: true)
     exposed_settings.map { |setting| { key: setting.var, value: setting.value } }
