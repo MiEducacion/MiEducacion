@@ -19,7 +19,7 @@
 
                 <button @click="runUpdate" :disabled="updating" class="bg-purple-900 px-4 py-2 mt-4 text-white"
                     :class="[updating ? 'bg-gray-700' : '']">
-                    {{ updating? "Updating...": "Update now" }}
+                    {{ updating ? "Updating..." : "Update now" }}
                 </button>
 
 
@@ -45,7 +45,6 @@
             </div>
         </div>
     </template>
-
 </template>
 
 <script setup>
@@ -61,8 +60,10 @@ var updateProgress = ref(0)
 var updateStatus = ref(null)
 
 const handleFailed = () => {
+    let expandableLogs = getElementById("expandable-logs")
+    MessageBus.unsubscribe('/admin/upgrade')
     currentLine.value = 'Failed to update MiEducación';
-    document.getElementById("expandable-logs").setAttribute("open", "true"); 
+    expandableLogs.setAttribute("open", "true");
 }
 
 onMounted(() => {
