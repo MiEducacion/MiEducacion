@@ -11,7 +11,13 @@
 
             <div v-else class="">
 
-                <button @click="runUpdate" :disabled="updating" class="bg-purple-900 px-4 py-2 text-white"
+                <section id="experimental-feature" class="bg-red-800
+                 text-white px-4 py-2 flex items-center">
+                    <AlertTriangle class="mr-2"/>
+                    This feature is Experimental
+                </section>
+
+                <button @click="runUpdate" :disabled="updating" class="bg-purple-900 px-4 py-2 mt-4 text-white"
                     :class="[updating ? 'bg-gray-700' : '']">
                     {{ updating? "Updating...": "Update now" }}
                 </button>
@@ -44,6 +50,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
+import { AlertTriangle } from 'lucide-vue-next';
 
 var updating = ref(false)
 var loading = ref(true)
