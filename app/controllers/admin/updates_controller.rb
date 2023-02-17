@@ -21,7 +21,7 @@ class Admin::UpdatesController < Admin::BaseController
                     "Web updater disabled"
                 ],
                 error_type: "web_update_disabled" 
-            }, status: 403 if !if SiteSetting.enable_web_updater
+            }, status: 403 if !SiteSetting.enable_web_updater
 
         MiEducacion::Updater.run_update
         head :ok
