@@ -7,51 +7,12 @@ es:
         settings: "Configuración"
         updater: "Actualizador"
       settings:
+        experimental:
+          enable_web_updater:
+            description: "Habilita la interfaz de actualización web en <a href='/admin/updates'>/admin/updateds.</a> <br><b>Precaución:</b> Como función experimental, la aplicación puede dejar de funcionar correctamente si algo sale mal durante la actualización"
+            title: "Actualizador web experimental"
+          title: "Experimental"
         general:
-          app_icon:
-            description: "Icono que se utilizará en la pantalla de inicio del usuario"
-            title: "Icono de la aplicación"
-          default_locale:
-            description: "La configuración regional predeterminada que se utilizará para el sitio"
-            title: "Configuración regional predeterminada"
-          enable_opengraph:
-            description: "Habilitar funciones de OpenGraph"
-            title: "Habilitar OpenGraph"
-          enable_splash_screen:
-            description: "Muestra una pantalla de carga temporal mientras se cargan los activos del sitio"
-            title: "Habilitar pantalla de carga"
-          force_redirect_private:
-            description: "Si se establece en true, forzar la redirección de los usuarios que no han iniciado sesión para que inicien sesión"
-            title: "Forzar redirección en sitio privado"
-          opengraph_sitename:
-            description: "Título utilizado para OpenGraph"
-            title: "Nombre del sitio OpenGraph"
-          public:
-            description: "Si está deshabilitada, solicita autenticación para leer el contenido de este sitio y no permite el acceso anónimo."
-            title: "Sitio público"
-          public_site:
-            description: "Si está deshabilitada, solicita autenticación para leer el contenido de este sitio y no permite el acceso anónimo."
-            title: "Sitio público"
-          show_site_banner:
-            description: "Mostrar un banner para todos los usuarios en la pantalla principal del sitio"
-            title: "Mostrar banner del sitio"
-          site_banner_content:
-            description: "Contenido del banner del sitio -  Admite Markdown (vista previa no disponible)"
-            title: "Contenido del banner del sitio"
-          site_description:
-            description: "Describe este sitio en una frase; se usa en la etiqueta de meta descripción."
-            title: "Descripción del sitio"
-          site_logo:
-            description: "La imagen del logotipo en la parte superior izquierda de tu sitio. Utilice una imagen rectangular ancha con una altura de 120 y una relación de aspecto superior a 3:1."
-            title: "Logotipo del sitio"
-          site_name:
-            description: "El nombre de este sitio, tal como se usa en la etiqueta del título."
-            title: "Nombre del sitio"
-          site_shortname:
-            description: "El título corto se utilizará en la pantalla de inicio del usuario, en el lanzador u otros lugares donde el espacio sea limitado. Debe estar limitado a 12 caracteres."
-            title: "Nombre abreviado del sitio"
-          title: "General"
-        general_settings:
           app_icon:
             description: "Icono que se utilizará en la pantalla de inicio del usuario"
             title: "Icono de la aplicación"

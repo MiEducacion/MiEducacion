@@ -7,6 +7,11 @@ en:
         settings: "Settings"
         updater: "Upgrader"
       settings:
+        experimental:
+          enable_web_updater:
+            description: "Enables the web update interface in <a href='/admin/updates'>/admin/updates</a>.<br><b>Caution:</b> As an experimental feature, the application may stop working properly if something goes wrong during the update"
+            title: "Experimental web updater"
+          title: "Experimental"
         general:
           app_icon:
             description: "Icon that will be used on the user's home screen"
@@ -51,14 +56,7 @@ en:
             description: "The short title will be used on the user's home screen, launcher, or other places where space may be limited. It should be limited to 12 characters."
             title: "Site shortname"
           title: "General"
-        
         save: "Save settings"
-        experimental:
-          title: "Experimental"
-          enable_web_updater:
-            title: "Experimental web updater"
-            description: "Enables the web update interface in <a href='/admin/updates'>/admin/updates</a>.<br><b>Caution:</b> As an experimental feature, the application may stop working properly if something goes wrong during the update"
-
       wizard_link: "Continue with Wizard"
       wizard_required: "Welcome to your new MiEducacion instance! Let’s get started with the setup wizard ✨."
     core:
