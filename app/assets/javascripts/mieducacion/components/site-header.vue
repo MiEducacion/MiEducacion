@@ -3,7 +3,7 @@
     <div class="site-header-wrap">
       <div class="title">
         <router-link to="/">
-          <img id="site-logo" :src="SiteSettings.site_logo" />
+          <img id="site-logo" :src="SiteSettings.site_logo" :alt="`${SiteSettings.site_name} logo`"/>
         </router-link>
       </div>
       <div class="site-navigation--nav hidden-sm-and-down" role="navigation" v-if="SiteSettings.public_site || currentUser">
