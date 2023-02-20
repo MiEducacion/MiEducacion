@@ -12,7 +12,7 @@
             <div v-else class="">
 
                 <section id="web-updater-landing" class="text-center">
-                    <img :src="ReadyIllustration" class="sm:w-3/6 mx-auto" alt="">
+                    <img :src="ReadyIllustration" class="sm:w-3/6 mx-auto" :alt="t('js.admin.updater.ready_title')">
                     <span class="bg-blue-100 rounded-full px-2 py-1 text-blue-700 text-sm font-medium
                                         ">Experimental</span>
                     <h2 class="text-xl font-medium text-gray-900 mt-2">{{ t('js.admin.updater.ready_title') }}
