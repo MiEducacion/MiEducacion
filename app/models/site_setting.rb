@@ -103,6 +103,15 @@ class SiteSetting < RailsSettings::Base
       secret: true
   end
 
+  # Internal use only
+
+  scope :internal do
+    field :waiting_on_first_user,
+      type: :boolean,
+      default: !User.exists?,
+      hidden: true
+  end
+
 
   def self.exposed_settings
     exposed_settings = self.where(exposed_to_client: true)
