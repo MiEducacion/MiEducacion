@@ -14,7 +14,7 @@
                 <section id="web-updater-landing" class="text-center">
                     <img :src="ReadyIllustration" class="sm:w-3/6 mx-auto" :alt="t('js.admin.updater.ready_title')">
                     <span class="bg-blue-100 rounded-full px-2 py-1 text-blue-700 text-sm font-medium
-                                        ">Experimental</span>
+                                                ">Experimental</span>
                     <h2 class="text-xl font-medium text-gray-900 mt-2">{{ t('js.admin.updater.ready_title') }}
 
                     </h2>
@@ -24,7 +24,8 @@
 
                 </section>
 
-                <button @click="runUpdate" :disabled="updating" class="bg-purple-900 mx-auto px-4 py-2 mt-4 flex justify-center text-white"
+                <button @click="runUpdate" :disabled="updating"
+                    class="bg-purple-900 mx-auto px-4 py-2 mt-4 flex justify-center text-white"
                     :class="[updating ? '!bg-gray-700' : '']">
                     {{ updating ? "Updating..." : "Update now" }}
                 </button>
@@ -103,6 +104,9 @@ onMounted(() => {
 const runUpdate = () => {
     updating.value = true
     axios.post('/admin/upgrade')
-}
-
+        .then(response => {
+            if (response.data.error_type === "no_updates_available") {
+                updating.value = false
+            }
+        })
 </script>
