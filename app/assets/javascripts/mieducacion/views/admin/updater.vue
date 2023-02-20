@@ -6,7 +6,7 @@
     <template v-else>
         <div class="admin-update-manager sm:p-8 p-2">
             <div v-if="!SiteSettings.enable_web_updater">
-                Las actualizaciones desde la interfaz web están deshabilitadas
+                {{ js.admin.updater.web_updater_disabled }}
             </div>
 
             <div v-else class="">
