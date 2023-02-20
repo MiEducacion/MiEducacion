@@ -11,8 +11,6 @@
 
             <div v-else class="">
 
-
-
                 <section id="web-updater-landing" class="text-center">
                     <img :src="ReadyIllustration" class="sm:w-3/6 mx-auto" alt="">
                     <span class="bg-blue-100 rounded-full px-2 py-1 text-blue-700 text-sm font-medium
