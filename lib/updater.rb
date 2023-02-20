@@ -1,5 +1,7 @@
 # lib/update.rb
 
+require 'io/wait'
+
 module MiEducacion
     module Updater
         
@@ -47,7 +49,16 @@ module MiEducacion
         log("********************************************************")
         log("*** MiEducación Update - This may take a few minutes ***")
         log("********************************************************")
+        log("")
 
+        log("=> Puma PID: #{pid}")
+        log("=> Current git hash: #{MiEducacion.git_version}")
+        log("=> Remote git hash: #{MiEducacion::Updater.remote_version}")
+
+        percent(5)
+        log("")
+        log("************** Enabling Maintenance Mode ***************")
+        log("")
         percent(10)
 
 
@@ -72,6 +83,9 @@ module MiEducacion
 
         run("rake assets:precompile")
 
+        percent(92)
+        log("************** Disabling Maintenance Mode ***************")
+
         percent(100)
 
         log("DONE")
@@ -93,6 +107,7 @@ module MiEducacion
         end
 
         FileUtils.touch(Rails.root.join("tmp/restart.txt"))
+        run("kill -USR2 #{pid}")
       end
 
       def self.run(cmd)
@@ -120,25 +135,7 @@ module MiEducacion
           raise RuntimeError
         end
       end
-  
-      private
 
-    
-      def self.recompile_assets
-        # Implementa la lógica para recompilar los assets
-        system("rails assets:precompile")
-
-      end
-  
-      def self.run_migrations
-        # Implementa la lógica para ejecutar las migraciones
-        system("rake db:migrate")
-      end
-  
-      def self.restart_server
-        # Implementa la lógica para reiniciar el servidor
-        system("rails restart")
-      end
     end
   end
   
