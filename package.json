@@ -22,7 +22,7 @@
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "i18n-js": "^3.9.2",
-    "jquery": "^3.6.3",
+    "jquery": "3.5.0",
     "lodash": "^4.17.21",
     "lucide-vue-next": "^0.88.0",
     "markdown-it": "^13.0.1",
@@ -32,8 +32,8 @@
     "node-waves": "^0.7.6",
     "pinia": "^2.0.22",
     "postcss": "^8.4.19",
-    "postcss-loader": "4.0.3",
     "postcss-import": "^15.1.0",
+    "postcss-loader": "4.0.3",
     "sass": "^1.57.1",
     "shakapacker": "^6.5",
     "style-loader": "^3.3.1",
@@ -54,7 +54,6 @@
   "version": "0.1.0",
   "devDependencies": {
     "@csstools/postcss-sass": "^5.0.1",
-    "postcss-nesting": "^10.2.0",
     "sass-loader": "^13.2.0",
     "vue-template-compiler": "^2.6.14",
     "webpack-dev-server": "^4.11.1"
