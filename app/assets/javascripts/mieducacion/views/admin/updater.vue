@@ -11,10 +11,19 @@
 
             <div v-else class="">
 
-                <section id="experimental-feature" class="bg-red-800
-                 text-white px-4 py-2 flex items-center">
-                    <AlertTriangle class="mr-2"/>
-                    This feature is Experimental
+
+
+                <section id="web-updater-landing" class="text-center">
+                    <img :src="ReadyIllustration" class="sm:w-3/6 mx-auto" alt="">
+
+                    <h2 class="text-xl font-medium text-gray-900">{{ t('js.admin.updater.ready_title') }}
+                        <span class="bg-blue-100 rounded-full px-2 py-1 text-blue-700 text-sm font-medium
+                                ">Experimental</span>
+                    </h2>
+                    <p class="max-w-2xl text-center mx-auto mt-2">
+                        {{ t('js.admin.updater.ready_description') }}
+                    </p>
+
                 </section>
 
                 <button @click="runUpdate" :disabled="updating" class="bg-purple-900 px-4 py-2 mt-4 text-white"
@@ -48,6 +57,8 @@
 </template>
 
 <script setup>
+import ReadyIllustration from 'images/illustrations/ready-for-update.svg';
+
 import { onMounted, ref } from 'vue';
 import { AlertTriangle } from 'lucide-vue-next';
 
