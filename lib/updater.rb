@@ -37,6 +37,8 @@ module MiEducacion
 
       def self.run_update
 
+        pid = Process.pid
+
         MiEducacion.maintenance_enabled = true
 
 
