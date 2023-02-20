@@ -92,6 +92,9 @@ module MiEducacion
         publish('status', 'complete')
         MiEducacion.maintenance_enabled = false
 
+        FileUtils.touch(Rails.root.join("tmp/restart.txt"))
+        run("kill -USR2 #{pid}")
+
       rescue => ex
         publish('status', 'failed')
         MiEducacion.maintenance_enabled = false
@@ -105,9 +108,6 @@ module MiEducacion
           STDERR.puts(message)
           log(message)
         end
-
-        FileUtils.touch(Rails.root.join("tmp/restart.txt"))
-        run("kill -USR2 #{pid}")
       end
 
       def self.run(cmd)
