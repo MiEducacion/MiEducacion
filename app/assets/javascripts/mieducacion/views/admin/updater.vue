@@ -109,4 +109,5 @@ const runUpdate = () => {
                 updating.value = false
             }
         })
+    }
 </script>
