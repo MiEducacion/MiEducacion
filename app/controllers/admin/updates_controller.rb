@@ -40,7 +40,7 @@ class Admin::UpdatesController < Admin::BaseController
     {
       versions_diff: MiEducacion::Updater.versions_diff,
       installed_sha: MiEducacion.git_version,
-      remote_hash: MiEducacion::Updater.remote_hash,
+      remote_hash: MiEducacion::Updater.remote_version,
       updates_available: MiEducacion::Updater.updates_available?
     }
   end
