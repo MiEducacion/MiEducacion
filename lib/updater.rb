@@ -12,7 +12,7 @@ module MiEducacion
       end
 
       def self.updates_available?
-        MiEducacion.versions_diff > 0
+        self.versions_diff > 0
       end
 
       def self.versions_diff  
