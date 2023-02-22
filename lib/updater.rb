@@ -11,14 +11,14 @@ module MiEducacion
         remote_hash
       end
 
-      def self.updates_available?
-        self.versions_diff > 0
-      end
-
       def self.versions_diff  
         commits = `git rev-list #{ MiEducacion.git_version}..#{remote_version}`
   
         commits.split("\n").count
+      end
+
+      def self.updates_available?
+        versions_diff > 0
       end
 
   
