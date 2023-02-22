@@ -12,7 +12,8 @@ module Admin
           git_branch: MiEducacion.git_branch,
           last_commit_date: MiEducacion.last_commit_date,
           updates_available: MiEducacion::Updater.updates_available?,
-          remote_version: MiEducacion::Updater.remote_version
+          remote_version: MiEducacion::Updater.remote_version,
+          versions_diff: MiEducacion::Updater.versions_diff,
         }
       }
       respond_to do |format|
