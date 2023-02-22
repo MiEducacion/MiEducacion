@@ -18,7 +18,7 @@ module MiEducacion
       end
 
       def self.updates_available?
-        versions_diff > 0
+        MiEducacion.git_version != remote_version #temporarily
       end
 
   
