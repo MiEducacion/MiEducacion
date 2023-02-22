@@ -12,7 +12,7 @@ module MiEducacion
       end
 
       def self.versions_diff  
-        commits = `git rev-list #{ MiEducacion.git_version}..#{remote_version}`
+        commits = `git rev-list #{MiEducacion.git_version}..#{remote_version}`
   
         commits.split("\n").count
       end
