@@ -17,7 +17,7 @@
                 <img :src="SiteSettings.site_logo" class="modal-site-logo" />
               </div>
               <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900" v-emoji>
-                Welcome back to {{ SiteSettings.title }} 👋!
+                Welcome back to {{ SiteSettings.site_name }} 👋!
               </DialogTitle>
               <div class="mt-2">
                 <p class="text-sm text-gray-500 mb-4">
