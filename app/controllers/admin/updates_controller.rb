@@ -9,20 +9,20 @@ class Admin::UpdatesController < Admin::BaseController
   end
 
   def run_update
-    if !MiEducacion::Updater.updates_available?
-      render json: {
-        errors: [
-          "No updates available"
-        ],
-        error_type: "no_updates_available"
-      }
-    elsif !SiteSetting.enable_web_updater
+    if !SiteSetting.enable_web_updater
       render json: {
         errors: [
           "Web updater disabled"
         ],
         error_type: "web_update_disabled"
       }, status: 403
+    elsif !MiEducacion::Updater.updates_available?
+      render json: {
+        errors: [
+          "No updates available"
+        ],
+        error_type: "no_updates_available"
+      }
     else
       MiEducacion::Updater.run_update
       head :ok
@@ -40,6 +40,7 @@ class Admin::UpdatesController < Admin::BaseController
     {
       versions_diff: MiEducacion::Updater.versions_diff,
       installed_sha: MiEducacion.git_version,
+      remote_hash: MiEducacion::Updater.remote_hash,
       updates_available: MiEducacion::Updater.updates_available?
     }
   end
