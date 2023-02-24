@@ -8,13 +8,13 @@ var colors = {
     secondary: SiteSettings.secondary_color
 }
 
-function generateColorVariations(hexColor, name) {
+const generateColorVariations = (hexColor, name) => {
     const color = chroma(hexColor)
     const variations = {}
   
     for (let i = 1; i <= 9; i++) {
       variations[`-${i}00`] = color
-        .brighten(i)
+        .brighten(i / 2.5)
         .hex()
     }
   

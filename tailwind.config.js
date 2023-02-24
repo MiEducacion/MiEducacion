@@ -10,7 +10,7 @@ module.exports = {
       './app/assets/javascripts/mieducacion/**/*.vue',
       './app/javascripts/**/*.js',
     ],
-    },
+  },
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -41,7 +41,25 @@ module.exports = {
       The prefix "m" is used here to distinguish between native colors and SiteSettings colors.
       */
       "m-primary": "var(--m-primary)",
+      "m-primary-100": "var(--m-primary-100)", 
+      "m-primary-200": "var(--m-primary-200)", 
+      "m-primary-300": "var(--m-primary-300)", 
+      "m-primary-400": "var(--m-primary-400)", 
+      "m-primary-500": "var(--m-primary-500)", 
+      "m-primary-600": "var(--m-primary-600)", 
+      "m-primary-700": "var(--m-primary-700)", 
+      "m-primary-800": "var(--m-primary-800)", 
+      "m-primary-900": "var(--m-primary-900)",
       "m-secondary": "var(--m-secondary)",
+      "m-secondary-100": "var(--m-secondary-100)",
+      "m-secondary-200": "var(--m-secondary-200)",
+      "m-secondary-300": "var(--m-secondary-300)", 
+      "m-secondary-400": "var(--m-secondary-400)", 
+      "m-secondary-500": "var(--m-secondary-500)", 
+      "m-secondary-600": "var(--m-secondary-600)", 
+      "m-secondary-700": "var(--m-secondary-700)", 
+      "m-secondary-800": "var(--m-secondary-800)", 
+      "m-secondary-900": "var(--m-secondary-900)",
       "m-tertiary": "var(--m-tertiary)",
 
     },

@@ -17,7 +17,12 @@
 }
 
 .nav-item {
-    @apply hover:bg-purple-100 hover:text-purple-700 px-4 py-2 flex
+    @apply px-4 py-2 flex transition-colors hover:bg-m-primary-400 hover:text-m-secondary
+}
+
+.nav-item:hover {
+    background-color: var(--m-primary-400);
+    color: var(--m-secondary);
 }
 
 .admin-nav-active {
@@ -158,7 +163,7 @@
 
 
 .settings-submit {
-    @apply px-4 py-2 text-white bg-purple-700 hover:bg-purple-900
+    @apply px-4 py-2 text-white bg-m-primary hover:bg-m-primary-100
 }
 
 .terminal-updating {
