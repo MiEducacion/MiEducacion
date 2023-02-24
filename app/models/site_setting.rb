@@ -82,12 +82,6 @@ class SiteSetting < RailsSettings::Base
           default: true
   end
 
-  scope :experimental do
-    field :enable_web_updater,
-          type: :boolean,
-          default: true
-  end
-
   scope :integrations do
     field :enable_discourse_connect_provider,
           type: :boolean,
@@ -108,6 +102,12 @@ class SiteSetting < RailsSettings::Base
 
     field :secondary_color,
           type: :color_picker
+  end
+
+  scope :experimental do
+    field :enable_web_updater,
+          type: :boolean,
+          default: true
   end
 
   # Internal use only
