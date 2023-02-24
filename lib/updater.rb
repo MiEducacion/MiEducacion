@@ -25,6 +25,9 @@ module MiEducacion
       def self.log(message)
         publish 'log', message + "\n"
       end
+    def self.last_commit_message
+      `git log --format=%s -n 1`
+    end
 
       def self.publish(type, value)
         MessageBus.publish("/admin/upgrade",
@@ -54,6 +57,7 @@ module MiEducacion
         log("=> Puma PID: #{pid}")
         log("=> Current git hash: #{MiEducacion.git_version}")
         log("=> Remote git hash: #{MiEducacion::Updater.remote_version}")
+      log("=> Commit message: #{Mieducacion::Update.last_commit_message}")
 
         percent(5)
         log("")
