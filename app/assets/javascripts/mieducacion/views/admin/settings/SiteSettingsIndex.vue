@@ -57,7 +57,21 @@
               :value="setting.value" class="setting-value textarea" type="text"
               :label="t(`js.admin.settings.${category}.${setting.key}.title`)"></textarea>
 
-            <span v-if="setting.type !== 1" class="setting-description" v-html="t(`js.admin.settings.${category}.${setting.key}.description`)"/>
+            <!-- Type : Color Picker -->
+
+            <template v-if="setting.type === 'color_picker'" class="flex">
+              <span class="flex h-4 w-4 rounded-full"
+                :style="`background-color: ${settings[setting.key] || settingsModel[index].value}`">
+                &nbsp;
+              </span>
+              <input @input="settings[setting.key] = $event.target.value" class="setting-value input" type="text"
+                :value="settingsModel[index].value" :label="t(`js.admin.settings.${category}.${setting.key}.title`)"
+                data-coloris>
+            </template>
+
+
+
+            <span class="setting-description" v-html="t(`js.admin.settings.${category}.${setting.key}.description`)" />
 
 
           </div>
@@ -68,7 +82,7 @@
       </div>
     </div>
     <loading-overlay v-if="btnLoading"></loading-overlay>
-</div>
+  </div>
 </template>
 
 <script setup>

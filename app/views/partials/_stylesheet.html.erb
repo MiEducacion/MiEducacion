@@ -3,3 +3,8 @@
 <% if Settings::LMS.enable_custom_styles? %>
 <link rel="stylesheet" href="/site/custom_stylesheet.css">
 <% end %>
+<style>
+    :root {
+        --m-primary: <%= SiteSetting.primary_color %>;
+    }
+</style>

@@ -24,7 +24,6 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
@@ -35,7 +34,16 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
-      lime: colors.lime
+      lime: colors.lime,
+      emerald: colors.emerald,
+      /* Global variables are used (which will come from SiteSettings)
+      to allow the customization of site colors.
+      The prefix "m" is used here to distinguish between native colors and SiteSettings colors.
+      */
+      "m-primary": "var(--m-primary)",
+      "m-secondary": "var(--m-secondary)",
+      "m-tertiary": "var(--m-tertiary)",
+
     },
     spacing: {
       px: '1px',

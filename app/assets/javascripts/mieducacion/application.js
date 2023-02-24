@@ -14,6 +14,7 @@ import metaManager from './plugins/metaManager';
 import mIcons from './plugins/m-icons';
 import pinia from './plugins/pinia';
 import Notifier from './lib/m-notifier';
+import ColorPicker from './plugins/color-picker';
 import "../../builds/mieducacion-wind.css"
 require('./initializers/require-libs.js')
 
@@ -33,7 +34,8 @@ let pluginsMap = [
   twemoji,
   Markdown,
   mIcons,
-  Notifier
+  Notifier,
+  ColorPicker
 ]
 
 
