@@ -14,7 +14,7 @@
                 <section id="web-updater-landing" class="text-center">
                     <img :src="ReadyIllustration" class="sm:w-3/6 mx-auto" :alt="t('js.admin.updater.ready_title')">
                     <span class="bg-blue-100 rounded-full px-2 py-1 text-blue-700 text-sm font-medium
-                                                ">Experimental</span>
+                                                    ">Experimental</span>
                     <h2 class="text-xl font-medium text-gray-900 mt-2">{{ t('js.admin.updater.ready_title') }}
 
                     </h2>
@@ -58,7 +58,7 @@
 <script setup>
 import ReadyIllustration from 'images/illustrations/ready-for-update.svg';
 
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, onUnmounted } from 'vue';
 import { AlertTriangle } from 'lucide-vue-next';
 
 var updating = ref(false)
@@ -109,5 +109,9 @@ const runUpdate = () => {
                 updating.value = false
             }
         })
-    }
+}
+
+onUnmounted(() => {
+    MessageBus.unsubscribe('/admin/upgrade')
+})
 </script>

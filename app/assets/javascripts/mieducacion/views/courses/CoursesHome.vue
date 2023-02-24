@@ -8,7 +8,7 @@
                   <div class="my-courses pb-4" v-if="currentUser">
                      <h2 class="title">My Courses</h2>
                      <div class="courses--no-data mx-auto text-center">
-                        <img :src="NoDataImage" class="illustration" />
+                        <img :src="NoDataImage" class="illustration w-2/5" />
                         <h1 class="title">
                            Actualmente no estás inscripto en ninguna clase.
                         </h1>
@@ -81,5 +81,8 @@ export default {
          console.log(data)
       });
    },
+   unmounted() {
+      MessageBus.unsubscribe('/courses')
+   }
 }
 </script>
