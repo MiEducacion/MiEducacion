@@ -25,7 +25,7 @@
                 </section>
 
                 <button @click="runUpdate" :disabled="updating"
-                    class="bg-purple-900 mx-auto px-4 py-2 mt-4 flex justify-center text-white"
+                    class="bg-m-primary mx-auto px-4 py-2 mt-4 flex justify-center text-white"
                     :class="[updating ? '!bg-gray-700' : '']">
                     {{ updating ? "Updating..." : "Update now" }}
                 </button>

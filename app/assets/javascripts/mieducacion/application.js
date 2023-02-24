@@ -17,7 +17,7 @@ import Notifier from './lib/m-notifier';
 import ColorPicker from './plugins/color-picker';
 import "../../builds/mieducacion-wind.css"
 require('./initializers/require-libs.js')
-
+require('./lib/site-customizations.js')
 
 
 

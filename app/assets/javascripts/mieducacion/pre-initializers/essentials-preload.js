@@ -1,5 +1,3 @@
-import I18n from "i18n-js";
-
 function showPreloaderError() {
   document.getElementById("m-splash").remove()
   const errorDiv = document.createElement("div");
@@ -22,9 +20,9 @@ else {
 
 
 let preloadedData = {
-    currentUser : preloaded.currentUser,
-    SiteSettings : preloaded.SiteSettings,
-    isMobile : preloaded.isMobile
+  currentUser : preloaded.currentUser,
+  SiteSettings : preloaded.SiteSettings,
+  isMobile : preloaded.isMobile
 };
 
 window.lang = {
@@ -36,5 +34,6 @@ window.lang = {
 export default {
   install: (app) => {
     Object.assign(app.config.globalProperties, preloadedData);
-  }
+  },
+  preloadedData
 }

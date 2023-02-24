@@ -32,7 +32,9 @@ module ApplicationHelper
       :site_banner_content,
       :enable_opengraph,
       :enable_splash_screen,
-      :default_locale
+      :default_locale,
+      :primary_color,
+      :secondary_color,
     ]
     if current_user&.has_role?(:admin)
       general_settings.push(
