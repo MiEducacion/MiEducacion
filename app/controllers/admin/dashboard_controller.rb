@@ -14,6 +14,7 @@ module Admin
           updates_available: MiEducacion::Updater.updates_available?,
           remote_version: MiEducacion::Updater.remote_version,
           versions_diff: MiEducacion::Updater.versions_diff,
+          last_commit_message: MiEducacion::Updater.last_commit_message
         }
       }
       respond_to do |format|
