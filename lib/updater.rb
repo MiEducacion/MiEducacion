@@ -52,7 +52,7 @@ module MiEducacion
       log("=> Puma PID: #{pid}")
       log("=> Current git hash: #{MiEducacion.git_version}")
       log("=> Remote git hash: #{MiEducacion::Updater.remote_version}")
-      log("=> Commit message: #{Mieducacion::Update.last_commit_message}")
+      log("=> Commit message: #{Mieducacion::Updater.last_commit_message}")
 
       percent(5)
       log("")
