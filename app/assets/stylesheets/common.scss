@@ -99,3 +99,7 @@ h5 {
 h6 {
   @apply text-base;
 }
+
+#debug-enabled {
+  @apply fixed px-4 py-2 text-center text-white bg-m-primary-200 bottom-8 right-4 shadow-lg rounded;
+}

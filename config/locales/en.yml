@@ -66,6 +66,7 @@ en:
       error_generic: "An error has occurred"
       error_not_modified: "No changes have been made"
       success_settings: "Settings saved successfully"
+      debug_enabled: "Debug mode"
     lms:
       courses: "Courses"
       grades: "Grades"
