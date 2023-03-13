@@ -7,7 +7,7 @@ module MiEducacion
         MAJOR = 0
         MINOR = 1
         TINY = 0
-        PRE = "alpha1"
+        PRE = "alpha2"
 
         FULL = [MAJOR, MINOR, TINY, PRE].compact.join(".")
       end
