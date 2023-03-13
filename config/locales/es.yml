@@ -57,9 +57,13 @@ es:
             title: "Nombre abreviado del sitio"
           title: "General"
         save: "Guardar ajustes"
+      updater:
+        ready_description: "MiEducación es un software que está siendo constantemente actualizado, y tenemos en cuenta el que desees estar a la vanguardia, por lo que implementamos esta característica para hacerlo tan simple como presionar un botón."
+        ready_title: "¿Listo para actualizar?"
       wizard_link: "Continuar con el asistente"
       wizard_required: "¡Bienvenido a tu nueva instancia de MiEducacion! Empecemos con el asistente de configuración ✨."
     core:
+      debug_enabled: "Debug mode"
       error_generic: "Se ha producido un error."
       error_not_modified: "No se han realizado cambios"
       success_settings: "Configuración guardada correctamente"

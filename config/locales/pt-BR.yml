@@ -57,9 +57,13 @@ pt-BR:
             title: "Nome abreviado do site"
           title: "Geral"
         save: "Salvar configurações"
+      updater:
+        ready_description: "O MiEducacion é um software que está sendo atualizado constantemente, e temos em mente que talvez você queira estar na vanguarda. Por isso, implementamos esse recurso experimental para torná-lo tão simples quanto pressionar um botão."
+        ready_title: "¿Pronto para atualização?"
       wizard_link: "Continue com o Wizard"
       wizard_required: "Bem-vindo à sua nova instância do MIEducacion! Vamos começar com o assistente de configuração ✨."
     core:
+      debug_enabled: "Modo de depuração"
       error_generic: "Ocorreu um erro"
       error_not_modified: "Nenhuma alteração foi feita"
       success_settings: "Configurações salvas com sucesso"
