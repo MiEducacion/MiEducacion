@@ -53,7 +53,7 @@
 
             <!-- Type 4: Long TextBox -->
 
-            <textarea v-if="setting.type == textarea" @input="settings[setting.name] = $event.target.value"
+            <textarea v-if="setting.type == 'textarea'" @input="settings[setting.name] = $event.target.value"
               :value="setting.value" class="setting-value textarea" type="text"
               :label="t(`js.admin.settings.${category}.${setting.key}.title`)"></textarea>
 

@@ -37,7 +37,7 @@ class SiteSetting < RailsSettings::Base
           default: false
 
     field :site_banner_content,
-          type: :string
+          type: :textarea
 
     field :favicon_url,
           type: :image,
