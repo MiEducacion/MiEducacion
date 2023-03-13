@@ -5,3 +5,4 @@ require('../lib/services/dialog')
 
 
 require('../initializers/capabilities')
+require('../initializers/debug-mode')
