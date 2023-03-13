@@ -1,7 +1,7 @@
 function showPreloaderError() {
   document.getElementById("m-splash").remove()
   const errorDiv = document.createElement("div");
-  errorDiv.setAttribute("id","preload-failed")
+  errorDiv.setAttribute("id", "preload-failed")
   const errorText = document.createTextNode("Unable to boot MiEducación: Essential preloaded data not found");
   errorDiv.appendChild(errorText)
   document.body.appendChild(errorDiv)
@@ -20,20 +20,21 @@ else {
 
 
 let preloadedData = {
-  currentUser : preloaded.currentUser,
-  SiteSettings : preloaded.SiteSettings,
-  isMobile : preloaded.isMobile
+  currentUser: preloaded.currentUser,
+  SiteSettings: preloaded.SiteSettings,
+  isMobile: preloaded.isMobile
 };
-
-window.lang = {
-  current: preloadedData.currentUser?.locale || preloadedData.SiteSettings.default_locale,
-  default: preloadedData.SiteSettings.default_locale
-}
 
 
 export default {
   install: (app) => {
     Object.assign(app.config.globalProperties, preloadedData);
-  },
-  preloadedData
+  }
+}
+
+export const { SiteSettings, currentUser } = preloadedData;
+
+export const Language = {
+  current: preloadedData.currentUser?.locale || preloadedData.SiteSettings.default_locale,
+  default: preloadedData.SiteSettings.default_locale
 }

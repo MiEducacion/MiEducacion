@@ -1,7 +1,5 @@
 import chroma from 'chroma-js'
-import essentialsPreload from '../pre-initializers/essentials-preload'
-
-let SiteSettings = essentialsPreload.preloadedData.SiteSettings
+import { SiteSettings } from '../pre-initializers/essentials-preload'
 
 var colors = {
     primary: SiteSettings.primary_color,

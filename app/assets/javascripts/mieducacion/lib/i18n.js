@@ -1,12 +1,10 @@
 import I18n from 'i18n-js'
 require('../i18n/translations')
 
+import { Language } from '../pre-initializers/essentials-preload'
 
-I18n.locale = lang.current
-I18n.defaultLocale = lang.default
-
-// Remove lang from global variables
-delete window.lang
+I18n.locale = Language.current
+I18n.defaultLocale = Language.default
 
 window.I18n = I18n
 
