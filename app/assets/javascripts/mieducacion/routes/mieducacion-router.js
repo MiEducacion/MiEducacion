@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router'
+import { currentUser, SiteSettings } from '../pre-initializers/essentials-preload'
 
 function loadRoutes() {
     const routes = require.context('./', true, /\.route\.js$/)
@@ -18,18 +19,15 @@ const router = createRouter({
   
 
 router.beforeEach((to, from, next) => {
- 
-    const user = window.MiEducacion.config.globalProperties.currentUser;
-    const SiteSettings = window.MiEducacion.config.globalProperties.SiteSettings;
 
-    if (!SiteSettings.public_site && !user && to.path !== '/login-required') {
+    if (!SiteSettings.public_site && !currentUser && to.path !== '/login-required') {
         next({
             path: '/login-required'
         })
     }
 
 
-    else if (to.path === '/login-required' && (SiteSettings.public_site || user )) {
+    else if (to.path === '/login-required' && (SiteSettings.public_site || currentUser )) {
         next({
             path: '/'
         })
@@ -37,7 +35,7 @@ router.beforeEach((to, from, next) => {
 }
 
 
-    else if (to.meta.requiresAuth && !user) {
+    else if (to.meta.requiresAuth && !currentUser) {
         next({
             name: 'NotFound',
             params: [to.path],
@@ -46,7 +44,7 @@ router.beforeEach((to, from, next) => {
 
     }
 
-    else if (to.meta.requireAdmin && !user.is_admin || false) {
+    else if (to.meta.requireAdmin && !currentUser.is_admin || false) {
         next({
             name: 'NotFound',
             params: [to.path],
