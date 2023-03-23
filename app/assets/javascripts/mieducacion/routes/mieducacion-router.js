@@ -59,6 +59,7 @@ router.afterEach((to, from) => {
     if (window.MiniProfiler && from) {
         window.MiniProfiler.pageTransition();
     }
+    document.body.setAttribute('data-current-path', to.path);
 })
 
 window.AppRouter = router
