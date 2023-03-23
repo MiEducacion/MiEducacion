@@ -12,6 +12,7 @@
 
             <input v-if="setting.type === 'string'" @input="settings[setting.key] = $event.target.value"
               class="setting-value input" type="text" :value="settingsModel[index].value"
+              :maxlength="setting.options.limit"
               :label="t(`js.admin.settings.${category}.${setting.key}.title`)">
 
             <!-- Type 1: Boolean -->

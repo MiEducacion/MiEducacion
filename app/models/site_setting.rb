@@ -16,7 +16,8 @@ class SiteSetting < RailsSettings::Base
 
     field :site_shortname,
           type: :string,
-          default: (ENV["MIEDUCACION_SHORTNAME"] || "MiEducación")
+          default: (ENV["MIEDUCACION_SHORTNAME"] || "MiEducación"),
+          limit: 12
 
     field :developer_emails,
           type: :array,
