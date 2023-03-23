@@ -32,7 +32,7 @@ export default {
   }
 }
 
-export const { SiteSettings, currentUser } = preloadedData;
+export const { SiteSettings, currentUser, isMobile } = preloadedData;
 
 export const Language = {
   current: preloadedData.currentUser?.locale || preloadedData.SiteSettings.default_locale,
