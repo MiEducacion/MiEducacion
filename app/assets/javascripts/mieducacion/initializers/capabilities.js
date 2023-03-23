@@ -1,7 +1,7 @@
 const html = document.querySelector("html");
-const touch = navigator.maxTouchPoints > 1 || "ontouchstart" in window;
+export const isTouch = navigator.maxTouchPoints > 1 || "ontouchstart" in window;
 
-if (touch) {
+if (isTouch) {
   html.classList.add("touch");
 } else {
   html.classList.add("no-touch");
