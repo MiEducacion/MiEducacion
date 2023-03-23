@@ -1,4 +1,5 @@
 @import "./common/admin/base.scss";
+@import './wizard.scss';
 
 .admin-dashboard {
     @apply mt-10 bg-white
@@ -126,7 +127,7 @@
 }
 
 .setting-value.textarea {
-    @apply px-4 py-2 border-2 border-gray-300 rounded-md hover:border-gray-400 transition-colors focus:border-blue-400 focus:outline-none w-full
+    @apply px-4 py-2 border-2 border-gray-300 rounded-md hover:border-gray-400 transition-colors focus:border-blue-400 focus:outline-none w-full overflow-auto
 }
 
 .setting-description {

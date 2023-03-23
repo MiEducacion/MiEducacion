@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html class="mieducacion-wizard">
+<html>
    <head>
-      <title>Wizard | <%= site_name.to_s %></title>
-      <%= render partial: "layouts/head" %>
-      <%= stylesheet_link_tag "mieducacion-wind", media: "all" %>
-      <%= stylesheet_link_tag "wizard", media: "all" %>
-   </head>
-   <body class='wizard'>
-      <div id='wizard-main'>
-         <div class="progress">
-            <div class="progress-bar" style="width: <%= @progress %>%"></div>
-         </div>
-         <%= yield %>
+      <meta charset="utf-8">
+      <title><%= content_for?(:title) ? yield(:title) : site_name.to_s %></title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+<%= render partial: "layouts/head" %>
+      <%= render partial: "partials/opengraph" %>
+      <%= render partial: "partials/additional_head_content" %>
+   </head>    
+   <body
+      class="app-body<% if device == "mobile" %> is-mobile<% end %>"
+      data-user-status="<%= j(user_logged_in_status) %>">
+      <mieducacion-assets>
+         <mieducacion-assets-stylesheets>
+      <%= render partial: "partials/stylesheet" %>
+         </mieducacion-assets-stylesheets>
+         <mieducacion-essentials-preload>
+            <div class="hidden" id="data-preloaded" data-preloaded="<%= preloaded_json %>"></div>
+         </mieducacion-essentials-preload>
+      </mieducacion-assets>
+      <!--The application is rendered at runtime on client-side-->
+      <div id="mieducacion">
+         <%- if include_splash? %>
+            <%= render partial: "common/splash" %>
+         <%- end %>
       </div>
+      <noscript data-path="<%= request.env["PATH_INFO"] %>">
+         <%= render partial: "layouts/noscript_header" %>
+         <div>
+            <!-- Fallback in case of JavaScript disabled / Crawler -->
+    <main class="container mx-auto mt-28 px-5 flex">
+              <%= yield %>
+    </main>
+            <!-- End of Fallback -->
+         </div>
+         <%= render partial: "layouts/noscript_footer" %>
+      </noscript>
+      <%= javascript_pack_tag "start-mieducacion.js" %>
+      <%= javascript_tag do -%>
+         let overrides = {
+            wizard: true
+         }
+      <% end -%>
    </body>
 </html>

@@ -1,8 +1,12 @@
-@import 'variables';
-
 body {
     background-color: var(--mieducacion-theme-background);
 }
+
+[data-current-path^="/wizard"] #global-alerts {
+    @apply hidden;
+}
+
+
 
 
 body.wizard #wizard-main {
@@ -16,7 +20,7 @@ body.wizard #wizard-main {
     position: relative;
     z-index: 11;
     background-color: var(--mieducacion-secondary, #FFFFFF);
-    box-shadow: 0 5px 10px rgba(34,34,34, 0.15);
+    box-shadow: 0 5px 10px rgba(34, 34, 34, 0.15);
     box-sizing: border-box;
     margin: 1.5em auto;
     padding: 0;
@@ -56,7 +60,8 @@ body.wizard #wizard-main {
     margin-top: -1.25rem !important;
 }
 
-.mieducacion-logo, .mieducacion-logo img {
+.mieducacion-logo,
+.mieducacion-logo img {
     height: 30px;
     width: 110px;
 }
@@ -73,5 +78,5 @@ body.wizard #wizard-main {
     cursor: pointer;
     margin: 0 auto;
     border-radius: 8px;
-    border: 1px var(--mieducacion-theme-text-secondary, #ddd ) solid
+    border: 1px var(--mieducacion-theme-text-secondary, #ddd) solid
 }

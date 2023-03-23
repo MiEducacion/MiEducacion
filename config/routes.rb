@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
   root to: "app#index", as: "app"
-  resources :wizard
 
   get "session/current", to: "session#current"
   get "manifest.webmanifest" => "metadata#webmanifest", as: :manifest
@@ -18,6 +17,10 @@ Rails.application.routes.draw do
   get "server/status" => "server#status"
 
   get "login-required" => "app#login_required"
+
+  get "wizard" => "wizard#index"
+  get "wizard/steps" => "steps#index"
+  get "wizard/steps/:id" => "wizard#index"
 
 
   authenticated :user, ->(u) { u.has_role?(:admin) } do
