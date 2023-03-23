@@ -63,7 +63,7 @@ es:
       wizard_link: "Continuar con el asistente"
       wizard_required: "¡Bienvenido a tu nueva instancia de MiEducacion! Empecemos con el asistente de configuración ✨."
     core:
-      debug_enabled: "Debug mode"
+      debug_enabled: "Modo de depuración"
       error_generic: "Se ha producido un error."
       error_not_modified: "No se han realizado cambios"
       success_settings: "Configuración guardada correctamente"
