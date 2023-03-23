@@ -1,6 +1,7 @@
 import { SiteSettings, currentUser } from '../pre-initializers/essentials-preload'
 import i18n from '../lib/i18n';
 import { BODY_ELEMENT } from '../helpers/dom-helper';
+import { isTouch } from './capabilities';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -24,5 +25,6 @@ if (DEBUG_ENABLED) {
     console.table(SiteSettings)
     console.log('[DEBUG] 👨‍🦱 Current User')
     console.table(currentUser)
+    console.log(`[DEBUG] Touch device: ${isTouch}`)
 }
 
